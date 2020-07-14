@@ -1,0 +1,77 @@
+nav.navbar-main {
+  margin: 0.5rem 16.25vw;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .nav-logo {
+    a {
+      font-family: 'Raleway', sans-serif;
+      font-weight: bold;
+      color: #000000;
+      text-decoration: none;
+    }
+
+    img {
+      width: 3rem;
+      margin-right: 0.5rem;
+    }
+  }
+
+  .nav-elements ul {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+
+    // General navigation links
+    li {
+      list-style: none;
+
+      a {
+        // border: 1px solid green;
+        color: #000000;
+        padding: 0 0.75rem;
+        margin: 0 0.25rem;
+        text-decoration: none;
+
+        transition: 0.1s;
+        transition-timing-function: ease;
+      }
+
+      a:hover {
+        color: #4053fe;
+      }
+    }
+
+    // Join button
+    li.join-button {
+      a {
+        color: #ffffff;
+        font-weight: bold;
+        margin-left: 1rem;
+        margin-right: 0;
+        padding: 0.5rem 1.5rem;
+        background-color: #4d5eff;
+        border-radius: 50px;
+
+        transition: 0.2s;
+        transition-timing-function: ease-in-out;
+      }
+
+      a:hover {
+        background-color: #4d5eff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}
+
+header {
+  // border: 3px dotted blue;
+}
+
+nav {
+  // border: 3px solid red;
+}
