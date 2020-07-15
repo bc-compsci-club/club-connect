@@ -10,7 +10,9 @@ const Navigation = () => {
       <div className="nav-logo">
         <a href="/">
           <img src={logo} alt="Brooklyn College Computer Science Club" />
-          <p>Brooklyn College <br/> Computer Science Club</p>
+          <p>
+            Brooklyn College <br /> Computer Science Club
+          </p>
         </a>
       </div>
 
