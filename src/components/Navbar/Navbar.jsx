@@ -1,8 +1,9 @@
 import React from 'react';
 
-import logo from '../../assets/logo.png';
-
 import './Navbar.scss';
+
+import logo from 'assets/logo.png';
+
 
 const Navigation = () => {
   return (
@@ -15,7 +16,6 @@ const Navigation = () => {
           </p>
         </a>
       </div>
-
       <div className="nav-elements">
         <ul>
           <li>
