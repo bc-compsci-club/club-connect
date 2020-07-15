@@ -1,6 +1,4 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 
 import logo from '../../assets/logo.png';
 
@@ -12,7 +10,7 @@ const Navigation = () => {
       <div className="nav-logo">
         <a href="/">
           <img src={logo} alt="Brooklyn College Computer Science Club" />
-          Computer Science Club
+          <p>Brooklyn College <br/> Computer Science Club</p>
         </a>
       </div>
 

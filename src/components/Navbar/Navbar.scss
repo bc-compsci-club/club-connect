@@ -1,28 +1,30 @@
 nav.navbar-main {
-  margin: 0.5rem 16.25vw;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  .nav-logo {
-    a {
+  .nav-logo a {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+
+    img {
+      height: 3rem;
+      width: 3rem;
+      margin-right: 0.5rem;
+    }
+
+    p {
+      margin: 0;
       font-family: 'Raleway', sans-serif;
       font-weight: bold;
       color: #000000;
-      text-decoration: none;
-    }
-
-    img {
-      width: 3rem;
-      margin-right: 0.5rem;
     }
   }
 
   .nav-elements ul {
     margin: 0;
     display: flex;
-    align-items: center;
     font-family: 'Nunito', sans-serif;
 
     // General navigation links
