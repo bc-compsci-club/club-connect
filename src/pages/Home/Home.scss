@@ -31,7 +31,9 @@ section.welcome {
   }
 
   .welcome-container {
-    // margin: 0 17.5vw 0;
+    margin: 0 17.5vw 0;
+    max-width: 720px;
+    width: 80%;
 
     // display: flex;
     // flex-direction: row;
