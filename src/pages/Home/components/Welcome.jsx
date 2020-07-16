@@ -30,7 +30,7 @@ const Welcome = () => {
   return (
     <section className="welcome">
       <div className="welcome-background-container">
-        <Container fluid="md" className="welcome-container">
+        <Container fluid="lg" className="welcome-container">
           <Row>
             <Col className="welcome-content">
               <h1>
