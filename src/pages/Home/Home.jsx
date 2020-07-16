@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Welcome from './Welcome';
+import Welcome from './components/Welcome';
 
 import './Home.scss';
 

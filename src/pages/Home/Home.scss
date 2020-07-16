@@ -1,6 +1,6 @@
 section.welcome {
   margin-top: 6vh;
-  border: 3px dashed green;
+  // border: 3px dashed green;
 
   h1 {
     font-size: 3rem;
@@ -31,26 +31,27 @@ section.welcome {
   }
 
   .welcome-container {
-    margin: 0 17.5vw 0;
+    // margin: 0 17.5vw 0;
 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-items: center;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // align-items: center;
+    // justify-items: center;
 
-    border-left: 10px solid blueviolet;
-    border-right: 10px solid blueviolet;
-    border-bottom: 10px solid blueviolet;
+    // border-left: 10px solid blueviolet;
+    // border-right: 10px solid blueviolet;
+    // border-bottom: 10px solid blueviolet;
 
     div {
-      border: 3px solid orange;
+      // border: 3px solid orange;
     }
   }
 
   .welcome-content {
-    flex-basis: 40%;
+    // flex-basis: 40%;
 
-    border: 5px dotted pink;
+    // border: 5px dotted pink;
 
     .welcome-action-buttons {
       margin-top: 2rem;
@@ -101,7 +102,7 @@ section.welcome {
     }
   }
   
-  @media only screen and (max-width: 720px) {
+  /* @media only screen and (max-width: 720px) {
     .welcome-container {
       margin: 0 auto;
       border: 25px dotted blue;
@@ -113,6 +114,6 @@ section.welcome {
       width: 100%;
       max-width: 50vw;
     }
-  }
+  } */
 
 }

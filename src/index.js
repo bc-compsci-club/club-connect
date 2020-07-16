@@ -6,6 +6,8 @@ import Home from 'pages/Home';
 
 import './index.scss';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import 'typeface-nunito';
 import 'typeface-raleway';
 
