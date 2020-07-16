@@ -1,0 +1,118 @@
+section.welcome {
+  margin-top: 6vh;
+  border: 3px dashed green;
+
+  h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    font-family: 'Raleway', sans-serif;
+
+    .Typewriter {
+      display: inline-block;
+
+      .Typewriter__wrapper {
+        font-weight: bold;
+      }
+    }
+  }
+
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+  }
+
+  .welcome-background-container {
+    // position: absolute;
+    height: 52.25vh;
+    width: 67.5vw;
+    background-color: #f8eeff;
+
+    // border: 3px solid purple;
+  }
+
+  .welcome-container {
+    margin: 0 17.5vw 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+
+    border-left: 10px solid blueviolet;
+    border-right: 10px solid blueviolet;
+    border-bottom: 10px solid blueviolet;
+
+    div {
+      border: 3px solid orange;
+    }
+  }
+
+  .welcome-content {
+    flex-basis: 40%;
+
+    border: 5px dotted pink;
+
+    .welcome-action-buttons {
+      margin-top: 2rem;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.75rem;
+
+      a.join-button {
+        padding: 1.25rem 2.5rem;
+
+        color: #ffffff;
+        font-weight: bold;
+
+        background: #4d5eff;
+        border-radius: 50px;
+        margin-right: 3rem;
+        text-decoration: none;
+
+        transition: 0.2s;
+        transition-timing-function: ease-in-out;
+      }
+
+      a.join-button:hover {
+        background-color: #5767fe;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      a.learn-more {
+        color: #4d5eff;
+      }
+    }
+  }
+
+  .welcome-slideshow {
+    // flex-basis: 60%;
+
+    img {
+      height: auto;
+      width: 100%;
+      max-width: 35vw;
+      box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 25px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .welcome-container {
+      // margin: 0;
+    }
+  }
+  
+  @media only screen and (max-width: 720px) {
+    .welcome-container {
+      margin: 0 auto;
+      border: 25px dotted blue;
+      // width: 100vw;
+    }
+    
+    img {
+      height: auto;
+      width: 100%;
+      max-width: 50vw;
+    }
+  }
+
+}

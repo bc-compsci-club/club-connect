@@ -1,7 +1,10 @@
 nav.navbar-main {
+  margin: 0 16.25vw;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 3px solid green;
 
   .nav-logo a {
     display: flex;
@@ -9,13 +12,13 @@ nav.navbar-main {
     align-items: center;
 
     img {
-      height: 3rem;
-      width: 3rem;
-      margin-right: 0.5rem;
+      height: 3.5rem;
+      width: 3.5rem;
     }
 
     p {
-      margin: 0;
+      margin: 0.75rem;
+      font-size: 1.25rem;
       font-family: 'Raleway', sans-serif;
       font-weight: bold;
       color: #000000;
@@ -23,7 +26,6 @@ nav.navbar-main {
   }
 
   .nav-elements ul {
-    margin: 0;
     display: flex;
     font-family: 'Nunito', sans-serif;
 
@@ -32,6 +34,7 @@ nav.navbar-main {
       list-style: none;
 
       a {
+        font-size: 1.2rem;
         color: #000000;
         padding: 0 0.75rem;
         margin: 0 0.25rem;

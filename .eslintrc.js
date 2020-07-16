@@ -15,5 +15,6 @@ module.exports = {
   rules: {
     semi: ['warn', 'always'],
     quotes: ['warn', 'single'],
+    'no-unused-vars': 'warn',
   },
 };
