@@ -4,7 +4,7 @@ nav.navbar-main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 3px solid green;
+  // border: 3px solid green;
 
   .nav-logo a {
     display: flex;
@@ -69,5 +69,15 @@ nav.navbar-main {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
       }
     }
+  }
+
+  @media only screen and (max-width: 540px) {
+    .nav-elements {
+      display: none;
+    }
+  }
+
+  @media only screen and (max-width: 1366px) {
+    margin: 0 2vw;
   }
 }

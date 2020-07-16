@@ -23,27 +23,26 @@ section.welcome {
 
   .welcome-background-container {
     // position: absolute;
-    height: 52.25vh;
-    width: 67.5vw;
+
+    // height: 52.25vh;
+    // width: 67.5vw;
+
     background-color: #f8eeff;
 
     // border: 3px solid purple;
   }
 
   .welcome-container {
-    margin: 0 17.5vw 0;
-    max-width: 720px;
-    width: 80%;
+    margin: 0 17.5vw;
 
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // align-items: center;
-    // justify-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
 
-    // border-left: 10px solid blueviolet;
-    // border-right: 10px solid blueviolet;
-    // border-bottom: 10px solid blueviolet;
+    // border-left: 3px solid blueviolet;
+    // border-right: 3px solid blueviolet;
+    // border-bottom: 3px solid blueviolet;
 
     div {
       // border: 3px solid orange;
@@ -51,7 +50,7 @@ section.welcome {
   }
 
   .welcome-content {
-    // flex-basis: 40%;
+    flex-basis: 40%;
 
     // border: 5px dotted pink;
 
@@ -87,35 +86,62 @@ section.welcome {
   }
 
   .welcome-slideshow {
-    // flex-basis: 60%;
+    flex-basis: 60%;
 
     img {
+      display: block;
       height: auto;
-      width: 100%;
+
       max-width: 35vw;
+      float: right;
+
       box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
       border-radius: 25px;
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  // Phones
+  @media only screen and (max-width: 540px) {
+    margin-top: 0;
+
     .welcome-container {
-      // margin: 0;
+      flex-direction: column;
+
+      .welcome-content {
+        margin: 5vh 7.5vw 0;
+
+        h1 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1rem;
+        }
+
+        .welcome-action-buttons {
+          font-size: 1.25rem;
+
+          a.join-button {
+            padding: 0.625rem 1.25rem;
+          }
+        }
+      }
+
+      .welcome-slideshow img {
+        margin-top: 5vh;
+        max-width: 90vw;
+      }
     }
   }
-  
-  /* @media only screen and (max-width: 720px) {
-    .welcome-container {
-      margin: 0 auto;
-      border: 25px dotted blue;
-      // width: 100vw;
-    }
-    
-    img {
-      height: auto;
-      width: 100%;
-      max-width: 50vw;
-    }
-  } */
 
+  // Small laptops
+  @media only screen and (max-width: 1366px) {
+    .welcome-container {
+      margin: 0 4vw;
+    }
+
+    .welcome-slideshow img {
+      width: 100%;
+    }
+  }
 }
