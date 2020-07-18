@@ -25,9 +25,6 @@
     "eject": "react-scripts eject",
     "postbuild": "react-snap"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "reactSnap": {
     "inlineCss": true
   },
