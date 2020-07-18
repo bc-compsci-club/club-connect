@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 
 import slideshow from 'assets/welcome-slideshow/inspiration.jpg';
@@ -39,12 +40,12 @@ const Welcome = () => {
               programming experience or major.
             </p>
             <div className="welcome-action-buttons">
-              <a className="join-button" href="/join">
+              <Link className="join-button" to="/join">
                 Join&nbsp;the&nbsp;Club
-              </a>
-              <a className="learn-more" href="#about">
+              </Link>
+              <Link className="learn-more" to="#about">
                 Learn&nbsp;More
-              </a>
+              </Link>
             </div>
           </div>
 
