@@ -1,13 +1,13 @@
+// @flow
 import React from 'react';
-
 import Welcome from './components/Welcome';
-
-import './Home.scss';
+import Description from './components/Description';
 
 const Home = () => {
   return (
     <div className="Home">
       <Welcome />
+      <Description />
     </div>
   );
 };
