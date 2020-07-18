@@ -1,7 +1,8 @@
+// @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
-
+import './Welcome.scss';
 import slideshow from 'assets/welcome-slideshow/inspiration.jpg';
 
 const strings = [
@@ -28,7 +29,7 @@ const typewriterInit = (typewriter) => {
 
 const Welcome = () => {
   return (
-    <section className="welcome">
+    <section className="Welcome">
       <div className="welcome-background-container">
         <div className="welcome-container">
           <div className="welcome-content">

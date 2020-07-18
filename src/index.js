@@ -1,17 +1,14 @@
+// @flow
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from 'Routes';
 import Navbar from 'components/Navbar';
-
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import 'typeface-nunito';
 import 'typeface-raleway';
 
-// Page structure goes here!
 const page = (
   <React.StrictMode>
     <Router>
