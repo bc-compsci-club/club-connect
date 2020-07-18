@@ -1,13 +1,11 @@
 import React from 'react';
 
-import Welcome from './components/Welcome';
-
-import './Home.scss';
+import './Join.scss';
 
 const Home = () => {
   return (
     <div className="Home">
-      <Welcome />
+      <h1>Join the Club</h1>
     </div>
   );
 };

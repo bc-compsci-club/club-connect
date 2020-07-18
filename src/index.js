@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+
+import Routes from 'Routes';
+
 import Navbar from 'components/Navbar';
 import Home from 'pages/Home';
+import Join from 'pages/Join';
 
 import './index.scss';
 
@@ -14,12 +19,14 @@ import 'typeface-raleway';
 // Page structure goes here!
 const page = (
   <React.StrictMode>
-    <header>
-      <Navbar />
-    </header>
-    <main>
-      <Home />
-    </main>
+    <Router>
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Routes />
+      </main>
+    </Router>
   </React.StrictMode>
 );
 

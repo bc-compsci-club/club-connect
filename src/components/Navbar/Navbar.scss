@@ -1,12 +1,11 @@
 nav.navbar-main {
-  max-width: 76.875rem;  // 1230px
+  max-width: 80rem; // 1230px
   margin: 0 auto;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-items: center;
-  // border: 3px solid green;
 
   // Logo area
   .nav-logo a {
@@ -91,6 +90,7 @@ nav.navbar-main {
     }
 
     .nav-elements {
+      // TODO: Hamburger menu for navbar on mobile
       display: none;
     }
   }

@@ -1,38 +1,40 @@
 import React from 'react';
 
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+
 import './Navbar.scss';
 
 import logo from 'assets/logo.png';
-
 
 const Navigation = () => {
   return (
     <nav className="navbar-main">
       <div className="nav-logo">
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="Brooklyn College Computer Science Club" />
           <p>
             Brooklyn College <br /> Computer Science Club
           </p>
-        </a>
+        </Link>
       </div>
+
       <div className="nav-elements">
         <ul>
           <li>
-            <a href="/about">About</a>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <a href="/events">Events</a>
+            <Link to="/events">Events</Link>
           </li>
           <li>
-            <a href="/resources">Resources</a>
+            <Link to="/resources">Resources</Link>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <Link to="/contact">Contact</Link>
           </li>
 
           <li className="join-button">
-            <a href="/join">Join the Club</a>
+            <Link to="/join">Join the Club</Link>
           </li>
         </ul>
       </div>

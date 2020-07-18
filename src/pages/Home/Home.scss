@@ -1,8 +1,11 @@
+// Welcome section of the website.
+
 section.welcome {
   margin-top: 6vh;
-  // border: 3px dashed green;
 
   .welcome-background-container {
+    // TODO: Make background look like prototype
+
     // position: absolute;
 
     // height: 52.25vh;
@@ -10,8 +13,6 @@ section.welcome {
 
     background-color: #f8eeff;
     padding: 5% 0;
-
-    // border: 3px solid purple;
   }
 
   .welcome-container {
@@ -54,8 +55,6 @@ section.welcome {
       justify-content: space-between;
       margin-top: 1.25rem;
 
-      // border: 3px solid red;
-
       a {
         font-size: 1.75rem;
         text-align: center;
@@ -92,8 +91,9 @@ section.welcome {
       }
 
       a.learn-more:hover {
-        // background-color: #5767fe;
         color: #ac40ff;
+        // Potential design change if we want to make the Learn More button similar to the Join the Club button
+        // background-color: #5767fe;
         // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       }
     }
@@ -120,12 +120,10 @@ section.welcome {
     }
 
     .welcome-container {
-      // border: 3px solid red;
       margin: 0 auto;
       flex-direction: column;
 
       .welcome-content {
-        // border: 3px solid blue;
         max-width: 100%;
         h1 {
           font-size: 2.25rem;
@@ -134,7 +132,7 @@ section.welcome {
         p {
           margin-top: 1rem;
           font-size: 1.1rem;
-          line-height: 1.25;
+          line-height: 1.35;
         }
 
         .welcome-action-buttons {
@@ -142,15 +140,12 @@ section.welcome {
           margin-top: 2rem;
 
           a {
-            padding: 1rem 8rem;
+            padding: 1rem 25vw;
             font-size: 1.25rem;
           }
-
-          a.join-button {
-          }
-
+          
           a.learn-more {
-            // padding: 0.75rem 2rem;
+            padding: 1rem 27.5vw;
             margin-top: 1rem;
             margin-left: 0;
           }
@@ -159,7 +154,7 @@ section.welcome {
 
       .welcome-slideshow {
         margin-top: 2rem;
-        max-width: 85vw;
+        max-width: 87.5vw;
       }
     }
   }

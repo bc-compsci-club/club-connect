@@ -33,10 +33,10 @@ const Welcome = () => {
           <div className="welcome-content">
             <Slogan />
             <p>
-              Learn something new at an event, find team members to build a
-              project with, or just come by and make some new friends! The
-              Brooklyn College Computer Science Club welcomes you, regardless of
-              your programming experience or major.
+              Learn something new at an event, find a team to build a project
+              with, or just come by and make some new friends! The Brooklyn
+              College Computer Science Club welcomes you, regardless of your
+              programming experience or major.
             </p>
             <div className="welcome-action-buttons">
               <a className="join-button" href="/join">
@@ -80,8 +80,7 @@ const Slogan = () => {
   } else {
     return (
       <h1>
-        A community driven
-        by&nbsp;
+        A community driven by&nbsp;
         {typewriterComponent}
       </h1>
     );
