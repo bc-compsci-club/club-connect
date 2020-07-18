@@ -73,9 +73,7 @@ const Slogan = () => {
   if (window.innerHeight > window.innerWidth) {
     return (
       <h1>
-        A community
-        <br /> driven by
-        <br />
+        A community driven by&nbsp;
         {typewriterComponent}
       </h1>
     );
@@ -83,7 +81,6 @@ const Slogan = () => {
     return (
       <h1>
         A community driven
-        <br />
         by&nbsp;
         {typewriterComponent}
       </h1>

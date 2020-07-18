@@ -22,18 +22,11 @@ section.welcome {
     justify-content: space-between;
     align-items: center;
     justify-items: center;
-
-    // border: 3px solid blueviolet;
-
-    div {
-      // border: 3px solid orange;
-    }
   }
 
   .welcome-content {
-    // border: 5px dotted pink;
     max-width: 40%;
-    
+
     h1 {
       margin: 0;
       font-size: 3rem;
@@ -85,11 +78,11 @@ section.welcome {
         background-color: #5767fe;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       }
-      
+
       a.learn-more {
         margin-left: 1rem;
         padding: 1rem 2.5rem;
-        
+
         // font-weight: bold;
         box-shadow: 0 0 0 2px #be68ff inset;
         color: #9000ff;
@@ -97,7 +90,7 @@ section.welcome {
         background-color: initial;
         // border: 3px solid blue;
       }
-      
+
       a.learn-more:hover {
         // background-color: #5767fe;
         color: #ac40ff;
@@ -107,7 +100,7 @@ section.welcome {
   }
 
   .welcome-slideshow {
-    max-width: 50%;
+    max-width: 52.5%;
 
     img {
       height: auto;
@@ -127,37 +120,46 @@ section.welcome {
     }
 
     .welcome-container {
+      // border: 3px solid red;
       margin: 0 auto;
-      max-width: 100%;
       flex-direction: column;
 
       .welcome-content {
+        // border: 3px solid blue;
+        max-width: 100%;
         h1 {
           font-size: 2.25rem;
         }
 
         p {
           margin-top: 1rem;
-          font-size: 1.1125rem;
+          font-size: 1rem;
           line-height: 1.25;
         }
 
         .welcome-action-buttons {
+          flex-direction: column;
           margin-top: 2rem;
-          font-size: 1.4rem;
-          // border: 3px solid blue;
+
+          a {
+            padding: 1rem 8rem;
+            font-size: 1.25rem;
+          }
 
           a.join-button {
-            margin-right: 6vw;
-            padding: 4vw 8vw;
-            // padding: 0.9375rem 1.875rem;
+          }
+
+          a.learn-more {
+            // padding: 0.75rem 2rem;
+            margin-top: 1rem;
+            margin-left: 0;
           }
         }
       }
 
       .welcome-slideshow {
         margin-top: 2rem;
-        max-width: 80vw;
+        max-width: 85vw;
       }
     }
   }
