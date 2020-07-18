@@ -2,15 +2,14 @@ import React from 'react';
 import Typewriter from 'typewriter-effect';
 
 import slideshow from 'assets/welcome-slideshow/inspiration.jpg';
-// import { Container as div, Row as div, Col as div } from 'react-bootstrap';
 
 const strings = [
   'inspiration.',
   'collaboration.',
-  'creativity.',
-  'learning.',
   'diversity.',
   'passion.',
+  'creativity.',
+  'learning.',
 ];
 
 const typewriterInit = (typewriter) => {
@@ -20,7 +19,7 @@ const typewriterInit = (typewriter) => {
 
   for (const string of strings) {
     typeString(string, 2500);
-    // TODO: Advance the slideshow
+    // TODO: Slideshow with club images
   }
 
   typewriter.start();
@@ -34,10 +33,10 @@ const Welcome = () => {
           <div className="welcome-content">
             <Slogan />
             <p>
-              Learn something new from an industry professional at our events,
-              find some team members to build a project with, or just come by
-              and make some new friends! The Brooklyn College Computer Science
-              Club welcomes you, regardless of your coding experience or major.
+              Learn something new at an event, find team members to build a
+              project with, or just come by and make some new friends! The
+              Brooklyn College Computer Science Club welcomes you, regardless of
+              your programming experience or major.
             </p>
             <div className="welcome-action-buttons">
               <a className="join-button" href="/join">
