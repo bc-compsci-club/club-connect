@@ -1,5 +1,7 @@
 # bccompsci.club
 
+![Node.js CI](https://github.com/bc-compsci-club/bccompsci.club/workflows/Node.js%20CI/badge.svg?branch=master)
+
 The official website for the Brooklyn College Computer Science Club.
 
 ---
