@@ -54,10 +54,18 @@
       // border: 3px solid blue;
 
       .highlight-content {
-        width: 40%;
+        width: 42.5%;
+
+        h2 {
+          font-size: 3rem;
+        }
 
         p {
           font-size: 1.25rem;
+        }
+
+        a {
+          font-size: 1.75rem;
         }
       }
 
