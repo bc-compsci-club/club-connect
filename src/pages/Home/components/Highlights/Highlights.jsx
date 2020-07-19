@@ -19,9 +19,9 @@ const descriptions = [
   take care of the rest.`,
 
   // Collaborate
-  `Teamwork makes the dream work! Find some team members to work on a
-  project with, form your winning hackathon team, or practice mock
-  interviewing and whiteboarding with others and score your dream job.`,
+  `Teamwork makes the dream work! Find team members to work on a project
+  with, form your winning hackathon team, or practice mock interviewing
+  and whiteboarding with others and score your dream job.`,
 
   // Network
   `The Computer Science Club is built upon the foundations of diversity and
