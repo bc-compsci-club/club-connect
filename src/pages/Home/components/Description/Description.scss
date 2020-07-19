@@ -1,0 +1,50 @@
+// Description section of the homepage.
+
+section.Description {
+  // Mobile styles
+
+  margin: 2.5rem auto 0;
+  max-width: 87.5vw;
+
+  h2 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.25rem;
+  }
+
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.125rem;
+  }
+
+  img {
+    margin: 2rem auto;
+    height: auto;
+    width: 100%;
+
+    box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+  }
+
+  // Desktop styles
+
+  // Small laptops up to 1280x720
+  @media only screen and (min-width: 80rem) {
+    margin: 4rem auto 0;
+    max-width: 53.8125rem; // 861px, 70% of 1230px
+    
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.25rem;
+    }
+
+    img {
+      margin: 2rem auto 1.5rem;
+      border-radius: 20px;
+    }
+
+  }
+}
