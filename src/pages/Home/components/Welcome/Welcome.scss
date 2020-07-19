@@ -1,8 +1,8 @@
 // Welcome section of the homepage.
 
-// Mobile styles
-
 section.Welcome {
+  // Mobile styles
+
   margin-top: 0;
 
   .welcome-background-container {
@@ -111,11 +111,10 @@ section.Welcome {
       }
     }
   }
-}
-// Desktop styles
 
-// 1280x720 and above
-section.Welcome {
+  // Desktop styles
+
+  // 1280x720 and above
   @media only screen and (min-width: 80rem) {
     margin-top: 0;
 
@@ -131,7 +130,7 @@ section.Welcome {
     }
 
     .welcome-container {
-      margin: 0 4.5vw;  // 1280x720 up to 1366x768 only
+      margin: 0 4.5vw; // 1280x720 up to 1366x768 only
       max-width: 76.875rem; // 1230px
       flex-direction: row;
 
