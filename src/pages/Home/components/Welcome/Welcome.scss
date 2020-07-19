@@ -107,7 +107,7 @@ section.Welcome {
         width: 100%;
 
         box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 25px;
+        border-radius: 10px;
       }
     }
   }
@@ -173,6 +173,10 @@ section.Welcome {
       .welcome-slideshow {
         margin-top: 0;
         max-width: 52.5%;
+
+        img {
+          border-radius: 20px;
+        }
       }
     }
   }
