@@ -3,6 +3,7 @@
 ![Node.js CI](https://github.com/bc-compsci-club/bccompsci.club/workflows/Node.js%20CI/badge.svg?branch=master)
 
 The official website for the Brooklyn College Computer Science Club.
+
 Figma Design: [https://www.figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1](https://www.figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1)
 
 ---
