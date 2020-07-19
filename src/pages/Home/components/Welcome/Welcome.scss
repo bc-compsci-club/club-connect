@@ -1,173 +1,193 @@
 // Welcome section of the homepage.
 
 section.Welcome {
-  margin-top: 6vh;
+  // Mobile styles
+
+  margin-top: 0;
 
   .welcome-background-container {
-    // TODO: Make background look like prototype
-
-    // position: absolute;
-
-    // height: 52.25vh;
-    // width: 67.5vw;
-
     background-color: #f8eeff;
-    padding: 5% 0;
+    padding: 4vh 0;
   }
 
   .welcome-container {
-    max-width: 76.875rem; // 1230px
+    // margin: 0 7.5vw;
     margin: 0 auto;
+    width: 90vw;
 
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     justify-items: center;
-  }
 
-  .welcome-content {
-    max-width: 40%;
+    .welcome-content {
+      max-width: 100%;
 
-    h1 {
-      margin: 0;
-      font-size: 3rem;
-      font-weight: 400;
-      font-family: 'Raleway', sans-serif;
+      h1 {
+        margin: 0;
+        font-size: 2.25rem;
+        font-weight: 400;
+        font-family: 'Raleway', sans-serif;
 
-      .Typewriter {
-        display: inline-block;
+        .Typewriter {
+          display: inline-block;
 
-        .Typewriter__wrapper {
+          .Typewriter__wrapper {
+            font-weight: bold;
+          }
+        }
+      }
+
+      p {
+        font-family: 'Nunito', sans-serif;
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        line-height: 1.35;
+      }
+
+      .welcome-action-buttons {
+        margin-top: 2rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+          text-align: center;
+          text-decoration: none;
+          font-family: 'Nunito', sans-serif;
+          font-size: 1.25rem;
+
+          transition: 0.2s;
+          transition-timing-function: ease-in-out;
+        }
+
+        a.join-button {
+          padding: 1rem 25vw;
+          color: #ffffff;
           font-weight: bold;
+          background-color: #4d5eff;
+          border-radius: 50px;
+        }
+
+        a.join-button:hover {
+          background-color: #5767fe;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        a.learn-more {
+          padding: 1rem 27.5vw;
+          margin-top: 1rem;
+          margin-left: 0;
+          box-shadow: 0 0 0 2px #be68ff inset;
+          color: #9000ff;
+          border-radius: 50px;
+          background-color: initial;
+          // font-weight: bold;
+          // border: 3px solid blue;
+        }
+
+        a.learn-more:hover {
+          color: #ac40ff;
+          // Potential design change if we want to make the Learn More button similar to the Join the Club button
+          // background-color: #5767fe;
+          // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
       }
     }
 
-    p {
-      margin: 1rem 0 0;
-      font-family: 'Nunito', sans-serif;
-      font-size: 1.25rem;
-    }
+    .welcome-slideshow {
+      margin-top: 2rem;
+      max-width: 87.5vw;
 
-    .welcome-action-buttons {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 1.25rem;
+      img {
+        height: auto;
+        width: 100%;
 
-      a {
-        font-size: 1.75rem;
-        text-align: center;
-        font-family: 'Nunito', sans-serif;
-        text-decoration: none;
-
-        transition: 0.2s;
-        transition-timing-function: ease-in-out;
-      }
-
-      a.join-button {
-        padding: 1rem 2.5rem;
-        color: #ffffff;
-        font-weight: bold;
-        background-color: #4d5eff;
-        border-radius: 50px;
-      }
-
-      a.join-button:hover {
-        background-color: #5767fe;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      }
-
-      a.learn-more {
-        margin-left: 1rem;
-        padding: 1rem 2.5rem;
-
-        // font-weight: bold;
-        box-shadow: 0 0 0 2px #be68ff inset;
-        color: #9000ff;
-        border-radius: 50px;
-        background-color: initial;
-        // border: 3px solid blue;
-      }
-
-      a.learn-more:hover {
-        color: #ac40ff;
-        // Potential design change if we want to make the Learn More button similar to the Join the Club button
-        // background-color: #5767fe;
-        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 25px;
       }
     }
   }
 
-  .welcome-slideshow {
-    max-width: 52.5%;
+  // Desktop styles
 
-    img {
-      height: auto;
-      width: 100%;
-
-      box-shadow: -4px 4px 15px rgba(0, 0, 0, 0.1);
-      border-radius: 25px;
-    }
-  }
-
-  // Phones
-  @media only screen and (max-width: 540px) {
+  // 1280x720 and above
+  @media only screen and (min-width: 80rem) {
     margin-top: 0;
 
     .welcome-background-container {
-      padding: 4vh 0;
+      // TODO: Make background look like prototype
+
+      // position: absolute;
+
+      // height: 52.25vh;
+      // width: 67.5vw;
+
+      padding: 3% 0;
     }
 
     .welcome-container {
-      margin: 0 auto;
-      flex-direction: column;
+      margin: 0 4.5vw; // 1280x720 up to 1366x768 only
+      max-width: 76.875rem; // 1230px
+      flex-direction: row;
+
+      // border: 3px solid red;
 
       .welcome-content {
-        max-width: 100%;
+        // align-items: center;
+        max-width: 40%;
+
         h1 {
-          font-size: 2.25rem;
+          font-size: 3rem;
         }
 
         p {
-          margin-top: 1rem;
-          font-size: 1.1rem;
-          line-height: 1.35;
+          // margin: 1rem 0 0;
+          font-size: 1.25rem;
+          line-height: 1.5;
         }
 
         .welcome-action-buttons {
-          flex-direction: column;
-          margin-top: 2rem;
+          flex-direction: row;
+          margin-top: 1.25rem;
 
           a {
-            padding: 1rem 25vw;
-            font-size: 1.25rem;
+            font-size: 1.75rem;
           }
-          
+
+          a.join-button {
+            padding: 1rem 2.5rem;
+          }
+
           a.learn-more {
-            padding: 1rem 27.5vw;
-            margin-top: 1rem;
-            margin-left: 0;
+            margin-top: 0;
+            margin-left: 1rem;
+            padding: 1rem 2.5rem;
           }
         }
       }
 
       .welcome-slideshow {
-        margin-top: 2rem;
-        max-width: 87.5vw;
+        margin-top: 0;
+        max-width: 52.5%;
       }
     }
   }
 
-  // Small laptops up to 1280x720
-  @media only screen and (max-width: 80rem) {
-    .welcome-container {
-      margin: 0 4.5vw;
-    }
+  // 1366x768 and above
+  @media only screen and (min-width: 85.375rem) {
+    margin-top: 2%;
 
-    .welcome-slideshow img {
-      width: 100%;
-      border-radius: 25px;
+    .welcome-container {
+      margin: 0 auto;
     }
+  }
+
+  // 1920x1080 and above
+  @media only screen and (min-width: 1920px) {
+    margin-top: 4%;
   }
 }

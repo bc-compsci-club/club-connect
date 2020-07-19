@@ -1,13 +1,13 @@
 nav.navbar-main {
-  max-width: 80rem; // 1230px
-  margin: 0 auto;
+  // Mobile styles
+
+  margin: 0 2vw;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
   justify-items: center;
 
-  // Logo area
   .nav-logo a {
     display: flex;
     text-decoration: none;
@@ -20,83 +20,89 @@ nav.navbar-main {
 
     p {
       margin: 0 0 0 1rem;
-      font-size: 1.25rem;
-      line-height: 1.25;
+      font-size: 1.1rem;
       font-family: 'Raleway', sans-serif;
       font-weight: bold;
       color: #000000;
+      line-height: 1.2;
     }
   }
 
-  // Navigation area
-  .nav-elements ul {
-    display: flex;
-    font-family: 'Nunito', sans-serif;
-    margin: 0;
-
-    // General navigation links
-    li {
-      list-style: none;
-
-      a {
-        font-size: 1rem;
-        color: #000000;
-        padding: 0 0.75rem;
-        margin: 0 0.25rem;
-        text-decoration: none;
-
-        transition: 0.1s;
-        transition-timing-function: ease;
-      }
-
-      a:hover {
-        color: #4053fe;
-      }
-    }
-
-    // Join button
-    li.join-button {
-      a {
-        color: #ffffff;
-        font-weight: bold;
-        margin-left: 1rem;
-        margin-right: 0;
-        padding: 0.5rem 1.5rem;
-        background-color: #4d5eff;
-        border-radius: 50px;
-
-        transition: 0.2s;
-        transition-timing-function: ease-in-out;
-      }
-
-      a:hover {
-        background-color: #4d5eff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      }
-    }
+  .nav-elements {
+    // TODO: Hamburger menu for navbar on mobile
+    display: none;
   }
 
-  // Phones
-  @media only screen and (max-width: 540px) {
-    .nav-logo a {
-      img {
-        height: 3rem;
-        width: 3rem;
-      }
+  // Desktop styles
 
-      p {
-        line-height: 1.2;
-      }
-    }
-
-    .nav-elements {
-      // TODO: Hamburger menu for navbar on mobile
-      display: none;
-    }
-  }
-
-  // Small laptops up to 1280x720
-  @media only screen and (max-width: 80rem) {
+  // 1280x720 and above
+  @media only screen and (min-width: 80rem) {
+    max-width: 80rem; // 1230px
     margin: 0 2vw;
+    border: 3px solid red;
+
+    // Logo area
+    .nav-logo a {
+      p {
+        line-height: 1.25;
+      }
+    }
+
+    // Navigation area
+    .nav-elements {
+      display: initial;
+
+      ul {
+        display: flex;
+        font-family: 'Nunito', sans-serif;
+        margin: 0;
+
+        // General navigation links
+        li {
+          list-style: none;
+
+          a {
+            font-size: 1rem;
+            color: #000000;
+            padding: 0 0.75rem;
+            margin: 0 0.25rem;
+            text-decoration: none;
+
+            transition: 0.1s;
+            transition-timing-function: ease;
+          }
+
+          a:hover {
+            color: #4053fe;
+          }
+        }
+
+        // Join button
+        li.join-button {
+          a {
+            color: #ffffff;
+            font-weight: bold;
+            margin-left: 1rem;
+            margin-right: 0;
+            padding: 0.5rem 1.5rem;
+            background-color: #4d5eff;
+            border-radius: 50px;
+
+            transition: 0.2s;
+            transition-timing-function: ease-in-out;
+          }
+
+          a:hover {
+            background-color: #4d5eff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+          }
+        }
+      }
+    }
+  }
+
+  // 1366x768 and above
+  @media only screen and (min-width: 1366px) {
+    margin: 0 auto;
   }
 }
