@@ -11,6 +11,7 @@ const Join = () => {
           <form
             name="join"
             method="POST"
+            action="/pages/Join/success"
             data-netlify="true"
             data-netlify-recaptcha="true"
           >
