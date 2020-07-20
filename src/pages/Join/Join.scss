@@ -64,6 +64,7 @@
         input[type='email'] {
           border: 2px solid #fff;
           background-color: #ececec;
+          background-clip: padding-box;
           padding: 0.5rem;
           border-radius: 10px;
           width: 100%;
