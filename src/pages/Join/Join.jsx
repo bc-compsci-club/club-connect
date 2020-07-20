@@ -14,6 +14,7 @@ const Join = () => {
             data-netlify="true"
             data-netlify-recaptcha="true"
           >
+            <input type="hidden" name="form-name" value="join" />
             <div className="form-name-row">
               <div className="form-first-name">
                 <label htmlFor="first-name">First Name*</label>
