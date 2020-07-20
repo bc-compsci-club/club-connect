@@ -2,7 +2,7 @@
   background-color: #232a67;
 
   .footer-container {
-    padding: 1rem 0;
+    padding: 2rem 0;
 
     p {
       font-size: 0.75rem;
@@ -19,8 +19,12 @@
 
   // Small laptops up to 1280x720
   @media only screen and (min-width: 80rem) {
-    .footer-container p {
-      font-size: 1rem;
+    .footer-container {
+      padding: 1rem 0;
+      
+      p {
+        font-size: 1rem;
+      }
     }
   }
 }
