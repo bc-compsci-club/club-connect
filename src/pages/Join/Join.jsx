@@ -4,46 +4,42 @@ import './Join.scss';
 
 const Join = () => {
   return (
-    <div className="Join">
-      <h1>Join the Club</h1>
-      <form
-        name="join"
-        method="POST"
-        data-netlify="true"
-        data-netlify-recaptcha="true"
-      >
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <label htmlFor="first-name">First Name</label>
-              </td>
-              <td>
+    <section className="Join">
+      <div className="join-flex-container">
+        <div className="join-container">
+          <h1>Join the Club</h1>
+          <form
+            name="join"
+            method="POST"
+            data-netlify="true"
+            data-netlify-recaptcha="true"
+          >
+            <div className="form-name-row">
+              <div className="form-first-name">
+                <label htmlFor="first-name">First Name*</label>
                 <input type="text" name="first-name" id="first-name" required />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label htmlFor="last-name">Last Name</label>
-              </td>
-              <td>
+              </div>
+
+              <div className="form-last-name">
+                <label htmlFor="last-name">Last Name*</label>
                 <input type="text" name="last-name" id="last-name" required />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label htmlFor="email">Email Address</label>
-              </td>
-              <td>
-                <input type="email" name="email" id="email" required />
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <div data-netlify-recaptcha="true"></div>
-        <input type="submit" value="Join the Club" />
-      </form>
-    </div>
+              </div>
+            </div>
+
+            <div className="form-email">
+              <label htmlFor="email">Email Address*</label>
+              <input type="email" name="email" id="email" required />
+            </div>
+
+            <div data-netlify-recaptcha="true"></div>
+            <br />
+            <div>
+              <input type="submit" value="Join!" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
   );
 };
 
