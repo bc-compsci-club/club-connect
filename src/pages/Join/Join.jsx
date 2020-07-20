@@ -11,7 +11,7 @@ const Join = () => {
           <form
             name="join"
             method="POST"
-            action="/join/success"
+            action="https://bc-compsci-club.netlify.app/.netlify/functions/handleJoin"
             data-netlify="true"
             // data-netlify-recaptcha="true"
           >

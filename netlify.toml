@@ -11,3 +11,8 @@
     public,
 	max-age=3600,
 	immutable'''
+
+[build]
+  command = "npm run build"
+  functions = "handleJoin"
+  publish = "functions"
