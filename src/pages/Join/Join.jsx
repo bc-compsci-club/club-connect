@@ -13,7 +13,7 @@ const Join = () => {
             method="POST"
             action="/pages/Join/success"
             data-netlify="true"
-            data-netlify-recaptcha="true"
+            // data-netlify-recaptcha="true"
           >
             <input type="hidden" name="form-name" value="join" />
             <div className="form-name-row">
@@ -33,7 +33,7 @@ const Join = () => {
               <input type="email" name="email" id="email" required />
             </div>
 
-            <div data-netlify-recaptcha="true"></div>
+            {/* <div data-netlify-recaptcha="true"></div> */}
             <br />
             <div>
               <input type="submit" value="Join!" />
