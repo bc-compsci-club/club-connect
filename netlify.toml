@@ -14,5 +14,5 @@
 
 [build]
   command = "npm run build"
-  functions = "handleJoin"
-  publish = "src"
+  functions = "functions/"
+  publish = "build"
