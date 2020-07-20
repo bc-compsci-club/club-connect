@@ -1,13 +1,22 @@
 [[headers]]
-  # Define which paths this specific [[headers]] block will cover.
-  for = "/static/media/*.woff2"
-
+  for = "/*"
   [headers.values]
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
 
-    # Multi-value headers are expressed with multi-line strings.
+## Fonts
+[[headers]]
+  for = "/static/media/*.woff2"
+  [headers.values]
 	cache-control = '''
     public,
-	max-age=60,
+	max-age=3600,
+	immutable'''
+
+[[headers]]
+  for = "/static/media/*.jpg"
+  [headers.values]
+	cache-control = '''
+    public,
+	max-age=3600,
 	immutable'''
