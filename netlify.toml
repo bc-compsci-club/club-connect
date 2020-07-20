@@ -4,17 +4,8 @@
     X-Frame-Options = "DENY"
     X-XSS-Protection = "1; mode=block"
 
-## Fonts
 [[headers]]
   for = "/static/media/*.woff2"
-  [headers.values]
-	cache-control = '''
-    public,
-	max-age=3600,
-	immutable'''
-
-[[headers]]
-  for = "/static/media/*.jpg"
   [headers.values]
 	cache-control = '''
     public,
