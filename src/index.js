@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from 'Routes';
 import Navbar from 'components/Navbar';
+import Footer from 'components/Footer';
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-nunito';
@@ -18,6 +19,9 @@ const page = (
       <main>
         <Routes />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   </React.StrictMode>
 );
