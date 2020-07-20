@@ -7,6 +7,7 @@ import logo from 'assets/logo.png';
 const Navigation = () => {
   return (
     <nav className="navbar-main">
+      {/* TODO: Refactor class name to Navbar */}
       <div className="nav-logo">
         <Link to="/">
           <img src={logo} alt="Brooklyn College Computer Science Club" />
@@ -28,7 +29,9 @@ const Navigation = () => {
             <Link to="/resources">Resources</Link>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            {/* Temporary email contact until contact page is ready */}
+            {/* <Link to="/contact">Contact</Link> */}
+            <a href="mailto:bc.cis.club@gmail.com">Contact</a>
           </li>
 
           <li className="join-button">

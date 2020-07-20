@@ -72,14 +72,17 @@ const Slogan = () => {
     />
   );
 
-  if (window.innerHeight > window.innerWidth) {
+  if (window.innerWidth < 370) {
+    // < 370px Mobile
     return (
       <h1>
-        A community driven by&nbsp;
+        A community driven by
+        <br />
         {typewriterComponent}
       </h1>
     );
   } else {
+    // > 370px Mobile
     return (
       <h1>
         A community driven by&nbsp;
