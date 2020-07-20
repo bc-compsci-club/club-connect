@@ -15,6 +15,7 @@ const strings = [
 ];
 
 const typewriterInit = (typewriter) => {
+  document.getElementById('welcome-typewriter-placeholder').remove();
   const typeString = (string, pauseTime) => {
     typewriter.typeString(string).pauseFor(pauseTime).deleteAll(30);
   };
@@ -78,6 +79,12 @@ const Slogan = () => {
       <h1>
         A community driven by
         <br />
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
         {typewriterComponent}
       </h1>
     );
@@ -86,6 +93,12 @@ const Slogan = () => {
     return (
       <h1>
         A community driven by&nbsp;
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
         {typewriterComponent}
       </h1>
     );
