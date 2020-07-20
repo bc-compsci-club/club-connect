@@ -95,6 +95,11 @@ nav.navbar-main {
             background-color: #4d5eff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           }
+
+          a:active {
+            background-color: #6574f7;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          }
         }
       }
     }

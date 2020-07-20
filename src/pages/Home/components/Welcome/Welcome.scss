@@ -74,6 +74,11 @@ section.Welcome {
           box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
+        a.join-button:active {
+          background-color: #6574f7;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
         a.learn-more {
           padding: 1rem 27.5vw;
           margin-top: 1rem;
