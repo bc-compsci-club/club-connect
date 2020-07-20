@@ -11,11 +11,8 @@ const Join = () => {
           <form
             name="join"
             method="POST"
-            action="https://bc-compsci-club.netlify.app/.netlify/functions/handleJoin"
-            data-netlify="true"
-            // data-netlify-recaptcha="true"
+            action="https://us-central1-bc-cs-club-website.cloudfunctions.net/handleJoin"
           >
-            <input type="hidden" name="form-name" value="join" />
             <div className="form-name-row">
               <div className="form-first-name">
                 <label htmlFor="first-name">First Name*</label>
@@ -33,7 +30,6 @@ const Join = () => {
               <input type="email" name="email" id="email" required />
             </div>
 
-            {/* <div data-netlify-recaptcha="true"></div> */}
             <br />
             <div>
               <input type="submit" value="Join!" />
