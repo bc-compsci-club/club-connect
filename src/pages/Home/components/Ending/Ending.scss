@@ -1,0 +1,40 @@
+.Ending {
+  background-color: #4d5eff;
+
+  .ending-container {
+    margin: 4rem auto 0;
+    padding: 5rem 0;
+    max-width: 87.5vw;
+
+    h2 {
+      text-align: center;
+      color: #fff;
+      font-size: 1.5rem;
+      line-height: 1.25;
+      font-weight: bold;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    a {
+      display: block;
+      margin: 3rem auto 0;
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.25rem;
+      transition: 0.2s;
+      transition-timing-function: ease-in-out;
+
+      padding: 1rem 25vw;
+      color: #4d5eff;
+      font-weight: bold;
+      background-color: #fff;
+      border-radius: 50px;
+    }
+
+    a:hover {
+      background-color: #c8d1ff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
