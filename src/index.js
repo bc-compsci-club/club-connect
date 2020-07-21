@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
+import ReactGA from 'react-ga';
+
 import Routes from 'Routes';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
@@ -10,6 +12,9 @@ import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-nunito';
 import 'typeface-raleway';
+
+ReactGA.initialize('UA-173191894-1');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const page = (
   <React.StrictMode>
