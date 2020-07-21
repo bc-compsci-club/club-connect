@@ -2,7 +2,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom';
-import GA from 'components/GA';
 
 import Routes from 'Routes';
 import Navbar from 'components/Navbar';
@@ -16,7 +15,6 @@ import 'typeface-raleway';
 const page = (
   <React.StrictMode>
     <Router basename="/">
-      <GA>
         <ScrollToTop />
         <header>
           <Navbar />
@@ -27,7 +25,6 @@ const page = (
         <footer>
           <Footer />
         </footer>
-      </GA>
     </Router>
   </React.StrictMode>
 );
