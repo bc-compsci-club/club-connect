@@ -4,8 +4,18 @@ import './WelcomeJoin.scss';
 const WelcomeJoin = () => {
   return (
     <section className="WelcomeJoin">
-      <p className="welcomejoin-emoji">🎉</p>
-      <h1>You&apos;re in!<br />Welcome aboard!</h1>
+      <span
+        className="welcomejoin-emoji"
+        role="img"
+        aria-label="Welcome Confetti"
+      >
+        🎉
+      </span>
+      <h1>
+        You&apos;re in!
+        <br />
+        Welcome aboard!
+      </h1>
       <p className="welcomejoin-description">
         Welcome to the Brooklyn College Computer Science Club! It’s great to
         have you here with us! You can join the community using the social media
@@ -13,9 +23,9 @@ const WelcomeJoin = () => {
       </p>
       <div className="welcomejoin-links">
         <a href="https://discord.gg/GxYBcx8">Discord</a>
-        <a href="">Facebook Messenger</a>
-        <a href="">Facebook Group</a>
-        <a href="">Instagram</a>
+        <a href="https://messenger.com">Facebook Messenger</a>
+        <a href="https://facebook.com">Facebook Group</a>
+        <a href="https://instagram.com">Instagram</a>
       </div>
     </section>
   );
