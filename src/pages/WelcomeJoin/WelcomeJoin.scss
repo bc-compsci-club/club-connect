@@ -9,8 +9,10 @@
   }
 
   .welcomejoin-emoji {
+    display: block;
+    margin: 0 auto 2.5rem;
+    width: fit-content;
     font-size: 5rem;
-    text-align: center;
   }
 
   .welcomejoin-description {
