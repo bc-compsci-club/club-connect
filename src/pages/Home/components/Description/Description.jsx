@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import './Description.scss';
-import image from 'assets/linkedin.png';
+import image from 'assets/linkedin.jpg';
 
 const Description = () => {
   return (
