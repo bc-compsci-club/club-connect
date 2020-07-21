@@ -15,16 +15,16 @@ import 'typeface-raleway';
 const page = (
   <React.StrictMode>
     <Router basename="/">
-        <ScrollToTop />
-        <header>
-          <Navbar />
-        </header>
-        <main>
-          <Routes />
-        </main>
-        <footer>
-          <Footer />
-        </footer>
+      <ScrollToTop />
+      <header>
+        <Navbar />
+      </header>
+      <main>
+        <Routes />
+      </main>
+      <footer>
+        <Footer />
+      </footer>
     </Router>
   </React.StrictMode>
 );

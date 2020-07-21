@@ -36,10 +36,10 @@ const Welcome = () => {
           <div className="welcome-content">
             <Slogan />
             <p>
-              Learn something new at an event, find a team to build a project
-              with, or just come by and make some new friends! The Brooklyn
-              College Computer Science Club welcomes you, regardless of your
-              programming experience or major.
+              Learn something new at an event, form a team to build a project
+              with, or find out more about the field! The Brooklyn College
+              Computer Science Club welcomes you, regardless of your programming
+              experience or major.
             </p>
             <div className="welcome-action-buttons">
               <Link className="join-button" to="/join">
