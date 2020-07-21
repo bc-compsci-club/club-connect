@@ -9,10 +9,10 @@ import WelcomeJoin from 'pages/WelcomeJoin';
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/welcome">
+      <Route path="/welcome">
         <WelcomeJoin />
       </Route>
-      <Route exact path="/join">
+      <Route path="/join">
         <Join />
       </Route>
       <Route exact path="/">
