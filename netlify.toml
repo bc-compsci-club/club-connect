@@ -6,7 +6,7 @@
 	max-age=86400,
 	immutable'''
 
-[[redirect]]
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
