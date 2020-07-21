@@ -8,9 +8,6 @@ const Join = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
 
-  const disableForm = () => {
-    setSubmitValue('Joining...');
-  };
   /*   const disableForm = () => {
     // Style submit button
     document.getElementById('form-join-submit').disabled = true;
