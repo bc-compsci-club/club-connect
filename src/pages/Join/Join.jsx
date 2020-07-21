@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './Join.scss';
 
 const Join = () => {
-  const [submitValue, setSubmitValue] = useState('Join!');
+  // const [submitValue, setSubmitValue] = useState('Join!');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -82,7 +82,8 @@ const Join = () => {
 
             <br />
             <div>
-              <input id="form-join-submit" type="submit" value={submitValue} />
+              <input id="form-join-submit" type="submit" />
+              {/* <input id="form-join-submit" type="submit" value={submitValue} /> */}
             </div>
           </form>
         </div>
