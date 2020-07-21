@@ -45,9 +45,9 @@ const Welcome = () => {
               <Link className="join-button" to="/join">
                 Join&nbsp;the&nbsp;Club
               </Link>
-              <Link className="learn-more" to="#about">
+              <a className="learn-more" href="#about">
                 Learn&nbsp;More
-              </Link>
+              </a>
             </div>
           </div>
 

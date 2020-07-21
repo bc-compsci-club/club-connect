@@ -3,7 +3,8 @@
 section.Description {
   // Mobile styles
 
-  margin: 2.5rem auto 0;
+  margin: 0 auto 0;
+  padding-top: 2.5rem;
   max-width: 87.5vw;
 
   h2 {
@@ -30,7 +31,7 @@ section.Description {
 
   // Small laptops up to 1280x720
   @media only screen and (min-width: 80rem) {
-    margin: 4rem auto 0;
+    padding-top: 1.5rem;
     max-width: 53.8125rem; // 861px, 70% of 1230px
 
     h2 {
