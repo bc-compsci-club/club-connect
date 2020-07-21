@@ -13,9 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-nunito';
 import 'typeface-raleway';
 
-// ReactGA.initialize('UA-173191894-1');
-// ReactGA.pageview(window.location.pathname + window.location.search);
-
 const page = (
   <React.StrictMode>
     <Router basename="/">

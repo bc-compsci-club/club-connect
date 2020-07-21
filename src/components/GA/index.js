@@ -1,5 +1,3 @@
-ReactGA.initialize();
-
 import { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { withRouter } from 'react-router';
@@ -15,7 +13,7 @@ function GAListener({ children, history }) {
     ReactGA.initialize('UA-173191894-1');
     sendPageView(history.location);
     return history.listen(sendPageView);
-  }, [history, 'UA-173191894-1']);
+  }, [history]);
 
   return children;
 }
