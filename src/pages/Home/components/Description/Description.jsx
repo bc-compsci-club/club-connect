@@ -5,7 +5,7 @@ import image from 'assets/linkedin.png';
 
 const Description = () => {
   return (
-    <section className="Description">
+    <section id="about" className="Description">
       <h2>Reach New Heights</h2>
       <img src={image} alt="Collaborate" />
       <p>
