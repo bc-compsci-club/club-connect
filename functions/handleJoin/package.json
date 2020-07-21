@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "firebase-admin": "^9.0.0",
+    "mongo-sanitize": "^1.1.0",
     "uuid": "^8.2.0"
   }
 }
