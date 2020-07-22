@@ -14,7 +14,7 @@ import 'typeface-raleway';
 
 const page = (
   <React.StrictMode>
-    <Router basename="/">
+    <Router>
       <ScrollToTop />
       <header>
         <Navbar />
