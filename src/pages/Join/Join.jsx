@@ -1,5 +1,6 @@
 // @flow
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Join.scss';
 
 const Join = () => {
@@ -86,6 +87,7 @@ const Join = () => {
               {/* <input id="form-join-submit" type="submit" value={submitValue} /> */}
             </div>
           </form>
+          <Link to="/welcome"></Link>
         </div>
       </div>
     </section>
