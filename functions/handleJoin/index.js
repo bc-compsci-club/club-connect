@@ -24,7 +24,7 @@ exports.handleJoin = async (req, res) => {
   }
 
   // Check for correct origin
-  if (req.get('origin') !== 'https://bc-compsci-club.netlify.app') {
+  if (req.get('origin') !== 'https://bccompsci.club') {
     console.error('Incorrect origin!');
     res.status(403).send('Forbidden');
     return;
@@ -72,5 +72,7 @@ exports.handleJoin = async (req, res) => {
     joinDate: new Date(),
   });
 
-  res.redirect('https://bc-compsci-club.netlify.app/welcome');
+  // TODO: Sign up for MailChimp
+
+  res.redirect('https://bccompsci.club/welcome');
 };
