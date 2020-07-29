@@ -5,8 +5,8 @@
 The official website for the Brooklyn College Computer Science Club.
 
 Link: [bccompsci.club](https://bccompsci.club)
-Figma Design: [figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1](https://www.figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1)
 <br />
+Figma Design: [figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1](https://www.figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1)
 
 ---
 
