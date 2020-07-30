@@ -1,0 +1,60 @@
+.about-top {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../../../../assets/about/about-header-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10% 0;
+
+  img {
+    display: block;
+    width: 100%;
+  }
+
+  .about-top-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 87.5vw;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+
+    // Small phones
+    @media only screen and (max-width: 320px) {
+      font-size: 1.75rem;
+    }
+
+    color: #fff;
+    text-align: center;
+    margin-bottom: 12.5%;
+  }
+
+  .about-join-button {
+    display: inline-block;
+    margin: 12.5% auto 0;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+    padding: 1rem 20vw;
+    color: #fff;
+    font-weight: bold;
+    background-color: #4d5eff;
+    border-radius: 50px;
+  }
+
+  .about-join-button:hover {
+    background-color: #5767fe;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .about-join-button:active {
+    background-color: #6574f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
