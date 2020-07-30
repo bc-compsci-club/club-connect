@@ -20,13 +20,13 @@ const Navigation = () => {
       <div className="nav-elements">
         <ul>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="/coming-soon">About</Link>
           </li>
           <li>
-            <Link to="/events">Events</Link>
+            <Link to="/coming-soon">Events</Link>
           </li>
           <li>
-            <Link to="/resources">Resources</Link>
+            <Link to="/coming-soon">Resources</Link>
           </li>
           <li>
             {/* Temporary email contact until contact page is ready */}
