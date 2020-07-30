@@ -8,10 +8,13 @@ import './About.scss';
 const About = () => {
   return (
     <div className="About">
-      <Top/>
-      <WhoWeAre/>
-      <WhatWeDo/>
-      <Ending />
+      <article>
+        <Top />
+        <WhoWeAre />
+        <WhatWeDo />
+        {/* TODO: Add Meet the Team section */}
+        <Ending />
+      </article>
     </div>
   );
 };
