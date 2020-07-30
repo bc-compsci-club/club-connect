@@ -3,7 +3,6 @@ import React from 'react';
 import './ComingSoon.scss';
 
 const ComingSoon = () => {
-
   return (
     <section className="ComingSoon">
       <div className="comingsoon-flex-container">
