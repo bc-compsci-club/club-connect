@@ -19,6 +19,7 @@ const WhatWeDo = () => {
           </p>
         </div>
 
+        {/* Skill Up */}
         <Activity
           image={skillUpImage}
           imageAlt="Students gathered in an event venue viewing a presentation from the presenter."
@@ -28,6 +29,7 @@ const WhatWeDo = () => {
           `}
         />
 
+        {/* Hackathon */}
         <HackathonActivity
           image={hackathonImage}
           imageAlt="Winners of a hackathon with some team members from Brooklyn College."
@@ -40,6 +42,7 @@ const WhatWeDo = () => {
           ]}
         />
 
+        {/* Collaborate, Build, and Conquer */}
         <Activity
           image={collaborateBuildConquerImage}
           imageAlt="Students collaborating together to solve a problem."
