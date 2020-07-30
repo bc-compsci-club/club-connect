@@ -6,8 +6,8 @@ const HackathonActivity = (props) => {
   return (
     <div className="about-activity">
       <div className="about-activity-text">
-        <h2 className="about-activity-title about-hackathonactivity-title">{props.title}</h2>
-        <h2 className="about-hackathonactivity-subtitle">{props.subtitle}</h2>
+        <h3 className="about-activity-title about-hackathonactivity-title">{props.title}</h3>
+        <h3 className="about-hackathonactivity-subtitle">{props.subtitle}</h3>
         <p>{props.description[0]}</p>
         <p>{props.description[1]}</p>
         <p>{props.description[2]}</p>

@@ -5,10 +5,14 @@ const Activity = (props) => {
   return (
     <div className="about-activity">
       <div className="about-activity-text">
-        <h2 className="about-activity-title">{props.title}</h2>
+        <h3 className="about-activity-title">{props.title}</h3>
         <p className="about-activity-description">{props.description}</p>
       </div>
-      <img className="about-activity-image" src={props.image} alt={props.imageAlt} />
+      <img
+        className="about-activity-image"
+        src={props.image}
+        alt={props.imageAlt}
+      />
     </div>
   );
 };
