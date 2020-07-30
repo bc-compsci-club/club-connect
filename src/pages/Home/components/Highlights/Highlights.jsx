@@ -3,9 +3,9 @@ import React from 'react';
 import Highlight from './Highlight/';
 import './Highlights.scss';
 
-import learn from 'assets/highlights/learn.jpg';
-import collaborate from 'assets/highlights/collaborate.jpg';
-import network from 'assets/highlights/network.jpg';
+import learn from 'assets/home/highlights/learn.jpg';
+import collaborate from 'assets/home/highlights/collaborate.jpg';
+import network from 'assets/home/highlights/network.jpg';
 
 const descriptions = [
   // Learn

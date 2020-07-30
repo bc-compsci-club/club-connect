@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
-import slideshow from 'assets/welcome-slideshow/inspiration.jpg';
+import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
 
 const strings = [
   'inspiration.',
