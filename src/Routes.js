@@ -3,7 +3,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import ComingSoon from 'pages/ComingSoon';
 import Home from 'pages/Home';
-import About from 'pages/About';
+// import About from 'pages/About';
 import Join from 'pages/Join';
 import WelcomeJoin from 'pages/WelcomeJoin';
 
@@ -22,9 +22,9 @@ const Routes = () => {
       <Route path="/coming-soon">
         <ComingSoon />
       </Route>
-      <Route path="/about">
+      {/* <Route path="/about">
         <About />
-      </Route>
+      </Route> */}
       <Route exact path="/">
         <Home />
       </Route>
