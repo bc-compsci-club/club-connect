@@ -31,7 +31,7 @@ const Navigation = () => {
           <li>
             {/* Temporary email contact until contact page is ready */}
             {/* <Link to="/contact">Contact</Link> */}
-            <a href="mailto:bc.cis.club@gmail.com">Contact</a>
+            <a href="mailto:contact@bccompsci.club">Contact</a>
           </li>
 
           <li className="join-button">
