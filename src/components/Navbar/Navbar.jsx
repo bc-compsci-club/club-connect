@@ -20,7 +20,7 @@ const Navigation = () => {
       <div className="nav-elements">
         <ul>
           <li>
-            <Link to="/coming-soon">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
             <Link to="/coming-soon">Events</Link>

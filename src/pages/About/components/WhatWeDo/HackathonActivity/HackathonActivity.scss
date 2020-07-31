@@ -1,0 +1,19 @@
+.Activity {
+  .about-hackathonactivity-title {
+    margin-bottom: 0;
+  }
+
+  .about-hackathonactivity-subtitle {
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-align: left;
+    margin-bottom: 0.5rem;
+  }
+
+  @media only screen and (min-width: 80rem) {
+    .about-hackathonactivity-subtitle {
+      font-size: 1rem;
+    }
+  }
+}
