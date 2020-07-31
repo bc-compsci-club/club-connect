@@ -19,12 +19,9 @@ const Routes = () => {
       <Route path="/join">
         <Join />
       </Route>
-      <Route path="/coming-soon">
-        <ComingSoon />
-      </Route>
-      {/* <Route path="/about">
+      <Route path="/about">
         <About />
-      </Route> */}
+      </Route>
       <Route exact path="/">
         <Home />
       </Route>
