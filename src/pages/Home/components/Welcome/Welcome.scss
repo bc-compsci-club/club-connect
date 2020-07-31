@@ -80,6 +80,7 @@ section.Welcome {
         }
 
         a.learn-more {
+          cursor: pointer;
           padding: 1rem 27.5vw;
           margin-top: 1rem;
           margin-left: 0;
@@ -92,10 +93,15 @@ section.Welcome {
         }
 
         a.learn-more:hover {
-          color: #ac40ff;
+          box-shadow: 0 0 0 2px #b661ff inset, 0 4px 10px rgba(0, 0, 0, 0.1);
+          //color: #b661ff;
           // Potential design change if we want to make the Learn More button similar to the Join the Club button
           // background-color: #5767fe;
           // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        a.learn-more:active {
+          box-shadow: 0 0 0 2px #b661ff inset, 0 4px 10px rgba(0, 0, 0, 0);
         }
       }
     }

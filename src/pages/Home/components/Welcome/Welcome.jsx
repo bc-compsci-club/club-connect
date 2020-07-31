@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
@@ -11,7 +12,7 @@ const strings = [
   'diversity.',
   'passion.',
   'creativity.',
-  'learning.',
+  'learning.'
 ];
 
 const typewriterInit = (typewriter) => {
@@ -34,7 +35,7 @@ const Welcome = () => {
       <div className="welcome-background-container">
         <div className="welcome-container">
           <div className="welcome-content">
-            <Slogan />
+            <Slogan/>
             <p>
               Learn something new at an event, form a team to build a project
               with, or find out more about the field! The Brooklyn College
@@ -45,14 +46,19 @@ const Welcome = () => {
               <Link className="join-button" to="/join">
                 Join&nbsp;the&nbsp;Club
               </Link>
-              <a className="learn-more" href="#about">
+              <ScrollLink
+                className="learn-more"
+                to="about"
+                smooth={true}
+                duration={500}
+              >
                 Learn&nbsp;More
-              </a>
+              </ScrollLink>
             </div>
           </div>
 
           <div className="welcome-slideshow">
-            <img className="slideshow" src={slideshow} alt="Slideshow" />
+            <img className="slideshow" src={slideshow} alt="Slideshow"/>
           </div>
         </div>
       </div>
@@ -67,7 +73,7 @@ const Slogan = () => {
         autoStart: true,
         loop: true,
         delay: 30,
-        deleteSpeed: 30,
+        deleteSpeed: 30
       }}
       onInit={(typewriter) => typewriterInit(typewriter)}
     />
@@ -78,7 +84,7 @@ const Slogan = () => {
     return (
       <h1>
         A community driven by
-        <br />
+        <br/>
         <span
           id="welcome-typewriter-placeholder"
           style={{ fontWeight: 'bold' }}
