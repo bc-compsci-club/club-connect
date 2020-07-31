@@ -12,7 +12,7 @@ const Description = () => {
         The Brooklyn College Computer Science Club is Brooklyn College’s premier
         student-led, community-first computer science community where students
         interested in technology come together to learn and grow in a safe,
-        warm, and welcome environment. Our mission is to empower students
+        warm, and welcoming environment. Our mission is to empower students
         interested in technology to succeed and advance in their careers. With a
         multitude of fun, exciting, and beginner-friendly events designed to
         enrich and grow your understanding of in-demand skills, a community of

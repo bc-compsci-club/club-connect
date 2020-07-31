@@ -7,11 +7,12 @@ const WhoWeAre = () => {
       <h2>Who We Are</h2>
       <p>
         The Brooklyn College Computer Science Club is Brooklyn College’s premier
-        computer science community where students come together to learn and
-        grow in a safe, warm, and welcome environment. Together as a community,
-        we share our knowledge and offer advice to each other, form teams to
-        build projects and attend hackathons with, discuss the latest trends and
-        technologies, and more!
+        student-led, community-first computer science community where students
+        interested in technology come together to learn and grow in a safe,
+        warm, and welcoming environment. Together as a community, we share our
+        knowledge and offer advice to each other, form teams to build projects
+        and attend hackathons with, discuss the latest trends and technologies,
+        and more!
       </p>
 
       <p>
