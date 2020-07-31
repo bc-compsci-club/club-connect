@@ -18,7 +18,7 @@ const FooterContents = () => {
         <p>0317 Ingersoll Hall, Brooklyn College</p>
         <p>
           <a href="mailto:contact@bccompsci.club">
-            Contact: contact@bccompsci.club
+            Email: contact@bccompsci.club
           </a>
         </p>
       </div>
@@ -31,7 +31,7 @@ const FooterContents = () => {
         <p>
           0317 Ingersoll Hall, Brooklyn College •{' '}
           <a href="mailto:contact@bccompsci.club">
-            Contact: contact@bccompsci.club
+            Email: contact@bccompsci.club
           </a>
         </p>
       </div>
