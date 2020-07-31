@@ -1,4 +1,4 @@
-.about-activity {
+.Activity {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem;
@@ -17,5 +17,35 @@
     width: 100%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
     border-radius: 10px;
+  }
+
+  @media only screen and (min-width: 80rem) {
+    margin-bottom: 4rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .about-activity-text {
+      width: 60%;
+
+      .about-activity-title {
+        font-size: 2rem;
+      }
+    }
+
+    .about-activity-image {
+      width: 35%;
+      margin: 0;
+    }
+  }
+}
+
+@media only screen and (min-width: 80rem) {
+  .about-activity-skill-up,
+  .about-activity-collaborate-build-conquer {
+    flex-direction: row-reverse;
+  }
+
+  .about-activity-hackathon {
+    flex-direction: row;
   }
 }

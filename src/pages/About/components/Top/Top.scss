@@ -1,7 +1,8 @@
 .about-top {
+  // Mobile styles
+
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('../../../../assets/about/about-header-mobile.jpg');
-
   background-size: cover;
   background-repeat: no-repeat;
   padding: 10% 0;
@@ -57,5 +58,28 @@
   .about-join-button:active {
     background-color: #6574f7;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  // Desktop styles
+
+  // Small laptops up to 1280x720
+  @media only screen and (min-width: 80rem) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('../../../../assets/about/about-header-desktop.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 7.5% 0;
+    max-height: 60vh;
+
+    h1 {
+      font-size: 4.25rem;
+      margin-bottom: 5%;
+    }
+
+    .about-join-button {
+      padding: 1rem 2.5rem;
+      margin-top: 5%;
+      font-size: 1.75rem;
+    }
   }
 }

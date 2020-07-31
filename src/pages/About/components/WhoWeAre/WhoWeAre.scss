@@ -2,4 +2,9 @@
   max-width: 87.5vw;
   margin: 0 auto;
   padding: 2.75rem 0 3rem;
+
+  @media only screen and (min-width: 80rem) {
+    margin: 0 auto;
+    max-width: 53.8125rem; // 861px, 70% of 1230px
+  }
 }

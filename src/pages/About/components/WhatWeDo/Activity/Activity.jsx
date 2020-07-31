@@ -3,7 +3,7 @@ import './Activity.scss';
 
 const Activity = (props) => {
   return (
-    <div className="about-activity">
+    <div className={`Activity ${props.componentClass}`}>
       <div className="about-activity-text">
         <h3 className="about-activity-title">{props.title}</h3>
         <p className="about-activity-description">{props.description}</p>
