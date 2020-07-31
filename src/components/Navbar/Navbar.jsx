@@ -26,7 +26,7 @@ const Navigation = () => {
             <Link to="/events">Events</Link>
           </li>
           <li>
-            <Link to="/coming-soon">Resources</Link>
+            <Link to="/resources">Resources</Link>
           </li>
           <li>
             {/* Temporary email contact until contact page is ready */}
