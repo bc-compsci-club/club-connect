@@ -50,7 +50,7 @@ const Highlights = () => {
         title="Collaborate"
         description={descriptions[1]}
         linkUrl="/about"
-        linkText="Check Out the Club"
+        linkText="See What We Do"
         image={collaborate}
         imageAlt="Collaborate"
         backgroundColor="#EEFFF0"
