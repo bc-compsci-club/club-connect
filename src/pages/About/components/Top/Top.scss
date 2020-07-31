@@ -1,7 +1,8 @@
 .about-top {
   // Mobile styles
 
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
     url('../../../../assets/about/about-header-mobile.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -64,7 +65,8 @@
 
   // Small laptops up to 1280x720
   @media only screen and (min-width: 80rem) {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url('../../../../assets/about/about-header-desktop.jpg');
     background-size: cover;
     background-repeat: no-repeat;
