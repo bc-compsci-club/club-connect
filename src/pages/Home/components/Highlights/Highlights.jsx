@@ -10,7 +10,7 @@ import network from 'assets/home/highlights/network.jpg';
 const descriptions = [
   // Learn
   `Whether you’ve never written a line of code before or you’ve written
-  full-stack applications that scale to planet scale, we’ve got you
+  full-stack applications that scale to planet-scale, we’ve got you
   covered. Our exciting events, ranging from beginner to advanced, will
   teach you how to create your very first website or how to deploy and
   auto-scale your application on the cloud. With tech talks, workshops,
@@ -37,7 +37,7 @@ const Highlights = () => {
         containerClass="highlight-learn"
         title="Learn"
         description={descriptions[0]}
-        linkUrl="/learn"
+        linkUrl="/events"
         linkText="Browse Events"
         image={learn}
         imageAlt="Learn"
@@ -49,8 +49,8 @@ const Highlights = () => {
         containerClass="highlight-collaborate"
         title="Collaborate"
         description={descriptions[1]}
-        linkUrl="/collaborate"
-        linkText="Find a Team"
+        linkUrl="/about"
+        linkText="Check Out the Club"
         image={collaborate}
         imageAlt="Collaborate"
         backgroundColor="#EEFFF0"
@@ -61,7 +61,7 @@ const Highlights = () => {
         containerClass="highlight-network"
         title="Network"
         description={descriptions[2]}
-        linkUrl="/network"
+        linkUrl="/join"
         linkText="Join the Community"
         image={network}
         imageAlt="Network"
