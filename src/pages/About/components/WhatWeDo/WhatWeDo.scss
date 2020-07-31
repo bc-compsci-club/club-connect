@@ -1,0 +1,25 @@
+.about-what-we-do {
+  background-color: #fff9ee;
+
+  .about-what-we-do-beginning {
+    margin-bottom: 2rem;
+  }
+
+  .about-what-we-do-container {
+    max-width: 87.5vw;
+    margin: 0 auto;
+    padding: 3rem 0 1rem;
+  }
+
+  @media only screen and (min-width: 80rem) {
+    .about-what-we-do-container {
+      margin: 0 auto;
+      max-width: 76.875rem; // 1230px
+
+      .about-what-we-do-beginning {
+        max-width: 53.8125rem; // 861px, 70% of 1230px
+        margin: 0 auto 4rem;
+      }
+    }
+  }
+}
