@@ -6,7 +6,8 @@ const Events = () => {
   return (
     <div className="Events">
       <h1>Upcoming Events</h1>
-      <span>🗒</span>
+      <span role="img"
+            aria-label="Events Notepad/Calendar">🗒</span>
       <h2>Coming soon...</h2>
       <p>
         We&apos;ve got some awesome events planned for our club members once the

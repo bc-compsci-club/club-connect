@@ -7,7 +7,9 @@ const Resources = () => {
   return (
     <div className="Resources">
       <h1>Resources</h1>
-      <span>📚</span>
+      <span role="img" aria-label="Resources Book Stack">
+        📚
+      </span>
       <h2>Coming soon...</h2>
 
       <p>
