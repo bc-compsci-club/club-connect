@@ -13,7 +13,7 @@ const Events = () => {
         semester starts! Check back here around mid-August for more details.
         We&apos;ll be notifying our club members in our monthly newsletter once
         the events are up. Make sure to join the club before then so you
-        don&apos;t miss out! See you at an event soon!
+        don&apos;t miss out! See you soon at an event!
       </p>
       <Link to="/join">Join the Club</Link>
     </div>
