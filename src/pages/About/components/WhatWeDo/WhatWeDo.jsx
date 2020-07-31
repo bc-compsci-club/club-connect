@@ -52,7 +52,7 @@ const WhatWeDo = () => {
             imageAlt="Students collaborating together to solve a problem."
             title="Collaborate, Build, and Conquer"
             description={`
-            Events aren't the only thing we do here! Our club members love to build their portfolios and work on passion projects on their spare time. Looking for a team to build a project with or want to practice your whiteboarding and interviewing skills in a mock interview with someone? Look no further!
+            Events aren't the only thing we do here! Our club members love to build their portfolios and work on passion projects in their free time. Looking for a team to build a project with or want to practice your whiteboarding and interviewing skills in a mock interview with someone? Look no further!
           `}
           />
         </div>

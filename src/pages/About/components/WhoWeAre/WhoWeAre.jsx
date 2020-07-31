@@ -10,8 +10,8 @@ const WhoWeAre = () => {
         computer science community where students come together to learn and
         grow in a safe, warm, and welcome environment. Together as a community,
         we share our knowledge and offer advice to each other, form teams to
-        build projects and attend hackathons with, discuss about the latest
-        trends and technologies, and more!
+        build projects and attend hackathons with, discuss the latest trends and
+        technologies, and more!
       </p>
 
       <p>
