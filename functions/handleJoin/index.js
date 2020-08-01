@@ -23,16 +23,17 @@ exports.handleJoin = async (req, res) => {
     return;
   }
 
-  // Check for correct origin
-  if (req.get('referer') !== 'https://bccompsci.club/join') {
-    console.error('Incorrect origin!');
+  // Check for correct referer
+  if (!req.get('referer').startsWith('https://bccompsci.club', 0)) {
+    console.error('Incorrect referer!');
+    console.log('Referer: ' + req.get('referer'));
     res.status(403).send('Forbidden');
     return;
   }
 
+  // Sanitize and parse inputs
   const body = req.body;
 
-  // Sanitize inputs
   const firstName = sanitize(body['first-name']);
   const lastName = sanitize(body['last-name']);
   const email = sanitize(body['email']);
@@ -41,6 +42,7 @@ exports.handleJoin = async (req, res) => {
     `${firstName} ${lastName} is requesting to join the club with email ${email}.`
   );
 
+  // Validate data before adding to database
   if (
     // Validate form data
     firstName === '' ||
@@ -60,10 +62,6 @@ exports.handleJoin = async (req, res) => {
   const docId = `${firstName} ${lastName} ${email} ${uuidv4()}`;
   const docRef = db.collection('members').doc(docId);
 
-  console.log(
-    `${firstName} ${lastName} has joined the club with email ${email}.`
-  );
-
   // Add member to database
   await docRef.set({
     firstName: firstName,
@@ -72,7 +70,12 @@ exports.handleJoin = async (req, res) => {
     joinDate: new Date(),
   });
 
+  console.log(
+    `${firstName} ${lastName} has joined the club with email ${email}.`
+  );
+
   // TODO: Sign up for MailChimp
 
+  // Redirect to welcome page
   res.redirect('https://bccompsci.club/welcome');
 };
