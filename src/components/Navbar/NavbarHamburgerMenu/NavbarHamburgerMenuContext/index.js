@@ -3,4 +3,4 @@ import {
   NavbarHamburgerMenuProvider,
 } from './NavbarHamburgerMenuContext.jsx';
 
-export { NavbarHamburgerMenuContext, NavbarHamburgerMenuProvider };
+export {NavbarHamburgerMenuContext, NavbarHamburgerMenuProvider};
