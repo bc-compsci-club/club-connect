@@ -7,6 +7,8 @@ import Routes from 'Routes';
 import Navbar from 'components/Navbar';
 import Footer from 'components/Footer';
 import ScrollToTop from 'components/ScrollToTop';
+import NavbarHamburgerMenu from './components/Navbar/NavbarHamburgerMenu';
+import { NavbarHamburgerMenuProvider } from './components/Navbar/NavbarHamburgerMenu/NavbarHamburgerMenuContext';
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-nunito';
@@ -16,12 +18,18 @@ const page = (
   <React.StrictMode>
     <Router>
       <ScrollToTop />
-      <header>
-        <Navbar />
-      </header>
+
+      <NavbarHamburgerMenuProvider>
+        <NavbarHamburgerMenu />
+        <header>
+          <Navbar />
+        </header>
+      </NavbarHamburgerMenuProvider>
+
       <main>
         <Routes />
       </main>
+
       <footer>
         <Footer />
       </footer>

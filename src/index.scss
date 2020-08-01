@@ -13,7 +13,14 @@ body {
 }
 
 header {
-  padding: 0.75rem 0;
+  padding: 0.75rem 0 3.25rem;
+
+  // Desktop styles
+
+  // 1200px and above
+  @media only screen and (min-width: 75rem) {
+    padding: 0.75rem 0 3.75rem;
+  }
 }
 
 code {
