@@ -24,7 +24,7 @@ exports.handleJoin = async (req, res) => {
   }
 
   // Check for correct origin
-  if (req.get('origin') !== 'https://bccompsci.club') {
+  if (req.get('referer') !== 'https://bccompsci.club/join') {
     console.error('Incorrect origin!');
     res.status(403).send('Forbidden');
     return;
