@@ -9,13 +9,11 @@ import Navbar from 'components/Navbar';
 import ScrollToTop from 'components/ScrollToTop';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from 'Routes';
 
 import NavbarHamburgerMenu from './components/Navbar/NavbarHamburgerMenu';
-import {
-  NavbarHamburgerMenuProvider
-} from './components/Navbar/NavbarHamburgerMenu/NavbarHamburgerMenuContext';
+import { NavbarHamburgerMenuProvider } from './components/Navbar/NavbarHamburgerMenu/NavbarHamburgerMenuContext';
 
 const page = (
   <React.StrictMode>
