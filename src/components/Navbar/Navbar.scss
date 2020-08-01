@@ -1,112 +1,142 @@
 nav.navbar-main {
   // Mobile styles
 
-  margin: 0 2vw;
+  position: fixed;
+  padding: 0.75rem 0;
+  width: 100%;
+  z-index: 900;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #fff;
+  border-bottom: 1px solid lightgray;
 
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  justify-items: center;
-
-  .nav-logo a {
+  .navbar-main-items {
+    margin: 0 5%;
     display: flex;
-    text-decoration: none;
+    justify-content: space-between;
     align-items: center;
+    justify-items: center;
 
-    img {
-      height: 3rem;
-      width: 3rem;
+    .nav-logo a {
+      display: flex;
+      text-decoration: none;
+      align-items: center;
+
+      img {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
+      p {
+        margin: 0 0 0 0.5rem;
+        font-size: 1rem;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        color: #000;
+        line-height: 1.2;
+      }
     }
 
-    p {
-      margin: 0 0 0 1rem;
-      font-size: 1.1rem;
-      font-family: 'Raleway', sans-serif;
-      font-weight: bold;
-      color: #000000;
-      line-height: 1.2;
+    // Hide Navbar on mobile
+    .NavbarMainLinks {
+      display: none;
     }
-  }
 
-  .nav-elements {
-    // TODO: Hamburger menu for navbar on mobile
-    display: none;
+    .navbar-hamburger-menu-button {
+      border: none;
+      background: none;
+      padding: 0;
+
+      svg {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
   }
 
   // Desktop styles
 
-  // 1280x720 and above
-  @media only screen and (min-width: 80rem) {
-    max-width: 80rem; // 1230px
-    margin: 0 2vw;
+  // 1200px and above
+  @media only screen and (min-width: 75rem) {
+    .navbar-main-items {
+      max-width: 80rem; // 1280px
+      width: 95vw;
+      margin: 0 auto;
 
-    // Logo area
-    .nav-logo a {
-      p {
-        line-height: 1.25;
+      .navbar-hamburger-menu-button {
+        display: none;
       }
-    }
 
-    // Navigation area
-    .nav-elements {
-      display: initial;
-
-      ul {
-        display: flex;
-        font-family: 'Nunito', sans-serif;
-        margin: 0;
-
-        // General navigation links
-        li {
-          list-style: none;
-
-          a {
-            font-size: 1rem;
-            color: #000000;
-            padding: 0 0.75rem;
-            margin: 0 0.25rem;
-            text-decoration: none;
-
-            transition: 0.1s;
-            transition-timing-function: ease;
-          }
-
-          a:hover {
-            color: #4053fe;
-          }
+      // Logo area
+      .nav-logo a {
+        img {
+          height: 3rem;
+          width: 3rem;
         }
 
-        // Join button
-        li.join-button {
-          a {
-            color: #ffffff;
-            font-weight: bold;
-            margin-left: 1rem;
-            margin-right: 0;
-            padding: 0.5rem 1.5rem;
-            background-color: #4d5eff;
-            border-radius: 50px;
+        p {
+          margin: 0 0 0 1rem;
+          font-size: 1rem;
+          line-height: 1.25;
+        }
+      }
 
-            transition: 0.2s;
-            transition-timing-function: ease-in-out;
+      // Navigation area
+      .NavbarMainLinks {
+        // Show Navbar on desktop
+        display: initial;
+
+        ul {
+          display: flex;
+          font-family: 'Nunito', sans-serif;
+          margin: 0;
+
+          // General navigation links
+          li {
+            list-style: none;
+
+            a {
+              font-size: 1rem;
+              color: #000;
+              padding: 0 0.75rem;
+              margin: 0 0.25rem;
+              text-decoration: none;
+              transition: 0.1s;
+              transition-timing-function: ease;
+            }
+
+            a:hover {
+              color: #4053fe;
+            }
           }
 
-          a:hover {
-            background-color: #4d5eff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-          }
+          // Join button
+          li.join-button {
+            a {
+              color: #fff;
+              font-weight: bold;
+              margin-left: 1rem;
+              margin-right: 0;
+              padding: 0.5rem 1.5rem;
+              background-color: #4d5eff;
+              border-radius: 50px;
+              transition: 0.2s;
+              transition-timing-function: ease-in-out;
+            }
 
-          a:active {
-            background-color: #6574f7;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            a:hover {
+              background-color: #4d5eff;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            }
+
+            a:active {
+              background-color: #6574f7;
+              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
           }
         }
       }
     }
-  }
-
-  // 1366x768 and above
-  @media only screen and (min-width: 1366px) {
-    margin: 0 auto;
   }
 }
