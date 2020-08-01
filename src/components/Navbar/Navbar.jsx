@@ -1,9 +1,9 @@
 // @flow
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { NavbarHamburgerMenuContext } from './NavbarHamburgerMenu/NavbarHamburgerMenuContext';
 import './Navbar.scss';
 import logo from 'assets/logo.png';
-import { NavbarHamburgerMenuContext } from './NavbarHamburgerMenu/NavbarHamburgerMenuContext';
 
 const Navigation = () => {
   const context = useContext(NavbarHamburgerMenuContext);
