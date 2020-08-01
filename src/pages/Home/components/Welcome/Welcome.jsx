@@ -12,7 +12,7 @@ const strings = [
   'diversity.',
   'passion.',
   'creativity.',
-  'learning.'
+  'learning.',
 ];
 
 const typewriterInit = (typewriter) => {
@@ -35,7 +35,7 @@ const Welcome = () => {
       <div className="welcome-background-container">
         <div className="welcome-container">
           <div className="welcome-content">
-            <Slogan/>
+            <Slogan />
             <p>
               Learn something new at an event, form a team to build a project
               with, or find out more about the field! The Brooklyn College
@@ -58,7 +58,7 @@ const Welcome = () => {
           </div>
 
           <div className="welcome-slideshow">
-            <img className="slideshow" src={slideshow} alt="Slideshow"/>
+            <img className="slideshow" src={slideshow} alt="Slideshow" />
           </div>
         </div>
       </div>
@@ -67,13 +67,28 @@ const Welcome = () => {
 };
 
 const Slogan = () => {
+  // Disable Typewriter effect on Internet Explorer
+  if (window.document.documentMode) {
+    return (
+      <h1>
+        A community driven by&nbsp;
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
+      </h1>
+    );
+  }
+
   const typewriterComponent = (
     <Typewriter
       options={{
         autoStart: true,
         loop: true,
         delay: 30,
-        deleteSpeed: 30
+        deleteSpeed: 30,
       }}
       onInit={(typewriter) => typewriterInit(typewriter)}
     />
@@ -84,7 +99,7 @@ const Slogan = () => {
     return (
       <h1>
         A community driven by
-        <br/>
+        <br />
         <span
           id="welcome-typewriter-placeholder"
           style={{ fontWeight: 'bold' }}
