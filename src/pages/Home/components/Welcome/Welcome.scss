@@ -203,7 +203,7 @@ section.Welcome {
       }
 
       .welcome-slideshow {
-        max-width: 46.25%;
+        max-width: 46.875%;
       }
     }
   }
@@ -240,6 +240,14 @@ section.Welcome {
 
     .welcome-container {
       max-width: 75rem;
+
+      .welcome-content {
+        max-width: 40%;
+      }
+
+      .welcome-slideshow {
+        max-width: 52.5%;
+      }
     }
   }
 
@@ -248,6 +256,7 @@ section.Welcome {
     margin-top: 2%;
 
     .welcome-container {
+      max-width: 76.875rem;
       margin: 0 auto;
     }
   }
