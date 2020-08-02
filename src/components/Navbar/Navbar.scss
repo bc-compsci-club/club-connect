@@ -57,8 +57,8 @@ nav.navbar-main {
 
   // Desktop styles
 
-  // 1200px and above
-  @media only screen and (min-width: 75rem) {
+  // 1024px and above
+  @media only screen and (min-width: 64rem) {
     .navbar-main-items {
       max-width: 80rem; // 1280px
       width: 95vw;
