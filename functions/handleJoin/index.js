@@ -24,8 +24,7 @@ exports.handleJoin = async (req, res) => {
   }
 
   // Check for correct referer
-  // if (!req.get('referer').startsWith('https://bccompsci.club', 0)) {
-  if (!req.get('referer').substring(0, 27) === 'https://bccompsci.club/join') {
+  if (!(req.get('referer').substring(0, 27) === 'https://bccompsci.club/join')) {
     console.error('Incorrect referer!');
     console.log('Referer: ' + req.get('referer'));
     res.status(403).send('Forbidden');
