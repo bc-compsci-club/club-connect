@@ -143,8 +143,8 @@ const Slogan = () => {
         {typewriterComponent}
       </h1>
     );
-    // <= 920px (tablets and landscape phones)
-  } else if (window.innerWidth <= 920) {
+    // <= 910px (tablets and landscape phones)
+  } else if (window.innerWidth <= 910) {
     return (
       <h1>
         A community driven by
