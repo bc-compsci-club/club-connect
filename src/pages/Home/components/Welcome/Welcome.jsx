@@ -6,14 +6,16 @@ import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
 
-const strings = [
-  'inspiration.',
-  'collaboration.',
-  'diversity.',
-  'passion.',
-  'creativity.',
-  'learning.',
-];
+const strings = ['collaboration.', 'collaboration.', 'collaboration.'];
+
+// const strings = [
+//   'inspiration.',
+//   'collaboration.',
+//   'diversity.',
+//   'passion.',
+//   'creativity.',
+//   'learning.',
+// ];
 
 const typewriterInit = (typewriter) => {
   document.getElementById('welcome-typewriter-placeholder').remove();
@@ -51,6 +53,7 @@ const Welcome = () => {
                 to="about"
                 smooth={true}
                 duration={500}
+                offset={-64}
               >
                 Learn&nbsp;More
               </ScrollLink>
@@ -94,8 +97,54 @@ const Slogan = () => {
     />
   );
 
-  if (window.innerWidth < 370) {
-    // < 370px Mobile
+  // <= 320px (small phones)
+  if (window.innerWidth <= 320) {
+    return (
+      <h1>
+        A community driven by&nbsp;
+        {/*<br />*/}
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
+        {typewriterComponent}
+      </h1>
+    );
+    // <= 370 (medium phones)
+  } else if (window.innerWidth <= 370) {
+    return (
+      <h1>
+        A community driven by&nbsp;
+        {/*<br />*/}
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
+        {typewriterComponent}
+      </h1>
+    );
+    // <= 600px (larger phones)
+  } else if (window.innerWidth <= 600) {
+    return (
+      <h1>
+        A community driven
+        <br />
+        by&nbsp;
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
+        {typewriterComponent}
+      </h1>
+    );
+    // <= 920px (tablets and landscape phones)
+  } else if (window.innerWidth <= 920) {
     return (
       <h1>
         A community driven by
@@ -110,7 +159,7 @@ const Slogan = () => {
       </h1>
     );
   } else {
-    // > 370px Mobile
+    // > 920px (larger tablets and laptops)
     return (
       <h1>
         A community driven by&nbsp;
