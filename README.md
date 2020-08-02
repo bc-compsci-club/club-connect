@@ -50,7 +50,7 @@ The browser versions listed represent the earliest versions that seem to work an
   - 10 - 11: Must disable typewriter effect for compatibility
   - 10: Welcome button padding and navbar padding are off but usable
   - 9: Page layout broken
-  - 6-8: The page cannot be displayed, possibly due to a DNS Error
+  - 6 - 8: The page cannot be displayed, possibly due to a DNS Error
 
 ### Mobile / Tablet
 
@@ -81,9 +81,10 @@ The browser versions listed represent the earliest versions that seem to work an
 - Most Android devices can still use recent versions of Google Chrome, even devices on 4.4 Kitkat.
 - Android Browser
   - Android 4.4: Hamburger menu stuck open on page load and cannot be closed
-  - Android 2.2 - 4: Can't establish secure connection
+  - Android 2.2 - 4.3: Can't establish secure connection
   
 #### Windows Phone
+
 Tested on emulated Windows Phone 8.1 on version 8.10.14141.167
 
 | Browser           | Works Great  | Works with Issues |
