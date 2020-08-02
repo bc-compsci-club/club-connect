@@ -9,7 +9,7 @@ nav.navbar-main {
   left: 50%;
   transform: translate(-50%, 0);
   background-color: #fff;
-  border-bottom: 1px solid lightgray;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
 
   .navbar-main-items {
     margin: 0 5%;
