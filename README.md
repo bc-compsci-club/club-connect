@@ -10,7 +10,7 @@ Figma Design: [figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1](http
 
 ## Browser Tests
 
-The browser versions listed represent the earliest versions that seem to work. Data may not be fully accurate. Not all versions may have been tested.
+The browser versions listed represent the earliest versions that seem to work and newer versions should work just as well, if not better. Data may not be fully accurate. Not all versions may have been tested.
 
 **Works Great:** The website is fully usable and appears as intended.
 
