@@ -6,16 +6,14 @@ import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
 
-const strings = ['collaboration.', 'collaboration.', 'collaboration.'];
-
-// const strings = [
-//   'inspiration.',
-//   'collaboration.',
-//   'diversity.',
-//   'passion.',
-//   'creativity.',
-//   'learning.',
-// ];
+const strings = [
+  'inspiration.',
+  'collaboration.',
+  'diversity.',
+  'passion.',
+  'creativity.',
+  'learning.',
+];
 
 const typewriterInit = (typewriter) => {
   document.getElementById('welcome-typewriter-placeholder').remove();
@@ -162,7 +160,9 @@ const Slogan = () => {
     // > 920px (larger tablets and laptops)
     return (
       <h1>
-        A community driven by&nbsp;
+        A community driven
+        <br />
+        by&nbsp;
         <span
           id="welcome-typewriter-placeholder"
           style={{ fontWeight: 'bold' }}
