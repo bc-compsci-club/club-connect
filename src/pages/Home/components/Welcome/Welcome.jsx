@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+// import { Link as ScrollLink } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
@@ -46,7 +46,10 @@ const Welcome = () => {
               <Link className="join-button" to="/join">
                 Join&nbsp;the&nbsp;Club
               </Link>
-              <ScrollLink
+              <Link className="learn-more" to="/about">
+                Learn More
+              </Link>
+              {/*<ScrollLink
                 className="learn-more"
                 to="about"
                 smooth={true}
@@ -54,7 +57,7 @@ const Welcome = () => {
                 offset={-64}
               >
                 Learn&nbsp;More
-              </ScrollLink>
+              </ScrollLink>*/}
             </div>
           </div>
 
