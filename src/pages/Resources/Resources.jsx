@@ -20,7 +20,7 @@ const Resources = () => {
         recommended lots of resources over on the Discord community! Visit the{' '}
         <span className="resources-bold">#resources</span> channel on the
         Discord community to get started. Not a member of the Discord community
-        yet? Join the club today to gain access to the Discord community.
+        yet? Join the club today to gain access!
       </p>
 
       <p>
@@ -30,8 +30,6 @@ const Resources = () => {
         <span className="resources-bold">#resources</span> channel on the
         Discord community!
       </p>
-
-      <Link to="/join">Join the Club</Link>
     </div>
   );
 };

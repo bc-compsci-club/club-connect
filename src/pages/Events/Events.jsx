@@ -16,7 +16,6 @@ const Events = () => {
         the events are up. Make sure to join the club before then so you
         don&apos;t miss out! See you soon at an event!
       </p>
-      <Link to="/join">Join the Club</Link>
     </div>
   );
 };
