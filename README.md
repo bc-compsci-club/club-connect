@@ -8,6 +8,94 @@ Link: [bccompsci.club](https://bccompsci.club)
 <br />
 Figma Design: [figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1](https://www.figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1)
 
+## Browser Tests
+
+The browser versions listed represent the earliest versions that seem to work. Data may not be fully accurate. Not all versions may have been tested.
+
+**Works Great:** The website is fully usable and appears as intended.
+
+**Works with Issues:** The website is fully usable, but slight layout issues are visible.
+
+### Desktop
+
+| Browser           | Works Great | Works with Issues |
+| ----------------- | ----------- | ----------------- |
+| Chrome            | 36          | 29                |
+| Firefox           | 60          | 32                |
+| Edge Chromium     | 80          | None              |
+| Edge Legacy       | 17          | 15                |
+| Safari            | 11.1        | 7.1               |
+| Opera             | 25          | 23                |
+| Yandex            | 14.12       | None              |
+| Internet Explorer | None        | 10                |
+
+#### Notes
+
+- Chrome
+  - 29 - 35: Navbar layout broken
+  - 15 - 28: Error 113: ERR_SSL_VERSION_OR_CIPHER_MISMATCH
+- Firefox
+  - 32 - 59: About top section has broken spacing
+- Edge Legacy
+  - 15 - 16: About top section has broken spacing
+- Safari
+  - 6.2 - 10.1: Join button on About spans the whole page
+  - 6.2 and under: Can't establish a secure connection
+- Opera
+  - 16 - 24: Typewriter effect disabled
+  - 16 - 22: Navbar layout broken
+  - 10.6 - 15: Webpage not available, possibly due to SSL/TLS protocol version
+- Internet Explorer
+  - 10 - 11: Join button on About spans the whole page
+  - 10 - 11: Must disable typewriter effect for compatibility
+  - 10: Welcome button padding and navbar padding are off but usable
+  - 9: Page layout broken
+  - 6-8: The page cannot be displayed, possibly due to a DNS Error
+
+### Mobile / Tablet
+
+#### iOS
+
+| Browser | Works Great | Works with Issues |
+| ------- | ----------- | ----------------- |
+| Safari  | iOS 9       | None              |
+
+#### Notes
+
+- Most browsers on iOS, such as Chrome and Firefox, should work as well as the Safari version the browser is currently on due to browsers on iOS using WebKit.
+- Safari
+  - iOS 5.1 - iOS 8: Hamburger menu stuck open on page load and cannot be closed
+  - iOS 3 - 4: Can't establish a secure connection to the server
+
+#### Android
+
+| Browser          | Works Great  | Works with Issues |
+| ---------------- | ------------ | ----------------- |
+| Chrome           | 68.0.3440.85 | Untested          |
+| Firefox          | 65           | Untested          |
+| Samsung Internet | 9.0.01.80    | Untested          |
+| UC Browser       | 12.10.2.1164 | Untested          |
+
+#### Notes
+
+- Most Android devices can still use recent versions of Google Chrome, even devices on 4.4 Kitkat.
+- Android Browser
+  - Android 4.4: Hamburger menu stuck open on page load and cannot be closed
+  - Android 2.2 - 4: Can't establish secure connection
+  
+#### Windows Phone
+Tested on emulated Windows Phone 8.1 on version 8.10.14141.167
+
+| Browser           | Works Great  | Works with Issues |
+| ----------------- | ------------ | ----------------- |
+| Internet Explorer | None         | None              |
+
+#### Notes
+
+- Internet Explorer
+  - Windows Phone 8.10.14141.167: Hamburger menu can be opened, but closing it with the X button results in a blank screen
+  - Windows Phone 8.10.14141.167: Images stretched
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
