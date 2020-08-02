@@ -8,7 +8,7 @@ section.Welcome {
 
   .welcome-background-container {
     background-color: #f8eeff;
-    padding: 4vh 0;
+    padding: 8% 0;
   }
 
   .welcome-container {
@@ -53,6 +53,7 @@ section.Welcome {
         justify-content: space-between;
 
         a {
+          padding: 1rem;
           text-align: center;
           text-decoration: none;
           font-family: 'Nunito', sans-serif;
@@ -63,7 +64,6 @@ section.Welcome {
         }
 
         a.join-button {
-          padding: 1rem;
           color: #fff;
           font-weight: bold;
           background-color: #4d5eff;
@@ -82,23 +82,15 @@ section.Welcome {
 
         a.learn-more {
           cursor: pointer;
-          padding: 1rem;
           margin-top: 1rem;
-          margin-left: 0;
           box-shadow: 0 0 0 2px #be68ff inset;
           color: #9000ff;
           border-radius: 50px;
           background-color: initial;
-          // font-weight: bold;
-          // border: 3px solid blue;
         }
 
         a.learn-more:hover {
           box-shadow: 0 0 0 2px #b661ff inset, 0 4px 10px rgba(0, 0, 0, 0.1);
-          //color: #b661ff;
-          // Potential design change if we want to make the Learn More button similar to the Join the Club button
-          // background-color: #5767fe;
-          // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         }
 
         a.learn-more:active {
@@ -147,14 +139,11 @@ section.Welcome {
 
   // 768px (tablet vertical)
   @media screen and (min-width: 48rem) {
-    margin-top: 0;
-
     .welcome-background-container {
       padding: 5.5% 0;
     }
 
     .welcome-container {
-      margin: 0 4vw;
       flex-direction: row;
 
       .welcome-content {
@@ -171,21 +160,10 @@ section.Welcome {
 
         .welcome-action-buttons {
           margin-top: 1.25rem;
-          align-items: start;
 
           a {
             font-size: 1.5rem;
             width: 100%;
-          }
-
-          a.join-button {
-            margin-bottom: 1rem;
-            padding: 1rem 2.5rem;
-          }
-
-          a.learn-more {
-            margin-top: 0;
-            padding: 1rem 3rem;
           }
         }
       }
@@ -203,60 +181,29 @@ section.Welcome {
 
   // 1024px (tablet horizontal)
   @media screen and (min-width: 64rem) {
-    margin-top: 0;
-
     .welcome-background-container {
       padding: 4% 0;
     }
 
     .welcome-container {
-      margin: 0 4.5vw; // 1280x720 up to 1366x768 only
-      max-width: 76.875rem; // 1230px
-      flex-direction: row;
-
       .welcome-content {
-        max-width: 45%;
-
-        h1 {
-          font-size: 2.5rem;
-        }
-
-        p {
-          // margin: 1rem 0 0;
-          font-size: 1.1rem;
-          line-height: 1.5;
-        }
-
         .welcome-action-buttons {
           flex-direction: row;
-          margin-top: 1.25rem;
-
-          a {
-            font-size: 1.5rem;
-          }
 
           a.join-button {
-            margin-bottom: 0;
-            padding: 1rem 2.5rem;
             width: 52.5%;
           }
 
           a.learn-more {
             margin-top: 0;
             margin-left: 1rem;
-            padding: 1rem 2.5rem;
             width: 47.5%;
           }
         }
       }
 
       .welcome-slideshow {
-        margin-top: 0;
-        max-width: 45%;
-
-        img {
-          border-radius: 20px;
-        }
+        max-width: 46.25%;
       }
     }
   }
@@ -268,44 +215,18 @@ section.Welcome {
       max-width: 70rem;
 
       .welcome-content {
-        max-width: 40%;
-
         h1 {
           font-size: 3rem;
         }
 
         p {
-          // margin: 1rem 0 0;
           font-size: 1.25rem;
-          line-height: 1.5;
         }
 
         .welcome-action-buttons {
-          flex-direction: row;
-          margin-top: 1.25rem;
-
           a {
             font-size: 1.75rem;
           }
-
-          a.join-button {
-            padding: 1rem 2.5rem;
-          }
-
-          a.learn-more {
-            margin-top: 0;
-            margin-left: 1rem;
-            padding: 1rem 2.5rem;
-          }
-        }
-      }
-
-      .welcome-slideshow {
-        margin-top: 0;
-        max-width: 52.5%;
-
-        img {
-          border-radius: 20px;
         }
       }
     }
