@@ -83,18 +83,18 @@ section.Welcome {
         a.learn-more {
           cursor: pointer;
           margin-top: 1rem;
-          box-shadow: 0 0 0 2px #be68ff inset;
-          color: #9000ff;
+          box-shadow: 0 0 0 2px #4d5eff inset;
+          color: #4d5eff;
           border-radius: 50px;
           background-color: initial;
         }
 
         a.learn-more:hover {
-          box-shadow: 0 0 0 2px #b661ff inset, 0 4px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 0 3px #4d5eff inset;
         }
 
         a.learn-more:active {
-          box-shadow: 0 0 0 2px #b661ff inset, 0 4px 10px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 0 2px #4d5eff inset;
         }
       }
     }
@@ -191,13 +191,13 @@ section.Welcome {
           flex-direction: row;
 
           a.join-button {
-            width: 52.5%;
+            width: 55%;
           }
 
           a.learn-more {
             margin-top: 0;
             margin-left: 1.5rem;
-            width: 47.5%;
+            width: 45%;
           }
         }
       }
