@@ -6,6 +6,11 @@
 	max-age=86400,
 	immutable'''
 
+[[redirects]]
+  from = "/*"
+  to = "/"
+  status = 200
+
 [build]
   command = "npm run build"
   publish = "build"
