@@ -6,14 +6,16 @@ import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
 
-const strings = [
-  'inspiration.',
-  'collaboration.',
-  'diversity.',
-  'passion.',
-  'creativity.',
-  'learning.',
-];
+const strings = ['collaboration.'];
+
+// const strings = [
+//   'inspiration.',
+//   'collaboration.',
+//   'diversity.',
+//   'passion.',
+//   'creativity.',
+//   'learning.',
+// ];
 
 const typewriterInit = (typewriter) => {
   document.getElementById('welcome-typewriter-placeholder').remove();
@@ -36,6 +38,8 @@ const Welcome = () => {
         <div className="welcome-container">
           <div className="welcome-content">
             <Slogan />
+            {/*<h2>{`Effective resolution: ${window.innerWidth}x${window.innerHeight}`}</h2>*/}
+            {/*<p>{`User Agent: ${navigator.appVersion}`}</p>*/}
             <p>
               Learn something new at an event, form a team to build a project
               with, or find out more about the field! The Brooklyn College

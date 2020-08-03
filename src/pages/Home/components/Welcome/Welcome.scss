@@ -1,28 +1,32 @@
 // Welcome section of the homepage.
+// The mobile h1 and paragraph sizing here is adjusted for the welcome area only!
 
 section.Welcome {
   // Mobile styles
-  // The mobile h1 and paragraph sizing here is adjusted for the welcome area only!
 
   margin-top: 0;
 
   .welcome-background-container {
     background-color: #f8eeff;
     padding: 8% 0;
+
+    @media screen and (orientation: landscape) {
+      padding: 4% 0;
+    }
   }
 
   .welcome-container {
     margin: 0 auto;
-    width: 90vw;
+    padding: 0 5vw;
+
     display: flex;
     flex-direction: column;
+
     justify-content: space-between;
     align-items: center;
     justify-items: center;
 
     .welcome-content {
-      max-width: 100%;
-
       h1 {
         margin: 0;
         font-size: 1.875rem;
@@ -39,9 +43,9 @@ section.Welcome {
       }
 
       p {
-        font-family: 'Nunito', sans-serif;
         margin-top: 1rem;
         font-size: 1rem;
+        font-family: 'Nunito', sans-serif;
         line-height: 1.35;
       }
 
@@ -56,8 +60,8 @@ section.Welcome {
           padding: 1rem;
           text-align: center;
           text-decoration: none;
-          font-family: 'Nunito', sans-serif;
           font-size: 1.25rem;
+          font-family: 'Nunito', sans-serif;
           transition: 0.2s;
           transition-timing-function: ease-in-out;
           width: 90%;
@@ -114,6 +118,7 @@ section.Welcome {
 
   // 350px (medium phones)
   @media screen and (min-width: 21.875rem) {
+    // Increase heading and paragraph font size a little bit
     .welcome-container .welcome-content {
       h1 {
         font-size: 2.1rem;
@@ -127,6 +132,7 @@ section.Welcome {
 
   // 370px (larger phones)
   @media screen and (min-width: 23.125rem) {
+    // Increase heading font size more
     .welcome-container .welcome-content {
       h1 {
         font-size: 2.25rem;
@@ -143,9 +149,11 @@ section.Welcome {
       padding: 5.5% 0;
     }
 
+    // Convert from column flex-direction to row and center the contents
     .welcome-container {
       flex-direction: row;
 
+      // Increase heading and paragraph size more
       .welcome-content {
         max-width: 45%;
 
@@ -187,6 +195,7 @@ section.Welcome {
 
     .welcome-container {
       .welcome-content {
+        // Change button layout from column to row
         .welcome-action-buttons {
           flex-direction: row;
 
@@ -196,7 +205,7 @@ section.Welcome {
 
           a.learn-more {
             margin-top: 0;
-            margin-left: 1.5rem;
+            margin-left: 1.25rem;
             width: 45%;
           }
         }
@@ -208,12 +217,9 @@ section.Welcome {
     }
   }
 
-  // 1200px
-  @media screen and (min-width: 75rem) {
+  // 1100px
+  @media screen and (min-width: 68.75rem) {
     .welcome-container {
-      margin: 0 4.5vw; // 1280x720 up to 1366x768 only
-      max-width: 70rem;
-
       .welcome-content {
         h1 {
           font-size: 3rem;
@@ -239,8 +245,6 @@ section.Welcome {
     }
 
     .welcome-container {
-      max-width: 75rem;
-
       .welcome-content {
         max-width: 40%;
       }
@@ -257,7 +261,7 @@ section.Welcome {
 
     .welcome-container {
       max-width: 76.875rem;
-      margin: 0 auto;
+      padding: 0;
     }
   }
 
