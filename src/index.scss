@@ -2,6 +2,91 @@
 
 @import-normalize;
 
+/*
+  Breakpoints:
+  - Under 576px/30rem (Vertical phones)
+  - 576px/30rem and above (Small horizontal phones)
+
+  - 768px/48rem and above (Vertical tablets and large horizontal phones)
+
+  - 1024px/64rem and above (Horizontal tablets)
+
+  - 1100px/68.75rem and above (Large horizontal tablets and small laptops)
+  - 1280px/80rem and above (Small laptops)
+  - 1366px/85.375rem and above (Medium laptops and everything above)
+*/
+
+// Under 576px/36rem (Vertical phones)
+:root {
+  // Text
+  --font-size-h1: 2rem; // 32px
+  --font-size-p: 1rem; // 16px
+}
+
+// 576px/36rem and above (Small horizontal phones)
+@media screen and (min-width: 36rem) {
+  :root {
+    // Text
+    --font-size-h1: 2.25rem; // 36px
+    --font-size-p: 1.125rem; // 18px
+  }
+}
+
+// 768px/48rem and above (Vertical tablets and large horizontal phones)
+@media screen and (min-width: 48rem) {
+  :root {
+    --container-max-width: 40rem; // 640px
+  }
+}
+
+// 1024px/64rem and above (Horizontal tablets)
+@media screen and (min-width: 64rem) {
+  :root {
+    // Content sizing
+    --container-max-width: 58rem;
+
+    // Text
+    --font-size-h1: 2.5rem;
+    --font-size-p: 1.1rem;
+
+    // Buttons
+    --button-padding: 1rem 2.5rem;
+  }
+}
+
+// 1100px/68.75rem and above (Large horizontal tablets and small laptops)
+@media screen and (min-width: 68.75rem) {
+  :root {
+    // Content sizing
+    --container-max-width: 64rem;
+
+    // Text
+    --font-size-h1: 3rem; // 48px
+    --font-size-h2: 2.5rem;
+    --font-size-h3: 2rem;
+    --font-size-p: 1.25rem; // 20px
+
+    // Buttons
+    --button-padding: 1rem 2.5rem;
+  }
+}
+
+// 1280px/80rem and above (Small laptops)
+@media screen and (min-width: 80rem) {
+  :root {
+    // Content sizing
+    --container-max-width: 75rem; // 1200px
+  }
+}
+
+// 1366px/85.375rem and above (Medium laptops and everything above)
+@media screen and (min-width: 85.375rem) {
+  :root {
+    // Content sizing
+    --container-max-width: 76.875rem; // 1230px
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -13,13 +98,12 @@ body {
 }
 
 header {
-  padding: 0.75rem 0 3.25rem;
+  // Hamburger menu navbar
+  padding: 2rem 0;
 
-  // Desktop styles
-
-  // 1200px and above
-  @media only screen and (min-width: 75rem) {
-    padding: 0.75rem 0 3.75rem;
+  // Full navbar, 1024px and above
+  @media screen and (min-width: 64rem) {
+    padding: 2.25rem 0;
   }
 }
 
