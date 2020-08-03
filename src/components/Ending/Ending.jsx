@@ -15,8 +15,8 @@ const Ending = () => {
 };
 
 const Header = () => {
-  if (window.innerHeight > window.innerWidth) {
-    // Phone
+  if (window.innerWidth <= 576) {
+    // Vertical phones
     return (
       <h2>
         Unlock your full potential at the Brooklyn College Computer Science
@@ -24,7 +24,7 @@ const Header = () => {
       </h2>
     );
   } else {
-    // Desktop
+    // Landscape phones, tablets and desktops
     return (
       <h2>
         Unlock your full potential at the

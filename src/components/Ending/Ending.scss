@@ -47,6 +47,24 @@
 
   // Desktop styles
 
+  // 1024px
+  @media only screen and (min-width: 48rem) {
+    .ending-container {
+      margin: 0 auto; // 1280x720 up to 1366x768 only
+      max-width: 76.875rem; // 1230px
+
+      h2 {
+        font-size: 2rem;
+        line-height: initial;
+      }
+
+      a {
+        font-size: 1.5rem;
+        padding: 1rem 2.5rem;
+      }
+    }
+  }
+
   // Small laptops up to 1280x720
   @media only screen and (min-width: 80rem) {
     .ending-container {
