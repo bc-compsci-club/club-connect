@@ -11,6 +11,7 @@
   to = "/"
   status = 200
 
+[[redirects]]
   from = "/surveys/welcome-back"
   to = "https://forms.gle/MkQeb1DQnmon1htZ9"
   status = 200
