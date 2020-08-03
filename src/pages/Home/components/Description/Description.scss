@@ -1,25 +1,35 @@
 // Description section of the homepage.
+// h2 font sizes match the h1 font sizes for the homepage only!
 
 section.Description {
   // Mobile styles
 
-  margin: 0 auto 0;
+  margin: 0 auto;
   padding-top: 2.5rem;
   max-width: 87.5vw;
 
-  h2 {
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.875rem;
-    font-weight: normal;
-  }
-
   p {
     font-family: 'Nunito', sans-serif;
-    font-size: 1.25rem;
   }
 
-  img {
+  h2 {
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .description-heading {
+    text-align: center;
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
+
+  .description-opening-paragraph {
+    margin: 0 auto;
+    font-size: 1.125rem;
+    text-align: center;
+  }
+
+  .description-image {
+    display: block;
     margin: 2rem auto;
     height: auto;
     width: 100%;
@@ -27,25 +37,131 @@ section.Description {
     border-radius: 10px;
   }
 
-  // Desktop styles
+  .description-mission {
+    margin: 4rem auto;
+    font-weight: bold;
+    text-align: center;
 
-  // Small laptops up to 1280x720
-  @media only screen and (min-width: 80rem) {
-    margin: 0 auto;
+    .description-mission-heading {
+      font-family: 'Raleway', sans-serif;
+      font-weight: normal;
+      font-size: 2.75rem;
+    }
+
+    .description-mission-content {
+      font-size: 1.3rem;
+    }
+  }
+
+  .description-main-content p {
+    margin: 1rem auto;
+    font-size: 1.125rem;
+  }
+
+  // 370px (larger phones)
+  @media screen and (min-width: 23.125rem) {
+    // Larger Our Mission section
+    .description-mission {
+      .description-mission-heading {
+        font-size: 3.15rem;
+      }
+
+      .description-mission-content {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  // Tablet and Desktop styles
+  // 18px font size, variable heading sizes
+
+  // 768px (vertical tablets)
+  @media only screen and (min-width: 48rem) {
     padding-top: 4rem;
-    max-width: 53.8125rem; // 861px, 70% of 1230px
+    max-width: 43.2rem;
 
     h2 {
       font-size: 2.5rem;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.125rem; // 18px
     }
 
     img {
-      margin: 2rem auto 1.5rem;
       border-radius: 20px;
     }
+
+    .description-opening-paragraph {
+      max-width: 85%;
+    }
+
+    .description-image {
+      max-width: 100%;
+    }
+
+    .description-mission {
+      max-width: 100%;
+
+      .description-mission-heading {
+        font-size: 3.5rem;
+      }
+
+      .description-mission-content {
+        font-size: 1.65rem;
+        //border: 3px solid blue;
+      }
+    }
+
+    .description-main-content p {
+      max-width: 100%;
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  @media only screen and (min-width: 64rem) {
+    max-width: 57.6rem;
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    // Slightly widen width for horizontal tablets
+    .description-opening-paragraph {
+      max-width: 62.5%;
+    }
+
+    .description-image {
+      max-width: 75%;
+    }
+
+    .description-mission {
+      max-width: 80%;
+
+      // Increase the font size slightly
+      .description-mission-content {
+        font-size: 1.75rem;
+        //border: 3px solid red;
+      }
+    }
+
+    .description-main-content p {
+      max-width: 67.5%;
+    }
+  }
+
+  // 1100px (larger devices)
+  // Max width: 72rem
+  @media only screen and (min-width: 68.75rem) {
+    max-width: 61.875rem; // 990px
+  }
+
+  // 1280px and higher
+  @media screen and (min-width: 80rem) {
+    max-width: 72rem; // 1152px, 90% of 1280px
+
+    //h2 {
+    //  font-size: 3rem; // 48px
+    //}
   }
 }
