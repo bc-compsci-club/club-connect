@@ -78,7 +78,7 @@ section.Description {
   // 768px (vertical tablets)
   @media only screen and (min-width: 48rem) {
     padding-top: 4rem;
-    max-width: 43.2rem;
+    max-width: 43.2rem;  // ~691px, ~90% of 768px
 
     h2 {
       font-size: 2.5rem;
@@ -120,7 +120,7 @@ section.Description {
 
   // 1024px (horizontal tablets)
   @media only screen and (min-width: 64rem) {
-    max-width: 57.6rem;
+    max-width: 57.6rem;  // ~922px, ~90% of 1024px
 
     h2 {
       font-size: 2.5rem;
@@ -153,15 +153,11 @@ section.Description {
   // 1100px (larger devices)
   // Max width: 72rem
   @media only screen and (min-width: 68.75rem) {
-    max-width: 61.875rem; // 990px
+    max-width: 61.875rem; // 990px, 90% of 1100px
   }
 
   // 1280px and higher
   @media screen and (min-width: 80rem) {
     max-width: 72rem; // 1152px, 90% of 1280px
-
-    //h2 {
-    //  font-size: 3rem; // 48px
-    //}
   }
 }
