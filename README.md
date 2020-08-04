@@ -10,7 +10,7 @@ Figma Design: [figma.com/file/LqXoWYMh8QUrHvBRJbp8V9/Website?node-id=0%3A1](http
 
 ## Browser Tests
 
-The browser versions listed represent the earliest versions that seem to work. Data may not be fully accurate. Not all versions may have been tested.
+The browser versions listed represent the earliest versions that seem to work and newer versions should work just as well, if not better. Data may not be fully accurate. Not all versions may have been tested.
 
 **Works Great:** The website is fully usable and appears as intended.
 
@@ -50,7 +50,7 @@ The browser versions listed represent the earliest versions that seem to work. D
   - 10 - 11: Must disable typewriter effect for compatibility
   - 10: Welcome button padding and navbar padding are off but usable
   - 9: Page layout broken
-  - 6-8: The page cannot be displayed, possibly due to a DNS Error
+  - 6 - 8: The page cannot be displayed, possibly due to a DNS Error
 
 ### Mobile / Tablet
 
@@ -81,9 +81,10 @@ The browser versions listed represent the earliest versions that seem to work. D
 - Most Android devices can still use recent versions of Google Chrome, even devices on 4.4 Kitkat.
 - Android Browser
   - Android 4.4: Hamburger menu stuck open on page load and cannot be closed
-  - Android 2.2 - 4: Can't establish secure connection
+  - Android 2.2 - 4.3: Can't establish secure connection
   
 #### Windows Phone
+
 Tested on emulated Windows Phone 8.1 on version 8.10.14141.167
 
 | Browser           | Works Great  | Works with Issues |
