@@ -58,13 +58,15 @@ The browser versions listed represent the earliest versions that seem to work an
 
 | Browser | Works Great | Works with Issues |
 | ------- | ----------- | ----------------- |
-| Safari  | iOS 9       | None              |
+| Safari  | iOS 10      | iOS 7             |
 
 #### Notes
 
 - Most browsers on iOS, such as Chrome and Firefox, should work as well as the Safari version the browser is currently on due to browsers on iOS using WebKit.
 - Safari
-  - iOS 5.1 - iOS 8: Hamburger menu stuck open on page load and cannot be closed
+  - iOS 9: Emoji size doesn't change with font-size
+  - iOS 7 - 8: The hamburger menu component doesn't use -webkit-transition when the menu initially loads, resulting in the menu being open by default. A workaround has been implemented to close the menu when the page loads on iOS 8 and under.
+  - iOS 5.1 - 6: JavaScript doesn't run
   - iOS 3 - 4: Can't establish a secure connection to the server
 
 #### Android
@@ -78,18 +80,18 @@ The browser versions listed represent the earliest versions that seem to work an
 
 #### Notes
 
-- Most Android devices can still use recent versions of Google Chrome, even devices on 4.4 Kitkat.
+- Most Android devices can still use recent browsers, even devices on 4.4 Kitkat.
 - Android Browser
   - Android 4.4: Hamburger menu stuck open on page load and cannot be closed
   - Android 2.2 - 4.3: Can't establish secure connection
-  
+ 
 #### Windows Phone
 
 Tested on emulated Windows Phone 8.1 on version 8.10.14141.167
 
-| Browser           | Works Great  | Works with Issues |
-| ----------------- | ------------ | ----------------- |
-| Internet Explorer | None         | None              |
+| Browser           | Works Great | Works with Issues |
+| ----------------- | ----------- | ----------------- |
+| Internet Explorer | None        | None              |
 
 #### Notes
 
