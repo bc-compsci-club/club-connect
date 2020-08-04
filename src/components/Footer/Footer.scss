@@ -17,8 +17,8 @@
     }
   }
 
-  // Small laptops up to 1280x720
-  @media only screen and (min-width: 80rem) {
+  // 768px
+  @media only screen and (min-width: 48rem) {
     .footer-container {
       padding: 1rem 0;
 

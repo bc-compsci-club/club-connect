@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+// import { Link as ScrollLink } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
@@ -46,14 +46,18 @@ const Welcome = () => {
               <Link className="join-button" to="/join">
                 Join&nbsp;the&nbsp;Club
               </Link>
-              <ScrollLink
+              <Link className="learn-more" to="/about">
+                Learn More
+              </Link>
+              {/*<ScrollLink
                 className="learn-more"
                 to="about"
                 smooth={true}
                 duration={500}
+                offset={-64}
               >
                 Learn&nbsp;More
-              </ScrollLink>
+              </ScrollLink>*/}
             </div>
           </div>
 
@@ -94,8 +98,54 @@ const Slogan = () => {
     />
   );
 
-  if (window.innerWidth < 370) {
-    // < 370px Mobile
+  // <= 320px (small phones)
+  if (window.innerWidth <= 320) {
+    return (
+      <h1>
+        A community driven by&nbsp;
+        {/*<br />*/}
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
+        {typewriterComponent}
+      </h1>
+    );
+    // <= 370 (medium phones)
+  } else if (window.innerWidth <= 370) {
+    return (
+      <h1>
+        A community driven by&nbsp;
+        {/*<br />*/}
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
+        {typewriterComponent}
+      </h1>
+    );
+    // <= 600px (larger phones)
+  } else if (window.innerWidth <= 600) {
+    return (
+      <h1>
+        A community driven
+        <br />
+        by&nbsp;
+        <span
+          id="welcome-typewriter-placeholder"
+          style={{ fontWeight: 'bold' }}
+        >
+          inspiration.
+        </span>
+        {typewriterComponent}
+      </h1>
+    );
+    // <= 910px (tablets and landscape phones)
+  } else if (window.innerWidth <= 910) {
     return (
       <h1>
         A community driven by
@@ -110,10 +160,12 @@ const Slogan = () => {
       </h1>
     );
   } else {
-    // > 370px Mobile
+    // > 920px (larger tablets and laptops)
     return (
       <h1>
-        A community driven by&nbsp;
+        A community driven
+        <br />
+        by&nbsp;
         <span
           id="welcome-typewriter-placeholder"
           style={{ fontWeight: 'bold' }}

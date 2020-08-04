@@ -22,6 +22,7 @@
 
       p {
         font-family: 'Nunito', sans-serif;
+        font-size: 1.125rem;
       }
 
       a {
@@ -41,29 +42,65 @@
 
   // Desktop styles
 
-  // Small laptops up to 1280x720
-  @media only screen and (min-width: 80rem) {
+  // 768px
+  /*
+  @media only screen and (min-width: 48rem) {
     padding: 4rem 0;
 
     .highlight-container {
-      max-width: 76.875rem; // 1230px
+      max-width: 43rem;
       align-items: center;
       justify-content: space-between;
-      // border: 3px solid blue;
 
       .highlight-content {
         width: 44%;
 
         h2 {
-          font-size: 3rem;
+          font-size: 2.5rem;
         }
 
         p {
-          font-size: 1.25rem;
+          font-size: 1.1rem;
         }
 
         a {
-          font-size: 1.75rem;
+          font-size: 1.5rem;
+          color: #4d5eff;
+        }
+      }
+
+      .highlight-image {
+        margin: 0;
+        height: auto;
+        width: 50%;
+        border-radius: 20px;
+      }
+    }
+  }
+  */
+
+  // 1024px
+  @media only screen and (min-width: 64rem) {
+    padding: 4rem 0;
+
+    .highlight-container {
+      max-width: 58rem;
+      align-items: center;
+      justify-content: space-between;
+
+      .highlight-content {
+        width: 44%;
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-size: 1.1rem;
+        }
+
+        a {
+          font-size: 1.5rem;
           color: #4d5eff;
         }
       }
@@ -83,6 +120,52 @@
 
     .highlight-container.highlight-collaborate {
       flex-direction: row;
+    }
+  }
+
+  // 1200px
+  @media only screen and (min-width: 75rem) {
+    .highlight-container {
+      max-width: 68rem;
+
+      .highlight-content {
+        width: 44%;
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+        }
+
+        a {
+          font-size: 1.75rem;
+        }
+      }
+    }
+  }
+
+  // 1366px
+  @media only screen and (min-width: 85.375rem) {
+    .highlight-container {
+      max-width: 76.875rem; // 1230px
+
+      .highlight-content {
+        width: 44%;
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+        }
+
+        a {
+          font-size: 1.75rem;
+        }
+      }
     }
   }
 }
