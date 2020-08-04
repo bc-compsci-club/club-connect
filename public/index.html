@@ -31,6 +31,15 @@
       Brooklyn College Computer Science Club | Brooklyn College's Premier
       Computer Science Community
     </title>
+
+    <!-- IE11 Custom Properties Polyfill -->
+    <script>
+      window.MSInputMethodContext &&
+        document.documentMode &&
+        document.write(
+          '<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"><\x2fscript>'
+        );
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
