@@ -49,7 +49,7 @@
       "not dead",
       "not op_mini all",
       "ie >= 10",
-      "ios_saf >= 5.1",
+      "ios_saf >= 7",
       "safari >= 7.1"
     ],
     "development": [
