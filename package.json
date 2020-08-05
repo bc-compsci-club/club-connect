@@ -62,6 +62,6 @@
     "extends": "react-app"
   },
   "reactSnap": {
-    "inlineCss": true
+    "inlineCss": false
   }
 }
