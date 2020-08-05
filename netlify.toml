@@ -1,11 +1,18 @@
 [[headers]]
-  for = "/static/media/*.woff2"
-  [headers.values]
-	cache-control = '''
+for = "/static/media/*.woff2"
+[headers.values]
+cache-control = '''
     public,
 	max-age=86400,
 	immutable'''
 
+# Redirects for the domain
+[[redirects]]
+from = "/discord"
+to = "https://discord.gg/ztz44wG"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
 [build]
-  command = "npm run build"
-  publish = "build"
+command = "npm run build"
+publish = "build"
