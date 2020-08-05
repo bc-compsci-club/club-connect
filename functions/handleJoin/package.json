@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.12",
     "firebase-admin": "^9.0.0",
+    "md5": "^2.3.0",
     "mongo-sanitize": "^1.1.0",
     "uuid": "^8.2.0"
   }

@@ -1,11 +1,18 @@
 const admin = require('firebase-admin');
-const { v4: uuidv4 } = require('uuid');
+const mailchimp = require('@mailchimp/mailchimp_marketing');
 const sanitize = require('mongo-sanitize');
+const { v4: uuidv4 } = require('uuid');
+const md5 = require('md5');
 
 admin.initializeApp({
-  credential: admin.credential.applicationDefault(),
+  credential: admin.credential.applicationDefault()
 });
 const db = admin.firestore();
+
+mailchimp.setConfig({
+  apiKey: process.env.MAILCHIMP_API_KEY,
+  server: 'us17'
+});
 
 /**
  * HTTP Cloud Function.
@@ -24,7 +31,9 @@ exports.handleJoin = async (req, res) => {
   }
 
   // Check for correct referer
-  if (!(req.get('referer').substring(0, 27) === 'https://bccompsci.club/join')) {
+  if (
+    !(req.get('referer').substring(0, 27) === 'https://bccompsci.club/join')
+  ) {
     console.error('Incorrect referer!');
     console.log('Referer: ' + req.get('referer'));
     res.status(403).send('Forbidden');
@@ -67,14 +76,49 @@ exports.handleJoin = async (req, res) => {
     firstName: firstName,
     lastName: lastName,
     email: email,
-    joinDate: new Date(),
+    joinDate: new Date()
   });
 
   console.log(
     `${firstName} ${lastName} has joined the club with email ${email}.`
   );
 
-  // TODO: Sign up for MailChimp
+  const listId = '60501b2db2'; // ID for the main mailing list.
+  const subscriberHash = md5(email.toLowerCase());
+
+  async function processSubscribe() {
+    try {
+      const response = await mailchimp.lists.getListMember(
+        listId,
+        subscriberHash
+      );
+
+      console.log(
+        `The subscription status for the email "${email}" is ${response.status}.`
+      );
+    } catch (e) {
+      if (e.status === 404) {
+        console.log(
+          `The email "${email}" is not subscribed to the mailing list. Subscribing...`
+        );
+
+        const response = await mailchimp.lists.addListMember(listId, {
+          email_address: email,
+          status: 'subscribed',
+          merge_fields: {
+            FNAME: firstName,
+            LNAME: lastName
+          }
+        });
+
+        console.log(
+          `Successfully subscribed member to the club newsletter! The contact's id is ${response.id}.`
+        );
+      }
+    }
+  }
+
+  await processSubscribe();
 
   // Redirect to welcome page
   res.redirect('https://bccompsci.club/welcome');
