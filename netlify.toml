@@ -6,36 +6,6 @@
 	max-age=86400,
 	immutable'''
 
-[[redirects]]
-  from = "/surveys/welcome-back"
-  to = "https://forms.gle/MkQeb1DQnmon1htZ9"
-  status = 200
-
-[[redirects]]
-  from = "/discord"
-  to = "https://discord.gg/ztz44wG"
-  status = 302
-
-[[redirects]]
-  from = "/messenger"
-  to = "/welcome"
-  status = 302
-
-[[redirects]]
-  from = "/facebook"
-  to = "https://www.facebook.com/groups/bc.cis.club"
-  status = 302
-
-[[redirects]]
-  from = "/instagram"
-  to = "https://www.instagram.com/bc_compsci"
-  status = 302
-
-[[redirects]]
-  from = "/*"
-  to = "/"
-  status = 200
-
 [build]
   command = "npm run build"
   publish = "build"
