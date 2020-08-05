@@ -37,6 +37,11 @@ to = "https://forms.gle/CBMDV1aDVqmVAVrv9"
 status = 302
 headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
+[[redirects]]
+from = "/*"
+to = "/"
+status = 200
+
 [build]
 command = "npm run build"
 publish = "build"
