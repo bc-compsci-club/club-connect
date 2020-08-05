@@ -9,7 +9,7 @@ cache-control = '''
 # Redirects for the domain
 [[redirects]]
 from = "/discord"
-to = "https://discord.gg/ztz44wG"
+to = "https://discord.com"
 status = 302
 headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
