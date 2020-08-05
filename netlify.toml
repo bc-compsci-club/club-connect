@@ -12,6 +12,26 @@
   status = 200
 
 [[redirects]]
+  from = "/discord"
+  to = "https://discord.gg/GxYBcx8"
+  status = 200
+
+[[redirects]]
+  from = "/messenger"
+  to = "/welcome"
+  status = 200
+
+[[redirects]]
+  from = "/facebook"
+  to = "https://www.facebook.com/groups/bc.cis.club"
+  status = 200
+
+[[redirects]]
+  from = "/instagram"
+  to = "https://www.instagram.com/bc_compsci"
+  status = 200
+
+[[redirects]]
   from = "/*"
   to = "/"
   status = 200
