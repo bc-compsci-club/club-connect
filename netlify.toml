@@ -9,8 +9,32 @@ cache-control = '''
 # Redirects for the domain
 [[redirects]]
 from = "/discord"
-to = "https://discord.com"
+to = "https://discord.com/invite/ztz44wG"
 status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}# Redirects for the domain
+
+[[redirects]]
+from = "/messenger"
+to = "https://messenger.com"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
+[[redirects]]
+from = "/facebook"
+to = "https://www.facebook.com/groups/bc.cis.club"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
+[[redirects]]
+from = "/instagram"
+to = "https://www.instagram.com/bc_compsci"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
+[[redirects]]
+from = "/surveys/welcomeback"
+to = "https://forms.gle/CBMDV1aDVqmVAVrv9"
+status = 200
 headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
 [build]
