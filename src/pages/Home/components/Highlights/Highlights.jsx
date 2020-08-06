@@ -9,14 +9,12 @@ import network from 'assets/home/highlights/network.jpg';
 
 const descriptions = [
   // Learn
-  `Whether you’ve never written a line of code before or you’ve written
-  full-stack applications that scale to planet-scale, we’ve got you
-  covered. Our exciting events, ranging from beginner to advanced, will
-  teach you how to create your very first website or how to deploy and
-  auto-scale your application on the cloud. With tech talks, workshops,
-  challenges, and more, there’s plenty of ways to gain new skills and
-  level up your career. Just bring your hunger for knowledge and we’ll
-  take care of the rest.`,
+  `Whether you’ve never even seen a line of code before or you’ve written
+  full-stack applications that scale, we’ve got you covered. With tech
+  talks, workshops, challenges, and more, there’s plenty of ways to gain
+  new skills and level up your career. Our exciting events, ranging from
+  beginner to advanced, will get you up and running with your first
+  website or how to deploy and auto-scale your application on the cloud.`,
 
   // Collaborate
   `Teamwork makes the dream work! Find team members to work on a project
@@ -62,7 +60,7 @@ const Highlights = () => {
         title="Network"
         description={descriptions[2]}
         linkUrl="/join"
-        linkText="Join the Community"
+        linkText="Join The Community"
         image={network}
         imageAlt="Network"
         backgroundColor="#EEF7FF"
