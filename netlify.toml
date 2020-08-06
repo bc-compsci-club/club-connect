@@ -38,6 +38,12 @@ status = 302
 headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
 [[redirects]]
+from = "/surveys/welcome"
+to = "https://forms.gle/vmoyfgcKekVCp9MU7"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
+[[redirects]]
 from = "/*"
 to = "/"
 status = 200
