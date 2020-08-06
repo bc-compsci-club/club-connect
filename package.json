@@ -6,7 +6,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "body-parser": "^1.19.0",
     "bootstrap": "^4.5.0",
     "empty": "^0.10.1",
     "flow-bin": "^0.129.0",
