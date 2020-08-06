@@ -8,10 +8,7 @@ const Description = () => {
     <section className="Description">
       <h2 className="description-heading">Reach New Heights</h2>
 
-      <p className="description-opening-paragraph">
-        The Brooklyn College Computer Science Club is a community that enables
-        students interested in technology to learn and grow together.
-      </p>
+      <OpeningParagraph />
       <img
         className="description-image"
         src={image}
@@ -46,6 +43,25 @@ const Description = () => {
       </div>
     </section>
   );
+};
+
+const OpeningParagraph = () => {
+  if (window.innerWidth <= 700) {
+    return (
+      <p className="description-opening-paragraph">
+        The Brooklyn College Computer Science Club is a community that enables
+        students interested in technology to learn and grow together.
+      </p>
+    );
+  } else {
+    return (
+      <p className="description-opening-paragraph">
+        The Brooklyn College Computer Science Club is a community that
+        <br />
+        enables students interested in technology to learn and grow together.
+      </p>
+    );
+  }
 };
 
 export default Description;
