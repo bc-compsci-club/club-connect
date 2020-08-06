@@ -120,7 +120,7 @@
   // Desktop styles
 
   // 1200px and above
-  @media only screen and (min-width: 75rem) {
+  @media screen and (min-width: 75rem) {
     // Hide the menu entirely
     display: none;
   }

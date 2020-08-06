@@ -63,7 +63,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
-  @media only screen and (min-width: 80rem) {
+  @media screen and (min-width: 80rem) {
     display: flex;
     flex-direction: column;
     max-width: 53.8125rem; // 861px, 70% of 1230px
