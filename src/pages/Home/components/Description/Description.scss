@@ -2,162 +2,201 @@
 // h2 font sizes match the h1 font sizes for the homepage only!
 
 section.Description {
-  // Mobile styles
-
   margin: 0 auto;
-  padding-top: 2.5rem;
-  max-width: 87.5vw;
 
+  // Mobile styles
   p {
-    font-family: 'Nunito', sans-serif;
+    font-family: var(--font-family-text);
   }
 
   h2 {
-    font-family: 'Raleway', sans-serif;
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-h2);
   }
 
-  .description-heading {
-    text-align: center;
-    font-weight: normal;
-    margin-bottom: 1rem;
-  }
-
-  .description-opening-paragraph {
+  .description-top {
     margin: 0 auto;
-    font-size: 1.125rem;
-    text-align: center;
-  }
+    padding: 2.5rem var(--content-side-padding-value) 0;
 
-  .description-image {
-    display: block;
-    margin: 2rem auto;
-    height: auto;
-    width: 100%;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-    border-radius: 10px;
-  }
-
-  .description-mission {
-    margin: 4rem auto;
-    font-weight: bold;
-    text-align: center;
-
-    .description-mission-heading {
-      font-family: 'Raleway', sans-serif;
-      font-weight: normal;
-      font-size: 2.75rem;
+    .description-heading {
+      margin-bottom: 1rem;
+      font-size: var(--font-size-h2);
+      font-weight: bold;
+      text-align: center;
     }
 
-    .description-mission-content {
-      font-size: 1.3rem;
+    .description-opening-paragraph {
+      margin: 0 auto;
+      font-size: var(--font-size-p);
+      text-align: center;
+    }
+
+    .description-image {
+      display: block;
+      margin: 2rem auto;
+      height: auto;
+      width: 100%;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+    .description-mission {
+      margin: 4rem auto;
+      text-align: center;
+
+      .description-mission-heading {
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        font-size: 2.275rem;
+      }
+
+      .MissionContent {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
     }
   }
 
-  .description-main-content p {
-    margin: 1rem auto;
-    font-size: 1.125rem;
+  .description-main {
+    padding: 0 var(--content-side-padding-value);
+
+    p {
+      margin: 1rem auto;
+      font-size: var(--font-size-p);
+    }
   }
 
   // 370px (larger phones)
   @media screen and (min-width: 23.125rem) {
-    // Larger Our Mission section
-    .description-mission {
-      .description-mission-heading {
-        font-size: 3.15rem;
-      }
+    .description-top {
+      .description-mission {
+        .description-mission-heading {
+          font-size: 2.625rem;
+        }
 
-      .description-mission-content {
-        font-size: 1.5rem;
+        .MissionContent {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    @media screen and (orientation: landscape) {
+      .description-top {
+        .description-mission {
+          .description-mission-heading {
+            font-size: 2.3625rem;
+          }
+
+          .MissionContent {
+            font-size: 1.35rem;
+          }
+        }
       }
     }
   }
 
-  // Tablet and Desktop styles
-  // 18px font size, variable heading sizes
+  // Desktop, Tablet, and Horizontal Phone styles
 
-  // 768px (vertical tablets)
-  @media only screen and (min-width: 48rem) {
-    padding-top: 4rem;
-    max-width: 43.2rem;  // ~691px, ~90% of 768px
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  @media screen and (min-width: 43.75rem) {
+    // Portrait phones
+    .description-top {
+      padding: 4rem 6.25vw 0;
 
-    h2 {
-      font-size: 2.5rem;
-    }
-
-    p {
-      font-size: 1.125rem; // 18px
-    }
-
-    img {
-      border-radius: 20px;
-    }
-
-    .description-opening-paragraph {
-      max-width: 85%;
-    }
-
-    .description-image {
-      max-width: 100%;
-    }
-
-    .description-mission {
-      max-width: 100%;
-
-      .description-mission-heading {
-        font-size: 3.5rem;
+      // Padding for landscape iPhones with notch
+      @supports (padding: max(0px)) {
+        @media screen and (orientation: landscape) {
+          padding-left: max(6.25vw, calc(env(safe-area-inset-left)));
+          padding-right: max(6.25vw, calc(env(safe-area-inset-right)));
+        }
       }
 
-      .description-mission-content {
-        font-size: 1.65rem;
-        //border: 3px solid blue;
+      .description-heading {
+        font-weight: 400;
+      }
+
+      .description-image {
+        border-radius: 15px;
       }
     }
 
-    .description-main-content p {
-      max-width: 100%;
+    .description-main {
+      padding: 0 10vw;
+
+      // Padding for landscape iPhones with notch
+      @supports (padding: max(0px)) {
+        @media screen and (orientation: landscape) {
+          padding-left: max(10vw, calc(env(safe-area-inset-left) + 10vw));
+          padding-right: max(10vw, calc(env(safe-area-inset-right) + 10vw));
+        }
+      }
+    }
+
+    // Landscape phones
+    @media screen and (orientation: landscape) {
+      .description-top {
+        .description-image-container {
+          padding-left: env(safe-area-inset-left);
+          padding-right: env(safe-area-inset-right);
+        }
+
+        .description-mission {
+          .description-mission-heading {
+            font-size: 2.5375rem;
+          }
+
+          .MissionContent {
+            font-size: 1.45rem;
+          }
+        }
+      }
+    }
+  }
+
+  // 768px
+  @media screen and (min-width: 48rem) {
+    .description-top {
+      .description-mission {
+        .description-mission-heading {
+          font-size: 2.8rem;
+        }
+
+        .MissionContent {
+          font-size: 1.6rem;
+        }
+      }
     }
   }
 
   // 1024px (horizontal tablets)
-  @media only screen and (min-width: 64rem) {
-    max-width: 57.6rem;  // ~922px, ~90% of 1024px
+  @media screen and (min-width: 64rem) {
+    .description-top {
+      padding: 4rem 0 0;
 
-    h2 {
-      font-size: 2.5rem;
-    }
+      .description-image {
+        max-width: 52rem;
+      }
 
-    // Slightly widen width for horizontal tablets
-    .description-opening-paragraph {
-      max-width: 62.5%;
-    }
+      .description-mission {
+        // Increase the font size slightly
+        .description-mission-heading {
+          font-size: 2.975rem;
+        }
 
-    .description-image {
-      max-width: 75%;
-    }
-
-    .description-mission {
-      max-width: 80%;
-
-      // Increase the font size slightly
-      .description-mission-content {
-        font-size: 1.75rem;
-        //border: 3px solid red;
+        .MissionContent {
+          font-size: 1.7rem;
+        }
       }
     }
 
-    .description-main-content p {
-      max-width: 67.5%;
+    .description-main p {
+      padding: 0;
+      max-width: 42rem;
     }
-  }
-
-  // 1100px (larger devices)
-  // Max width: 72rem
-  @media only screen and (min-width: 68.75rem) {
-    max-width: 61.875rem; // 990px, 90% of 1100px
   }
 
   // 1280px and higher
   @media screen and (min-width: 80rem) {
-    max-width: 72rem; // 1152px, 90% of 1280px
+    max-width: var(--large-screen-max-width);
   }
 }
