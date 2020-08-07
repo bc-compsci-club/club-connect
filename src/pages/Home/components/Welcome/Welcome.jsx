@@ -1,42 +1,18 @@
 // @flow
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import { Link as ScrollLink } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
 
-const strings = [
-  'inspiration.',
-  'collaboration.',
-  'diversity.',
-  'passion.',
-  'creativity.',
-  'learning.',
-];
-
-const typewriterInit = (typewriter) => {
-  document.getElementById('welcome-typewriter-placeholder').remove();
-  const typeString = (string, pauseTime) => {
-    typewriter.typeString(string).pauseFor(pauseTime).deleteAll(30);
-  };
-
-  for (const string of strings) {
-    typeString(string, 2500);
-    // TODO: Slideshow with club images
-  }
-
-  typewriter.start();
-};
-
-const Welcome = () => {
+const Welcome = (props) => {
   return (
     <section className="Welcome">
       <div className="welcome-background-container">
         <div className="welcome-container">
           <div className="welcome-content">
-            <Slogan />
-            <p>
+            <Slogan width={props.width} />
+            <p className="welcome-description">
               Learn something new at an event, form a team to build a project
               with, or find out more about the field! The Brooklyn College
               Computer Science Club welcomes you, regardless of your programming
@@ -49,15 +25,6 @@ const Welcome = () => {
               <Link className="learn-more" to="/about">
                 Learn More
               </Link>
-              {/*<ScrollLink
-                className="learn-more"
-                to="about"
-                smooth={true}
-                duration={500}
-                offset={-64}
-              >
-                Learn&nbsp;More
-              </ScrollLink>*/}
             </div>
           </div>
 
@@ -70,112 +37,116 @@ const Welcome = () => {
   );
 };
 
-const Slogan = () => {
-  // Disable Typewriter effect on Internet Explorer
+const Slogan = (props) => {
   if (window.document.documentMode) {
+    console.log('Internet Explorer detected, disabling typewriter effect.');
     return (
-      <h1>
-        A community driven by&nbsp;
-        <span
-          id="welcome-typewriter-placeholder"
-          style={{ fontWeight: 'bold' }}
-        >
-          inspiration.
-        </span>
-      </h1>
+      // eslint-disable-next-line
+      <span className="Slogan" role="text">
+        <h1 className="SloganBeginning">
+          A community driven by&nbsp;
+          <span id="welcome-typewriter-placeholder">inspiration.</span>
+        </h1>
+      </span>
+    );
+  } else {
+    return (
+      // eslint-disable-next-line
+      <span className="Slogan" role="text">
+        <SloganBeginning width={props.width}>
+          <TypewriterWelcome />
+        </SloganBeginning>
+      </span>
     );
   }
+};
 
-  const typewriterComponent = (
-    <Typewriter
-      options={{
-        autoStart: true,
-        loop: true,
-        delay: 30,
-        deleteSpeed: 30,
-      }}
-      onInit={(typewriter) => typewriterInit(typewriter)}
-    />
-  );
-
-  // <= 320px (small phones)
-  if (window.innerWidth <= 320) {
+const SloganBeginning = (props) => {
+  // <= 370 (small phones)
+  if (props.width <= 370) {
     return (
-      <h1>
-        A community driven by&nbsp;
-        {/*<br />*/}
-        <span
-          id="welcome-typewriter-placeholder"
-          style={{ fontWeight: 'bold' }}
-        >
-          inspiration.
-        </span>
-        {typewriterComponent}
-      </h1>
-    );
-    // <= 370 (medium phones)
-  } else if (window.innerWidth <= 370) {
-    return (
-      <h1>
-        A community driven by&nbsp;
-        {/*<br />*/}
-        <span
-          id="welcome-typewriter-placeholder"
-          style={{ fontWeight: 'bold' }}
-        >
-          inspiration.
-        </span>
-        {typewriterComponent}
+      <h1 className="SloganBeginning">
+        A community driven by&nbsp;{props.children}
       </h1>
     );
     // <= 600px (larger phones)
-  } else if (window.innerWidth <= 600) {
+  } else if (props.width <= 600) {
     return (
-      <h1>
+      <h1 className="SloganBeginning">
         A community driven
         <br />
         by&nbsp;
-        <span
-          id="welcome-typewriter-placeholder"
-          style={{ fontWeight: 'bold' }}
-        >
-          inspiration.
-        </span>
-        {typewriterComponent}
+        {props.children}
       </h1>
     );
     // <= 910px (tablets and landscape phones)
-  } else if (window.innerWidth <= 910) {
+  } else if (props.width <= 910) {
     return (
-      <h1>
+      <h1 className="SloganBeginning">
         A community driven by
         <br />
-        <span
-          id="welcome-typewriter-placeholder"
-          style={{ fontWeight: 'bold' }}
-        >
-          inspiration.
-        </span>
-        {typewriterComponent}
+        {props.children}
       </h1>
     );
   } else {
-    // > 920px (larger tablets and laptops)
+    // > 910px (larger tablets and laptops)
     return (
-      <h1>
+      <h1 className="SloganBeginning">
         A community driven
         <br />
         by&nbsp;
-        <span
-          id="welcome-typewriter-placeholder"
-          style={{ fontWeight: 'bold' }}
-        >
-          inspiration.
-        </span>
-        {typewriterComponent}
+        {props.children}
       </h1>
     );
   }
+};
+
+const TypewriterWelcome = () => {
+  useEffect(() => {
+    console.log('New typewriter created');
+    return () => {
+      console.log('Cleaning up typewriter');
+    };
+  }, []);
+
+  // Strings for the typewriter effect to cycle through
+  const strings = [
+    'inspiration.',
+    'collaboration.',
+    'diversity.',
+    'passion.',
+    'creativity.',
+    'learning.',
+  ];
+
+  const typewriterInit = (typewriter) => {
+    document.getElementById('welcome-typewriter-placeholder').remove();
+    const typeString = (string, pauseTime) => {
+      typewriter.typeString(string).pauseFor(pauseTime).deleteAll(30);
+    };
+
+    for (const string of strings) {
+      typeString(string, 2500);
+      // TODO: Slideshow with club images
+    }
+
+    typewriter.start();
+  };
+
+  return (
+    <span className="TypewriterWelcome">
+      <span id="welcome-typewriter-placeholder">inspiration.</span>
+      <Typewriter
+        options={{
+          autoStart: true,
+          loop: true,
+          delay: 30,
+          deleteSpeed: 30,
+        }}
+        onInit={(typewriter) => typewriterInit(typewriter)}
+      />
+    </span>
+  );
 };
 
 export default Welcome;
