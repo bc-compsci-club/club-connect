@@ -1,22 +1,23 @@
 // @flow
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
-
-import React  from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
-
-import Routes from 'Routes';
-import Navbar from 'components/Navbar';
-import Footer from 'components/Footer';
-import ScrollToTop from 'components/ScrollToTop';
-import NavbarHamburgerMenu from './components/Navbar/NavbarHamburgerMenu';
-import { NavbarHamburgerMenuProvider } from './components/Navbar/NavbarHamburgerMenu/NavbarHamburgerMenuContext';
-
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-nunito';
 import 'typeface-raleway';
+
+import Footer from 'components/Footer';
+import Navbar from 'components/Navbar';
+import ScrollToTop from 'components/ScrollToTop';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {BrowserRouter as Router} from 'react-router-dom';
+import Routes from 'Routes';
+
+import NavbarHamburgerMenu from './components/Navbar/NavbarHamburgerMenu';
+import {
+  NavbarHamburgerMenuProvider
+} from './components/Navbar/NavbarHamburgerMenu/NavbarHamburgerMenuContext';
 
 const page = (
   <React.StrictMode>

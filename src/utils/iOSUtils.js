@@ -1,7 +1,6 @@
 // Checks if the device is an iOS device.
-export const isUsingiOS = () => {
-  return /iP(hone|od touch|ad)/.test(navigator.platform);
-};
+export const isUsingiOS =
+    () => { return /iP(hone|od touch|ad)/.test(navigator.platform);};
 
 // Gets the iOS version. Returns null if the device isn't an iOS device.
 export const getiOSVersion = () => {
