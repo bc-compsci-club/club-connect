@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Footer.scss';
 
 const Footer = () => {
@@ -10,8 +10,25 @@ const Footer = () => {
 };
 
 const FooterContents = () => {
-  if (window.innerWidth < 400) {
-    // < 400px Mobile
+  // TODO: Global window resize listener
+  const [width, setWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    console.log('Adding footer resize event listener');
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      console.log('Removing footer resize event listener');
+    };
+  }, []);
+
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+
+  if (width < 700) {
+    // < 700px (Vertical phones and small horizontal phones)
     return (
       <div className="footer-container">
         <p>© 2020 Brooklyn College Computer Science Club</p>
@@ -24,7 +41,7 @@ const FooterContents = () => {
       </div>
     );
   } else {
-    // > 400px Mobile
+    // > 700px (Desktops, laptops, tablets, and large horizontal phones)
     return (
       <div className="footer-container">
         <p>© 2020 Brooklyn College Computer Science Club</p>
