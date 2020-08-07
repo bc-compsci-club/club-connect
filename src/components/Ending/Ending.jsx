@@ -26,7 +26,8 @@ const Header = () => {
   } else {
     // Landscape phones, tablets and desktops
     return (
-      <h2>
+      // eslint-disable-next-line
+      <h2 role="text">
         Unlock your full potential at the
         <br />
         Brooklyn College Computer Science Club.
