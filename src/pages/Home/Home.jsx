@@ -28,7 +28,7 @@ const Home = () => {
         <Welcome width={width} />
         <Description width={width} />
         <Highlights />
-        <Ending />
+        <Ending width={width}/>
       </article>
     </div>
   );
