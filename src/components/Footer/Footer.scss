@@ -2,7 +2,7 @@
   background-color: #232a67;
 
   .footer-container {
-    padding: 2rem 0;
+    padding: 1rem 0;
 
     p {
       font-size: 0.75rem;
@@ -17,11 +17,9 @@
     }
   }
 
-  // 768px
-  @media only screen and (min-width: 48rem) {
+  // 700px (vertical tablets and horizontal phones)
+  @media screen and (min-width: 43.75rem) {
     .footer-container {
-      padding: 1rem 0;
-
       p {
         font-size: 1rem;
       }

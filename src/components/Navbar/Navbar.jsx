@@ -13,8 +13,9 @@ const Navigation = () => {
       <div className="navbar-main-items">
         <div className="nav-logo">
           <Link to="/">
-            <img src={logo} alt="Brooklyn College Computer Science Club" />
-            <p>
+            <img src={logo} alt="Logo" />
+            {/* eslint-disable-next-line */}
+            <p role="text">
               Brooklyn College <br /> Computer Science Club
             </p>
           </Link>

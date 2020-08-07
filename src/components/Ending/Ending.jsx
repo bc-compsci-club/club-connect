@@ -3,19 +3,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Ending.scss';
 
-const Ending = () => {
+const Ending = ({ width }) => {
   return (
     <section className="Ending">
       <div className="ending-container">
-        <Header />
+        <EndingText width={width} />
         <Link to="/join">Join the Club</Link>
       </div>
     </section>
   );
 };
 
-const Header = () => {
-  if (window.innerWidth <= 576) {
+const EndingText = ({ width }) => {
+  if (width < 700) {
     // Vertical phones
     return (
       <h2>
@@ -26,7 +26,8 @@ const Header = () => {
   } else {
     // Landscape phones, tablets and desktops
     return (
-      <h2>
+      // eslint-disable-next-line
+      <h2 role="text">
         Unlock your full potential at the
         <br />
         Brooklyn College Computer Science Club.

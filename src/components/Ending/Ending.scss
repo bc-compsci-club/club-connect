@@ -5,8 +5,7 @@
     display: flex;
     flex-direction: column;
     margin: 4rem auto 0;
-    padding: 5rem 0;
-    max-width: 87.5vw;
+    padding: 5rem 6.25vw;
 
     h2 {
       margin: 0;
@@ -27,7 +26,8 @@
       font-size: 1.25rem;
       transition: 0.2s;
       transition-timing-function: ease-in-out;
-      padding: 1rem 25vw;
+      padding: 1rem;
+      width: 100%;
       color: #4d5eff;
       font-weight: bold;
       background-color: #fff;
@@ -45,13 +45,13 @@
     }
   }
 
-  // Desktop styles
+  // Tablet and Desktop styles
 
-  // 1024px
-  @media only screen and (min-width: 48rem) {
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  @media screen and (min-width: 43.75rem) {
     .ending-container {
-      margin: 0 auto; // 1280x720 up to 1366x768 only
-      max-width: 76.875rem; // 1230px
+      margin: 0 auto;
+      max-width: 76.875rem;
 
       h2 {
         font-size: 2rem;
@@ -61,24 +61,16 @@
       a {
         font-size: 1.5rem;
         padding: 1rem 2.5rem;
+        width: auto;
       }
     }
   }
 
   // Small laptops up to 1280x720
-  @media only screen and (min-width: 80rem) {
+  @media screen and (min-width: 80rem) {
     .ending-container {
-      margin: 0 auto; // 1280x720 up to 1366x768 only
-      max-width: 76.875rem; // 1230px
-
-      h2 {
-        font-size: 2.5rem;
-        line-height: initial;
-      }
-
       a {
         font-size: 1.75rem;
-        padding: 1rem 2.5rem;
       }
     }
   }

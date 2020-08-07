@@ -1,5 +1,4 @@
 // Welcome section of the homepage.
-// The mobile h1 and paragraph sizing here is adjusted for the welcome area only!
 
 section.Welcome {
   // Mobile styles
@@ -13,16 +12,7 @@ section.Welcome {
 
   .welcome-container {
     margin: 0 auto;
-
-    // Landscape large phones
-    padding: 0 5vw;
-
-    @supports (padding: max(0px)) {
-      @media screen and (orientation: landscape) {
-        padding-left: max(5vw, calc(env(safe-area-inset-left) + 1rem));
-        padding-right: max(5vw, calc(env(safe-area-inset-right) + 1rem));
-      }
-    }
+    padding: 0 6.25vw;
 
     display: flex;
     flex-direction: column;
@@ -32,11 +22,19 @@ section.Welcome {
     justify-items: center;
 
     .welcome-content {
-      h1 {
+      .Slogan {
         margin: 0;
         font-size: 1.875rem;
-        font-weight: 400;
         font-family: 'Raleway', sans-serif;
+
+        .SloganBeginning {
+          #welcome-typewriter-placeholder {
+            font-weight: bold;
+          }
+
+          font-size: inherit;
+          font-weight: 400;
+        }
 
         .Typewriter {
           display: inline-block;
@@ -47,7 +45,7 @@ section.Welcome {
         }
       }
 
-      p {
+      .welcome-description {
         margin-top: 1rem;
         font-size: 1rem;
         font-family: 'Nunito', sans-serif;
@@ -69,7 +67,7 @@ section.Welcome {
           font-family: 'Nunito', sans-serif;
           transition: 0.2s;
           transition-timing-function: ease-in-out;
-          width: 90%;
+          width: 95%;
         }
 
         a.join-button {
@@ -122,33 +120,34 @@ section.Welcome {
   }
 
   // 350px (medium phones)
+  // Increase heading and paragraph font size a little bit
   @media screen and (min-width: 21.875rem) {
-    // Increase heading and paragraph font size a little bit
     .welcome-container .welcome-content {
-      h1 {
+      .Slogan {
         font-size: 2.1rem;
       }
 
-      p {
+      .welcome-description {
         font-size: 1.125rem;
       }
     }
   }
 
   // 370px (larger phones)
+  // Increase heading font a little bit
   @media screen and (min-width: 23.125rem) {
-    // Increase heading font size more
     .welcome-container .welcome-content {
-      h1 {
-        font-size: 2.25rem;
+      .Slogan {
+        font-size: 2.2rem;
       }
     }
   }
 
-  // Desktop styles
+  // Tablet and Desktop styles
   // TODO: Make background look like prototype
 
   // 700px (vertical tablets and horizontal phones)
+  // Use row format for content.
   @media screen and (min-width: 43.75rem) {
     .welcome-background-container {
       padding: 5.5% 0;
@@ -163,15 +162,25 @@ section.Welcome {
     .welcome-container {
       flex-direction: row;
 
+      padding: 0 5vw;
+
+      // Landscape iPhones with notch
+      @supports (padding: max(0px)) {
+        @media screen and (orientation: landscape) {
+          padding-left: max(5vw, calc(env(safe-area-inset-left) + 1rem));
+          padding-right: max(5vw, calc(env(safe-area-inset-right) + 1rem));
+        }
+      }
+
       // Increase heading and paragraph size more
       .welcome-content {
         max-width: 45%;
 
-        h1 {
+        .Slogan {
           font-size: 2.5rem;
         }
 
-        p {
+        .welcome-description {
           font-size: 1.1rem;
           line-height: 1.5;
         }
@@ -197,7 +206,8 @@ section.Welcome {
     }
   }
 
-  // 1024px (tablet horizontal)
+  // 1024px (horizontal tablets)
+  // Use row format for buttons.
   @media screen and (min-width: 64rem) {
     .welcome-background-container {
       padding: 4% 0;
@@ -227,15 +237,16 @@ section.Welcome {
     }
   }
 
-  // 1100px
+  // 1100px (small laptops)
+  // Set font size for all larger resolutions
   @media screen and (min-width: 68.75rem) {
     .welcome-container {
       .welcome-content {
-        h1 {
+        .Slogan {
           font-size: 3rem;
         }
 
-        p {
+        .welcome-description {
           font-size: 1.25rem;
         }
 
@@ -248,7 +259,8 @@ section.Welcome {
     }
   }
 
-  // 1280px
+  // 1280px (small - medium laptops)
+  // Shrink padding on top and bottom of welcome and adjust proportions of welcome container items for larger resolutions.
   @media screen and (min-width: 80rem) {
     .welcome-background-container {
       padding: 3% 0;
@@ -265,7 +277,8 @@ section.Welcome {
     }
   }
 
-  // 1366px
+  // 1366px (medium laptops)
+  // Increase margin on top and set max width for all larger resolutions
   @media screen and (min-width: 85.375rem) {
     margin-top: 2%;
 
@@ -275,7 +288,8 @@ section.Welcome {
     }
   }
 
-  // 1920px and above
+  // 1920px and above (desktops)
+  // Increase margin on top
   @media screen and (min-width: 120rem) {
     margin-top: 4%;
   }

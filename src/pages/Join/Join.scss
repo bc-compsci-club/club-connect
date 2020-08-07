@@ -118,7 +118,7 @@
   // Desktop styles
 
   // 768px
-  @media only screen and (min-width: 48rem) {
+  @media screen and (min-width: 48rem) {
     .join-flex-container {
       .join-container {
         max-width: 512px;

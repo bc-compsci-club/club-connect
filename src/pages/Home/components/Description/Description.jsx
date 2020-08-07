@@ -3,30 +3,26 @@ import React from 'react';
 import './Description.scss';
 import image from 'assets/home/linkedin.jpg';
 
-const Description = () => {
+const Description = (props) => {
   return (
     <section className="Description">
-      <h2 className="description-heading">Reach New Heights</h2>
-
-      <p className="description-opening-paragraph">
-        The Brooklyn College Computer Science Club is a community that enables
-        students interested in technology to learn and grow together.
-      </p>
-      <img
-        className="description-image"
-        src={image}
-        alt="Club members visiting LinkedIn during a club company visit."
-      />
-
-      <div className="description-mission">
-        <h3 className="description-mission-heading">Our Mission:</h3>
-        <p className="description-mission-content">
-          To help students interested in technology to meet other
-          like&#8209;minded students and to help advance their careers.
-        </p>
+      <div className="description-top">
+        <h2 className="description-heading">Reach New Heights</h2>
+        <OpeningParagraph width={props.width} />
+        <div className="description-image-container">
+          <img
+            className="description-image"
+            src={image}
+            alt="Club members visiting LinkedIn during a club company visit."
+          />
+        </div>
+        {/* eslint-disable-next-line */}
+        <div className="description-mission" role="text">
+          <h3 className="description-mission-heading">Our Mission:</h3>
+          <MissionContent width={props.width} />
+        </div>
       </div>
-
-      <div className="description-main-content">
+      <div className="description-main">
         <p>
           The Computer Science Club offers a multitude of fun, exciting, and
           beginner-friendly events designed to enrich and grow your
@@ -46,6 +42,47 @@ const Description = () => {
       </div>
     </section>
   );
+};
+
+const OpeningParagraph = ({ width }) => {
+  if (width < 700) {
+    return (
+      <p className="description-opening-paragraph">
+        The Brooklyn College Computer Science Club is a community that enables
+        students interested in technology to learn and grow together.
+      </p>
+    );
+  } else {
+    return (
+      // eslint-disable-next-line
+      <p className="description-opening-paragraph" role="text">
+        The Brooklyn College Computer Science Club is a community that
+        <br />
+        enables students interested in technology to learn and grow together.
+      </p>
+    );
+  }
+};
+
+const MissionContent = ({ width }) => {
+  // The line doesn't evenly break until ~716px so we need to up it from 700px
+  if (width < 720) {
+    return (
+      <p className="MissionContent">
+        To help students interested in technology to meet other
+        like&#8209;minded students and to help advance their careers.
+      </p>
+    );
+  } else {
+    return (
+      // eslint-disable-next-line
+      <p className="MissionContent" role="text">
+        To help students interested in technology to meet other
+        <br />
+        like&#8209;minded students and to help advance their careers.
+      </p>
+    );
+  }
 };
 
 export default Description;

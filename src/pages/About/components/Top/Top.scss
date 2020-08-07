@@ -23,10 +23,11 @@
 
   h1 {
     font-family: 'Raleway', sans-serif;
+    font-weight: 400;
     font-size: 2rem;
 
     // Small phones
-    @media only screen and (max-width: 320px) {
+    @media screen and (max-width: 320px) {
       font-size: 1.75rem;
     }
 
@@ -64,7 +65,7 @@
   // Desktop styles
 
   // Small laptops up to 1280x720
-  @media only screen and (min-width: 80rem) {
+  @media screen and (min-width: 75rem) {
     background-image:
       linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
       url('../../../../assets/about/about-header-desktop.jpg');
@@ -74,7 +75,7 @@
     max-height: 60vh;
 
     h1 {
-      font-size: 4.25rem;
+      font-size: 4rem;
       margin-bottom: 5%;
     }
 
