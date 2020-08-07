@@ -12,6 +12,7 @@ import Footer from 'components/Footer';
 import ScrollToTop from 'components/ScrollToTop';
 import NavbarHamburgerMenu from './components/Navbar/NavbarHamburgerMenu';
 import { NavbarHamburgerMenuProvider } from './components/Navbar/NavbarHamburgerMenu/NavbarHamburgerMenuContext';
+
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'typeface-nunito';
