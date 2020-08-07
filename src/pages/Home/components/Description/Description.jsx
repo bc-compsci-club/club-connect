@@ -45,7 +45,7 @@ const Description = (props) => {
 };
 
 const OpeningParagraph = ({ width }) => {
-  if (width <= 700) {
+  if (width < 700) {
     return (
       <p className="description-opening-paragraph">
         The Brooklyn College Computer Science Club is a community that enables
@@ -66,7 +66,7 @@ const OpeningParagraph = ({ width }) => {
 
 const MissionContent = ({ width }) => {
   // The line doesn't evenly break until ~716px so we need to up it from 700px
-  if (width <= 720) {
+  if (width < 720) {
     return (
       <p className="MissionContent">
         To help students interested in technology to meet other
