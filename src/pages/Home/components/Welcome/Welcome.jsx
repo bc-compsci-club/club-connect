@@ -1,5 +1,5 @@
 // @flow
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 import './Welcome.scss';
@@ -102,12 +102,12 @@ const SloganBeginning = (props) => {
 };
 
 const TypewriterWelcome = () => {
-  useEffect(() => {
-    console.log('New typewriter created');
-    return () => {
-      console.log('Cleaning up typewriter');
-    };
-  }, []);
+  // useEffect(() => {
+  //   console.log('New typewriter created');
+  //   return () => {
+  //     console.log('Cleaning up typewriter');
+  //   };
+  // }, []);
 
   // Strings for the typewriter effect to cycle through
   const strings = [

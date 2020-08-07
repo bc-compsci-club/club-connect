@@ -15,11 +15,9 @@ const FooterContents = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-    console.log('Adding footer resize event listener');
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      console.log('Removing footer resize event listener');
     };
   }, []);
 

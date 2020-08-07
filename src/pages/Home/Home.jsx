@@ -10,11 +10,9 @@ const Home = () => {
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-    console.log('Adding resize event listener');
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      console.log('Removing resize event listener');
     };
   }, []);
 
@@ -28,7 +26,7 @@ const Home = () => {
         <Welcome width={width} />
         <Description width={width} />
         <Highlights />
-        <Ending width={width}/>
+        <Ending width={width} />
       </article>
     </div>
   );
