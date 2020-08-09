@@ -13,6 +13,9 @@
     flex-direction: column;
 
     .highlight-content {
+      padding-left: 1.75vw;
+      padding-right: 1.75vw;
+
       h2 {
         font-family: 'Raleway', sans-serif;
         font-size: 2.5rem;
@@ -48,13 +51,13 @@
     padding: 4rem 0;
 
     .highlight-container {
-      padding: 0 4vw;
+      padding: 0 5vw;
 
       // Padding for landscape iPhones with notch
       @supports (padding: max(0px)) {
         @media screen and (orientation: landscape) {
-          padding-left: max(4vw, calc(env(safe-area-inset-left) + 1rem));
-          padding-right: max(4vw, calc(env(safe-area-inset-right) + 1rem));
+          padding-left: max(5vw, calc(env(safe-area-inset-left) + 1rem));
+          padding-right: max(5vw, calc(env(safe-area-inset-right) + 1rem));
         }
       }
 
@@ -62,6 +65,8 @@
       justify-content: space-between;
 
       .highlight-content {
+        padding-left: 0;
+        padding-right: 0;
         width: 47.5%;
 
         h2 {
