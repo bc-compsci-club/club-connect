@@ -7,23 +7,31 @@ import Join from 'pages/Join';
 import Resources from 'pages/Resources';
 import WelcomeJoin from 'pages/WelcomeJoin';
 import React from 'react';
-import {Route, Switch} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 const Routes = () => {
-  return (<Switch><Route path = "/welcome"><WelcomeJoin />
-          </Route>
+  return (
+    <Switch>
+      <Route path="/welcome">
+        <WelcomeJoin />
+      </Route>
       <Route path="/join ">
-           < Join /></Route>
+        <Join />
+      </Route>
       <Route path="/resources ">
-                     < Resources /></Route>
+        <Resources />
+      </Route>
       <Route path="/events ">
-                                    < Events />
-          </Route>
+        <Events />
+      </Route>
       <Route path="/about ">
-           < About /></Route>
+        <About />
+      </Route>
       <Route exact path="/">
-                      < Home /></Route>
-    </Switch>);
+        <Home />
+      </Route>
+    </Switch>
+  );
 };
 
 export default Routes;
