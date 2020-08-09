@@ -11,7 +11,7 @@ section.Description {
 
   h2 {
     font-family: var(--font-family-heading);
-    font-size: 2.5rem;
+    font-size: 2.25rem;
   }
 
   .description-top {
@@ -58,7 +58,7 @@ section.Description {
   }
 
   .description-main {
-    padding: 0 var(--content-side-padding-value);
+    padding: 0 8vw;
 
     p {
       margin: 1rem auto;
@@ -66,8 +66,18 @@ section.Description {
     }
   }
 
+  @media screen and (orientation: landscape) {
+    h2 {
+      font-size: 2.5rem;
+    }
+  }
+
   // 370px (larger phones)
   @media screen and (min-width: 23.125rem) {
+    h2 {
+      font-size: 2.5rem;
+    }
+
     .description-top {
       .description-mission {
         .description-mission-heading {
@@ -195,8 +205,9 @@ section.Description {
     }
   }
 
-  // 1280px and higher
-  @media screen and (min-width: 80rem) {
+  // 1366px (medium laptops)
+  // Increase margin on top and set max width for all larger resolutions
+  @media screen and (min-width: 85.375rem) {
     max-width: var(--large-screen-max-width);
   }
 }

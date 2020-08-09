@@ -82,7 +82,9 @@
 @media screen and (min-width: 85.375rem) {
   :root {
     // Max width
-    --large-screen-max-width: 76.875rem; // 1230px
+    --content-max-width: 48rem; // For long bodies of text meant for reading
+    --before-content-max-width: 52rem; // For short descriptions before main content
+    --large-screen-max-width: 76.875rem; // 1230px, for restricting the main content from going too wide on high resolutions
   }
 }
 
