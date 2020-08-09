@@ -76,9 +76,11 @@
     }
   }
 
-  // 1024px (horizontal tablets)
-  // Use full size layout and font size
+  // 1280px
   @media screen and (min-width: 80rem) {
+    padding-left: 0;
+    padding-right: 0;
+
     margin-bottom: 4rem;
 
     .about-activity-text {
