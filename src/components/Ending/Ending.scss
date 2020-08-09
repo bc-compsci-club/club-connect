@@ -54,7 +54,7 @@
       max-width: 76.875rem;
 
       h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
         line-height: initial;
       }
 
@@ -66,9 +66,13 @@
     }
   }
 
-  // Small laptops up to 1280x720
-  @media screen and (min-width: 80rem) {
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 64rem) {
     .ending-container {
+      h2 {
+        font-size: 2.5rem;
+      }
+
       a {
         font-size: 1.75rem;
       }
