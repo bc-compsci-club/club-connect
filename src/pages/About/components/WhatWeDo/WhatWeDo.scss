@@ -1,25 +1,61 @@
+// What We Do section
+
 .about-what-we-do {
   background-color: #fff9ee;
 
-  .about-what-we-do-beginning {
-    margin-bottom: 2rem;
-  }
-
   .about-what-we-do-container {
-    max-width: 87.5vw;
     margin: 0 auto;
     padding: 3rem 0 1rem;
+
+    .about-what-we-do-beginning {
+      padding-left: 8vw;
+      padding-right: 8vw;
+      margin-bottom: 2rem;
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+    }
+
+    .about-activities-container {
+      padding: 0 6.25vw;
+    }
   }
 
-  @media only screen and (min-width: 80rem) {
-    .about-what-we-do-container {
-      margin: 0 auto;
-      max-width: 76.875rem; // 1230px
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  // 10vw of padding for width on large horizontal phones and tablets
+  @media screen and (min-width: 43.75rem) {
+    margin: 0 auto 3rem;
 
+    .about-what-we-do-container {
       .about-what-we-do-beginning {
-        max-width: 53.8125rem; // 861px, 70% of 1230px
+        padding-left: 6.25vw;
+        padding-right: 6.25vw;
+
+        max-width: 52rem;
         margin: 0 auto 4rem;
+        text-align: center;
+
+        h2 {
+          font-size: 3rem;
+        }
       }
+
+      .about-activities-container {
+        padding: 0;
+      }
+    }
+  }
+
+  // 1366px (medium laptops)
+  // Increase margin on top and set max width for all larger resolutions
+  @media screen and (min-width: 85.375rem) {
+    margin: 0 auto;
+
+    .about-what-we-do-container {
+      padding: 3rem 0 1rem;
+      max-width: var(--large-screen-max-width);
     }
   }
 }
