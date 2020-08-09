@@ -13,9 +13,9 @@ const HackathonActivity = (props) => {
           </h3>
           <h3 className="about-hackathonactivity-subtitle">{props.subtitle}</h3>
         </div>
-        <p>{props.description[0]}</p>
-        <p>{props.description[1]}</p>
-        <p>{props.description[2]}</p>
+        <p className="about-activity-description">{props.description[0]}</p>
+        <p className="about-activity-description">{props.description[1]}</p>
+        <p className="about-activity-description">{props.description[2]}</p>
       </div>
 
       {/* TODO: Make this a slideshow of hackathon images */}

@@ -9,6 +9,7 @@
 
   p {
     font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
   }
 
   p:last-child {
@@ -17,16 +18,17 @@
 
   // Desktop styles
 
-  // Small laptops up to 1280x720
-  @media screen and (min-width: 75rem) {
+  // 700px (vertical tablets and horizontal phones)
+  // Landscape and tablet optimized layout
+  @media screen and (min-width: 43.75rem) {
     h2 {
       font-size: 3rem;
-      font-weight: normal;
       margin-bottom: 2rem;
     }
 
     p {
-      font-size: 1.25rem;
+      padding-left: 1.75vw;
+      padding-right: 1.75vw;
     }
 
     img {
