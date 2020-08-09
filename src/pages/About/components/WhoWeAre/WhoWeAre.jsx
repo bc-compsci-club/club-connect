@@ -5,6 +5,7 @@ const WhoWeAre = () => {
   return (
     <section className="about-who-we-are">
       <h2>Who We Are</h2>
+
       <p>
         The Brooklyn College Computer Science Club is Brooklyn College’s premier
         student-led, community-first computer science community where students
