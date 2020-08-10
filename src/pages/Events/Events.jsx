@@ -33,7 +33,7 @@ const Events = () => {
         well!), feel free to visit the{' '}
         <a
           href="https://github.com/bc-compsci-club/bccompsci.club"
-          rel="noopener"
+          rel="noopener noreferrer"
           target="_blank"
         >
           website&apos;s GitHub repository
