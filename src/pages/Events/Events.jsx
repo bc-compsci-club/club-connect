@@ -35,7 +35,7 @@ const Events = () => {
           href="https://github.com/bc-compsci-club/bccompsci.club"
           rel="noopener"
         >
-          website's GitHub repository
+          website&apos;s GitHub repository
         </a>{' '}
         for more details on how to contribute and to create a pull request.
       </p>
