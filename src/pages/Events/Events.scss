@@ -29,32 +29,19 @@
     margin-bottom: 2rem;
   }
 
-  a {
-    display: block;
-    margin: 0 auto;
+  .events-list {
+    margin-bottom: 2rem;
+    padding: 0;
     text-align: center;
-    text-decoration: none;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.25rem;
-    transition: 0.2s;
-    transition-timing-function: ease-in-out;
-    padding: 1rem 25vw;
-    color: #fff;
-    font-weight: bold;
-    background-color: #4d5eff;
-    border-radius: 50px;
-  }
 
-  a:hover {
-    background-color: #5767fe;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    color: #fff;
-  }
+    li {
+      list-style-type: none;
+      margin-bottom: 2rem;
+    }
 
-  a:active {
-    background-color: #6574f7;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    a {
+      font-size: 2rem;
+    }
   }
 
   @media screen and (min-width: 80rem) {
@@ -73,11 +60,6 @@
 
     p {
       margin-bottom: 2.5rem;
-    }
-
-    a {
-      font-size: 1.5rem;
-      padding: 1rem 5rem;
     }
   }
 }

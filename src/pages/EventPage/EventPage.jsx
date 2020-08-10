@@ -50,7 +50,7 @@ const EventPage = (props) => {
             eventData.shortDescription = data.shortDescription;
             eventData.longDescription = data.longDescription;
 
-            // setTimeout(() => setLoading(false), 2500);
+            // setTimeout(() => setLoading(false), 500);
             setLoading(false);
           })
 
