@@ -34,6 +34,7 @@ const Events = () => {
         <a
           href="https://github.com/bc-compsci-club/bccompsci.club"
           rel="noopener"
+          target="_blank"
         >
           website&apos;s GitHub repository
         </a>{' '}
