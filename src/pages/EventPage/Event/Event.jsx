@@ -8,7 +8,7 @@ const Event = (props) => {
   if (!props.isLoading) {
     const dataDirectory = `/data/events/${props.eventData.dataLocation}`;
 
-    const image = `${dataDirectory}/${props.eventData.image}`;
+    const image = `${dataDirectory}/${props.eventData.banner}`;
     const presenterImage = `${dataDirectory}/${props.eventData.presenterImage}`;
 
     return (

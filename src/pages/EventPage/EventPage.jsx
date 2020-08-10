@@ -46,7 +46,7 @@ const EventPage = (props) => {
             eventData.startTime = data.startTime;
             eventData.endTime = data.endTime;
             eventData.location = data.location;
-            eventData.image = data.image;
+            eventData.banner = data.banner;
             eventData.shortDescription = data.shortDescription;
             eventData.longDescription = data.longDescription;
 
