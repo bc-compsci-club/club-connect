@@ -99,16 +99,6 @@
       justify-content: space-between;
       align-items: center;
 
-      //padding: 0 5vw 0;
-
-      //// Padding for landscape iPhones with notch
-      //@supports (padding: max(0px)) {
-      //  @media screen and (orientation: landscape) {
-      //    padding-left: max(5vw, calc(env(safe-area-inset-left) + 5vw));
-      //    padding-right: max(5vw, calc(env(safe-area-inset-right) + 5vw));
-      //  }
-      //}
-
       .event-banner-container {
         width: 55%;
 
@@ -140,7 +130,7 @@
       margin-bottom: 1rem;
       display: flex;
       justify-content: space-between;
-      align-items: start;
+      align-items: flex-start;
 
       .event-banner-container {
         width: 65%;
@@ -188,17 +178,10 @@
 .EventLoading {
   padding: 0 6.25vw;
 
-  h2 {
-    margin: 2rem 0;
-    font-family: 'Nunito', sans-serif;
-    font-weight: bold;
-    font-size: 2.5rem;
-    text-align: center;
-  }
-
   .ContentLoader {
+    width: 50%;
     display: block;
     text-align: center;
-    margin: 0 auto;
+    margin: 2rem auto 0;
   }
 }
