@@ -81,13 +81,33 @@
   // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
   // 10vw of padding for width on large horizontal phones and tablets
   @media screen and (min-width: 43.75rem) {
-    padding: 5vw;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem 5vw 5vw;
+
+    // Padding for landscape iPhones with notch
+    @supports (padding: max(0px)) {
+      @media screen and (orientation: landscape) {
+        padding-left: max(5vw, calc(env(safe-area-inset-left) + 5vw));
+        padding-right: max(5vw, calc(env(safe-area-inset-right) + 5vw));
+      }
+    }
 
     .event-banner-and-information {
       margin-bottom: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      //padding: 0 5vw 0;
+
+      //// Padding for landscape iPhones with notch
+      //@supports (padding: max(0px)) {
+      //  @media screen and (orientation: landscape) {
+      //    padding-left: max(5vw, calc(env(safe-area-inset-left) + 5vw));
+      //    padding-right: max(5vw, calc(env(safe-area-inset-right) + 5vw));
+      //  }
+      //}
 
       .event-banner-container {
         width: 55%;
@@ -132,7 +152,7 @@
         width: 30%;
 
         .event-presenter {
-          margin-bottom: 6rem;
+          margin-bottom: 4rem;
         }
       }
     }
@@ -150,9 +170,18 @@
   // 1366px (medium laptops)
   // Increase margin on top and set max width for all larger resolutions
   @media screen and (min-width: 85.375rem) {
-    margin: 4rem auto 0;
+    min-height: 80vh;
+    margin: 4rem auto;
     padding: 0;
     max-width: var(--large-screen-max-width);
+
+    //.event-banner-and-information {
+    //  .event-information {
+    //    .event-presenter {
+    //      margin-bottom: 4rem;
+    //    }
+    //  }
+    //}
   }
 }
 
