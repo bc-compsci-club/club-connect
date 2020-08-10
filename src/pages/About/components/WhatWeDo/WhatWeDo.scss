@@ -48,6 +48,16 @@
     }
   }
 
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 64rem) {
+    .about-what-we-do-container {
+      .about-what-we-do-beginning {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
   // 1366px (medium laptops)
   // Increase margin on top and set max width for all larger resolutions
   @media screen and (min-width: 85.375rem) {
