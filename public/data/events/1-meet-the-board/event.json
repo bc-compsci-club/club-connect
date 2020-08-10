@@ -1,14 +1,14 @@
 {
   "id": 1,
-  "dataLocation": "1-meet-the-boards",
-  "title": "Meet the Boards",
+  "dataLocation": "1-meet-the-board",
+  "title": "Meet the Board",
   "presenter": "Computer Science Club",
   "presenterImage": "cs-club-logo.png",
   "date": "September 10, 2020",
   "startTime": "12:00 PM",
   "endTime": "2:00 PM",
   "location": "Online",
-  "banner": "meet-the-boards-banner.jpg",
+  "banner": "meet-the-board-banner.jpg",
   "shortDescription": "Our very first event of the semester!",
   "longDescription": "Come and meet the brand new E-Board, network with new club members, and relax and play some fun games with everyone, including skribbl.io and some Kahoot! trivia!"
 }
