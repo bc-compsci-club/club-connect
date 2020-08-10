@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Event from './Event';
-import './EventPage.scss';
 
 const EventPage = (props) => {
   const [isLoading, setLoading] = useState(true);
