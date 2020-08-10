@@ -1,0 +1,76 @@
+.Event {
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+  }
+
+  .event-banner-container {
+    margin-bottom: 1rem;
+
+    .event-banner {
+      width: 100%;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .event-main-container {
+    padding: 0 6.25vw;
+
+    .event-title {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .event-presenter {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0 0 0 1rem;
+      }
+
+      .event-presenter-image {
+        height: 3rem;
+        border-radius: 100rem;
+      }
+    }
+
+    .event-time {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0 0 0 0.75rem;
+      }
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+      }
+    }
+
+    .event-location {
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+
+      p {
+        margin: 0 0 0 0.75rem;
+      }
+
+      svg {
+        height: 2rem;
+        width: 2rem;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .event-short-description {
+      font-weight: bold;
+    }
+  }
+}

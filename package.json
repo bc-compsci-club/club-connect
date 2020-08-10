@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
     "bootstrap": "^4.5.2",
     "empty": "^0.10.1",
     "flow-bin": "^0.131.0",
@@ -13,6 +14,7 @@
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-burger-menu": "^2.7.1",
+    "react-content-loader": "^5.1.0",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
@@ -62,5 +64,6 @@
   },
   "reactSnap": {
     "inlineCss": false
-  }
+  },
+  "proxy": "https://localhost:3000"
 }
