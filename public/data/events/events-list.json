@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Meet the Boards",
+    "dataLocation": "1-meet-the-boards"
+  },
+  {
+    "id": 2,
+    "name": "Donuts and Discussion",
+    "dataLocation": "2-donuts-and-discussion"
+  },
+  {
+    "id": 3,
+    "name": "Facul-Tea Time",
+    "dataLocation": "3-facul-tea-time"
+  }
+]
