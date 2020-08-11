@@ -37,7 +37,7 @@ const Join = () => {
             name="join"
             id="join-form"
             method="POST"
-            action="https://us-east4-bc-cs-club-website.cloudfunctions.net/handleJoin"
+            action="https://us-east1-bc-cs-club-website.cloudfunctions.net/handleJoin"
             // onSubmit={disableForm}
           >
             <div className="form-name-row">
