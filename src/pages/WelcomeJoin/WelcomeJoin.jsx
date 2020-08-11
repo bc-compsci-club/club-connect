@@ -22,10 +22,10 @@ const WelcomeJoin = () => {
         links below. Check your email for these links, too!
       </p>
       <div className="welcomejoin-links">
-        <a href="/discord">Discord</a>
-        <a href="/messenger">Facebook Messenger</a>
-        <a href="/facebook">Facebook Group</a>
-        <a href="/instagram">Instagram</a>
+        <a href="https://bccompsci.club/discord">Discord</a>
+        <a href="https://bccompsci.club/messenger">Facebook Messenger</a>
+        <a href="https://bccompsci.club/facebook">Facebook Group</a>
+        <a href="https://bccompsci.club/instagram">Instagram</a>
       </div>
     </section>
   );
