@@ -15,7 +15,7 @@ headers = {Cache-Control = "public, max-age=0, must-revalidate"}# Redirects for 
 
 [[redirects]]
 from = "/messenger"
-to = "https://messenger.com"
+to = "https://forms.gle/FzqhVEB54rvTqBgi7"
 status = 302
 headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
