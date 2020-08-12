@@ -456,6 +456,7 @@
     @media screen and (orientation: landscape) {
       margin: 5% auto;
       height: 100vh;
+      width: 100vw;
 
       h2 {
         margin-bottom: 1rem;
@@ -476,6 +477,7 @@
   @media screen and (min-width: 64rem) {
     margin: 10vw auto;
     height: auto;
+    width: 40rem;
 
     h2 {
       margin-bottom: 2rem;
