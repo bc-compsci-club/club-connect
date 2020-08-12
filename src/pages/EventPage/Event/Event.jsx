@@ -113,33 +113,36 @@ const Event = (props) => {
             </div>
           </div>
         </div>
-        <div className="event-descriptions">
-          <p className="event-short-description">
-            {props.eventData.shortDescription}
-          </p>
-          <p className="event-long-description">
-            {props.eventData.longDescription}
-          </p>
-        </div>
-        <div className="event-actions">
-          <div className="event-add-to-calendar">
-            <CalendarModal
-              className="event-add-to-calendar-modal"
-              event={event}
-              items={
-                isiOS
-                  ? [SHARE_SITES.GOOGLE, SHARE_SITES.ICAL, SHARE_SITES.YAHOO]
-                  : [
-                      SHARE_SITES.GOOGLE,
-                      SHARE_SITES.ICAL,
-                      SHARE_SITES.YAHOO,
-                      SHARE_SITES.OUTLOOK,
-                    ]
-              }
-            />
+        <div className="event-descriptions-and-actions">
+          <div className="event-descriptions">
+            <p className="event-short-description">
+              {props.eventData.shortDescription}
+            </p>
+            <p className="event-long-description">
+              {props.eventData.longDescription}
+            </p>
           </div>
-          <div className="event-share">
-
+          <div className="event-actions">
+            <div className="event-add-to-calendar">
+              <CalendarModal
+                className="event-add-to-calendar-modal"
+                buttonText="+ Add to Calendar"
+                event={event}
+                items={
+                  isiOS
+                    ? [SHARE_SITES.GOOGLE, SHARE_SITES.ICAL, SHARE_SITES.YAHOO]
+                    : [
+                        SHARE_SITES.GOOGLE,
+                        SHARE_SITES.ICAL,
+                        SHARE_SITES.YAHOO,
+                        SHARE_SITES.OUTLOOK,
+                      ]
+                }
+              />
+            </div>
+            <div className="event-share">
+              <button>Share this Event</button>
+            </div>
           </div>
         </div>
       </section>
@@ -296,7 +299,10 @@ const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
       closeTimeoutMS={200}
     >
       <h2>Add to Calendar</h2>
-      <p>If you're using Apple Calendar or need an .ics file, pick the <strong>"iCal"</strong> option.</p>
+      <p>
+        If you're using Apple Calendar or need an .ics file, pick the{' '}
+        <strong>"iCal"</strong> option.
+      </p>
       <div>
         {children}
         <a href={outlookLink}>Outlook.com Web</a>

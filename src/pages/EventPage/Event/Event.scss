@@ -71,7 +71,7 @@
       .event-link {
         a {
           display: block;
-          margin: 0 auto 2rem;
+          margin: 0 auto 0.5rem;
           text-align: center;
           text-decoration: none;
           font-family: 'Nunito', sans-serif;
@@ -99,17 +99,56 @@
     }
   }
 
-  .event-descriptions {
-    padding: 0 8vw 1rem;
+  .event-descriptions-and-actions {
+    display: flex;
+    flex-direction: column-reverse;
 
-    .event-short-description {
-      font-weight: bold;
+    .event-descriptions {
+      padding: 0 8vw 1rem;
+
+      .event-short-description {
+        font-weight: bold;
+      }
+    }
+
+    .event-actions {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      button {
+        font-weight: bold;
+        display: block;
+        margin: 0.75rem auto;
+        padding: 0.75rem;
+        width: 80%;
+        border: none;
+        border-radius: 100px;
+        background-color: #f0f0f0;
+        transition: 0.2s;
+        transition-timing-function: ease-in-out;
+      }
+
+      button:hover {
+        background-color: #f5f5f5;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button:active {
+        background-color: #f0f0f0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
     }
   }
 
+  // Disable tablet styles and use mobile style for now until we can think of a better layout
+  // TODO: Improve tablet vertical layout
+
   // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
   // 10vw of padding for width on large horizontal phones and tablets
-  @media screen and (min-width: 43.75rem) {
+  //@media screen and (min-width: 43.75rem) {
+
+  @media screen and (min-width: 64rem) {
     min-height: 100vh;
     margin: 0 auto;
     padding: 2rem 2vw 5vw;
@@ -156,8 +195,10 @@
       }
     }
 
-    .event-descriptions {
-      padding: 0 5vw;
+    .event-descriptions-and-actions {
+      .event-descriptions {
+        padding: 0 5vw;
+      }
     }
 
     @media screen and (orientation: landscape) {
@@ -222,12 +263,28 @@
       }
     }
 
-    .event-descriptions {
-      padding: 0 0 0 0.66rem;
-      width: 65%;
+    .event-descriptions-and-actions {
+      flex-direction: row;
+      justify-content: space-between;
 
-      .event-short-description {
-        font-size: 1.5rem;
+      .event-descriptions {
+        padding: 0 0.66rem;
+        width: 66.25%;
+
+        .event-short-description {
+          font-size: 1.5rem;
+        }
+      }
+
+      .event-actions {
+        flex-direction: column;
+        width: 30%;
+
+        button {
+          width: 95%;
+          padding: 0.5rem;
+          margin: 0.25rem auto;
+        }
       }
     }
   }
