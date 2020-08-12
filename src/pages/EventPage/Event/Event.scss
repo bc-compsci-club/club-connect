@@ -343,9 +343,13 @@
   outline: none;
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin: 3rem 0 1rem;
+    margin: 2.75rem 0 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
   }
 
   div {
@@ -354,20 +358,20 @@
 
     a {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.25rem;
     }
   }
 
   button {
     display: block;
-    margin: 0.5rem auto 2rem;
+    margin: 0.5rem auto;
     text-align: center;
     text-decoration: none;
     font-family: 'Nunito', sans-serif;
     font-size: 1.5rem;
     transition: 0.2s;
     transition-timing-function: ease-in-out;
-    padding: 1rem;
+    padding: 0.5rem;
     width: 95%;
     color: #000;
     font-weight: bold;
@@ -389,15 +393,24 @@
   // 370px (larger phones)
   @media screen and (min-width: 23.125rem) {
     h2 {
-      font-size: 2.5rem;
-      margin: 3rem 0 1.5rem;
+      font-size: 2rem;
+      margin: 2.5rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
     }
 
     div {
       a {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
       }
+    }
+
+    button {
+      margin: 0.5rem auto 2rem;
+      padding: 1rem;
     }
   }
 
@@ -407,24 +420,53 @@
     height: 100vh;
 
     h2 {
-      font-size: 2rem;
-      margin: 3rem 0 0.5rem;
+      font-size: 1.5rem;
+      margin: 3rem 0 0;
+    }
+
+    p {
+      margin: 0.25rem 0;
     }
 
     div {
       flex-direction: row;
       justify-content: center;
+      align-items: center;
 
       a {
-        font-size: 1.5rem;
-        padding: 0 1.5rem;
-        margin: 0.5rem 0 0.25rem;
+        font-size: 1.25rem;
+        padding: 0 0.75rem;
+        margin: 0;
+      }
+
+      a:not(:last-child) {
+        border-right: 1px solid lightgray;
       }
     }
 
     button {
       font-size: 1.5rem;
       width: 50%;
+      padding: 0.5rem;
+    }
+
+    // Medium horizontal devices
+    @media screen and (min-width: 37.5rem) {
+      h2 {
+        font-size: 2rem;
+        margin: 3rem auto 0;
+      }
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      div {
+        a {
+          font-size: 1.25rem;
+          padding: 0 1rem;
+        }
+      }
     }
   }
 
@@ -433,7 +475,6 @@
   @media screen and (min-width: 43.75rem) {
     margin: 15vw auto;
     width: 40rem;
-    padding: 2rem;
     height: auto;
 
     h2 {
@@ -454,12 +495,17 @@
 
     // Landscape phones
     @media screen and (orientation: landscape) {
-      margin: 5% auto;
+      margin: 2.5rem auto 0;
       height: 100vh;
       width: 100vw;
 
       h2 {
-        margin-bottom: 1rem;
+        font-size: 2rem;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 1.25rem;
       }
 
       div {
@@ -467,7 +513,9 @@
         justify-content: center;
 
         a {
-          padding: 0 1.5rem;
+          font-size: 1.5rem;
+          padding: 0 1rem;
+          margin: 0.25rem 0;
         }
       }
     }

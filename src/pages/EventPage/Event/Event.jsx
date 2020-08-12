@@ -132,11 +132,14 @@ const Event = (props) => {
                   : [
                       SHARE_SITES.GOOGLE,
                       SHARE_SITES.ICAL,
-                      SHARE_SITES.OUTLOOK,
                       SHARE_SITES.YAHOO,
+                      SHARE_SITES.OUTLOOK,
                     ]
               }
             />
+          </div>
+          <div className="event-share">
+
           </div>
         </div>
       </section>
@@ -293,9 +296,10 @@ const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
       closeTimeoutMS={200}
     >
       <h2>Add to Calendar</h2>
+      <p>If you're using Apple Calendar or need an .ics file, pick the <strong>"iCal"</strong> option.</p>
       <div>
         {children}
-        <a href={outlookLink}>Outlook.com</a>
+        <a href={outlookLink}>Outlook.com Web</a>
         <a href={office365Link}>Office 365</a>
       </div>
       <button onClick={onRequestClose}>Close</button>
