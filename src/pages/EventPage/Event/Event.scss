@@ -473,7 +473,7 @@
   // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
   // 10vw of padding for width on large horizontal phones and tablets
   @media screen and (min-width: 43.75rem) {
-    margin: 15vw auto;
+    margin: 15vh auto;
     width: 40rem;
     height: auto;
 
@@ -523,12 +523,12 @@
 
   // 1024px (horizontal tablets)
   @media screen and (min-width: 64rem) {
-    margin: 10vw auto;
+    margin: 25vh auto;
     height: auto;
-    width: 40rem;
+    width: 55rem;
 
-    h2 {
-      margin-bottom: 2rem;
+    p {
+      margin-bottom: 1rem;
     }
 
     div {
@@ -539,7 +539,7 @@
   // 1100px (small laptops)
   // Set font size for all larger resolutions
   @media screen and (min-width: 68.75rem) {
-    margin: 7.5vw auto;
+    margin: 25vh auto;
   }
 }
 

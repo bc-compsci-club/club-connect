@@ -48,7 +48,7 @@ const Event = (props) => {
 
     // TODO: Allow events from any time zone other than Brooklyn College's Time Zone
     event.title = props.eventData.title;
-    event.description = `${props.eventData.shortDescription}\n${props.eventData.longDescription}`;
+    event.description = `${props.eventData.shortDescription}\n\n${props.eventData.longDescription}`;
     event.startDatetime = dayjs(
       props.eventData.date + ' ' + props.eventData.startTime + ' EDT'
     ).format('YYYYMMDDTHHmmss');
