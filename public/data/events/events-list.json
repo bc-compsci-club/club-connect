@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "title": "Meet the Board",
+    "name": "meet-the-board"
+  },
+  {
+    "id": 2,
+    "title": "Donuts and Discussion",
+    "name": "donuts-and-discussion"
+  },
+  {
+    "id": 3,
+    "title": "Facul-Tea Time",
+    "name": "facul-tea-time"
+  }
+]

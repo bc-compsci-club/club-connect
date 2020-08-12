@@ -7,6 +7,7 @@ import Events from 'pages/Events';
 import Resources from 'pages/Resources';
 import Join from 'pages/Join';
 import WelcomeJoin from 'pages/WelcomeJoin';
+import EventPage from './pages/EventPage';
 
 const Routes = () => {
   return (
@@ -19,6 +20,9 @@ const Routes = () => {
       </Route>
       <Route path="/resources">
         <Resources />
+      </Route>
+      <Route path="/events/:id">
+        <EventPage />
       </Route>
       <Route path="/events">
         <Events />

@@ -1,0 +1,14 @@
+{
+  "id": 3,
+  "name": "facul-tea-time",
+  "title": "Facul-Tea Time",
+  "presenter": "Computer Science Club",
+  "presenterImage": "cs-club-logo.png",
+  "date": "September 22, 2020",
+  "startTime": "12:00 PM",
+  "endTime": "2:00 PM",
+  "location": "Online",
+  "banner": "facul-tea-time-banner.jpg",
+  "shortDescription": "Talk with faculty from the Computer Science department and enjoy some tea with everyone.",
+  "longDescription": "Get answers to questions you may have and and hear the latest about what's happening with Computer Science at Brooklyn College, straight from faculty members in the department themselves! Bring your own tea and refreshments and enjoy some afternoon tea with everyone."
+}

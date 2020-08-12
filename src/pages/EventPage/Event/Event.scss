@@ -1,0 +1,187 @@
+.Event {
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+  }
+
+  .event-banner-and-information {
+    .event-banner-container {
+      margin-bottom: 1rem;
+
+      .event-banner {
+        width: 100%;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .event-information {
+      padding: 1rem 8vw 0;
+
+      .event-title {
+        font-family: 'Nunito', sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .event-presenter {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+
+        p {
+          margin: 0 0 0 1rem;
+        }
+
+        .event-presenter-image {
+          height: 3rem;
+          border-radius: 100rem;
+        }
+      }
+
+      .event-time {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+
+        p {
+          margin: 0 0 0 0.75rem;
+        }
+
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      .event-location {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+
+        p {
+          margin: 0 0 0 0.75rem;
+        }
+
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+  }
+
+  .event-descriptions {
+    padding: 0 8vw 1rem;
+
+    .event-short-description {
+      font-weight: bold;
+    }
+  }
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  // 10vw of padding for width on large horizontal phones and tablets
+  @media screen and (min-width: 43.75rem) {
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 2rem 5vw 5vw;
+
+    // Padding for landscape iPhones with notch
+    @supports (padding: max(0px)) {
+      @media screen and (orientation: landscape) {
+        padding-left: max(5vw, calc(env(safe-area-inset-left) + 5vw));
+        padding-right: max(5vw, calc(env(safe-area-inset-right) + 5vw));
+      }
+    }
+
+    .event-banner-and-information {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .event-banner-container {
+        width: 55%;
+
+        .event-banner {
+          border-radius: 15px;
+        }
+      }
+
+      .event-information {
+        padding: 0;
+        width: 40%;
+
+        .event-presenter {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .event-descriptions {
+      padding: 0 5vw;
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 64rem) {
+    padding: 5vw;
+
+    .event-banner-and-information {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .event-banner-container {
+        width: 65%;
+      }
+
+      .event-information {
+        margin-top: 0.66rem;
+        padding: 0;
+        width: 30%;
+
+        .event-presenter {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+
+    .event-descriptions {
+      padding: 0 0 0 0.66rem;
+      width: 65%;
+
+      .event-short-description {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  // 1366px (medium laptops)
+  // Increase margin on top and set max width for all larger resolutions
+  @media screen and (min-width: 85.375rem) {
+    min-height: 80vh;
+    margin: 4rem auto;
+    padding: 0;
+    max-width: var(--large-screen-max-width);
+
+    //.event-banner-and-information {
+    //  .event-information {
+    //    .event-presenter {
+    //      margin-bottom: 4rem;
+    //    }
+    //  }
+    //}
+  }
+}
+
+.EventLoading {
+  padding: 0 6.25vw;
+
+  .ContentLoader {
+    width: 50%;
+    display: block;
+    text-align: center;
+    margin: 2rem auto 0;
+  }
+}

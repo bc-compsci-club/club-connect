@@ -1,6 +1,6 @@
 .Events {
-  max-width: 87.5vw;
   margin: 2.5vh auto 10vh;
+  padding: 0 8vw;
 
   span {
     margin: 0 auto;
@@ -13,7 +13,7 @@
     font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: 2.25rem;
-    margin-bottom: 5vh;
+    margin: 10vh auto 2rem;
   }
 
   h2 {
@@ -29,35 +29,25 @@
     margin-bottom: 2rem;
   }
 
-  a {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.25rem;
-    transition: 0.2s;
-    transition-timing-function: ease-in-out;
-    padding: 1rem 25vw;
-    color: #fff;
-    font-weight: bold;
-    background-color: #4d5eff;
-    border-radius: 50px;
+  .events-list {
+    margin: 0 auto 2rem;
+    padding: 0 2rem;
+
+    li {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      //padding-left: 0.25rem;
+      font-size: 1.5rem;
+    }
   }
 
-  a:hover {
-    background-color: #5767fe;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    text-decoration: none;
-    color: #fff;
-  }
+  // Desktop, Tablet, and Horizontal Phone styles
 
-  a:active {
-    background-color: #6574f7;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  @media screen and (min-width: 80rem) {
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  @media screen and (min-width: 43.75rem) {
     display: flex;
     flex-direction: column;
     max-width: 53.8125rem; // 861px, 70% of 1230px
@@ -65,19 +55,45 @@
 
     h1 {
       font-size: 3rem;
+      margin-top: 2rem;
     }
 
     h2 {
       font-size: 2.5rem;
+      margin: 0 auto 2.5rem;
     }
 
     p {
-      margin-bottom: 2.5rem;
+      max-width: 52rem;
+      margin: 0 auto 2.5rem;
     }
 
-    a {
-      font-size: 1.5rem;
-      padding: 1rem 5rem;
+    .events-list {
+      padding: 0;
+
+      li {
+        font-size: 1.75rem;
+      }
+
+      a {
+        font-size: 1.75rem;
+      }
     }
+
+    padding: 0 10vw;
+
+    // Padding for landscape iPhones with notch
+    @supports (padding: max(0px)) {
+      @media screen and (orientation: landscape) {
+        padding-left: max(10vw, calc(env(safe-area-inset-left) + 10vw));
+        padding-right: max(10vw, calc(env(safe-area-inset-right) + 10vw));
+      }
+    }
+  }
+
+  // 1366px (medium laptops)
+  // Increase margin on top and set max width for all larger resolutions
+  @media screen and (min-width: 85.375rem) {
+    max-width: var(--large-screen-max-width);
   }
 }
