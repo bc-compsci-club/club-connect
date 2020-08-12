@@ -1,10 +1,41 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import ContentLoader from 'react-content-loader';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
-import AddToCalendar from 'react-add-to-calendar';
-import AddToCalendarHOC from 'react-add-to-calendar-hoc';
+import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
 import './Event.scss';
+
+const getRandomKey = () => {
+  let n = Math.floor(Math.random() * 999999999999).toString();
+  return new Date().getTime().toString() + '_' + n;
+};
+
+// Create Outlook.com web calendar links for Outlook.com and Office 365
+const createMicrosoftWebLink = (link) => {
+  let finalLink = link;
+  finalLink +=
+    '&startdt=' + dayjs(event.startDatetime).format('YYYY-MM-DDTHH:mm:ssZ');
+  finalLink +=
+    '&enddt=' + dayjs(event.endDatetime).format('YYYY-MM-DDTHH:mm:ssZ');
+  finalLink += '&subject=' + encodeURIComponent(event.title);
+  finalLink += '&location=' + encodeURIComponent(event.location);
+  finalLink += '&body=' + encodeURIComponent(event.description);
+  finalLink += '&allday=false';
+  finalLink += '&uid=' + getRandomKey();
+  finalLink += '&path=/calendar/view/Month';
+
+  return finalLink;
+};
+
+const event = {
+  title: null,
+  description: null,
+  startDatetime: null,
+  endDatetime: null,
+  duration: null,
+  location: null,
+  timezone: null,
+};
 
 const Event = (props) => {
   console.log('rendering event');
@@ -15,19 +46,20 @@ const Event = (props) => {
     const image = `${dataDirectory}/${props.eventData.banner}`;
     const presenterImage = `${dataDirectory}/${props.eventData.presenterImage}`;
 
-    const event = {
-      title: props.eventData.title,
-      description: `${props.eventData.shortDescription}\n${props.eventData.longDescription}`,
-      startDatetime: dayjs(
-        props.eventData.date + ' ' + props.eventData.startTime + ' -04:00'
-      ).format('YYYYMMDDTHHmmssZ'),
-      endDatetime: dayjs(
-        props.eventData.date + ' ' + props.eventData.endTime + ' -04:00'
-      ).format('YYYYMMDDTHHmmssZ'),
-      duration: 2,
-      location: props.eventData.location,
-      timezone: 'America/New_York',
-    };
+    // TODO: Allow events from any time zone other than Brooklyn College's Time Zone
+    event.title = props.eventData.title;
+    event.description = `${props.eventData.shortDescription}\n${props.eventData.longDescription}`;
+    event.startDatetime = dayjs(
+      props.eventData.date + ' ' + props.eventData.startTime + ' EDT'
+    ).format('YYYYMMDDTHHmmss');
+    event.endDatetime = dayjs(
+      props.eventData.date + ' ' + props.eventData.endTime + ' EDT'
+    ).format('YYYYMMDDTHHmmss');
+    event.duration = 2;
+    event.location = props.eventData.location;
+    event.timezone = 'America/New_York';
+
+    const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     const CalendarModal = AddToCalendarHOC(
       AddToCalendarButton,
@@ -94,6 +126,16 @@ const Event = (props) => {
             <CalendarModal
               className="event-add-to-calendar-modal"
               event={event}
+              items={
+                isiOS
+                  ? [SHARE_SITES.GOOGLE, SHARE_SITES.ICAL, SHARE_SITES.YAHOO]
+                  : [
+                      SHARE_SITES.GOOGLE,
+                      SHARE_SITES.ICAL,
+                      SHARE_SITES.OUTLOOK,
+                      SHARE_SITES.YAHOO,
+                    ]
+              }
             />
           </div>
         </div>
@@ -213,8 +255,20 @@ const LocationSvg = () => {
 };
 
 const AddToCalendarButton = ({ children, onClick }) => {
+  // Open add to calendar modal if "addtocalendar" is after the event name in the URL
+  useEffect(() => {
+    const pathArray = window.location.pathname.split('/');
+    if (pathArray[4] === 'addtocalendar') {
+      document.getElementById('AddToCalendarButton').click();
+    }
+  }, []);
+
   return (
-    <button className="AddToCalendarButton" onClick={onClick}>
+    <button
+      id="AddToCalendarButton"
+      className="AddToCalendarButton"
+      onClick={onClick}
+    >
       {children}
     </button>
   );
@@ -222,6 +276,14 @@ const AddToCalendarButton = ({ children, onClick }) => {
 
 const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
   Modal.setAppElement('#root');
+
+  let outlookLink = createMicrosoftWebLink(
+    'https://outlook.live.com/owa/?rru=addevent'
+  );
+  let office365Link = createMicrosoftWebLink(
+    'https://outlook.office.com/owa/?rru=addevent'
+  );
+
   return (
     <Modal
       className="AddToCalendarModal"
@@ -231,7 +293,11 @@ const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
       closeTimeoutMS={200}
     >
       <h2>Add to Calendar</h2>
-      <div>{children}</div>
+      <div>
+        {children}
+        <a href={outlookLink}>Outlook.com</a>
+        <a href={office365Link}>Office 365</a>
+      </div>
       <button onClick={onRequestClose}>Close</button>
     </Modal>
   );
