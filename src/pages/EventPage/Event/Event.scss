@@ -112,13 +112,13 @@
   @media screen and (min-width: 43.75rem) {
     min-height: 100vh;
     margin: 0 auto;
-    padding: 2rem 5vw 5vw;
+    padding: 2rem 2vw 5vw;
 
     // Padding for landscape iPhones with notch
     @supports (padding: max(0px)) {
       @media screen and (orientation: landscape) {
-        padding-left: max(5vw, calc(env(safe-area-inset-left) + 5vw));
-        padding-right: max(5vw, calc(env(safe-area-inset-right) + 5vw));
+        padding-left: max(2vw, calc(env(safe-area-inset-left) + 2vw));
+        padding-right: max(2vw, calc(env(safe-area-inset-right) + 2vw));
       }
     }
 
@@ -144,6 +144,10 @@
           margin-bottom: 1rem;
         }
 
+        .event-location {
+          margin-bottom: 1rem;
+        }
+
         .event-link {
           a {
             margin: 0 auto;
@@ -155,7 +159,39 @@
     .event-descriptions {
       padding: 0 5vw;
     }
+
+    @media screen and (orientation: landscape) {
+      .event-banner-and-information {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .event-banner-container {
+          width: 55%;
+
+          .event-banner {
+            border-radius: 15px;
+          }
+        }
+
+        .event-information {
+          padding: 0;
+          width: 40%;
+
+          .event-presenter {
+            margin-bottom: 1rem;
+          }
+
+          .event-location {
+            margin-bottom: 1.5rem;
+          }
+        }
+      }
+    }
   }
+
+  // TODO: reduce individual device breakpoints for margin and padding
 
   // 1024px (horizontal tablets)
   @media screen and (min-width: 64rem) {
@@ -177,7 +213,11 @@
         width: 30%;
 
         .event-presenter {
-          margin-bottom: 22.5%;
+          margin-bottom: 1rem;
+        }
+
+        .event-location {
+          margin-bottom: 1.5rem;
         }
       }
     }
@@ -188,6 +228,69 @@
 
       .event-short-description {
         font-size: 1.5rem;
+      }
+    }
+  }
+
+  // 1072px (iPad 2019)
+  @media screen and (min-width: 67rem) {
+    .event-banner-and-information {
+      .event-information {
+        .event-presenter {
+          margin-bottom: 2rem;
+        }
+
+        .event-location {
+          margin-bottom: 1.5rem; // iPad 2019
+        }
+      }
+    }
+  }
+
+  // 1088px (iPad Pro 10.5 2017 and iPad Air 2019)
+  @media screen and (min-width: 68rem) {
+    .event-banner-and-information {
+      .event-information {
+        .event-presenter {
+          margin-bottom: 2rem;
+        }
+
+        .event-location {
+          margin-bottom: 2rem; // iPad 2019
+        }
+      }
+    }
+  }
+
+  // 1136px (Samsung Galaxy Tab S4, S5e, S6)
+  @media screen and (min-width: 71rem) {
+    .event-banner-and-information {
+      .event-information {
+        .event-presenter {
+          margin-bottom: 2.5rem;
+        }
+      }
+    }
+  }
+
+  // 1184px (small laptops)
+  @media screen and (min-width: 74rem) {
+    .event-banner-and-information {
+      .event-information {
+        .event-presenter {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+
+  // 1280px (small-medium laptops)
+  @media screen and (min-width: 80rem) {
+    .event-banner-and-information {
+      .event-information {
+        .event-presenter {
+          margin-bottom: 5rem;
+        }
       }
     }
   }
