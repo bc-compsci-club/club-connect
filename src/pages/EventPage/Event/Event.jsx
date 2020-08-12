@@ -1,9 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import ContentLoader from 'react-content-loader';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
+import {
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  LineShareButton,
+  LineIcon,
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from 'react-share';
 import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
 import './Event.scss';
+
+const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 const getRandomKey = () => {
   let n = Math.floor(Math.random() * 999999999999).toString();
@@ -38,7 +58,15 @@ const event = {
 };
 
 const Event = (props) => {
-  console.log('rendering event');
+  const [shareModalIsOpen, setShareModalIsOpen] = useState(false);
+
+  function openShareModal() {
+    setShareModalIsOpen(true);
+  }
+
+  function closeShareModal() {
+    setShareModalIsOpen(false);
+  }
 
   if (!props.isLoading) {
     const dataDirectory = `/data/events/${props.eventData.id}-${props.eventData.name}`;
@@ -58,8 +86,6 @@ const Event = (props) => {
     event.duration = 2;
     event.location = props.eventData.location;
     event.timezone = 'America/New_York';
-
-    const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
     const CalendarModal = AddToCalendarHOC(
       AddToCalendarButton,
@@ -140,8 +166,17 @@ const Event = (props) => {
                 }
               />
             </div>
+
             <div className="event-share">
-              <button>Share this Event</button>
+              <ShareButton
+                shareModalIsOpen={shareModalIsOpen}
+                openShareModal={openShareModal}
+                closeShareModal={closeShareModal}
+              />
+              <ShareModal
+                shareModalIsOpen={shareModalIsOpen}
+                onRequestClose={closeShareModal}
+              />
             </div>
           </div>
         </div>
@@ -307,6 +342,83 @@ const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
         {children}
         <a href={outlookLink}>Outlook.com Web</a>
         <a href={office365Link}>Office 365</a>
+      </div>
+      <button onClick={onRequestClose}>Close</button>
+    </Modal>
+  );
+};
+
+const ShareButton = ({ shareModalIsOpen, openShareModal, closeShareModal }) => {
+  const handleClick = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: `Join me at ${event.title}!`,
+        text: `Join me at ${event.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:`,
+        url: window.location.href,
+      });
+    } else {
+      console.log('share sheet not supported');
+      if (shareModalIsOpen) {
+        closeShareModal();
+      } else {
+        openShareModal();
+      }
+    }
+  };
+
+  return (
+    <button className="event-share-button" onClick={handleClick}>
+      Share this Event
+    </button>
+  );
+};
+
+const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
+  const eventUrl = window.location.href;
+
+  Modal.setAppElement('#root');
+  return (
+    <Modal
+      className="ShareModal"
+      isOpen={shareModalIsOpen}
+      onRequestClose={onRequestClose}
+      shouldCloseOnOverlayClick={true}
+      closeTimeoutMS={200}
+    >
+      <h2>Share this Event</h2>
+      <input type="text" value={eventUrl} readOnly />
+      <div className="event-share-platforms">
+        <FacebookMessengerShareButton url={eventUrl}>
+          <FacebookMessengerIcon size={32} round />
+        </FacebookMessengerShareButton>
+
+        <WhatsappShareButton url={eventUrl}>
+          <WhatsappIcon size={32} round />
+        </WhatsappShareButton>
+
+        <TelegramShareButton url={eventUrl}>
+          <TelegramIcon size={32} round />
+        </TelegramShareButton>
+
+        <LineShareButton url={eventUrl}>
+          <LineIcon size={32} round />
+        </LineShareButton>
+
+        <EmailShareButton url={eventUrl}>
+          <EmailIcon size={32} round />
+        </EmailShareButton>
+
+        <FacebookShareButton url={eventUrl}>
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+
+        <TwitterShareButton url={eventUrl}>
+          <TwitterIcon size={32} round />
+        </TwitterShareButton>
+
+        <LinkedinShareButton url={eventUrl}>
+          <LinkedinIcon size={32} round />
+        </LinkedinShareButton>
       </div>
       <button onClick={onRequestClose}>Close</button>
     </Modal>
