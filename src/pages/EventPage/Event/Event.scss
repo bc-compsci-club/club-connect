@@ -373,6 +373,14 @@
   @media screen and (min-width: 64rem) {
     margin: 10vw auto;
     height: auto;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    div {
+      margin-bottom: 1rem;
+    }
   }
 
   // 1100px (small laptops)
