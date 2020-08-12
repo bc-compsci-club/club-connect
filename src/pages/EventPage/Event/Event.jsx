@@ -1,5 +1,9 @@
+import React, { useState } from 'react';
 import ContentLoader from 'react-content-loader';
-import React from 'react';
+import dayjs from 'dayjs';
+import Modal from 'react-modal';
+import AddToCalendar from 'react-add-to-calendar';
+import AddToCalendarHOC from 'react-add-to-calendar-hoc';
 import './Event.scss';
 
 const Event = (props) => {
@@ -10,6 +14,25 @@ const Event = (props) => {
 
     const image = `${dataDirectory}/${props.eventData.banner}`;
     const presenterImage = `${dataDirectory}/${props.eventData.presenterImage}`;
+
+    const event = {
+      title: props.eventData.title,
+      description: `${props.eventData.shortDescription}\n${props.eventData.longDescription}`,
+      startDatetime: dayjs(
+        props.eventData.date + ' ' + props.eventData.startTime + ' -04:00'
+      ).format('YYYYMMDDTHHmmssZ'),
+      endDatetime: dayjs(
+        props.eventData.date + ' ' + props.eventData.endTime + ' -04:00'
+      ).format('YYYYMMDDTHHmmssZ'),
+      duration: 2,
+      location: props.eventData.location,
+      timezone: 'America/New_York',
+    };
+
+    const CalendarModal = AddToCalendarHOC(
+      AddToCalendarButton,
+      AddToCalendarModal
+    );
 
     return (
       <section className="Event">
@@ -48,7 +71,9 @@ const Event = (props) => {
               <a
                 href="#"
                 onClick={() => {
-                  window.alert('Check back here a day before the event starts for the Zoom Meeting link!');
+                  window.alert(
+                    'Check back here a day before the event starts for the Zoom Meeting link!'
+                  );
                 }}
               >
                 Zoom Meeting Link
@@ -63,6 +88,14 @@ const Event = (props) => {
           <p className="event-long-description">
             {props.eventData.longDescription}
           </p>
+        </div>
+        <div className="event-actions">
+          <div className="event-add-to-calendar">
+            <CalendarModal
+              className="event-add-to-calendar-modal"
+              event={event}
+            />
+          </div>
         </div>
       </section>
     );
@@ -176,6 +209,31 @@ const LocationSvg = () => {
       <path d="M0 0h24v24H0z" fill="none" />
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
     </svg>
+  );
+};
+
+const AddToCalendarButton = ({ children, onClick }) => {
+  return (
+    <button className="AddToCalendarButton" onClick={onClick}>
+      {children}
+    </button>
+  );
+};
+
+const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
+  Modal.setAppElement('#root');
+  return (
+    <Modal
+      className="AddToCalendarModal"
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      shouldCloseOnOverlayClick={true}
+      closeTimeoutMS={200}
+    >
+      <h2>Add to Calendar</h2>
+      <div>{children}</div>
+      <button onClick={onRequestClose}>Close</button>
+    </Modal>
   );
 };
 
