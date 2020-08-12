@@ -44,6 +44,16 @@ const Event = (props) => {
               <LocationSvg />
               <p>{props.eventData.location}</p>
             </div>
+            <div className="event-link">
+              <a
+                href="#"
+                onClick={() => {
+                  window.alert('Check back here a day before the event starts for the Zoom Meeting link!');
+                }}
+              >
+                Zoom Meeting Link
+              </a>
+            </div>
           </div>
         </div>
         <div className="event-descriptions">

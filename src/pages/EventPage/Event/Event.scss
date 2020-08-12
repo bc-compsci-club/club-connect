@@ -67,6 +67,35 @@
           width: 2rem;
         }
       }
+
+      .event-link {
+        a {
+          display: block;
+          margin: 0 auto 2rem;
+          text-align: center;
+          text-decoration: none;
+          font-family: 'Nunito', sans-serif;
+          font-size: 1.5rem;
+          transition: 0.2s;
+          transition-timing-function: ease-in-out;
+          padding: 1rem;
+          width: 95%;
+          color: #fff;
+          font-weight: bold;
+          background-color: #3bba7d;
+          border-radius: 50px;
+        }
+
+        a:hover {
+          background-color: #4dc98d;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        a:active {
+          background-color: #3bba7d;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
     }
   }
 
@@ -114,6 +143,12 @@
         .event-presenter {
           margin-bottom: 1rem;
         }
+
+        .event-link {
+          a {
+            margin: 0 auto;
+          }
+        }
       }
     }
 
@@ -142,7 +177,7 @@
         width: 30%;
 
         .event-presenter {
-          margin-bottom: 4rem;
+          margin-bottom: 22.5%;
         }
       }
     }
@@ -164,9 +199,18 @@
     margin: 4rem auto;
     padding: 0;
     max-width: var(--large-screen-max-width);
+
+    .event-banner-and-information {
+      .event-information {
+        .event-presenter {
+          margin-bottom: 7rem;
+        }
+      }
+    }
   }
 }
 
+// Loading placeholder
 .EventLoading {
   padding: 0 6.25vw;
 
