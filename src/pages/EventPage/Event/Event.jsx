@@ -374,7 +374,9 @@ const ShareButton = ({ shareModalIsOpen, openShareModal, closeShareModal }) => {
 };
 
 const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
-  const eventUrl = window.location.href;
+  const eventUrl = `https://bccompsci.club/events/1/meet-the-board`;
+  const shareTitle = `Join me at ${event.title}!`;
+  const shareDescription = `Join me at ${event.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:`;
 
   Modal.setAppElement('#root');
   return (
@@ -388,39 +390,60 @@ const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
       <h2>Share this Event</h2>
       <input type="text" value={eventUrl} readOnly />
       <div className="event-share-platforms">
-        <FacebookMessengerShareButton url={eventUrl}>
-          <FacebookMessengerIcon size={32} round />
-        </FacebookMessengerShareButton>
-
-        <WhatsappShareButton url={eventUrl}>
-          <WhatsappIcon size={32} round />
-        </WhatsappShareButton>
-
-        <TelegramShareButton url={eventUrl}>
-          <TelegramIcon size={32} round />
-        </TelegramShareButton>
-
-        <LineShareButton url={eventUrl}>
-          <LineIcon size={32} round />
-        </LineShareButton>
-
-        <EmailShareButton url={eventUrl}>
-          <EmailIcon size={32} round />
-        </EmailShareButton>
-
-        <FacebookShareButton url={eventUrl}>
+        <FacebookShareButton
+          url={eventUrl}
+          quote={shareDescription}
+          hashtag={'#bccompsciclub'}
+          disabled
+        >
           <FacebookIcon size={32} round />
         </FacebookShareButton>
 
-        <TwitterShareButton url={eventUrl}>
+        <TwitterShareButton
+          url={eventUrl}
+          title={shareDescription}
+          hashtags={['bccompsciclub']}
+        >
           <TwitterIcon size={32} round />
         </TwitterShareButton>
 
-        <LinkedinShareButton url={eventUrl}>
+        <LinkedinShareButton
+          url={eventUrl}
+          title={shareTitle}
+          summary={shareDescription}
+        >
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
+
+        <FacebookMessengerShareButton url={eventUrl} disabled>
+          <FacebookMessengerIcon size={32} round />
+        </FacebookMessengerShareButton>
+
+        <WhatsappShareButton url={eventUrl} title={shareDescription}>
+          <WhatsappIcon size={32} round />
+        </WhatsappShareButton>
+
+        <TelegramShareButton url={eventUrl} title={shareDescription}>
+          <TelegramIcon size={32} round />
+        </TelegramShareButton>
+
+        <LineShareButton url={eventUrl} title={shareDescription}>
+          <LineIcon size={32} round />
+        </LineShareButton>
+
+        <EmailShareButton
+          url={eventUrl}
+          subject={`Join me at ${event.title}!`}
+          body={`Join me at ${event.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:\n\n`}
+        >
+          <EmailIcon size={32} round />
+        </EmailShareButton>
       </div>
       <button onClick={onRequestClose}>Close</button>
+      <p>
+        Sharing to Facebook and Facebook Messenger are currently unavailable.
+        Sorry about that!
+      </p>
     </Modal>
   );
 };
