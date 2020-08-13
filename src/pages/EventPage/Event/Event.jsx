@@ -1,15 +1,119 @@
+import React, { useEffect, useState } from 'react';
 import ContentLoader from 'react-content-loader';
-import React from 'react';
+import dayjs from 'dayjs';
+import Modal from 'react-modal';
+import {
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  LineShareButton,
+  LineIcon,
+  EmailShareButton,
+  EmailIcon,
+  FacebookShareButton,
+  FacebookIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
+} from 'react-share';
+import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
 import './Event.scss';
+import shareIcon from 'assets/icons/share.svg';
+import addToCalendarIcon from 'assets/icons/add-to-calendar.svg';
+
+// Checks for iOS
+const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+// For Outlook.com and Office 365 web calendar links
+const getRandomKey = () => {
+  let n = Math.floor(Math.random() * 999999999999).toString();
+  return new Date().getTime().toString() + '_' + n;
+};
+
+// Create Outlook.com web calendar links for Outlook.com and Office 365
+const createMicrosoftWebLink = (link) => {
+  let finalLink = link;
+  finalLink +=
+    '&startdt=' + dayjs(event.startDatetime).format('YYYY-MM-DDTHH:mm:ssZ');
+  finalLink +=
+    '&enddt=' + dayjs(event.endDatetime).format('YYYY-MM-DDTHH:mm:ssZ');
+  finalLink += '&subject=' + encodeURIComponent(event.title);
+  finalLink += '&location=' + encodeURIComponent(event.location);
+  finalLink += '&body=' + encodeURIComponent(event.description);
+  finalLink += '&allday=false';
+  finalLink += '&uid=' + getRandomKey();
+  finalLink += '&path=/calendar/view/Month';
+
+  return finalLink;
+};
+
+// Event data to be filled later
+const event = {
+  title: null,
+  description: null,
+  startDatetime: null,
+  endDatetime: null,
+  duration: null,
+  location: null,
+  timezone: null,
+};
+
+const eventShareData = {
+  eventUrl: `https://bccompsci.club/events`,
+  shareTitle: `Join me at an event!`,
+  shareDescription: `Join me at an event hosted by the Brooklyn College Computer Science Club!`,
+};
 
 const Event = (props) => {
-  console.log('rendering event');
+  // Share sheet modal for unsupported devices
+  const [shareModalIsOpen, setShareModalIsOpen] = useState(false);
+
+  // Opens the share sheet modal.
+  const openShareModal = () => {
+    setShareModalIsOpen(true);
+  };
+
+  // Closes the share sheet modal.
+  const closeShareModal = () => {
+    setShareModalIsOpen(false);
+  };
+
+  // Toggles the share sheet modal.
+  const toggleShareModal = () => {
+    setShareModalIsOpen(!shareModalIsOpen);
+  };
 
   if (!props.isLoading) {
     const dataDirectory = `/data/events/${props.eventData.id}-${props.eventData.name}`;
 
     const image = `${dataDirectory}/${props.eventData.banner}`;
     const presenterImage = `${dataDirectory}/${props.eventData.presenterImage}`;
+
+    // TODO: Allow events from any time zone other than Brooklyn College's Time Zone
+    event.title = props.eventData.title;
+    event.description = `${props.eventData.shortDescription}\n\n${props.eventData.longDescription}`;
+    event.startDatetime = dayjs(
+      props.eventData.date + ' ' + props.eventData.startTime + ' EDT'
+    ).format('YYYYMMDDTHHmmss');
+    event.endDatetime = dayjs(
+      props.eventData.date + ' ' + props.eventData.endTime + ' EDT'
+    ).format('YYYYMMDDTHHmmss');
+    event.duration = 2;
+    event.location = props.eventData.location;
+    event.timezone = 'America/New_York';
+
+    const CalendarModal = AddToCalendarHOC(
+      AddToCalendarButton,
+      AddToCalendarModal
+    );
+
+    eventShareData.eventUrl = `https://bccompsci.club/events/${props.eventData.id}/${props.eventData.name}`;
+    eventShareData.shareTitle = `Join me at ${props.eventData.title}!`;
+    eventShareData.shareDescription = `Join me at ${props.eventData.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:`;
 
     return (
       <section className="Event">
@@ -44,15 +148,60 @@ const Event = (props) => {
               <LocationSvg />
               <p>{props.eventData.location}</p>
             </div>
+            <div className="event-link">
+              <a
+                href={eventShareData.eventUrl}
+                onClick={() => {
+                  window.alert(
+                    'Check back here a day before the event starts for the Zoom Meeting link!'
+                  );
+                }}
+              >
+                Zoom Meeting Link
+              </a>
+            </div>
           </div>
         </div>
-        <div className="event-descriptions">
-          <p className="event-short-description">
-            {props.eventData.shortDescription}
-          </p>
-          <p className="event-long-description">
-            {props.eventData.longDescription}
-          </p>
+        <div className="event-descriptions-and-actions">
+          <div className="event-descriptions">
+            <p className="event-short-description">
+              {props.eventData.shortDescription}
+            </p>
+            <p className="event-long-description">
+              {props.eventData.longDescription}
+            </p>
+          </div>
+          <div className="event-actions">
+            <div className="event-add-to-calendar">
+              <CalendarModal
+                className="event-add-to-calendar-modal"
+                event={event}
+                items={
+                  isiOS
+                    ? [SHARE_SITES.GOOGLE, SHARE_SITES.ICAL, SHARE_SITES.YAHOO]
+                    : [
+                        SHARE_SITES.GOOGLE,
+                        SHARE_SITES.ICAL,
+                        SHARE_SITES.YAHOO,
+                        SHARE_SITES.OUTLOOK,
+                      ]
+                }
+              />
+            </div>
+
+            <div className="event-share">
+              <ShareButton
+                shareModalIsOpen={shareModalIsOpen}
+                openShareModal={openShareModal}
+                closeShareModal={closeShareModal}
+                toggleShareModal={toggleShareModal}
+              />
+              <ShareModal
+                shareModalIsOpen={shareModalIsOpen}
+                onRequestClose={closeShareModal}
+              />
+            </div>
+          </div>
         </div>
       </section>
     );
@@ -166,6 +315,166 @@ const LocationSvg = () => {
       <path d="M0 0h24v24H0z" fill="none" />
       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
     </svg>
+  );
+};
+
+const AddToCalendarButton = ({ children, onClick }) => {
+  // Open add to calendar modal if "addtocalendar" is after the event name in the URL
+  useEffect(() => {
+    const pathArray = window.location.pathname.split('/');
+    if (pathArray[4] === 'addtocalendar') {
+      document.getElementById('AddToCalendarButton').click();
+    }
+  }, []);
+
+  return (
+    <button
+      id="AddToCalendarButton"
+      className="AddToCalendarButton"
+      onClick={onClick}
+    >
+      <img src={addToCalendarIcon} alt="Add to Calendar" />
+      {children}
+    </button>
+  );
+};
+
+const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
+  Modal.setAppElement('#root');
+
+  let outlookLink = createMicrosoftWebLink(
+    'https://outlook.live.com/owa/?rru=addevent'
+  );
+  let office365Link = createMicrosoftWebLink(
+    'https://outlook.office.com/owa/?rru=addevent'
+  );
+
+  return (
+    <Modal
+      className="AddToCalendarModal"
+      isOpen={isOpen}
+      onRequestClose={onRequestClose}
+      shouldCloseOnOverlayClick={true}
+      closeTimeoutMS={200}
+    >
+      <h2>Add to Calendar</h2>
+      <p>
+        If you're using Apple Calendar or need an .ics file, pick the
+        <strong>"iCal"</strong> option.
+      </p>
+      <div>
+        {children}
+        <a href={outlookLink}>Outlook.com Web</a>
+        <a href={office365Link}>Office 365</a>
+      </div>
+      <button onClick={onRequestClose}>Close</button>
+    </Modal>
+  );
+};
+
+const ShareButton = ({
+  shareModalIsOpen,
+  openShareModal,
+  closeShareModal,
+  toggleShareModal,
+}) => {
+  const handleClick = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: eventShareData.shareTitle,
+        text: eventShareData.shareDescription,
+        url: eventShareData.eventUrl,
+      });
+    } else {
+      toggleShareModal();
+    }
+  };
+
+  return (
+    <button className="event-share-button" onClick={handleClick}>
+      <img src={shareIcon} alt="Share this Event" />
+      <p>Share this Event</p>
+    </button>
+  );
+};
+
+const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
+  Modal.setAppElement('#root');
+  return (
+    <Modal
+      className="ShareModal"
+      isOpen={shareModalIsOpen}
+      onRequestClose={onRequestClose}
+      shouldCloseOnOverlayClick={true}
+      closeTimeoutMS={200}
+    >
+      <h2>Share this Event</h2>
+      <input type="text" value={eventShareData.eventUrl} readOnly />
+      <div className="event-share-platforms">
+        <FacebookShareButton
+          url={eventShareData.eventUrl}
+          quote={eventShareData.shareDescription}
+          hashtag={'#bccompsciclub'}
+          disabled
+        >
+          <FacebookIcon size={32} round />
+        </FacebookShareButton>
+
+        <TwitterShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
+          hashtags={['bccompsciclub']}
+        >
+          <TwitterIcon size={32} round />
+        </TwitterShareButton>
+
+        <LinkedinShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareTitle}
+          summary={eventShareData.shareDescription}
+        >
+          <LinkedinIcon size={32} round />
+        </LinkedinShareButton>
+
+        <FacebookMessengerShareButton url={eventShareData.eventUrl} disabled>
+          <FacebookMessengerIcon size={32} round />
+        </FacebookMessengerShareButton>
+
+        <WhatsappShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
+        >
+          <WhatsappIcon size={32} round />
+        </WhatsappShareButton>
+
+        <TelegramShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
+        >
+          <TelegramIcon size={32} round />
+        </TelegramShareButton>
+
+        <LineShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
+        >
+          <LineIcon size={32} round />
+        </LineShareButton>
+
+        <EmailShareButton
+          url={eventShareData.eventUrl}
+          subject={eventShareData.shareTitle}
+          body={`${eventShareData.shareDescription}\n\n`}
+        >
+          <EmailIcon size={32} round />
+        </EmailShareButton>
+      </div>
+      <button onClick={onRequestClose}>Close</button>
+      <p>
+        Sharing to Facebook and Facebook Messenger are currently unavailable.
+        Sorry about that!
+      </p>
+    </Modal>
   );
 };
 

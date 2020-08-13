@@ -33,8 +33,12 @@ const EventPage = () => {
 
         // Add event name to URL if it doesn't match the event name
         if (pathArray[3] !== (events.name || events.name + '/')) {
-          console.log("URL doesn't have the event name");
-          window.location.href = `${window.location.protocol}//${window.location.hostname}/events/${eventId}/${events.name}`;
+          // Check if "addtocalendar" is after the event name in the URL
+          if (typeof pathArray[4] === 'undefined') {
+            window.location.href = `${window.location.protocol}//${window.location.hostname}/events/${eventId}/${events.name}`;
+          } else {
+            window.location.href = `${window.location.protocol}//${window.location.hostname}/events/${eventId}/${events.name}/addtocalendar`;
+          }
         }
 
         // Get the event data from the ID specified in the path
