@@ -95,7 +95,7 @@ const Event = (props) => {
 
     // TODO: Allow events from any time zone other than Brooklyn College's Time Zone
     event.title = props.eventData.title;
-    event.description = `${props.eventData.shortDescription}\n\n${props.eventData.longDescription}`;
+    event.description = `${props.eventData.shortDescription}\n\n${props.eventData.longDescription}\n\nMore Details: https://bccompsci.club/events/${props.eventData.id}/${props.eventData.name}\nJoin the Event: https://bccompsci.club/events/${props.eventData.id}/${props.eventData.name}/join`;
     event.startDatetime = dayjs(
       props.eventData.date + ' ' + props.eventData.startTime + ' EDT'
     ).format('YYYYMMDDTHHmmss');
@@ -103,7 +103,7 @@ const Event = (props) => {
       props.eventData.date + ' ' + props.eventData.endTime + ' EDT'
     ).format('YYYYMMDDTHHmmss');
     event.duration = 2;
-    event.location = props.eventData.location;
+    event.location = `https://bccompsci.club/events/${props.eventData.id}/${props.eventData.name}/join`;
     event.timezone = 'America/New_York';
 
     const CalendarModal = AddToCalendarHOC(
@@ -364,8 +364,12 @@ const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
       </p>
       <div>
         {children}
-        <a href={outlookLink}>Outlook.com Web</a>
-        <a href={office365Link}>Office 365</a>
+        <a href={outlookLink} target="_blank" rel="noopener noreferrer">
+          Outlook.com Web
+        </a>
+        <a href={office365Link} target="_blank" rel="noopener noreferrer">
+          Office 365
+        </a>
       </div>
       <button onClick={onRequestClose}>Close</button>
     </Modal>
