@@ -18,7 +18,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-scroll": "^1.8.0",
+    "react-scroll": "^1.8.1",
     "react-snap": "^1.23.0",
     "sass": "^1.26.10",
     "sitemap": "^6.2.0",
