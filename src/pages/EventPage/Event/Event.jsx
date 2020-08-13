@@ -22,6 +22,8 @@ import {
 } from 'react-share';
 import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
 import './Event.scss';
+import shareIcon from 'assets/icons/share.svg';
+import addToCalendarIcon from 'assets/icons/add-to-calendar.svg';
 
 // Checks for iOS
 const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
@@ -173,7 +175,6 @@ const Event = (props) => {
             <div className="event-add-to-calendar">
               <CalendarModal
                 className="event-add-to-calendar-modal"
-                buttonText="+ Add to Calendar"
                 event={event}
                 items={
                   isiOS
@@ -332,6 +333,7 @@ const AddToCalendarButton = ({ children, onClick }) => {
       className="AddToCalendarButton"
       onClick={onClick}
     >
+      <img src={addToCalendarIcon} alt="Add to Calendar" />
       {children}
     </button>
   );
@@ -390,7 +392,8 @@ const ShareButton = ({
 
   return (
     <button className="event-share-button" onClick={handleClick}>
-      Share this Event
+      <img src={shareIcon} alt="Share this Event" />
+      <p>Share this Event</p>
     </button>
   );
 };
@@ -460,8 +463,8 @@ const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
 
         <EmailShareButton
           url={eventShareData.eventUrl}
-          subject={`Join me at ${event.title}!`}
-          body={`Join me at ${event.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:\n\n`}
+          subject={eventShareData.shareTitle}
+          body={`${eventShareData.shareDescription}\n\n`}
         >
           <EmailIcon size={32} round />
         </EmailShareButton>

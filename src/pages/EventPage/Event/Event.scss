@@ -1,3 +1,5 @@
+// TODO: Rewrite the events page
+
 .Event {
   p {
     font-family: 'Nunito', sans-serif;
@@ -117,8 +119,13 @@
       margin-bottom: 1rem;
 
       button {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.25rem;
         font-weight: bold;
-        display: block;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
         margin: 0.5rem auto;
         padding: 0.75rem;
         width: 80%;
@@ -127,6 +134,16 @@
         background-color: #f0f0f0;
         transition: 0.2s;
         transition-timing-function: ease-in-out;
+
+        img {
+          height: 1.75rem;
+          width: 1.75rem;
+          margin-right: 0.5rem;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
       }
 
       button:hover {
