@@ -23,8 +23,10 @@ import {
 import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
 import './Event.scss';
 
+// Checks for iOS
 const isiOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
+// For Outlook.com and Office 365 web calendar links
 const getRandomKey = () => {
   let n = Math.floor(Math.random() * 999999999999).toString();
   return new Date().getTime().toString() + '_' + n;
@@ -47,6 +49,7 @@ const createMicrosoftWebLink = (link) => {
   return finalLink;
 };
 
+// Event data to be filled later
 const event = {
   title: null,
   description: null,
@@ -57,13 +60,22 @@ const event = {
   timezone: null,
 };
 
+const eventShareData = {
+  eventUrl: `https://bccompsci.club/events`,
+  shareTitle: `Join me at an event!`,
+  shareDescription: `Join me at an event hosted by the Brooklyn College Computer Science Club!`,
+};
+
 const Event = (props) => {
+  // Share sheet modal for unsupported devices
   const [shareModalIsOpen, setShareModalIsOpen] = useState(false);
 
+  // Opens the share sheet modal.
   function openShareModal() {
     setShareModalIsOpen(true);
   }
 
+  // Closes the share sheet modal.
   function closeShareModal() {
     setShareModalIsOpen(false);
   }
@@ -91,6 +103,10 @@ const Event = (props) => {
       AddToCalendarButton,
       AddToCalendarModal
     );
+
+    eventShareData.eventUrl = `https://bccompsci.club/events/${props.eventData.id}/${props.eventData.name}`;
+    eventShareData.shareTitle = `Join me at ${props.eventData.title}!`;
+    eventShareData.shareDescription = `Join me at ${props.eventData.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:`;
 
     return (
       <section className="Event">
@@ -357,7 +373,6 @@ const ShareButton = ({ shareModalIsOpen, openShareModal, closeShareModal }) => {
         url: window.location.href,
       });
     } else {
-      console.log('share sheet not supported');
       if (shareModalIsOpen) {
         closeShareModal();
       } else {
@@ -374,10 +389,6 @@ const ShareButton = ({ shareModalIsOpen, openShareModal, closeShareModal }) => {
 };
 
 const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
-  const eventUrl = `https://bccompsci.club/events/1/meet-the-board`;
-  const shareTitle = `Join me at ${event.title}!`;
-  const shareDescription = `Join me at ${event.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:`;
-
   Modal.setAppElement('#root');
   return (
     <Modal
@@ -388,11 +399,11 @@ const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
       closeTimeoutMS={200}
     >
       <h2>Share this Event</h2>
-      <input type="text" value={eventUrl} readOnly />
+      <input type="text" value={eventShareData.eventUrl} readOnly />
       <div className="event-share-platforms">
         <FacebookShareButton
-          url={eventUrl}
-          quote={shareDescription}
+          url={eventShareData.eventUrl}
+          quote={eventShareData.shareDescription}
           hashtag={'#bccompsciclub'}
           disabled
         >
@@ -400,39 +411,48 @@ const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
         </FacebookShareButton>
 
         <TwitterShareButton
-          url={eventUrl}
-          title={shareDescription}
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
           hashtags={['bccompsciclub']}
         >
           <TwitterIcon size={32} round />
         </TwitterShareButton>
 
         <LinkedinShareButton
-          url={eventUrl}
-          title={shareTitle}
-          summary={shareDescription}
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareTitle}
+          summary={eventShareData.shareDescription}
         >
           <LinkedinIcon size={32} round />
         </LinkedinShareButton>
 
-        <FacebookMessengerShareButton url={eventUrl} disabled>
+        <FacebookMessengerShareButton url={eventShareData.eventUrl} disabled>
           <FacebookMessengerIcon size={32} round />
         </FacebookMessengerShareButton>
 
-        <WhatsappShareButton url={eventUrl} title={shareDescription}>
+        <WhatsappShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
+        >
           <WhatsappIcon size={32} round />
         </WhatsappShareButton>
 
-        <TelegramShareButton url={eventUrl} title={shareDescription}>
+        <TelegramShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
+        >
           <TelegramIcon size={32} round />
         </TelegramShareButton>
 
-        <LineShareButton url={eventUrl} title={shareDescription}>
+        <LineShareButton
+          url={eventShareData.eventUrl}
+          title={eventShareData.shareDescription}
+        >
           <LineIcon size={32} round />
         </LineShareButton>
 
         <EmailShareButton
-          url={eventUrl}
+          url={eventShareData.eventUrl}
           subject={`Join me at ${event.title}!`}
           body={`Join me at ${event.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:\n\n`}
         >
