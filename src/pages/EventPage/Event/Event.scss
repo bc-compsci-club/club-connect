@@ -20,14 +20,14 @@
       padding: 1rem 8vw 0;
 
       .event-title {
-        margin: 0 0 1.3rem;
+        margin: 0 0 0.75rem;
         font-family: 'Nunito', sans-serif;
         font-size: 2rem;
         font-weight: bold;
       }
 
       .event-presenter {
-        margin-bottom: 2rem;
+        margin-bottom: 1.75rem;
         display: flex;
         align-items: center;
 
@@ -117,7 +117,7 @@
     .event-actions {
       display: flex;
       flex-direction: column;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
 
       button {
         font-family: 'Nunito', sans-serif;
@@ -166,89 +166,89 @@
   // 10vw of padding for width on large horizontal phones and tablets
   //@media screen and (min-width: 43.75rem) {
 
-  @media screen and (min-width: 64rem) {
-    min-height: 100vh;
-    margin: 0 auto;
-    padding: 2rem 2vw 5vw;
-
-    // Padding for landscape iPhones with notch
-    @supports (padding: max(0px)) {
-      @media screen and (orientation: landscape) {
-        padding-left: max(2vw, calc(env(safe-area-inset-left) + 2vw));
-        padding-right: max(2vw, calc(env(safe-area-inset-right) + 2vw));
-      }
-    }
-
-    .event-banner-and-information {
-      margin-bottom: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .event-banner-container {
-        width: 55%;
-
-        .event-banner {
-          border-radius: 15px;
-        }
-      }
-
-      .event-information {
-        padding: 0;
-        width: 40%;
-
-        .event-presenter {
-          margin-bottom: 1rem;
-        }
-
-        .event-location {
-          margin-bottom: 1rem;
-        }
-
-        .event-link {
-          a {
-            margin: 0 auto;
-          }
-        }
-      }
-    }
-
-    .event-descriptions-and-actions {
-      .event-descriptions {
-        padding: 0 5vw;
-      }
-    }
-
-    @media screen and (orientation: landscape) {
-      .event-banner-and-information {
-        margin-bottom: 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .event-banner-container {
-          width: 55%;
-
-          .event-banner {
-            border-radius: 15px;
-          }
-        }
-
-        .event-information {
-          padding: 0;
-          width: 40%;
-
-          .event-presenter {
-            margin-bottom: 1rem;
-          }
-
-          .event-location {
-            margin-bottom: 1.5rem;
-          }
-        }
-      }
-    }
-  }
+  //@media screen and (min-width: 64rem) {
+  //  min-height: 100vh;
+  //  margin: 0 auto;
+  //  padding: 2rem 5vw 5vw;
+  //
+  //  // Padding for landscape iPhones with notch
+  //  @supports (padding: max(0px)) {
+  //    @media screen and (orientation: landscape) {
+  //      padding-left: max(5vw, calc(env(safe-area-inset-left) + 5vw));
+  //      padding-right: max(5vw, calc(env(safe-area-inset-right) + 5vw));
+  //    }
+  //  }
+  //
+  //  .event-banner-and-information {
+  //    margin-bottom: 1rem;
+  //    display: flex;
+  //    justify-content: space-between;
+  //    align-items: center;
+  //
+  //    .event-banner-container {
+  //      width: 55%;
+  //
+  //      .event-banner {
+  //        border-radius: 15px;
+  //      }
+  //    }
+  //
+  //    .event-information {
+  //      padding: 0;
+  //      width: 40%;
+  //
+  //      .event-presenter {
+  //        margin-bottom: 1rem;
+  //      }
+  //
+  //      .event-location {
+  //        margin-bottom: 1rem;
+  //      }
+  //
+  //      .event-link {
+  //        a {
+  //          margin: 0 auto;
+  //        }
+  //      }
+  //    }
+  //  }
+  //
+  //  .event-descriptions-and-actions {
+  //    .event-descriptions {
+  //      padding: 0 5vw;
+  //    }
+  //  }
+  //
+  //  @media screen and (orientation: landscape) {
+  //    .event-banner-and-information {
+  //      margin-bottom: 2rem;
+  //      display: flex;
+  //      justify-content: space-between;
+  //      align-items: center;
+  //
+  //      .event-banner-container {
+  //        width: 55%;
+  //
+  //        .event-banner {
+  //          border-radius: 15px;
+  //        }
+  //      }
+  //
+  //      .event-information {
+  //        padding: 0;
+  //        width: 40%;
+  //
+  //        .event-presenter {
+  //          margin-bottom: 1rem;
+  //        }
+  //
+  //        .event-location {
+  //          margin-bottom: 1.5rem;
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
 
   // TODO: reduce individual device breakpoints for margin and padding
 
@@ -264,6 +264,10 @@
 
       .event-banner-container {
         width: 66.25%;
+
+        .event-banner {
+          border-radius: 15px;
+        }
       }
 
       .event-information {
@@ -272,7 +276,7 @@
         width: 30%;
 
         .event-presenter {
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
         }
 
         .event-location {
@@ -312,7 +316,7 @@
     .event-banner-and-information {
       .event-information {
         .event-presenter {
-          margin-bottom: 2rem;
+          margin-bottom: 1.75rem;
         }
 
         .event-location {
@@ -327,7 +331,7 @@
     .event-banner-and-information {
       .event-information {
         .event-presenter {
-          margin-bottom: 2rem;
+          margin-bottom: 1.75rem;
         }
 
         .event-location {
@@ -342,7 +346,7 @@
     .event-banner-and-information {
       .event-information {
         .event-presenter {
-          margin-bottom: 2.5rem;
+          margin-bottom: 2.25rem;
         }
       }
     }
@@ -353,7 +357,7 @@
     .event-banner-and-information {
       .event-information {
         .event-presenter {
-          margin-bottom: 4rem;
+          margin-bottom: 3.75rem;
         }
       }
     }
@@ -364,7 +368,7 @@
     .event-banner-and-information {
       .event-information {
         .event-presenter {
-          margin-bottom: 5.5rem;
+          margin-bottom: 5.25rem;
         }
       }
     }
@@ -381,7 +385,7 @@
     .event-banner-and-information {
       .event-information {
         .event-presenter {
-          margin-bottom: 7.7rem;
+          margin-bottom: 7.45rem;
         }
       }
     }
