@@ -360,7 +360,7 @@ const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
       <h2>Add to Calendar</h2>
       <p>
         If you're using Apple Calendar or need an .ics file, pick the
-        <span className="bold-font"> "iCal"</span> option.
+        <strong> &quot;iCal&quot;</strong> option.
       </p>
       <div>
         {children}
