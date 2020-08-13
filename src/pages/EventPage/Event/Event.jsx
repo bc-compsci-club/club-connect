@@ -71,14 +71,19 @@ const Event = (props) => {
   const [shareModalIsOpen, setShareModalIsOpen] = useState(false);
 
   // Opens the share sheet modal.
-  function openShareModal() {
+  const openShareModal = () => {
     setShareModalIsOpen(true);
-  }
+  };
 
   // Closes the share sheet modal.
-  function closeShareModal() {
+  const closeShareModal = () => {
     setShareModalIsOpen(false);
-  }
+  };
+
+  // Toggles the share sheet modal.
+  const toggleShareModal = () => {
+    setShareModalIsOpen(!shareModalIsOpen);
+  };
 
   if (!props.isLoading) {
     const dataDirectory = `/data/events/${props.eventData.id}-${props.eventData.name}`;
@@ -188,6 +193,7 @@ const Event = (props) => {
                 shareModalIsOpen={shareModalIsOpen}
                 openShareModal={openShareModal}
                 closeShareModal={closeShareModal}
+                toggleShareModal={toggleShareModal}
               />
               <ShareModal
                 shareModalIsOpen={shareModalIsOpen}
@@ -364,20 +370,21 @@ const AddToCalendarModal = ({ children, isOpen, onRequestClose }) => {
   );
 };
 
-const ShareButton = ({ shareModalIsOpen, openShareModal, closeShareModal }) => {
+const ShareButton = ({
+  shareModalIsOpen,
+  openShareModal,
+  closeShareModal,
+  toggleShareModal,
+}) => {
   const handleClick = () => {
     if (navigator.share) {
       navigator.share({
-        title: `Join me at ${event.title}!`,
-        text: `Join me at ${event.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:`,
-        url: window.location.href,
+        title: eventShareData.shareTitle,
+        text: eventShareData.shareDescription,
+        url: eventShareData.eventUrl,
       });
     } else {
-      if (shareModalIsOpen) {
-        closeShareModal();
-      } else {
-        openShareModal();
-      }
+      toggleShareModal();
     }
   };
 
