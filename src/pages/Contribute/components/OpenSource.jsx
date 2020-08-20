@@ -57,26 +57,45 @@ const OpenSource = () => (
             Create a branch in your forked repository on your computer for your
             changes.
           </li>
-          <li>Make your changes and commit them to your new branch</li>
+          <li>
+            Make your changes and commit them to your new branch on your
+            computer.
+          </li>
           <Alert variant="success">
             Be sure to leave comments about your progress and status on the
-            issue every few days while you're working on it! It's okay to ask
-            for help or for clarification about the issue!
+            issue every few days while you're working on it! If you're stuck
+            with something or need some more information, it's okay to ask for
+            help or for clarification about the issue!
+          </Alert>
+          <Alert variant="warning">
+            The reason we ask that you provide updates about your issue every
+            few days is to make sure that claimed issues are actively being
+            worked on. If you do not provide any updates within a week, your
+            issue may be unassigned from you and released for others to claim.
+            There are other contributors that may have wanted to take the issue
+            you claimed!
           </Alert>
         </div>
         <div>
           <h4>
-            Finally, once you're done, push your local changes to your fork on
-            GitHub and open a pull request!
+            Finally, once you're done, you can submit a pull request to merge
+            your changes with the main branch!
           </h4>
           <li>Push your changes to your fork on GitHub.</li>
           <li>Open a pull request for your changes.</li>
         </div>
       </ol>
       <p>
-        After you submit your pull request, a maintainer will review your code.
-        If all goes well and your pull request is accepted, your changes will be
-        merged into the main branch!
+        After you submit your pull request, a maintainer (or multiple!) will
+        review your code. If all goes well and your pull request is accepted,
+        your changes will be merged into the main branch!
+      </p>
+      <p>
+        If things don't go as smoothly as they should, don't worry! Code
+        reviewers will usually provide guidance about how you could fix any
+        problems with your submission. Don't take it personally, as the
+        maintainers are just trying their best to maintain the quality of the
+        codebase. Don't be afraid to ask for help on the pull request if needed!
       </p>
       <a
         href="https://opensource.guide/how-to-contribute/#opening-a-pull-request"
