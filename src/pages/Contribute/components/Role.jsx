@@ -13,8 +13,10 @@ const Role = (props) => {
           <div>
             {props.children}
             <a
-              href="https://bccompsci.club/contribute/apply"
               className="role-apply"
+              href="https://bccompsci.club/contribute/apply"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Apply for this Role
             </a>
