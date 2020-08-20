@@ -11,8 +11,14 @@ const OpenSource = () => (
 
       <p>
         Most of the club's software is open source on our&nbsp;
-        <a href="https://github.com/bc-compsci-club">GitHub Organization</a>!
-        We're currently looking for contributors interested in helping us out
+        <a
+          href="https://github.com/bc-compsci-club"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub Organization
+        </a>
+        ! We're currently looking for contributors interested in helping us out
         with some of our software, such as new features and bug fixes for the
         club's website.
       </p>
@@ -28,7 +34,11 @@ const OpenSource = () => (
 
           <Alert variant="primary">
             Our open source projects can be found on our&nbsp;
-            <Alert.Link href="https://github.com/bc-compsci-club">
+            <Alert.Link
+              href="https://github.com/bc-compsci-club"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub Organization
             </Alert.Link>
             .
