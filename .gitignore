@@ -25,6 +25,7 @@ yarn-error.log*
 
 # Editor data files
 .idea
+.vscode
 
 # Local Netlify folder
 .netlify
