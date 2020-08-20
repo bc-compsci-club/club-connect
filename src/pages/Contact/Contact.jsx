@@ -1,8 +1,8 @@
+// @flow
 import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
-import ContactForm from "./components/Contact Form";
-
-
+import ContactForm from './components/ContactForm';
+import './Contact.scss';
 
 const Contact = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -20,12 +20,9 @@ const Contact = () => {
   };
 
   return (
-    <div className="Home">
+    <div className="Contact">
       <article>
         <Header width={width} />
-        {/* <Header width={width} />
-        <Email />
-        <SocialMedia width={width} /> */}
         <ContactForm />
       </article>
     </div>
