@@ -4,3 +4,4 @@ Thank you for your interest in contributing to the club's website! There are a f
 
 - Please follow the style guidelines and auto-format your code with Prettier. This project uses single quotes whenever possible and backticks wherever necessary.
 - We use functional React components in this project. If you have a class-based component, please refactor it to a functional component before opening a pull request.
+- Refer to the Figma design in the README when developing a new feature.
