@@ -131,7 +131,6 @@ class ContactForm extends Component {
               )}
               {this.state.emailSent === false && (
                 <Alert
-                  dismissible
                   variant="danger"
                   onClose={() => this.setState({ emailSent: null })}
                   dismissible
