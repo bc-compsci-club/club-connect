@@ -38,7 +38,6 @@ const Navigation = () => {
             </li>
             <li>
               <Link to="/contact">Contact</Link>
-              {/* <a href="mailto:contact@bccompsci.club">Contact</a> */}
             </li>
 
             <li className="join-button">

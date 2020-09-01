@@ -1,156 +1,134 @@
 // @flow
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 import './ContactForm.scss';
 
-class ContactForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      email: '',
-      message: '',
-      disabled: false,
-      emailSent: null,
-    };
-  }
+const ContactForm = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [disabled, setDisabled] = useState(false);
+  const [emailSent, setEmailSent] = useState(null);
 
-  handleChange = (event) => {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value,
-    });
-  };
-
-  handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(event.target);
+    setDisabled(true);
 
-    this.setState({
-      disabled: true,
-    });
-
-    Axios.post(
-      'https://bc-cs-club-website.ue.r.appspot.com/api/email',
-      this.state
-    )
+    Axios.post('https://bc-cs-club-website.ue.r.appspot.com/api/email', {
+      name: name,
+    })
       .then((res) => {
         if (res.data.success) {
-          this.setState({
-            disabled: false,
-            emailSent: true,
-          });
+          setEmailSent(true);
         } else {
-          this.setState({
-            disabled: false,
-            emailSent: false,
-          });
+          setDisabled(false);
+          setEmailSent(false);
         }
       })
-      .catch((err) => {
-        console.log(err);
-
-        this.setState({
-          disabled: false,
-          emailSent: false,
-        });
+      .catch(() => {
+        setDisabled(false);
+        setEmailSent(false);
       });
   };
 
-  render() {
-    return (
-      <section className="contact">
-        <div className="contact-container">
-          <Form onSubmit={this.handleSubmit}>
-            {/* input fields */}
+  return (
+    <section className="contact">
+      <div className="contact-container">
+        <Form onSubmit={handleSubmit}>
+          {/* input fields */}
+          <div className="fields">
+            <Form.Group>
+              <Form.Label className="helloworld" htmlFor="full-name">
+                Full Name*
+              </Form.Label>
+              <Form.Control
+                id="full-name"
+                name="name"
+                type="text"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
+              />
+            </Form.Group>
 
-            <div className="fields">
-              <Form.Group>
-                <Form.Label className="helloworld" htmlFor="full-name">
-                  Full Name
-                </Form.Label>
-                <Form.Control
-                  id="full-name"
-                  name="name"
-                  type="text"
-                  value={this.state.name}
-                  onChange={this.handleChange}
-                  required
-                />
-              </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor="email">Email*</Form.Label>
+              <Form.Control
+                id="email"
+                name="email"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+              />
+            </Form.Group>
 
-              <Form.Group>
-                <Form.Label htmlFor="email">Email</Form.Label>
-                <Form.Control
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.handleChange}
-                  required
-                />
-              </Form.Group>
+            <Form.Group>
+              <Form.Label htmlFor="message">Message*</Form.Label>
+              <Form.Control
+                id="message"
+                name="message"
+                as="textarea"
+                rows="5"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                required
+              />
+            </Form.Group>
+          </div>
 
-              <Form.Group>
-                <Form.Label htmlFor="message">Message</Form.Label>
-                <Form.Control
-                  id="message"
-                  name="message"
-                  as="textarea"
-                  rows="5"
-                  value={this.state.message}
-                  onChange={this.handleChange}
-                  required
-                />
-              </Form.Group>
-            </div>
-
-            {/* Button sends the email */}
-            <Button type="submit" disabled={this.state.disabled}>
-              Send Message
-            </Button>
-
-            {/* Approval/Rejection alert */}
-            <div className="alertMessage">
-              {this.state.emailSent === true && (
+          {/* Approval/Rejection alert */}
+          <div className="alertMessage">
+            {emailSent !== null ? (
+              emailSent ? (
                 <Alert
                   variant="success"
-                  onClose={() => this.setState({ emailSent: null })}
+                  // onClose={}
                   dismissible
                 >
-                  <Alert.Heading>Email sent!</Alert.Heading>
-                  <p>Our representative will contact you shortly!</p>
-                </Alert>
-              )}
-              {this.state.emailSent === false && (
-                <Alert
-                  variant="danger"
-                  onClose={() => this.setState({ emailSent: null })}
-                  dismissible
-                >
-                  <Alert.Heading>Email not sent!</Alert.Heading>
+                  <Alert.Heading>Message sent!</Alert.Heading>
                   <p>
-                    Sorry, there is a problem on our end. Please contact us at
-                    <a href="mailto:contact@bccompsci.club">
-                      contact@bccompsci.club
-                    </a>
-                    manually.
+                    Thank you! We have received your message and will get back
+                    to you shortly.
                   </p>
                 </Alert>
-              )}
-            </div>
-          </Form>
-        </div>
-      </section>
-    );
-  }
-}
+              ) : (
+                <>
+                  <Button type="submit" disabled={disabled}>
+                    {disabled ? 'Sending...' : 'Send Message'}
+                  </Button>
+                  <Alert
+                    variant="danger"
+                    // onClose={() => setEmailSent(null)}
+                    dismissible
+                  >
+                    <Alert.Heading>Uh oh!</Alert.Heading>
+                    <p>
+                      It seems that there was a problem on our end! Please try
+                      sending the message again above. If that doesn't work,
+                      please send us your message by email at&nbsp;
+                      <a href="mailto:contact@bccompsci.club">
+                        contact@bccompsci.club
+                      </a>
+                      . We apologize for any inconvenience this may have caused!
+                    </p>
+                  </Alert>
+                </>
+              )
+            ) : (
+              <Button type="submit" disabled={disabled}>
+                {disabled ? 'Sending...' : 'Send Message'}
+              </Button>
+            )}
+          </div>
+        </Form>
+      </div>
+    </section>
+  );
+};
 
 export default ContactForm;
