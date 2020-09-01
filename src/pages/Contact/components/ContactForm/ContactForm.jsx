@@ -20,6 +20,8 @@ const ContactForm = () => {
 
     Axios.post('https://bc-cs-club-website.ue.r.appspot.com/api/email', {
       name: name,
+      email: email,
+      message: message,
     })
       .then((res) => {
         if (res.data.success) {
