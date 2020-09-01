@@ -111,8 +111,8 @@ const ContactForm = () => {
                     <Alert.Heading>Uh oh!</Alert.Heading>
                     <p>
                       It seems that there was a problem on our end! Please try
-                      sending the message again above. If that doesn't work,
-                      please send us your message by email at&nbsp;
+                      sending the message again above. If that doesn&apos;t
+                      work, please send us your message by email at&nbsp;
                       <a href="mailto:contact@bccompsci.club">
                         contact@bccompsci.club
                       </a>
