@@ -59,14 +59,14 @@ const NavbarHamburgerMenu = () => {
               </Link>
             </li>
             <li>
-              {/* Temporary email contact until contact page is ready */}
-              {/* <Link to="/contact">Contact</Link> */}
-              <a
-                href="mailto:contact@bccompsci.club"
-                onClick={context.toggleMenu}
-              >
+              <Link to="/contribute" onClick={context.toggleMenu}>
+                Contribute
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" onClick={context.toggleMenu}>
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

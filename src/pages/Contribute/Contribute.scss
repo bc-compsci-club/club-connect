@@ -1,19 +1,16 @@
 .Contribute {
-  font-family: 'Nunito', sans-serif;
-  padding: 8vw;
   margin: 0 auto;
-  font-size: 1.25rem;
 
-  h1 {
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    font-size: 2.5rem;
+  p {
+    margin-bottom: 1.5rem;
   }
 
-  ul {
-    margin-bottom: 0;
+  p:last-of-type {
+    margin-bottom: 0.5rem;
+  }
+
+  .contribute-list {
+    margin: 0 auto;
   }
 
   .contribute-heading {
@@ -123,20 +120,6 @@
   // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
   // 10vw of padding for width on large horizontal phones and tablets
   @media screen and (min-width: 43.75rem) {
-    h1 {
-      font-size: 3rem;
-    }
-
-    padding: 2.75rem 10vw 3rem;
-
-    // Padding for landscape iPhones with notch
-    @supports (padding: max(0px)) {
-      @media screen and (orientation: landscape) {
-        padding-left: max(10vw, calc(env(safe-area-inset-left) + 10vw));
-        padding-right: max(10vw, calc(env(safe-area-inset-right) + 10vw));
-      }
-    }
-
     .contribute-volunteer {
       .Contribute-Role {
         .role-apply {
@@ -149,7 +132,6 @@
   // 1024px (horizontal tablets)
   // Switch to max-width instead of using padding
   @media screen and (min-width: 64rem) {
-    padding: 2.75rem 0 3rem;
     max-width: 48rem;
   }
 }

@@ -3,11 +3,12 @@ import { Link as ScrollLink } from 'react-scroll';
 import Volunteer from './components/Volunteer';
 import OpenSource from './components/OpenSource';
 import HostEvent from './components/HostEvent';
+import '../page-styles.scss';
 import './Contribute.scss';
 
 const Contribute = () => {
   return (
-    <div className="Contribute">
+    <div className="page-styles Contribute">
       <section className="contribute-intro">
         <h1>Contribute to the Club</h1>
         <p>
@@ -27,7 +28,7 @@ const Contribute = () => {
           If you're interested in contributing to the club, here are a few ways
           you can do so:
         </p>
-        <ul>
+        <ul className="contribute-list">
           <li>
             <ScrollDownPage to="volunteer">
               Volunteer for the club
