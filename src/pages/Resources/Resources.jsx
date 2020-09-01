@@ -1,10 +1,11 @@
 // @flow
 import React from 'react';
+import '../page-styles.scss';
 import './Resources.scss';
 
 const Resources = () => {
   return (
-    <div className="Resources">
+    <div className="page-styles Resources">
       <h1>Resources</h1>
       <span role="img" aria-label="Resources Book Stack">
         📚

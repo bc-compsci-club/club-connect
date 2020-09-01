@@ -1,10 +1,11 @@
 import React from 'react';
-import './Events.scss';
 import { Link } from 'react-router-dom';
+import '../page-styles.scss';
+import './Events.scss';
 
 const Events = () => {
   return (
-    <div className="Events">
+    <div className="page-styles Events">
       <h1>Upcoming Events</h1>
       <ul className="events-list">
         <li>

@@ -59,6 +59,11 @@ const NavbarHamburgerMenu = () => {
               </Link>
             </li>
             <li>
+              <Link to="/contribute" onClick={context.toggleMenu}>
+                Contribute
+              </Link>
+            </li>
+            <li>
               <Link to="/contact" onClick={context.toggleMenu}>
                 Contact
               </Link>
