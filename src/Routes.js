@@ -7,8 +7,9 @@ import Events from 'pages/Events';
 import Resources from 'pages/Resources';
 import Join from 'pages/Join';
 import WelcomeJoin from 'pages/WelcomeJoin';
-import EventPage from './pages/EventPage';
-import Contribute from './pages/Contribute';
+import EventPage from 'pages/EventPage';
+import Contribute from 'pages/Contribute';
+import Contact from 'pages/Contact';
 
 const Routes = () => {
   return (
@@ -30,6 +31,9 @@ const Routes = () => {
       </Route>
       <Route path="/contribute">
         <Contribute />
+      </Route>
+      <Route path="/contact">
+        <Contact />
       </Route>
       <Route path="/about">
         <About />

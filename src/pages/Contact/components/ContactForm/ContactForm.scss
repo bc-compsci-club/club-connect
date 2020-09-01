@@ -1,0 +1,67 @@
+section.contact {
+  .contact-container {
+    .btn {
+      display: block;
+      margin: 1rem auto 2rem;
+      padding: 1rem;
+      width: 95%;
+
+      text-align: center;
+      text-decoration: none;
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.25rem;
+      font-weight: bold;
+
+      transition: 0.2s;
+      transition-timing-function: ease-in-out;
+
+      color: #fff;
+      background-color: #4d5eff;
+      border: none;
+      border-radius: 50px;
+    }
+
+    .btn:hover {
+      background-color: #5767fe;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:active {
+      background-color: #6574f7;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .fields {
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    text-align: left;
+    color: #000;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  .alertMessage {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin: 1rem auto 0;
+    font-size: 1.5rem;
+    line-height: 1.25;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    width: 40%;
+  }
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  @media screen and (min-width: 43.75rem) {
+    .contact-container {
+      .btn {
+        width: 15rem;
+      }
+    }
+  }
+}
