@@ -1,17 +1,19 @@
 .Events {
-  .events-list {
-    margin: 0 auto 2rem;
-    padding: 0 2rem;
+  .Events-banners-month {
+    margin: 1.5rem 0 0.5rem;
+    text-align: start;
+    font-weight: bold;
+  }
 
-    li {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
+  .Events-banners {
+    margin: 1rem auto 2rem;
+    display: grid;
+    gap: 2rem;
+  }
 
-    a {
-      //padding-left: 0.25rem;
-      font-size: 1.5rem;
-    }
+  .Events-banners-description {
+    margin: 0 0 20%;
+    font-size: 1.5rem;
   }
 
   // Desktop, Tablet, and Horizontal Phone styles
@@ -21,16 +23,13 @@
     display: flex;
     flex-direction: column;
 
-    .events-list {
-      padding: 0;
+    .Events-banners-month {
+      margin-top: 1rem;
+    }
 
-      li {
-        font-size: 1.75rem;
-      }
-
-      a {
-        font-size: 1.75rem;
-      }
+    .Events-banners {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
     }
 
     p {
