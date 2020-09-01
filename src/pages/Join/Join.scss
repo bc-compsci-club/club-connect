@@ -26,6 +26,7 @@
         margin-bottom: 3rem;
         font-family: 'Raleway', sans-serif;
         font-size: 2rem;
+        font-weight: bold;
         text-align: center;
       }
 
@@ -56,12 +57,14 @@
         label {
           display: block;
           font-family: 'Nunito', sans-serif;
-          font-size: 1rem;
+          font-size: 1.25rem;
           line-height: 1;
         }
 
         input[type='text'],
         input[type='email'] {
+          font-family: 'Nunito', sans-serif;
+          font-size: 1.25rem;
           border: 2px solid #fff;
           background-color: #ececec;
           background-clip: padding-box;
