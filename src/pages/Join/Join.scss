@@ -124,7 +124,15 @@
   @media screen and (min-width: 48rem) {
     .join-flex-container {
       .join-container {
-        max-width: 512px;
+        max-width: 32rem;
+
+        h1 {
+          margin-bottom: 3rem;
+          font-family: 'Raleway', sans-serif;
+          font-size: 2.25rem;
+          font-weight: bold;
+          text-align: center;
+        }
 
         form {
           margin-top: 2rem;
@@ -137,6 +145,11 @@
             .form-last-name {
               width: 100%;
             }
+          }
+
+          input[type='submit'] {
+            font-size: 1.5rem;
+            width: 98%;
           }
         }
       }
