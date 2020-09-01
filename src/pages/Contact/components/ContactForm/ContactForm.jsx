@@ -44,12 +44,12 @@ class ContactForm extends Component {
       .then((res) => {
         if (res.data.success) {
           this.setState({
-            disabled: false,
+            disabled: true,
             emailSent: true,
           });
         } else {
           this.setState({
-            disabled: false,
+            disabled: true,
             emailSent: false,
           });
         }
@@ -58,7 +58,7 @@ class ContactForm extends Component {
         console.log(err);
 
         this.setState({
-          disabled: false,
+          disabled: true,
           emailSent: false,
         });
       });
