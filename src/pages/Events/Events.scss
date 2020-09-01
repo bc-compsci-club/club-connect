@@ -1,34 +1,4 @@
 .Events {
-  margin: 2.5vh auto 10vh;
-  padding: 0 8vw;
-
-  span {
-    margin: 0 auto;
-    display: block;
-    text-align: center;
-    font-size: 5rem;
-  }
-
-  h1 {
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    font-size: 2.25rem;
-    margin: 10vh auto 2rem;
-  }
-
-  h2 {
-    font-family: 'Raleway', sans-serif;
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 2.5vh;
-  }
-
-  p {
-    font-family: 'Nunito', sans-serif;
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-
   .events-list {
     margin: 0 auto 2rem;
     padding: 0 2rem;
@@ -50,23 +20,6 @@
   @media screen and (min-width: 43.75rem) {
     display: flex;
     flex-direction: column;
-    max-width: 53.8125rem; // 861px, 70% of 1230px
-    margin: 5vh auto 20%;
-
-    h1 {
-      font-size: 3rem;
-      margin-top: 2rem;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin: 0 auto 2.5rem;
-    }
-
-    p {
-      max-width: 52rem;
-      margin: 0 auto 2.5rem;
-    }
 
     .events-list {
       padding: 0;
@@ -80,20 +33,9 @@
       }
     }
 
-    padding: 0 10vw;
-
-    // Padding for landscape iPhones with notch
-    @supports (padding: max(0px)) {
-      @media screen and (orientation: landscape) {
-        padding-left: max(10vw, calc(env(safe-area-inset-left) + 10vw));
-        padding-right: max(10vw, calc(env(safe-area-inset-right) + 10vw));
-      }
+    p {
+      margin: 0 auto;
+      max-width: 44rem;
     }
-  }
-
-  // 1366px (medium laptops)
-  // Increase margin on top and set max width for all larger resolutions
-  @media screen and (min-width: 85.375rem) {
-    max-width: var(--large-screen-max-width);
   }
 }
