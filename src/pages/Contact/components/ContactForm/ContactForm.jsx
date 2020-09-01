@@ -126,7 +126,7 @@ class ContactForm extends Component {
                   dismissible
                 >
                   <Alert.Heading>Email sent!</Alert.Heading>
-                  <p>Our representive will contact you shorltly!</p>
+                  <p>Our representative will contact you shortly!</p>
                 </Alert>
               )}
               {this.state.emailSent === false && (
