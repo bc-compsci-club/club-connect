@@ -6,8 +6,13 @@ const Header = () => {
     <section className="Header">
       <h1>Contact Us</h1>
       <p>
-        Got a question? We'd love to hear from you. Send us a message and we'll
-        respond as soon as possible.
+        If you have any questions, comments, and/or concerns, are interested in
+        leading an event, want to sponsor the club, or have something else you
+        want to talk to us about, you&apos;ve come to the right place!
+      </p>
+      <p>
+        Please fill out the form below and we&apos;ll be in touch shortly. Thank
+        you!
       </p>
     </section>
   );
