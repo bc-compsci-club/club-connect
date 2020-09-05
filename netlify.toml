@@ -8,10 +8,17 @@ cache-control = '''
 
 # Redirects for the domain
 [[redirects]]
+from = "/zoom-virtual-club-fair"
+to = "https://zoom.us/j/96511874743"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
+# Redirects for the domain
+[[redirects]]
 from = "/discord"
 to = "https://discord.com/invite/ztz44wG"
 status = 302
-headers = {Cache-Control = "public, max-age=0, must-revalidate"}# Redirects for the domain
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
 [[redirects]]
 from = "/messenger"
