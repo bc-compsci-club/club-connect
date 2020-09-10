@@ -150,12 +150,8 @@ const Event = (props) => {
             </div>
             <div className="event-link">
               <a
-                href={eventShareData.eventUrl}
-                onClick={() => {
-                  window.alert(
-                    'Check back here a day before the event starts for the Zoom Meeting link!'
-                  );
-                }}
+                href="https://zoom.us/j/95531280573?pwd=enFuY0xFblpBWk1iK2JmMGhsNFB3Zz09"
+                rel="noopener noreferrer"
               >
                 Zoom Meeting Link
               </a>
