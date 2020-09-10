@@ -16,7 +16,7 @@ headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 # Redirects for the domain
 [[redirects]]
 from = "/events/1/meet-the-board/join"
-to = "https://l.messenger.com/l.php?u=https%3A%2F%2Fzoom.us%2Fj%2F95531280573%3Fpwd%3DenFuY0xFblpBWk1iK2JmMGhsNFB3Zz09&h=AT1TEhcoQByM8NwJv5ti0CPiHNeiiKkse6-9c46G2MfUTJRd_TZuF3icFXF8gN7Tm2nlM5YLKxHTCS-wsaZrw5dIPb-jKa1ihklSHTVn2kQu6d4sRn8xErM8wlqMos4T0-iVs_TcAmk"
+to = "https://zoom.us/j/95531280573?pwd=enFuY0xFblpBWk1iK2JmMGhsNFB3Zz09"
 status = 302
 headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
