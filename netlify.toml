@@ -57,6 +57,12 @@ status = 302
 headers = {Cache-Control = "public, max-age=0, must-revalidate"}
 
 [[redirects]]
+from = "/surveys/meet-the-board"
+to = "https://forms.gle/NbWnFkHxFsKQsHYk9"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
+[[redirects]]
 from = "/contribute/apply"
 to = "https://forms.gle/HWNzk4LwP1QVQmn87"
 status = 302
