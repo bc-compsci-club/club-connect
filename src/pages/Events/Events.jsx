@@ -10,20 +10,8 @@ const Events = () => {
 
       <h2 className="Events-banners-month">September</h2>
       <section className="Events-banners">
-        <Event name="meet-the-board" id={1} />
         <Event name="donuts-and-discussion" id={2} />
         <Event name="facul-tea-time" id={3} />
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSft-lq-WJ7my5VB1WMV9c__q3WFJrsEpOq2O0mEbe9EG-WiBg/viewform"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="Events-event"
-        >
-          <img
-            src={`${process.env.PUBLIC_URL}/data/events/bloomberg-cuny-week.png`}
-            alt="Event banner"
-          />
-        </a>
       </section>
 
       <h2 className="Events-banners-month">October</h2>
