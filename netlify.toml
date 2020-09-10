@@ -6,6 +6,14 @@ cache-control = '''
 	max-age=86400,
 	immutable'''
 
+[[headers]]
+for = "*.json"
+[headers.values]
+cache-control = '''
+    public,
+	max-age=0,
+	must-revalidate'''
+
 # Redirects for the domain
 [[redirects]]
 from = "/discord"
