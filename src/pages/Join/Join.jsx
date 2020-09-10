@@ -83,7 +83,7 @@ const Join = () => {
 
             <br />
             <div>
-              <input id="form-join-submit" type="submit" value="Join!"/>
+              <input id="form-join-submit" type="submit" value="Join!" />
               {/* <input id="form-join-submit" type="submit" value={submitValue} /> */}
             </div>
           </form>

@@ -24,55 +24,60 @@ const EventPage = () => {
     const pathArray = window.location.pathname.split('/');
     const eventId = parseInt(pathArray[2]);
 
-    // Get the events index
-    axios
-      .get('/data/events/events-list.json')
+    try {
+      // Get the events index
+      axios
+        .get('/data/events/events-list.json')
 
-      .then((res) => {
-        const events = res.data[eventId - 1];
+        .then((res) => {
+          const events = res.data[eventId - 1];
 
-        // Add event name to URL if it doesn't match the event name
-        if (pathArray[3] !== (events.name || events.name + '/')) {
-          // Check if "addtocalendar" is after the event name in the URL
-          if (typeof pathArray[4] === 'undefined') {
-            window.location.href = `${window.location.protocol}//${window.location.hostname}/events/${eventId}/${events.name}`;
-          } else {
-            window.location.href = `${window.location.protocol}//${window.location.hostname}/events/${eventId}/${events.name}/addtocalendar`;
+          // Add event name to URL if it doesn't match the event name
+          if (pathArray[3] !== (events.name || events.name + '/')) {
+            // Check if "addtocalendar" is after the event name in the URL
+            if (typeof pathArray[4] === 'undefined') {
+              window.location.href = `${window.location.protocol}//${window.location.hostname}/events/${eventId}/${events.name}`;
+            } else {
+              window.location.href = `${window.location.protocol}//${window.location.hostname}/events/${eventId}/${events.name}/addtocalendar`;
+            }
           }
-        }
 
-        // Get the event data from the ID specified in the path
-        axios
-          .get(`/data/events/${eventId}-${events.name}/event.json`)
+          // Get the event data from the ID specified in the path
+          axios
+            .get(`/data/events/${eventId}-${events.name}/event.json`)
 
-          .then((res) => {
-            // TODO: Find a better way to do this
-            const data = res.data;
+            .then((res) => {
+              // TODO: Find a better way to do this
+              const data = res.data;
 
-            eventData.id = data.id;
-            eventData.name = data.name;
-            eventData.title = data.title;
-            eventData.presenter = data.presenter;
-            eventData.presenterImage = data.presenterImage;
-            eventData.date = data.date;
-            eventData.startTime = data.startTime;
-            eventData.endTime = data.endTime;
-            eventData.location = data.location;
-            eventData.banner = data.banner;
-            eventData.shortDescription = data.shortDescription;
-            eventData.longDescription = data.longDescription;
+              eventData.id = data.id;
+              eventData.name = data.name;
+              eventData.title = data.title;
+              eventData.presenter = data.presenter;
+              eventData.presenterImage = data.presenterImage;
+              eventData.date = data.date;
+              eventData.startTime = data.startTime;
+              eventData.endTime = data.endTime;
+              eventData.location = data.location;
+              eventData.banner = data.banner;
+              eventData.shortDescription = data.shortDescription;
+              eventData.longDescription = data.longDescription;
 
-            setLoading(false);
-          })
+              setLoading(false);
+            })
 
-          .catch((err) => {
-            console.error(err);
-          });
-      })
+            .catch((err) => {
+              console.error(err);
+            });
+        })
 
-      .catch((err) => {
-        console.error(err);
-      });
+        .catch((err) => {
+          console.error(err);
+        });
+    } catch (err) {
+      console.error('Could not get event data!');
+      console.err(err);
+    }
   }, [eventData]);
 
   return (

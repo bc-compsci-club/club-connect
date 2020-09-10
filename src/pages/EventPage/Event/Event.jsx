@@ -63,9 +63,9 @@ const event = {
 };
 
 const eventShareData = {
-  eventUrl: `https://bccompsci.club/events`,
-  shareTitle: `Join me at an event!`,
-  shareDescription: `Join me at an event hosted by the Brooklyn College Computer Science Club!`,
+  eventUrl: 'https://bccompsci.club/events',
+  shareTitle: 'Join me at an event!',
+  shareDescription: 'Join me at an event hosted by the Brooklyn College Computer Science Club!',
 };
 
 const Event = (props) => {
