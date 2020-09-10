@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ContentLoader from 'react-content-loader';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
@@ -71,6 +71,8 @@ const eventShareData = {
 };
 
 const Event = (props) => {
+  let location = useLocation();
+
   // Share sheet modal for unsupported devices
   const [shareModalIsOpen, setShareModalIsOpen] = useState(false);
 
@@ -169,10 +171,7 @@ const Event = (props) => {
               <p>{props.eventData.location}</p>
             </div>
             <div className="event-link">
-              <Link
-                to={`/events/${props.eventData.id}/${props.eventData.name}/join`}
-                onClick={navigateToMeetingLink}
-              >
+              <Link to={location.pathname} onClick={navigateToMeetingLink}>
                 Zoom Meeting Link
               </Link>
             </div>
