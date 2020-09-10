@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import ContentLoader from 'react-content-loader';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
@@ -88,6 +89,24 @@ const Event = (props) => {
     setShareModalIsOpen(!shareModalIsOpen);
   };
 
+  const navigateToMeetingLink = () => {
+    if (props.eventData.meetingLink === null) {
+      alert('Check back a day before the event starts for the meeting link!');
+    } else {
+      window.location.replace(props.eventData.meetingLink);
+    }
+  };
+
+  // Temporary solution for routing to the external meeting link
+  useEffect(() => {
+    const pathArray = window.location.pathname.split('/');
+    if (pathArray[4] === 'join') {
+      if (props.eventData.meetingLink !== null) {
+        window.location.replace(props.eventData.meetingLink);
+      }
+    }
+  }, [props.eventData.meetingLink]);
+
   if (!props.isLoading) {
     const dataDirectory = `/data/events/${props.eventData.id}-${props.eventData.name}`;
 
@@ -150,17 +169,12 @@ const Event = (props) => {
               <p>{props.eventData.location}</p>
             </div>
             <div className="event-link">
-              <a
-                href="#"
-                rel="noopener noreferrer"
-                onClick={() =>
-                  alert(
-                    'Check back here a day before the event starts for the Zoom link!'
-                  )
-                }
+              <Link
+                to={`/events/${props.eventData.id}/${props.eventData.name}/join`}
+                onClick={navigateToMeetingLink}
               >
                 Zoom Meeting Link
-              </a>
+              </Link>
             </div>
           </div>
         </div>
