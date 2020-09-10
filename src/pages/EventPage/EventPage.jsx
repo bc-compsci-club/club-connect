@@ -17,6 +17,7 @@ const EventPage = () => {
     banner: '',
     shortDescription: '',
     longDescription: '',
+    meetingLink: null,
   });
 
   useEffect(() => {
@@ -62,6 +63,7 @@ const EventPage = () => {
               eventData.banner = data.banner;
               eventData.shortDescription = data.shortDescription;
               eventData.longDescription = data.longDescription;
+              eventData.meetingLink = data.meetingLink;
 
               setLoading(false);
             })
