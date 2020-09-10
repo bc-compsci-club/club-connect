@@ -65,7 +65,8 @@ const event = {
 const eventShareData = {
   eventUrl: 'https://bccompsci.club/events',
   shareTitle: 'Join me at an event!',
-  shareDescription: 'Join me at an event hosted by the Brooklyn College Computer Science Club!',
+  shareDescription:
+    'Join me at an event hosted by the Brooklyn College Computer Science Club!',
 };
 
 const Event = (props) => {
@@ -150,8 +151,13 @@ const Event = (props) => {
             </div>
             <div className="event-link">
               <a
-                href="https://zoom.us/j/95531280573?pwd=enFuY0xFblpBWk1iK2JmMGhsNFB3Zz09"
+                href="#"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  alert(
+                    'Check back here a day before the event starts for the Zoom link!'
+                  )
+                }
               >
                 Zoom Meeting Link
               </a>
