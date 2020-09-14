@@ -91,14 +91,6 @@ const Event = (props) => {
     setShareModalIsOpen(!shareModalIsOpen);
   };
 
-  const navigateToMeetingLink = () => {
-    if (props.eventData.meetingLink === null) {
-      alert('Check back a day before the event starts for the meeting link!');
-    } else {
-      window.location.replace(props.eventData.meetingLink);
-    }
-  };
-
   // Temporary solution for routing to the external meeting link
   useEffect(() => {
     const pathArray = window.location.pathname.split('/');
@@ -171,9 +163,26 @@ const Event = (props) => {
               <p>{props.eventData.location}</p>
             </div>
             <div className="event-link">
-              <Link to={location.pathname} onClick={navigateToMeetingLink}>
-                Zoom Meeting Link
-              </Link>
+              {props.eventData.meetingLink === null ? (
+                <Link
+                  to={location.pathname}
+                  onClick={() =>
+                    alert(
+                      'Check back here a day before the event starts for the meeting link!'
+                    )
+                  }
+                >
+                  Zoom Meeting Link
+                </Link>
+              ) : (
+                <a
+                  href={props.eventData.meetingLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Zoom Meeting Link
+                </a>
+              )}
             </div>
           </div>
         </div>
