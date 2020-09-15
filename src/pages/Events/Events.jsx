@@ -10,7 +10,6 @@ const Events = () => {
 
       <h2 className="Events-banners-month">September</h2>
       <section className="Events-banners">
-        <Event name="donuts-and-discussion" id={2} />
         <Event name="facul-tea-time" id={3} />
       </section>
 
