@@ -18,6 +18,7 @@ const EventPage = () => {
     shortDescription: '',
     longDescription: '',
     meetingLink: null,
+    buttonText: '',
   });
 
   useEffect(() => {
@@ -64,6 +65,7 @@ const EventPage = () => {
               eventData.shortDescription = data.shortDescription;
               eventData.longDescription = data.longDescription;
               eventData.meetingLink = data.meetingLink;
+              eventData.buttonText = data.buttonText;
 
               setLoading(false);
             })
