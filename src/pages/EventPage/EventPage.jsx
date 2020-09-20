@@ -9,12 +9,10 @@ const EventPage = () => {
     name: '',
     title: '',
     presenter: '',
-    presenterImage: '',
     date: '',
     startTime: '',
     endTime: '',
     location: '',
-    banner: '',
     shortDescription: '',
     longDescription: '',
     meetingLink: null,
@@ -56,12 +54,10 @@ const EventPage = () => {
               eventData.name = data.name;
               eventData.title = data.title;
               eventData.presenter = data.presenter;
-              eventData.presenterImage = data.presenterImage;
               eventData.date = data.date;
               eventData.startTime = data.startTime;
               eventData.endTime = data.endTime;
               eventData.location = data.location;
-              eventData.banner = data.banner;
               eventData.shortDescription = data.shortDescription;
               eventData.longDescription = data.longDescription;
               eventData.meetingLink = data.meetingLink;

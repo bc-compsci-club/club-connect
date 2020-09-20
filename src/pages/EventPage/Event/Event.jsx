@@ -104,8 +104,8 @@ const Event = (props) => {
   if (!props.isLoading) {
     const dataDirectory = `/data/events/${props.eventData.id}-${props.eventData.name}`;
 
-    const image = `${dataDirectory}/${props.eventData.banner}`;
-    const presenterImage = `${dataDirectory}/${props.eventData.presenterImage}`;
+    const image = `${dataDirectory}/banner.png`;
+    const presenterImage = `${dataDirectory}/presenter-icon.png`;
 
     // TODO: Allow events from any time zone other than Brooklyn College's Time Zone
     event.title = props.eventData.title;
@@ -133,7 +133,7 @@ const Event = (props) => {
       <section className="Event">
         <div className="event-banner-and-information">
           <div className="event-banner-container">
-            <img className="event-banner" src={image} alt="Event banner" />
+            <img className="event-banner" src={image} alt={props.eventData.title} />
           </div>
 
           <div className="event-information">
