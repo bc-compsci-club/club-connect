@@ -1,0 +1,37 @@
+{
+  "upcomingEvents": {
+    "september": {
+      "monthName": "September",
+      "events": [
+        {
+          "id": 3,
+          "name": "facul-tea-time",
+          "title": "Facul-Tea Time"
+        }
+      ]
+    },
+    "october": {
+      "monthName": "October",
+      "events": [
+        {
+          "id": 5,
+          "name": "monthly-project-showcase-october",
+          "title": "Monthly Project Showcase"
+        }
+      ]
+    }
+  },
+
+  "pastEvents": [
+    {
+      "id": 1,
+      "name": "meet-the-board",
+      "title": "Meet the Board"
+    },
+    {
+      "id": 2,
+      "name": "donuts-and-discussion",
+      "title": "Donuts and Discussion"
+    }
+  ]
+}

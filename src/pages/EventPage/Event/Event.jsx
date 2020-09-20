@@ -67,7 +67,7 @@ const eventShareData = {
   eventUrl: 'https://bccompsci.club/events',
   shareTitle: 'Join me at an event!',
   shareDescription:
-    'Join me at an event hosted by the Brooklyn College Computer Science Club!',
+    'Join me at an event by the Brooklyn College Computer Science Club!',
 };
 
 const Event = (props) => {
@@ -104,8 +104,8 @@ const Event = (props) => {
   if (!props.isLoading) {
     const dataDirectory = `/data/events/${props.eventData.id}-${props.eventData.name}`;
 
-    const image = `${dataDirectory}/${props.eventData.banner}`;
-    const presenterImage = `${dataDirectory}/${props.eventData.presenterImage}`;
+    const image = `${dataDirectory}/banner.png`;
+    const presenterImage = `${dataDirectory}/presenter-icon.png`;
 
     // TODO: Allow events from any time zone other than Brooklyn College's Time Zone
     event.title = props.eventData.title;
@@ -127,13 +127,13 @@ const Event = (props) => {
 
     eventShareData.eventUrl = `https://bccompsci.club/events/${props.eventData.id}/${props.eventData.name}`;
     eventShareData.shareTitle = `Join me at ${props.eventData.title}!`;
-    eventShareData.shareDescription = `Join me at ${props.eventData.title}, an event hosted by the Brooklyn College Computer Science Club! Register here:`;
+    eventShareData.shareDescription = `Join me at ${props.eventData.title}, an event by ${props.eventData.presenter}! Register here:`;
 
     return (
       <section className="Event">
         <div className="event-banner-and-information">
           <div className="event-banner-container">
-            <img className="event-banner" src={image} alt="Event banner" />
+            <img className="event-banner" src={image} alt={props.eventData.title} />
           </div>
 
           <div className="event-information">
@@ -172,7 +172,7 @@ const Event = (props) => {
                     )
                   }
                 >
-                  Zoom Meeting Link
+                  {props.eventData.buttonText}
                 </Link>
               ) : (
                 <a
@@ -180,7 +180,7 @@ const Event = (props) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Zoom Meeting Link
+                  {props.eventData.buttonText}
                 </a>
               )}
             </div>
@@ -420,8 +420,8 @@ const ShareButton = ({
 
   return (
     <button className="event-share-button" onClick={handleClick}>
-      <img src={shareIcon} alt="Share this Event" />
-      <p>Share this Event</p>
+      <img src={shareIcon} alt="Share This Event" />
+      <p>Share This Event</p>
     </button>
   );
 };
@@ -436,7 +436,7 @@ const ShareModal = ({ shareModalIsOpen, onRequestClose }) => {
       shouldCloseOnOverlayClick={true}
       closeTimeoutMS={200}
     >
-      <h2>Share this Event</h2>
+      <h2>Share This Event</h2>
       <input type="text" value={eventShareData.eventUrl} readOnly />
       <div className="event-share-platforms">
         <FacebookShareButton

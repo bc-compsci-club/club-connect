@@ -1,17 +1,27 @@
 [
   {
     "id": 1,
-    "title": "Meet the Board",
-    "name": "meet-the-board"
+    "name": "meet-the-board",
+    "title": "Meet the Board"
   },
   {
     "id": 2,
-    "title": "Donuts and Discussion",
-    "name": "donuts-and-discussion"
+    "name": "donuts-and-discussion",
+    "title": "Donuts and Discussion"
   },
   {
     "id": 3,
-    "title": "Facul-Tea Time",
-    "name": "facul-tea-time"
+    "name": "facul-tea-time",
+    "title": "Facul-Tea Time"
+  },
+  {
+    "id": 4,
+    "name": "the-check-in-october",
+    "title": "The Check-In"
+  },
+  {
+    "id": 5,
+    "name": "monthly-project-showcase-october",
+    "title": "Monthly Project Showcase"
   }
 ]

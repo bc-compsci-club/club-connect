@@ -1,4 +1,12 @@
 .Events {
+  .Events-loading-placeholder {
+    height: 100vh;
+  }
+
+  .Events-upcoming {
+    margin-bottom: 2.5rem;
+  }
+
   .Events-banners-month {
     margin: 1.5rem 0 0.5rem;
     text-align: start;
@@ -8,7 +16,7 @@
   .Events-banners {
     margin: 1rem auto 2rem;
     display: grid;
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .Events-banners-description {
@@ -22,6 +30,10 @@
   @media screen and (min-width: 43.75rem) {
     display: flex;
     flex-direction: column;
+
+    .Events-upcoming {
+      margin-bottom: 5rem;
+    }
 
     .Events-banners-month {
       margin-top: 1rem;

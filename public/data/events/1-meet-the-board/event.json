@@ -3,13 +3,12 @@
   "name": "meet-the-board",
   "title": "Meet the Board",
   "presenter": "Computer Science Club",
-  "presenterImage": "cs-club-logo.png",
   "date": "September 10, 2020",
   "startTime": "12:00 PM",
   "endTime": "2:00 PM",
   "location": "Online",
-  "banner": "meet-the-board-banner.png",
   "shortDescription": "Our very first event of the semester!",
   "longDescription": "Come and meet the brand new E-Board, network with new club members, and relax and play some fun games with everyone, including skribbl.io and some Kahoot! trivia!",
-  "meetingLink": "https://zoom.us/j/95531280573?pwd=enFuY0xFblpBWk1iK2JmMGhsNFB3Zz09"
+  "meetingLink": "https://zoom.us/j/95531280573?pwd=enFuY0xFblpBWk1iK2JmMGhsNFB3Zz09",
+  "buttonText": "Join Zoom Meeting"
 }
