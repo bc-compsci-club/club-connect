@@ -1,0 +1,14 @@
+{
+  "id": 7,
+  "name": "bc-google-tech-interview-event-demo",
+  "title": "Google at BC: Tech Interview Event/Demo",
+  "presenter": "Google",
+  "date": "October 6, 2020",
+  "startTime": "12:30 PM",
+  "endTime": "2:00 PM",
+  "location": "Online",
+  "shortDescription": "Learn about the tech interviews at Google and see a live demo.",
+  "longDescription": "Learn about the tech interviews at Google and see a live demo. (This event is not affiliated with the Computer Science Club.)",
+  "meetingLink": null,
+  "buttonText": "Link in cistalk, check email"
+}

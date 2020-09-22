@@ -4,9 +4,9 @@
       "monthName": "September",
       "events": [
         {
-          "id": 3,
-          "name": "facul-tea-time",
-          "title": "Facul-Tea Time"
+          "id": 6,
+          "name": "bc-google-resume-workshop",
+          "title": "Google at BC: Resume Event/Reviews"
         }
       ]
     },
@@ -15,8 +15,18 @@
       "events": [
         {
           "id": 5,
-          "name": "monthly-project-showcase-october",
-          "title": "Monthly Project Showcase"
+          "name": "team-tech-project-october",
+          "title": "Team Tech Project: October"
+        },
+        {
+          "id": 7,
+          "name": "bc-google-tech-interview-event-demo",
+          "title": "Google at BC: Tech Interview Event/Demo"
+        },
+        {
+          "id": 8,
+          "name": "bc-google-mock-interviews",
+          "title": "Google at BC: Mock Interviews"
         }
       ]
     }
@@ -32,6 +42,11 @@
       "id": 2,
       "name": "donuts-and-discussion",
       "title": "Donuts and Discussion"
+    },
+    {
+      "id": 3,
+      "name": "facul-tea-time",
+      "title": "Facul-Tea Time"
     }
   ]
 }
