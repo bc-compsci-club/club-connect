@@ -1,14 +1,14 @@
 {
   "id": 5,
   "name": "team-tech-project-october",
-  "title": "Team Tech Project: October",
+  "title": "Team Tech Project",
   "presenter": "Computer Science Club",
-  "date": "October 2020",
-  "startTime": "TBD",
-  "endTime": "TBD",
+  "date": "Tuesday, October 13, 2020",
+  "startTime": "12:15 PM",
+  "endTime": "2:15 PM",
   "location": "Online",
   "shortDescription": "Form teams to build a project around a selected theme and share it with us the following month!",
   "longDescription": "The Team Tech Project is a monthly meetup for club members interested in gaining experience working in a team, as well as building up their portfolio! Each month, participants get together to vote on a theme for the month, form teams to build awesome projects, and share what they built and learned the following month.",
   "meetingLink": null,
-  "buttonText": "Coming Soon..."
+  "buttonText": "Details Coming Soon..."
 }

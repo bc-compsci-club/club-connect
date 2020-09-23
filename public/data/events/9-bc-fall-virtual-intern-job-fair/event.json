@@ -1,0 +1,14 @@
+{
+  "id": 9,
+  "name": "bc-fall-virtual-intern-job-fair",
+  "title": "Brooklyn College: Fall Virtual Intern/Job Fair",
+  "presenter": "Brooklyn College",
+  "date": "Friday, October 16, 2020",
+  "startTime": "11:00 AM",
+  "endTime": "3:00 PM",
+  "location": "Online",
+  "shortDescription": "Meet recruiters coming to Brooklyn College and get hired!",
+  "longDescription": "Recruiters from various companies are coming to Brooklyn College! (This event is not affiliated with the Computer Science Club.)",
+  "meetingLink": "https://login.brooklyn.cuny.edu/cas/login?service=https%3A%2F%2Fwebsql.brooklyn.cuny.edu%2Fvcc%2Fworkshop%2Flogin.jsp",
+  "buttonText": "Register for this Event"
+}

@@ -1,0 +1,14 @@
+{
+  "id": 4,
+  "name": "the-check-in-october",
+  "title": "The Check-In",
+  "presenter": "Computer Science Club",
+  "date": "Friday, October 9, 2020",
+  "startTime": "6:00 PM",
+  "endTime": "8:00 PM",
+  "location": "Online",
+  "shortDescription": "Our monthly meetup! Join us for a relaxing night to hear about upcoming club activities and chill with other club members.",
+  "longDescription": "Get the latest about things happening in the club, share cool projects you might be working on, see what other club members are up to, and relax with everyone!",
+  "meetingLink": "https://zoom.us/meeting/register/tJMtduuurTMiH9aPrdgd9udn2ooKJUlPP6it",
+  "buttonText": "Register for this Event"
+}
