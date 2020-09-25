@@ -16,6 +16,12 @@ cache-control = '''
 
 # Redirects for the domain
 [[redirects]]
+from = "/verify"
+to = "https://forms.gle/ZbnLSWCLwhXrBYa46"
+status = 302
+headers = {Cache-Control = "public, max-age=0, must-revalidate"}
+
+[[redirects]]
 from = "/discord"
 to = "https://discord.com/invite/ztz44wG"
 status = 302
