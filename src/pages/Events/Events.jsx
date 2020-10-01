@@ -33,13 +33,6 @@ const Events = () => {
 
   return (
     <div className="page-styles Events">
-      <Helmet>
-        <title>Events - Brooklyn College Computer Science Club</title>
-        <meta
-          name="description"
-          content="A list of events curated by the Computer Science Club."
-        />
-      </Helmet>
       {/* Fix footer flashing in while events are loading */}
       {!eventsAreDownloaded && (
         <div className="Events-loading-placeholder"></div>
