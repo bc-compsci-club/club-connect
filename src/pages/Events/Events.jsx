@@ -35,7 +35,10 @@ const Events = () => {
     <div className="page-styles Events">
       <Helmet>
         <title>Events - Brooklyn College Computer Science Club</title>
-        <meta name="description" content="A list of events curated by the Computer Science Club." />
+        <meta
+          name="description"
+          content="A list of events curated by the Computer Science Club."
+        />
       </Helmet>
       {/* Fix footer flashing in while events are loading */}
       {!eventsAreDownloaded && (
@@ -46,12 +49,6 @@ const Events = () => {
         <h1>Upcoming Events</h1>
 
         {/* TODO: Dynamically generate per month */}
-        <h2 className="Events-banners-month">September</h2>
-        <section className="Events-banners">
-          {eventsAreDownloaded &&
-            upcomingEvents.september.events.map((event) => createEvent(event))}
-        </section>
-
         <h2 className="Events-banners-month">October</h2>
         <section className="Events-banners">
           {eventsAreDownloaded &&
