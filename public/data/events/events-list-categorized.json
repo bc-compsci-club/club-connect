@@ -1,15 +1,5 @@
 {
   "upcomingEvents": {
-    "september": {
-      "monthName": "September",
-      "events": [
-        {
-          "id": 6,
-          "name": "bc-google-resume-workshop",
-          "title": "Google at BC: Resume Event/Reviews"
-        }
-      ]
-    },
     "october": {
       "monthName": "October",
       "events": [
@@ -57,6 +47,11 @@
       "id": 3,
       "name": "facul-tea-time",
       "title": "Facul-Tea Time"
+    },
+    {
+      "id": 6,
+      "name": "bc-google-resume-workshop",
+      "title": "Google at BC: Resume Event/Reviews"
     }
   ]
 }
