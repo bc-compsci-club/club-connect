@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { Helmet } from 'react-helmet';
 import Event from './components/Event';
 import '../page-styles.scss';
 import './Events.scss';
