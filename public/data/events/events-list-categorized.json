@@ -14,16 +14,6 @@
           "title": "Team Tech Project: October"
         },
         {
-          "id": 7,
-          "name": "bc-google-tech-interview-event-demo",
-          "title": "Google at BC: Tech Interview Event/Demo"
-        },
-        {
-          "id": 8,
-          "name": "bc-google-mock-interviews",
-          "title": "Google at BC: Mock Interviews"
-        },
-        {
           "id": 9,
           "name": "bc-fall-virtual-intern-job-fair",
           "title": "Brooklyn College: Fall Virtual Intern/Job Fair"
@@ -52,6 +42,16 @@
       "id": 6,
       "name": "bc-google-resume-workshop",
       "title": "Google at BC: Resume Event/Reviews"
+    },
+    {
+      "id": 7,
+      "name": "bc-google-tech-interview-event-demo",
+      "title": "Google at BC: Tech Interview Event/Demo"
+    },
+    {
+      "id": 8,
+      "name": "bc-google-mock-interviews",
+      "title": "Google at BC: Mock Interviews"
     }
   ]
 }
