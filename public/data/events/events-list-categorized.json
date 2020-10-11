@@ -34,11 +34,6 @@
       "title": "Facul-Tea Time"
     },
     {
-      "id": 4,
-      "name": "the-check-in-october",
-      "title": "The Check-In: October"
-    },
-    {
       "id": 6,
       "name": "bc-google-resume-workshop",
       "title": "Google at BC: Resume Event/Reviews"
@@ -52,6 +47,11 @@
       "id": 8,
       "name": "bc-google-mock-interviews",
       "title": "Google at BC: Mock Interviews"
+    },
+    {
+      "id": 4,
+      "name": "the-check-in-october",
+      "title": "The Check-In: October"
     }
   ]
 }
