@@ -4,11 +4,6 @@
       "monthName": "October",
       "events": [
         {
-          "id": 4,
-          "name": "the-check-in-october",
-          "title": "The Check-In: October"
-        },
-        {
           "id": 5,
           "name": "team-tech-project-october",
           "title": "Team Tech Project: October"
@@ -37,6 +32,11 @@
       "id": 3,
       "name": "facul-tea-time",
       "title": "Facul-Tea Time"
+    },
+    {
+      "id": 4,
+      "name": "the-check-in-october",
+      "title": "The Check-In: October"
     },
     {
       "id": 6,
