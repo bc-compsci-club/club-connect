@@ -1,35 +1,54 @@
 // @flow
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import Alert from 'react-bootstrap/Alert';
+import learnDocs from './docs/learn.md';
+import toolsDocs from './docs/tools.md';
+import axios from 'axios';
 import '../page-styles.scss';
 import './Resources.scss';
 
 const Resources = () => {
+  const [learnMarkdown, setLearnMarkdown] = useState('');
+  const [toolsMarkdown, setToolsMarkdown] = useState('');
+
+  useEffect(() => {
+    axios.get(learnDocs).then((res) => {
+      setLearnMarkdown(res.data);
+      console.log('Updated Raw Markdown');
+    });
+  }, [learnMarkdown]);
+
+  useEffect(() => {
+    axios.get(toolsDocs).then((res) => {
+      setToolsMarkdown(res.data);
+      console.log('Updated Raw Markdown');
+    });
+  }, [learnMarkdown]);
+
   return (
     <div className="page-styles Resources">
       <h1>Resources</h1>
-      <span role="img" aria-label="Resources Book Stack">
-        📚
-      </span>
-      <h2>Coming soon...</h2>
 
-      <p>
-        Very soon, you&apos;ll be able to view a list of useful resources
-        available to you as a club member and as a student that can help you
-        with your projects, interviews, designs, and many more, all right here
-        at the Resources page! While you wait, the helpful community has
-        recommended lots of resources over on the Discord community! Visit the{' '}
-        <span className="resources-bold">#resources</span> channel on the
-        Discord community to get started. Not a member of the Discord community
-        yet? Join the club today to gain access!
-      </p>
+      <ReactMarkdown source={learnMarkdown} />
+      <br />
+      <ReactMarkdown source={toolsMarkdown} />
 
-      <p>
-        The Resources page is a community effort, where everyone can suggest and
-        recommend resources for everyone to enjoy. Want to help out the
-        community and recommend a resource? Tell us all about it in the{' '}
-        <span className="resources-bold">#resources</span> channel on the
-        Discord community!
-      </p>
+      <Alert variant="primary" className="Resources-contribute">
+        <Alert.Heading>Contribute to this list!</Alert.Heading>
+        <p>
+          Have any resources you want to share with us? Post them in our Discord
+          community under the <code>#resources</code> channel or&nbsp;
+          <Alert.Link
+            href="https://github.com/bc-compsci-club/bccompsci.club"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            submit a pull request here
+          </Alert.Link>
+          !
+        </p>
+      </Alert>
     </div>
   );
 };
