@@ -1,7 +1,47 @@
 .Resources {
-  p .resources-bold {
-    display: inline;
-    font-size: 1.25rem;
+  p {
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    text-align: left;
+    font-size: 2rem;
     font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
+
+  h3,
+  h4 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+  }
+
+  h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+  }
+
+  li {
+    margin-top: 0.5rem;
+  }
+
+  .Resources-contribute {
+    margin-top: 2rem;
+    padding: 1.5rem;
+
+    .alert-heading {
+      font-weight: bold;
+      font-size: 1.75rem;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
   }
 }
