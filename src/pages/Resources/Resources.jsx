@@ -15,16 +15,14 @@ const Resources = () => {
   useEffect(() => {
     axios.get(learnDocs).then((res) => {
       setLearnMarkdown(res.data);
-      console.log('Updated Raw Markdown');
     });
   }, [learnMarkdown]);
 
   useEffect(() => {
     axios.get(toolsDocs).then((res) => {
       setToolsMarkdown(res.data);
-      console.log('Updated Raw Markdown');
     });
-  }, [learnMarkdown]);
+  }, [toolsMarkdown]);
 
   return (
     <div className="page-styles Resources">
