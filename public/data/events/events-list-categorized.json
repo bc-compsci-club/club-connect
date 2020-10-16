@@ -4,11 +4,6 @@
       "monthName": "October",
       "events": [
         {
-          "id": 5,
-          "name": "team-tech-project-october",
-          "title": "Team Tech Project: October"
-        },
-        {
           "id": 9,
           "name": "bc-fall-virtual-intern-job-fair",
           "title": "Brooklyn College: Fall Virtual Intern/Job Fair"
@@ -52,6 +47,11 @@
       "id": 4,
       "name": "the-check-in-october",
       "title": "The Check-In: October"
+    },
+    {
+      "id": 5,
+      "name": "team-tech-project-october",
+      "title": "Team Tech Project: October"
     }
   ]
 }
