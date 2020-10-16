@@ -11,7 +11,7 @@
 - [**webgems.io**](https://webgems.io)  
   webgems is a goto place for devs and designers to find new resources and more. _Contributed by Calvin Kipperman_
 - [**bookmarks.design**](https://www.bookmarks.design)
-- A collection of resources for designers.
+  A collection of resources for designers.
 
 ## Utilities
 
