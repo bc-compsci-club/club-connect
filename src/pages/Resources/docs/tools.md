@@ -10,7 +10,7 @@
   A large collection of tools and services that have free tiers for everyone to use. _Contributed by Calvin Kipperman_
 - [**webgems.io**](https://webgems.io)  
   webgems is a goto place for devs and designers to find new resources and more. _Contributed by Calvin Kipperman_
-- [**bookmarks.design**](https://www.bookmarks.design)
+- [**bookmarks.design**](https://www.bookmarks.design)  
   A collection of resources for designers.
 
 ## Utilities
