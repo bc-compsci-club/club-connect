@@ -41,7 +41,9 @@ const Events = () => {
         <h1>Upcoming Events</h1>
 
         {/* TODO: Dynamically generate per month */}
-        <h2 className="Events-banners-month">October</h2>
+        {/* <h2 className="Events-banners-month">October</h2> */}
+        <br />
+        <h2>More events coming soon...</h2>
         <section className="Events-banners">
           {eventsAreDownloaded &&
             upcomingEvents.october.events.map((event) => createEvent(event))}
