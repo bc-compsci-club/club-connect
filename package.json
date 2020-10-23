@@ -39,7 +39,7 @@
     "@babel/cli": "^7.12.1",
     "@babel/core": "^7.12.3",
     "@babel/preset-flow": "^7.12.1",
-    "netlify-cli": "^2.65.6",
+    "netlify-cli": "^2.65.7",
     "prettier": "^2.1.2",
     "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0"
