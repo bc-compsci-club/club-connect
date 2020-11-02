@@ -18,7 +18,7 @@
     "react-app-polyfill": "^1.0.6",
     "react-bootstrap": "^1.4.0",
     "react-burger-menu": "^2.9.0",
-    "react-content-loader": "^5.1.2",
+    "react-content-loader": "^5.1.4",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
     "react-markdown": "^5.0.1",
