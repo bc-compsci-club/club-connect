@@ -2,13 +2,6 @@ Interested in learning how to program, learning a new technology, or just want a
 
 **Resources with a &nbsp;⭐&nbsp; are recommended for anyone that has never programmed before or are new to the field of computer science!**
 
-## Upcoming Events and Workshops
-
----
-
-- [**MLH Local Hack Day: Learn**](https://localhackday.mlh.io/learn) - **October 18 - 24** ⭐  
-  An online, week-long conference where you can pick up new skills by participating in various workshops and talks. Learn skills such as publishing websites using AWS, scraping tweets using Python, and more!
-
 ## Courses, Bootcamps, and Tutorials
 
 ---
