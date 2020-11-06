@@ -43,5 +43,15 @@
     "id": 9,
     "name": "bc-fall-virtual-intern-job-fair",
     "title": "Brooklyn College: Fall Virtual Intern/Job Fair"
+  },
+  {
+    "id": 10,
+    "name": "the-check-in-november",
+    "title": "The Check-In: November"
+  },
+  {
+    "id": 11,
+    "name": "team-tech-project-november",
+    "title": "Team Tech Project: November"
   }
 ]
