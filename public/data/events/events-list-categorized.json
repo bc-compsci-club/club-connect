@@ -2,7 +2,18 @@
   "upcomingEvents": {
     "october": {
       "monthName": "October",
-      "events": []
+      "events": [
+        {
+          "id": 10,
+          "name": "the-check-in-november",
+          "title": "The Check-In: November"
+        },
+        {
+          "id": 11,
+          "name": "team-tech-project-november",
+          "title": "Team Tech Project: November"
+        }
+      ]
     }
   },
 
