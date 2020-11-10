@@ -10,7 +10,7 @@
     "bootstrap": "^4.5.3",
     "dayjs": "^1.9.3",
     "empty": "^0.10.1",
-    "flow-bin": "^0.133.0",
+    "flow-bin": "^0.137.0",
     "postcss-normalize": "^9.0.0",
     "react": "^16.14.0",
     "react-add-to-calendar": "^0.1.5",
