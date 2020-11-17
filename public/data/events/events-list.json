@@ -53,5 +53,10 @@
     "id": 11,
     "name": "team-tech-project-november",
     "title": "Team Tech Project: November"
+  },
+  {
+    "id": 12,
+    "name": "women-in-tech-panel",
+    "title": "Women in Tech Panel" 
   }
 ]
