@@ -1,0 +1,147 @@
+.about-team {
+  margin: 0 auto;
+  padding: 0 1rem 0;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    padding-top: 3rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+    text-align: center;
+  }
+
+  h4 {
+    text-align: center;
+    margin: 0;
+  }
+
+  .about-team-teammembers {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem auto 2rem;
+  }
+
+  .about-team-join {
+    margin-bottom: 3rem;
+
+    p {
+      text-align: center;
+      margin: 0;
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    .about-team-teammembers {
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .about-team-teammembers {
+      max-width: 1200px;
+      flex-wrap: nowrap;
+    }
+  }
+}
+
+.about-team-teammember {
+  width: 100%;
+  overflow: hidden;
+  margin: 0 1rem 2rem;
+
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+
+  transition: 0.15s;
+  transition-timing-function: ease-in-out;
+
+  .about-team-teammember-container {
+    padding: 2rem;
+    height: 30rem;
+    max-height: 30rem;
+  }
+
+  img {
+    max-width: 50%;
+
+    display: block;
+    margin: 0 auto 0.5rem;
+    border: 1px solid lightgray;
+    border-radius: 100rem;
+  }
+
+  .teammember-description {
+    font-size: 1.125rem;
+  }
+
+  .teammember-additional-roles {
+    text-align: center;
+  }
+
+  // Galaxy Fold
+  @media screen and (max-width: 310px) {
+    .about-team-teammember-container {
+      height: 35rem;
+      max-height: 35rem;
+    }
+  }
+
+  @media screen and (min-width: 541px) {
+    img {
+      max-width: 40%;
+    }
+  }
+
+  @media screen and (min-width: 700px) {
+    width: 45%;
+    margin: 1rem;
+
+    img {
+      max-width: 70%;
+    }
+
+    .about-team-teammember-container {
+      padding: 1.25rem;
+      height: 30rem;
+      max-height: 30rem;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    width: 30%;
+
+    .about-team-teammember-container {
+      padding: 1.25rem;
+      height: 28rem;
+      max-height: 28rem;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 25%;
+    margin: 0.5rem;
+  }
+}
+
+.about-team-teammember:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.about-team-teammember:active {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+a.about-team-teammember-link {
+  color: #000 !important;
+  text-decoration: none !important;
+}
