@@ -58,14 +58,27 @@
     }
   }
 
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 1280px) {
+    .about-what-we-do-container {
+      .about-activities-container {
+        padding: 0 3vw;
+      }
+    }
+  }
+
   // 1366px (medium laptops)
   // Increase margin on top and set max width for all larger resolutions
-  @media screen and (min-width: 85.375rem) {
+  @media screen and (min-width: 1366px) {
     margin: 0 auto;
 
     .about-what-we-do-container {
       padding: 3rem 0 1rem;
       max-width: var(--large-screen-max-width);
+
+      .about-activities-container {
+        padding: 0;
+      }
     }
   }
 }
