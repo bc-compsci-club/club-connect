@@ -17,7 +17,7 @@ const Team = () => {
   return (
     <section className="about-team">
       <h2>Meet The Team</h2>
-      <div>
+      <section className="about-team-position position-eboard">
         <h3>
           <strong>Executive Board Members</strong>
         </h3>
@@ -91,8 +91,8 @@ const Team = () => {
             </TeamMember>
           </div>
         </div>
-      </div>
-      <div>
+      </section>
+      <section className="about-team-position position-software-engineer">
         <h3>
           <strong>Software Engineers</strong>
         </h3>
@@ -121,18 +121,17 @@ const Team = () => {
             </TeamMember>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div className="about-team-join">
+      <article className="about-team-join">
         <p>
           Interested in joining the team? We're currently looking for volunteers
-          to help out with the club!
+          to help out with the club!&nbsp;
+          <Link to="/contribute">
+            Click here to learn more about our open positions and to apply now.
+          </Link>
         </p>
-        <p>
-          To learn more and to apply, visit the{' '}
-          <Link to="/contribute">contribution page here.</Link>
-        </p>
-      </div>
+      </article>
     </section>
   );
 };
