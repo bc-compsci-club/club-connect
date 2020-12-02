@@ -119,6 +119,10 @@ const Team = () => {
               College. I&apos;m trying to write code that will make the world a
               better place one day!
             </TeamMember>
+            <TeamMember image={logo} firstName="Junninho" lastName="Thomas">
+              Hi! I&apos;m an Executive Board Member of the Brooklyn College
+              Computer Science Club.
+            </TeamMember>
           </div>
         </div>
       </section>
