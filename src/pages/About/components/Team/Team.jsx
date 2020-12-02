@@ -26,12 +26,12 @@ const Team = () => {
           <div className="about-team-teammembers">
             {/* 150 characters max for description */}
             <TeamMember image={logo} firstName="Syeda" lastName="Kazmi">
-              Hi! I'm an Executive Board Member of the Brooklyn College Computer
-              Science Club.
+              Hi! I&apos;m an Executive Board Member of the Brooklyn College
+              Computer Science Club.
             </TeamMember>
             <TeamMember image={logo} firstName="Junninho" lastName="Thomas">
-              Hi! I'm an Executive Board Member of the Brooklyn College Computer
-              Science Club.
+              Hi! I&apos;m an Executive Board Member of the Brooklyn College
+              Computer Science Club.
             </TeamMember>
             <TeamMember
               image={kevinImage}
@@ -39,12 +39,12 @@ const Team = () => {
               lastName="Tam"
               website="https://kevintamcs.com"
             >
-              Hello! I'm Kevin, a Computer Science student. I develop software
-              and experiences that captivate users on all platforms.
+              Hello! I&apos;m Kevin, a Computer Science student. I develop
+              software and experiences that captivate users on all platforms.
             </TeamMember>
             <TeamMember image={logo} firstName="Neissa" lastName="Dorsinville">
-              Hi! I'm an Executive Board Member of the Brooklyn College Computer
-              Science Club.
+              Hi! I&apos;m an Executive Board Member of the Brooklyn College
+              Computer Science Club.
             </TeamMember>
             <TeamMember
               image={dennisImage}
@@ -52,9 +52,9 @@ const Team = () => {
               lastName="Klimenkov"
               website="https://www.linkedin.com/in/dennis-klimenkov"
             >
-              Hi! I’m Dennis, a Computer Science student at Brooklyn College.
-              I’m trying to write code that will make the world a better place
-              one day!
+              Hi! I&apos;m Dennis, a Computer Science student at Brooklyn
+              College. I&apos;m trying to write code that will make the world a
+              better place one day!
             </TeamMember>
           </div>
         </div>
@@ -67,8 +67,8 @@ const Team = () => {
               firstName="Shahzoda"
               lastName="Davlatova"
             >
-              I'm a student studying Computational Math with a minor Physics. My
-              interests are reading, traveling, and long boarding.
+              I&apos;m a student studying Computational Math with a minor
+              Physics. My interests are reading, traveling, and long boarding.
             </TeamMember>
             <TeamMember image={vincentImage} firstName="Vincent" lastName="Xie">
               In my free time I attend hackathons and sleep. If you want to talk
@@ -76,8 +76,8 @@ const Team = () => {
               say hi!
             </TeamMember>
             <TeamMember image={rohmaImage} firstName="Rohma" lastName="Khan">
-              I'm a Brooklyn College alumni interested in baking, movies and
-              meditation!
+              I&apos;m a Brooklyn College alumni interested in baking, movies
+              and meditation!
             </TeamMember>
             <TeamMember image={tylerImage} firstName="Tyler" lastName="Carway">
               On top of my passion for coding I also enjoy videogames, starting
@@ -86,8 +86,8 @@ const Team = () => {
             </TeamMember>
             <TeamMember image={siamImage} firstName="Siam" lastName="Rahman">
               I love wrestling, biking, video games and WWII planes. If any one
-              of you wanna talk about video games or planes I'd be psyched to do
-              so.
+              of you wanna talk about video games or planes I&apos;d be psyched
+              to do so.
             </TeamMember>
           </div>
         </div>
@@ -106,8 +106,8 @@ const Team = () => {
               lastName="Tam"
               website="https://kevintamcs.com"
             >
-              Hello! I'm Kevin, a Computer Science student. I develop software
-              and experiences that captivate users on all platforms.
+              Hello! I&apos;m Kevin, a Computer Science student. I develop
+              software and experiences that captivate users on all platforms.
             </TeamMember>
             <TeamMember
               image={dennisImage}
@@ -115,9 +115,9 @@ const Team = () => {
               lastName="Klimenkov"
               website="https://www.linkedin.com/in/dennis-klimenkov"
             >
-              Hi! I’m Dennis, a Computer Science student at Brooklyn College.
-              I’m trying to write code that will make the world a better place
-              one day!
+              Hi! I&apos;m Dennis, a Computer Science student at Brooklyn
+              College. I&apos;m trying to write code that will make the world a
+              better place one day!
             </TeamMember>
           </div>
         </div>
@@ -125,8 +125,8 @@ const Team = () => {
 
       <article className="about-team-join">
         <p>
-          Interested in joining the team? We're currently looking for volunteers
-          to help out with the club!&nbsp;
+          Interested in joining the team? We&apos;re currently looking for
+          volunteers to help out with the club!&nbsp;
           <Link to="/contribute">
             Click here to learn more about our open positions and to apply now.
           </Link>
