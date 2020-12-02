@@ -5,7 +5,7 @@
 
   .about-what-we-do-container {
     margin: 0 auto;
-    padding: 3rem 0 1rem;
+    padding: 3rem 0 1px;
 
     .about-what-we-do-beginning {
       padding-left: 8vw;
@@ -26,8 +26,6 @@
   // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
   // 10vw of padding for width on large horizontal phones and tablets
   @media screen and (min-width: 43.75rem) {
-    margin: 0 auto 3rem;
-
     .about-what-we-do-container {
       .about-what-we-do-beginning {
         padding-left: 6.25vw;
@@ -58,14 +56,25 @@
     }
   }
 
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 1280px) {
+    .about-what-we-do-container {
+      .about-activities-container {
+        padding: 0 3vw;
+      }
+    }
+  }
+
   // 1366px (medium laptops)
   // Increase margin on top and set max width for all larger resolutions
-  @media screen and (min-width: 85.375rem) {
-    margin: 0 auto;
-
+  @media screen and (min-width: 1366px) {
     .about-what-we-do-container {
       padding: 3rem 0 1rem;
       max-width: var(--large-screen-max-width);
+
+      .about-activities-container {
+        padding: 0;
+      }
     }
   }
 }
