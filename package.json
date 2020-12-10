@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.12.1",
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.12.10",
     "@babel/preset-flow": "^7.12.1",
     "netlify-cli": "^2.68.7",
     "prettier": "^2.1.2",
