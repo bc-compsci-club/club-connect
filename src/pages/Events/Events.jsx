@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const Events = () => {
   const [eventsAreDownloaded, setEventsAreDownloaded] = useState(false);
-  const [upcomingEvents, setUpcomingEvents] = useState({});
+  // const [upcomingEvents, setUpcomingEvents] = useState({});
   const [pastEvents, setPastEvents] = useState([]);
 
   const createEvent = (eventData) => {
@@ -24,7 +24,7 @@ const Events = () => {
 
   useEffect(() => {
     axios.get('/data/events/events-list-categorized.json').then((res) => {
-      setUpcomingEvents(res.data.upcomingEvents);
+      // setUpcomingEvents(res.data.upcomingEvents);
       setPastEvents(res.data.pastEvents);
       setEventsAreDownloaded(true);
     });
@@ -40,12 +40,15 @@ const Events = () => {
       <section className="Events-upcoming">
         <h1>Upcoming Events</h1>
 
-        {/* TODO: Dynamically generate per month */}
-        {/* <h2 className="Events-banners-month">October</h2> */}
+        <h2 className="Events-coming-soon">More events coming soon...</h2>
+
+        {/*
         <section className="Events-banners">
           {eventsAreDownloaded &&
-            upcomingEvents.october.events.map((event) => createEvent(event))}
+            upcomingEvents &&
+            upcomingEvents.january.events.map((event) => createEvent(event))}
         </section>
+        */}
       </section>
 
       <section className="Events-past">
