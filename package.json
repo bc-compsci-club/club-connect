@@ -1,6 +1,13 @@
 {
   "name": "bccompsci.club",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "The new website for the BC Computer Science Club.",
+  "author": "KevinTamCS",
+  "contributors": [
+    "klimenkoff9",
+    "junninho"
+  ],
+  "license": "GPL-3.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
