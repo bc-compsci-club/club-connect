@@ -39,7 +39,7 @@ nav.navbar-main {
     }
 
     // Hide Navbar on mobile
-    .NavbarMainLinks {
+    .navbarMainLinks {
       display: none;
     }
 
@@ -83,7 +83,7 @@ nav.navbar-main {
       }
 
       // Navigation area
-      .NavbarMainLinks {
+      .navbarMainLinks {
         // Show Navbar on desktop
         display: initial;
 
@@ -112,7 +112,7 @@ nav.navbar-main {
           }
 
           // Join button
-          li.join-button {
+          li.joinButton {
             a {
               color: #fff;
               font-weight: bold;
