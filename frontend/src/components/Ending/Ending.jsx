@@ -1,14 +1,12 @@
-// @flow
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Ending.scss';
+import Link from 'next/link';
+import styles from './Ending.module.scss';
 
 const Ending = ({ width }) => {
   return (
-    <section className="Ending">
-      <div className="ending-container">
+    <section className={styles.ending}>
+      <div className={styles.endingContainer}>
         <EndingText width={width} />
-        <Link to="/join">Join the Club</Link>
+        <Link href="/join">Join the Club</Link>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
-.Footer {
+.footer {
   background-color: #232a67;
 
-  .footer-container {
+  .footerContainer {
     padding: 1rem 0;
 
     p {
@@ -19,7 +19,7 @@
 
   // 700px (vertical tablets and horizontal phones)
   @media screen and (min-width: 43.75rem) {
-    .footer-container {
+    .footerContainer {
       p {
         font-size: 1rem;
       }

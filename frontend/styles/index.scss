@@ -1,7 +1,5 @@
 // Global styles
 
-@import-normalize;
-
 /*
   Old Breakpoints:
   - Under 576px/30rem (Vertical phones)
@@ -44,6 +42,10 @@
   // Headings
   --font-size-h1: 2.75rem; // 44px
   --font-size-h2: 2.1rem; // ~33.6px
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .btn {

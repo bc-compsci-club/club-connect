@@ -1,7 +1,7 @@
-.Ending {
+.ending {
   background-color: #4d5eff;
 
-  .ending-container {
+  .endingContainer {
     display: flex;
     flex-direction: column;
     margin: 4rem auto 0;
@@ -49,7 +49,7 @@
 
   // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
   @media screen and (min-width: 43.75rem) {
-    .ending-container {
+    .endingContainer {
       margin: 0 auto;
       max-width: 76.875rem;
 
@@ -68,7 +68,7 @@
 
   // 1024px (horizontal tablets)
   @media screen and (min-width: 64rem) {
-    .ending-container {
+    .endingContainer {
       h2 {
         font-size: 2.5rem;
       }
