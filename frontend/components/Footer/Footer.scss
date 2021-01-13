@@ -1,0 +1,28 @@
+.Footer {
+  background-color: #232a67;
+
+  .footer-container {
+    padding: 1rem 0;
+
+    p {
+      font-size: 0.75rem;
+      margin: 0;
+      color: #fff;
+      text-align: center;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    a {
+      color: rgb(148, 214, 255);
+    }
+  }
+
+  // 700px (vertical tablets and horizontal phones)
+  @media screen and (min-width: 43.75rem) {
+    .footer-container {
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}

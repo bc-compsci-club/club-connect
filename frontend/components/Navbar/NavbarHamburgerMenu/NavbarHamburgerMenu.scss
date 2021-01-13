@@ -1,0 +1,127 @@
+.NavbarHamburgerMenu {
+  // Hides the button it comes with and uses the navbar button instead
+  .bm-burger-button {
+    display: none;
+  }
+
+  // The slide out mobile navigation menu
+  .bm-menu {
+    border-radius: 10px 0 0 10px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    padding: 1rem;
+
+    // Includes both the top group and the join button
+    .bm-item-list {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      // Includes the logo section with the close menu button, as well as the links section
+      .nav-mobile-top-group {
+        outline: none;
+
+        // Includes the logo section and the close menu button
+        .nav-mobile-logo-and-close-menu {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          outline: none;
+          margin-bottom: 2rem;
+
+          // The logo combo with the logo image and text
+          .nav-mobile-logo a {
+            padding-left: 0.5rem;
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+            align-items: center;
+
+            img {
+              height: 2rem;
+              width: 2rem;
+            }
+
+            p {
+              margin: 0 0 0 0.5rem;
+              font-size: 0.9rem;
+              font-family: 'Raleway', sans-serif;
+              font-weight: bold;
+              color: #000;
+              line-height: 1.2;
+            }
+          }
+
+          // The close button to close the navigation menu
+          .nav-mobile-close-menu {
+            padding-right: 0.25rem;
+
+            svg {
+              height: 2rem;
+              width: 2rem;
+            }
+          }
+        }
+
+        // Includes the links to other pages
+        .nav-mobile-links {
+          padding-left: 1rem;
+
+          li {
+            list-style: none;
+            margin: 1rem 0;
+
+            a {
+              font-size: 1.75rem;
+              font-family: 'Nunito', sans-serif;
+              color: #000;
+              transition: 0.2s;
+              transition-timing-function: ease;
+            }
+
+            a:hover,
+            a:active {
+              color: #4053fe;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      // Join button
+      .nav-mobile-join-button {
+        margin: 0 1rem 1rem;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        background-color: #4d5eff;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family: 'Nunito', sans-serif;
+        transition: 0.2s;
+        transition-timing-function: ease-in-out;
+      }
+
+      .nav-mobile-join-button:hover {
+        background-color: #4d5eff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-mobile-join-button:active {
+        background-color: #6574f7;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  // Desktop styles
+
+  // 1200px and above
+  @media screen and (min-width: 75rem) {
+    // Hide the menu entirely
+    display: none;
+  }
+}
