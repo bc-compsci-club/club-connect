@@ -28,12 +28,6 @@ const MyApp = ({ Component, pageProps }) => (
       <link rel="icon" href="/favicon.ico" />
       <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
       <link rel="manifest" href="/manifest.json" />
-
-      {/* IE11 Custom Properties Polyfill Script */}
-      {/* Will only load if IE11 is being used */}
-      {/*<script>*/}
-      {/*  window.MSInputMethodContext && document.documentMode && document.write('<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"></script>');*/}
-      {/*</script>*/}
     </Head>
 
     <NavbarHamburgerMenuProvider>
