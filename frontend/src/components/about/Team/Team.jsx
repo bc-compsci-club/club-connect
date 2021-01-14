@@ -1,7 +1,8 @@
 import Link from 'next/link';
 
 import TeamMember from './TeamMember';
-import styles from './Team.module.scss';
+import aboutStyles from 'styles/pages/About.module.scss';
+import teamStyles from './Team.module.scss';
 import logo from 'assets/logo.png';
 import kevinImage from 'assets/about/team-members/2020-2021/kevin.jpg';
 import dennisImage from 'assets/about/team-members/2020-2021/dennis.jpg';
@@ -13,19 +14,19 @@ import siamImage from 'assets/about/team-members/2019-2020/siam.jpg';
 
 const Team = () => {
   return (
-    <section className={styles.team}>
-      <h2>Meet The Team</h2>
+    <section className={teamStyles.team}>
+      <h2 className={aboutStyles.heading}>Meet The Team</h2>
 
       {/* Executive Board Members */}
-      <section className={styles.positionExecutiveBoard}>
-        <h3>
+      <section className={teamStyles.positionExecutiveBoard}>
+        <h3 className={teamStyles.position}>
           <strong>Executive Board Members</strong>
         </h3>
 
         {/* 2020 - 2021 Executive Board */}
         <div>
-          <h4>June 2020 - May 2021</h4>
-          <div className={styles.teamMemberList}>
+          <h4 className={teamStyles.term}>June 2020 - May 2021</h4>
+          <div className={teamStyles.teamMemberList}>
             {/* 150 characters max for description */}
             <TeamMember image={logo} firstName="Syeda" lastName="Kazmi">
               Hi! I&apos;m an Executive Board Member of the Brooklyn College
@@ -41,8 +42,9 @@ const Team = () => {
               lastName="Tam"
               website="https://kevintamcs.com"
             >
-              Hello! I&apos;m Kevin, a Computer Science student. I develop
-              software and experiences that captivate users on all platforms.
+              Hello! I&apos;m Kevin, a Software Engineer studying Computer
+              Science here at BC. I develop innovative software to help solve
+              problems and overcome challenges.
             </TeamMember>
             <TeamMember image={logo} firstName="Neissa" lastName="Dorsinville">
               Hi! I&apos;m an Executive Board Member of the Brooklyn College
@@ -63,8 +65,8 @@ const Team = () => {
 
         {/* 2019 - 2020 Executive Board */}
         <div>
-          <h4>June 2019 - May 2020</h4>
-          <div className={styles.teamMemberList}>
+          <h4 className={teamStyles.term}>June 2019 - May 2020</h4>
+          <div className={teamStyles.teamMemberList}>
             <TeamMember
               image={shahzodaImage}
               firstName="Shahzoda"
@@ -98,13 +100,13 @@ const Team = () => {
 
       {/* Software Engineers */}
       <section>
-        <h3>
+        <h3 className={teamStyles.position}>
           <strong>Software Engineers</strong>
         </h3>
 
         <div>
-          <h4>June 2020 - May 2021</h4>
-          <div className={styles.teamMemberList}>
+          <h4 className={teamStyles.term}>June 2020 - May 2021</h4>
+          <div className={teamStyles.teamMemberList}>
             {/* 150 characters max for description */}
             <TeamMember
               image={kevinImage}
@@ -112,8 +114,9 @@ const Team = () => {
               lastName="Tam"
               website="https://kevintamcs.com"
             >
-              Hello! I&apos;m Kevin, a Computer Science student. I develop
-              software and experiences that captivate users on all platforms.
+              Hello! I&apos;m Kevin, a Software Engineer studying Computer
+              Science here at BC. I develop innovative software to help solve
+              problems and overcome challenges.
             </TeamMember>
             <TeamMember
               image={dennisImage}
@@ -133,7 +136,7 @@ const Team = () => {
         </div>
       </section>
 
-      <article className={styles.join}>
+      <article className={teamStyles.join}>
         <p>
           Interested in joining the team? We&apos;re currently looking for
           volunteers to help out with the club!&nbsp;

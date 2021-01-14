@@ -1,5 +1,5 @@
 .teamMember {
-  width: 100%;
+  width: 95%;
   overflow: hidden;
   margin: 0 1rem 2rem;
 
@@ -40,13 +40,13 @@
 
 .teamMemberContainer {
   padding: 2rem;
-  height: 27.5rem;
-  max-height: 27.5rem;
+  height: 28.5rem;
+  max-height: 28.5rem;
 
   // Galaxy Fold
   @media screen and (max-width: 310px) {
-    height: 35rem;
-    max-height: 35rem;
+    height: 36rem;
+    max-height: 36rem;
   }
 
   @media screen and (min-width: 700px) {
@@ -63,7 +63,6 @@
 
 .teamMemberImage {
   max-width: 50%;
-
   display: block;
   margin: 0 auto 0.5rem;
   border: 1px solid lightgray;
@@ -79,9 +78,11 @@
 }
 
 .teamMemberName {
+  text-align: center;
   margin-bottom: 0.5rem;
 }
 
 .teamMemberDescription {
+  font-family: 'Nunito', sans-serif;
   font-size: 1.125rem;
 }

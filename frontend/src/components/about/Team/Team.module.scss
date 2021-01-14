@@ -1,21 +1,20 @@
 .team {
-  margin: 0 auto;
+  margin: 3rem auto 0;
   padding: 0 1rem 0;
+}
 
-  h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    padding-top: 3rem;
-  }
+.position {
+  font-size: 1.7rem;
+  text-align: center;
+}
 
-  h3 {
-    font-size: 1.75rem;
-    text-align: center;
-  }
+.term {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 1rem 0 2rem;
 
-  h4 {
-    text-align: center;
-    margin: 1rem 0;
+  @media screen and (min-width: 700px) {
+    margin-bottom: 0.75rem;
   }
 }
 
@@ -29,9 +28,10 @@
   justify-items: center;
   justify-content: center;
   align-items: center;
-  margin: 0.5rem auto 3rem;
+  margin: 0.5rem auto 2rem;
 
   @media screen and (min-width: 700px) {
+    margin: 0.5rem auto 2.5rem;
     flex-direction: row;
     flex-wrap: wrap;
     max-width: 100%;
