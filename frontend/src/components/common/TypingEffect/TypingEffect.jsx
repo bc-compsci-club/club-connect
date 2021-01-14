@@ -1,8 +1,7 @@
+import { useEffect, useState } from 'react';
+
 // Unfinished and experimental custom typing effect
 // DO NOT USE IT YET!
-
-import { useState, useEffect } from 'react';
-
 const TypingEffect = (props) => {
   // const [character, setCharacters] = useState([]);
   const [currentString, setCurrentString] = useState('');

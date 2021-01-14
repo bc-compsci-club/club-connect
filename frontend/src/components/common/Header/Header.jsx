@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import Link from 'next/link';
-import { NavbarHamburgerMenuContext } from '../NavbarHamburgerMenu/NavbarHamburgerMenuContext';
+
+import { HamburgerMenuContext } from 'components/common/HamburgerMenu/HamburgerMenuContext';
 import styles from './Header.module.scss';
 import logo from 'assets/logo.png';
 
 const Header = () => {
-  const context = useContext(NavbarHamburgerMenuContext);
+  const context = useContext(HamburgerMenuContext);
 
   return (
     <header>

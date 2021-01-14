@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { isUsingiOS, getiOSVersion } from 'utils/iOSUtils';
+
+import { getiOSVersion, isUsingiOS } from 'utils/iOSUtils';
 
 // make a new context
-const NavbarHamburgerMenuContext = React.createContext();
+const HamburgerMenuContext = React.createContext();
 
 // create the provider
-const NavbarHamburgerMenuProvider = (props) => {
+const HamburgerMenuProvider = (props) => {
   const [menuOpenState, setMenuOpenState] = useState(false);
 
   // Workaround for the hamburger menu opening when the page is loaded on iOS 8 and under.
@@ -25,7 +26,7 @@ const NavbarHamburgerMenuProvider = (props) => {
   }, []);
 
   return (
-    <NavbarHamburgerMenuContext.Provider
+    <HamburgerMenuContext.Provider
       value={{
         isMenuOpen: menuOpenState,
         toggleMenu: () => setMenuOpenState(!menuOpenState),
@@ -33,8 +34,8 @@ const NavbarHamburgerMenuProvider = (props) => {
       }}
     >
       {props.children}
-    </NavbarHamburgerMenuContext.Provider>
+    </HamburgerMenuContext.Provider>
   );
 };
 
-export { NavbarHamburgerMenuContext, NavbarHamburgerMenuProvider };
+export { HamburgerMenuContext, HamburgerMenuProvider };

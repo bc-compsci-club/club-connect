@@ -1,15 +1,16 @@
 import { useContext } from 'react';
 import Link from 'next/link';
 import { slide as Menu } from 'react-burger-menu';
-import { NavbarHamburgerMenuContext } from './NavbarHamburgerMenuContext';
-import styles from './NavbarHamburgerMenu.module.scss';
+
+import { HamburgerMenuContext } from './HamburgerMenuContext';
+import styles from './HamburgerMenu.module.scss';
 import logo from 'assets/logo.png';
 
-const NavbarHamburgerMenu = () => {
-  const context = useContext(NavbarHamburgerMenuContext);
+const HamburgerMenu = () => {
+  const context = useContext(HamburgerMenuContext);
 
   return (
-    <div className={styles.navbarHamburgerMenu}>
+    <div className={styles.hamburgerMenu}>
       <Menu
         className="navbar-mobile-menu"
         isOpen={context.isMenuOpen}
@@ -92,4 +93,4 @@ const NavbarHamburgerMenu = () => {
   );
 };
 
-export default NavbarHamburgerMenu;
+export default HamburgerMenu;
