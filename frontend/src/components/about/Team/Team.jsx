@@ -137,7 +137,7 @@ const Team = () => {
         <p>
           Interested in joining the team? We&apos;re currently looking for
           volunteers to help out with the club!&nbsp;
-          <Link to="/contribute">
+          <Link href="/contribute">
             Click here to learn more about our open positions and to apply now.
           </Link>
         </p>
