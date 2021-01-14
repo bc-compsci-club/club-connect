@@ -25,11 +25,15 @@
         font-size: 1.875rem;
         font-family: 'Raleway', sans-serif;
 
-        // Typewriter styles moved to overrides .scss
+        // Most typewriter styles moved to overrides .scss
         .sloganBeginning {
           margin: 0.67em 0;
           font-size: inherit;
           font-weight: 400;
+        }
+
+        .typewriterPlaceholder {
+          font-weight: bold;
         }
       }
 

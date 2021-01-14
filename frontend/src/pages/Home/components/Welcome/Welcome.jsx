@@ -4,6 +4,7 @@ import Typewriter from 'typewriter-effect';
 import { windowSupported } from 'utils/windowSupported';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
 import styles from './Welcome.module.scss';
+import { useState } from 'react';
 
 const Welcome = (props) => {
   return (
@@ -29,7 +30,10 @@ const Welcome = (props) => {
           </div>
 
           <div className={styles.welcomeSlideshow}>
-            <img src={slideshow} alt="Members of the Computer Science Club at the SBUHacks hackathon." />
+            <img
+              src={slideshow}
+              alt="Members of the Computer Science Club at the SBUHacks hackathon."
+            />
           </div>
         </div>
       </div>
@@ -45,7 +49,7 @@ const Slogan = (props) => {
       <span className={styles.slogan} role="text">
         <h1 className={styles.sloganBeginning}>
           A community driven by&nbsp;
-          <span id="welcome-typewriter-placeholder">inspiration.</span>
+          <span className={styles.typewriterPlaceholder}>inspiration.</span>
         </h1>
       </span>
     );
@@ -102,6 +106,8 @@ const SloganBeginning = (props) => {
 };
 
 const TypewriterWelcome = () => {
+  const [displayPlaceholder, setDisplayPlaceholder] = useState(true);
+
   // Strings for the typewriter effect to cycle through
   const strings = [
     'inspiration.',
@@ -113,14 +119,17 @@ const TypewriterWelcome = () => {
   ];
 
   const typewriterInit = (typewriter) => {
-    document.getElementById('welcome-typewriter-placeholder').remove();
+    // Turn off the placeholder on init
+    if (displayPlaceholder) {
+      setDisplayPlaceholder(false);
+    }
+
     const typeString = (string, pauseTime) => {
       typewriter.typeString(string).pauseFor(pauseTime).deleteAll(30);
     };
 
     for (const string of strings) {
       typeString(string, 2500);
-      // TODO: Slideshow with club images
     }
 
     typewriter.start();
@@ -128,7 +137,9 @@ const TypewriterWelcome = () => {
 
   return (
     <>
-      <span id="welcome-typewriter-placeholder">inspiration.</span>
+      {displayPlaceholder && (
+        <span className={styles.typewriterPlaceholder}>inspiration.</span>
+      )}
       <Typewriter
         options={{
           autoStart: true,
