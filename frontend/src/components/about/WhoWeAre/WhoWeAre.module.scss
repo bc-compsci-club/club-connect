@@ -2,23 +2,8 @@
   padding: 2.75rem 8vw 3rem;
   margin: 0 auto;
 
-  h2 {
-    font-size: 2.25rem;
-    font-weight: bold;
-  }
-
-  @media screen and (orientation: landscape) {
-    h2 {
-      font-size: 2.5rem;
-    }
-  }
-
   @media screen and (min-width: 43.75rem) {
     padding: 2.75rem 10vw 3rem;
-
-    h2 {
-      font-size: 2.5rem;
-    }
 
     // Padding for landscape iPhones with notch
     @supports (padding: max(0px)) {

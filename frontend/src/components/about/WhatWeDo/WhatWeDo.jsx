@@ -1,5 +1,6 @@
 import Activity from './Activity';
 import HackathonActivity from './HackathonActivity';
+import aboutStyles from 'styles/pages/About.module.scss';
 import whatWeDoStyles from './WhatWeDo.module.scss';
 import activityStyles from './Activity/Activity.module.scss';
 import skillUpImage from 'assets/about/activities/skill-up.jpg';
@@ -11,8 +12,8 @@ const WhatWeDo = () => {
     <section className={whatWeDoStyles.whatWeDo}>
       <div className={whatWeDoStyles.whatWeDoContainer}>
         <div className={whatWeDoStyles.whatWeDoBeginning}>
-          <h2>What We Do</h2>
-          <p>
+          <h2 className={aboutStyles.heading}>What We Do</h2>
+          <p className={aboutStyles.paragraphNoMargin}>
             Here at the Computer Science Club, there’s no shortage of things to
             do and activities to participate in. Here are just some of the
             things that you might see us doing!
