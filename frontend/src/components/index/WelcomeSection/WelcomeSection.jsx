@@ -1,12 +1,12 @@
+import { useState } from 'react';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
 
 import { windowSupported } from 'utils/windowSupported';
+import styles from './WelcomeSection.module.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
-import styles from './Welcome.module.scss';
-import { useState } from 'react';
 
-const Welcome = (props) => {
+const WelcomeSection = (props) => {
   return (
     <section className={styles.welcome}>
       <div className={styles.welcomeBackgroundContainer}>
@@ -153,4 +153,4 @@ const TypewriterWelcome = () => {
   );
 };
 
-export default Welcome;
+export default WelcomeSection;

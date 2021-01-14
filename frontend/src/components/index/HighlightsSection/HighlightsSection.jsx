@@ -1,7 +1,6 @@
-import Highlight from './Highlight/Highlight';
-import styles from './Highlights.module.scss';
-import highlightStyles from './Highlight/Highlight.module.scss';
-
+import Highlight from 'components/index/Highlight';
+import styles from './HighlightsSection.module.scss';
+import highlightStyles from 'components/index/Highlight/Highlight.module.scss';
 import learn from 'assets/home/highlights/learn.jpg';
 import collaborate from 'assets/home/highlights/collaborate.jpg';
 import network from 'assets/home/highlights/network.jpg';
@@ -26,7 +25,7 @@ const descriptions = [
   network with some of the brightest people in the industry.`,
 ];
 
-const Highlights = () => {
+const HighlightsSection = () => {
   return (
     <section className={styles.highlights}>
       {/* Learn */}
@@ -68,4 +67,4 @@ const Highlights = () => {
   );
 };
 
-export default Highlights;
+export default HighlightsSection;

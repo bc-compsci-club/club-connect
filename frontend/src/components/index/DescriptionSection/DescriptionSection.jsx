@@ -1,7 +1,7 @@
-import styles from './Description.module.scss';
+import styles from './DescriptionSection.module.scss';
 import image from 'assets/home/linkedin.jpg';
 
-const Description = (props) => {
+const DescriptionSection = (props) => {
   return (
     <section className={styles.description}>
       <div className={styles.descriptionTop}>
@@ -83,4 +83,4 @@ const MissionContent = ({ width }) => {
   }
 };
 
-export default Description;
+export default DescriptionSection;

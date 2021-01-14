@@ -1,7 +1,11 @@
 import Head from 'next/head';
-import Home from './Home/Home';
 
-const Index = () => {
+import WelcomeSection from 'components/index/WelcomeSection';
+import DescriptionSection from 'components/index/DescriptionSection';
+import HighlightsSection from 'components/index/HighlightsSection';
+import Ending from 'components/common/Ending';
+
+const Home = (props) => {
   return (
     <>
       <Head>
@@ -24,11 +28,12 @@ const Index = () => {
         />
       </Head>
 
-      <main>
-        <Home />
-      </main>
+      <WelcomeSection width={props.width} />
+      <DescriptionSection width={props.width} />
+      <HighlightsSection />
+      <Ending width={props.width} />
     </>
   );
 };
 
-export default Index;
+export default Home;
