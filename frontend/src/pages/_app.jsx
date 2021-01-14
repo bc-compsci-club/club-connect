@@ -7,13 +7,13 @@ import 'typeface-raleway';
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Header from '../components/Header/Header';
-import Footer from '../components/Footer/Footer';
-import NavbarHamburgerMenu from '../components/NavbarHamburgerMenu/NavbarHamburgerMenu';
-import { NavbarHamburgerMenuProvider } from '../components/NavbarHamburgerMenu/NavbarHamburgerMenuContext';
-import '../../styles/index.scss';
-import '../../styles/overrides.scss';
+import Header from '../components/common/Header';
+import Footer from '../components/common/Footer';
+import HamburgerMenu from '../components/common/HamburgerMenu';
+import { HamburgerMenuProvider } from '../components/common/HamburgerMenu/HamburgerMenuContext';
 import { windowSupported } from '../utils/windowSupported';
+import '../styles/index.scss';
+import '../styles/overrides.scss';
 
 const MyApp = ({ Component, pageProps }) => {
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
@@ -43,10 +43,10 @@ const MyApp = ({ Component, pageProps }) => {
         <link rel="manifest" href="/manifest.json" />
       </Head>
 
-      <NavbarHamburgerMenuProvider>
-        <NavbarHamburgerMenu />
+      <HamburgerMenuProvider>
+        <HamburgerMenu />
         <Header />
-      </NavbarHamburgerMenuProvider>
+      </HamburgerMenuProvider>
 
       <Component width={width} {...pageProps} />
 
