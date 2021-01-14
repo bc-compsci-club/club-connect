@@ -1,0 +1,154 @@
+.top {
+  // Mobile styles
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('../../../assets/about/about-header-mobile.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .topContainer {
+    padding: 10% 6.25vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin: 0 auto 12.5%;
+
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.25rem;
+    font-weight: 400;
+    text-align: center;
+
+    // 352px (Small phones)
+    @media screen and (max-width: 22rem) {
+      font-size: 1.75rem;
+    }
+  }
+
+  .joinButton {
+    margin: 12.5% auto 0;
+
+    // Text style
+    color: #fff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    // Animation
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+
+    // Button styling
+    padding: 1rem;
+    background-color: #4d5eff;
+    border-radius: 50px;
+    width: 95%;
+  }
+
+  .joinButton:hover {
+    background-color: #5767fe;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .joinButton:active {
+    background-color: #6574f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  // Small landscape phones
+  @media screen and (orientation: landscape) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('../../../assets/about/about-header-desktop.jpg');
+
+    .topContainer {
+      padding: 5vw 6.25vw;
+    }
+
+    h1 {
+      margin: 0 auto 5%;
+      font-size: 2.4rem;
+    }
+
+    .joinButton {
+      margin: 5% auto 0;
+      font-size: 1.25rem;
+      width: auto;
+      padding: 1rem 2.5rem;
+    }
+  }
+
+  // Desktop styles
+
+  // 700px (vertical tablets and horizontal phones)
+  // Landscape and tablet optimized layout
+  @media screen and (min-width: 43.75rem) {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+      url('../../../assets/about/about-header-desktop.jpg');
+
+    h1 {
+      margin-bottom: 7.5%;
+      font-size: 2.5rem;
+    }
+
+    .joinButton {
+      margin: 7.5% auto 0;
+      font-size: 1.75rem;
+      width: auto;
+      padding: 1rem 2.5rem;
+    }
+
+    // Large landscape phones
+    @media screen and (orientation: landscape) {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('../../../assets/about/about-header-desktop.jpg');
+      padding: 0;
+
+      .topContainer {
+        padding: 5vw 6.25vw;
+      }
+
+      // 2.5% top and bottom margin
+      h1 {
+        margin: 0 auto 5%;
+        font-size: 2.75rem;
+      }
+
+      .joinButton {
+        margin: 5% auto 0;
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  // Use row format for buttons.
+  @media screen and (min-width: 64rem) {
+    h1 {
+      margin-bottom: 5%;
+      font-size: 3.5rem;
+    }
+
+    .joinButton {
+      margin-top: 5%;
+      font-size: 1.75rem;
+    }
+  }
+
+  // 1100px (small laptops)
+  // Set font size for all larger resolutions
+  @media screen and (min-width: 68.75rem) {
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 5%;
+    }
+
+    .joinButton {
+      margin-top: 5%;
+      font-size: 1.75rem;
+    }
+  }
+}
