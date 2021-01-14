@@ -1,9 +1,11 @@
 import Head from 'next/head';
 
-import WelcomeSection from 'components/index/WelcomeSection';
-import DescriptionSection from 'components/index/DescriptionSection';
-import HighlightsSection from 'components/index/HighlightsSection';
-import Ending from 'components/common/Ending';
+import {
+  WelcomeSection,
+  DescriptionSection,
+  HighlightsSection,
+} from 'components/index';
+import { Ending } from 'components/common';
 
 const Home = (props) => {
   return (
