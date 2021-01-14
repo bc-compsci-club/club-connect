@@ -53,28 +53,28 @@ const HamburgerMenu = () => {
 
           <ul className={styles.navMobileLinks}>
             <li>
-              <Link href="/about" onClick={context.toggleMenu}>
-                About Us
+              <Link href="/about">
+                <a onClick={context.toggleMenu}>About Us</a>
               </Link>
             </li>
             <li>
-              <Link href="/events" onClick={context.toggleMenu}>
-                Events
+              <Link href="/events">
+                <a onClick={context.toggleMenu}>Events</a>
               </Link>
             </li>
             <li>
-              <Link href="/resources" onClick={context.toggleMenu}>
-                Resources
+              <Link href="/resources">
+                <a onClick={context.toggleMenu}>Resources</a>
               </Link>
             </li>
             <li>
-              <Link href="/contribute" onClick={context.toggleMenu}>
-                Contribute
+              <Link href="/contribute">
+                <a onClick={context.toggleMenu}>Contribute</a>
               </Link>
             </li>
             <li>
-              <Link href="/contact" onClick={context.toggleMenu}>
-                Contact
+              <Link href="/contact">
+                <a onClick={context.toggleMenu}>Contact</a>
               </Link>
             </li>
           </ul>
