@@ -1,13 +1,13 @@
 import Activity from './Activity';
 import HackathonActivity from './HackathonActivity';
 import aboutStyles from 'styles/pages/About.module.scss';
-import whatWeDoStyles from './WhatWeDo.module.scss';
+import whatWeDoStyles from './WhatWeDoSection.module.scss';
 import activityStyles from './Activity/Activity.module.scss';
 import skillUpImage from 'assets/about/activities/skill-up.jpg';
 import hackathonImage from 'assets/about/activities/hackathon.jpg';
 import collaborateBuildConquerImage from 'assets/about/activities/collaborate-build-conquer.jpg';
 
-const WhatWeDo = () => {
+const WhatWeDoSection = () => {
   return (
     <section className={whatWeDoStyles.whatWeDo}>
       <div className={whatWeDoStyles.whatWeDoContainer}>
@@ -62,4 +62,4 @@ const WhatWeDo = () => {
   );
 };
 
-export default WhatWeDo;
+export default WhatWeDoSection;

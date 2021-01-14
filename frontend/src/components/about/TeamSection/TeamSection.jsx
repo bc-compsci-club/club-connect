@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 import TeamMember from './TeamMember';
 import aboutStyles from 'styles/pages/About.module.scss';
-import teamStyles from './Team.module.scss';
+import teamStyles from './TeamSection.module.scss';
 import logo from 'assets/logo.png';
 import kevinImage from 'assets/about/team-members/2020-2021/kevin.jpg';
 import dennisImage from 'assets/about/team-members/2020-2021/dennis.jpg';
@@ -12,7 +12,7 @@ import rohmaImage from 'assets/about/team-members/2019-2020/rohma.jpg';
 import tylerImage from 'assets/about/team-members/2019-2020/tyler.jpg';
 import siamImage from 'assets/about/team-members/2019-2020/siam.jpg';
 
-const Team = () => {
+const TeamSection = () => {
   return (
     <section className={teamStyles.team}>
       <h2 className={aboutStyles.heading}>Meet The Team</h2>
@@ -149,4 +149,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default TeamSection;

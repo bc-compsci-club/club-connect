@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import styles from './Top.module.scss';
+import styles from './TopSection.module.scss';
 
-const Top = () => {
+const TopSection = () => {
   return (
     <section className={styles.top}>
       <div className={styles.topContainer}>
@@ -14,4 +14,4 @@ const Top = () => {
   );
 };
 
-export default Top;
+export default TopSection;

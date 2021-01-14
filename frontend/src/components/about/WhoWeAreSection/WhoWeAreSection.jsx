@@ -1,7 +1,7 @@
 import aboutStyles from 'styles/pages/About.module.scss';
-import whoWeAreStyles from './WhoWeAre.module.scss';
+import whoWeAreStyles from './WhoWeAreSection.module.scss';
 
-const WhoWeAre = () => {
+const WhoWeAreSection = () => {
   return (
     <section className={whoWeAreStyles.whoWeAre}>
       <h2 className={aboutStyles.heading}>Who We Are</h2>
@@ -38,4 +38,4 @@ const WhoWeAre = () => {
   );
 };
 
-export default WhoWeAre;
+export default WhoWeAreSection;
