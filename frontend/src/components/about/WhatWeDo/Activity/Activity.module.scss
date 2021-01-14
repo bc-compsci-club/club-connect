@@ -3,19 +3,17 @@
   flex-direction: column;
   margin-bottom: 2rem;
 
-  .text {
-    // Empty for CSS modules
-  }
+  .titleAndDescription {
+    .title {
+      margin-bottom: 0.5rem;
+      padding-left: 1.75vw;
+      padding-right: 1.75vw;
 
-  .title {
-    margin-bottom: 0.5rem;
-    padding-left: 1.75vw;
-    padding-right: 1.75vw;
-
-    font-family: 'Nunito', sans-serif;
-    font-weight: bold;
-    font-size: 1.5rem;
-    text-align: left;
+      font-family: 'Nunito', sans-serif;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: left;
+    }
   }
 
   .description {
@@ -37,6 +35,12 @@
     border-radius: 10px;
   }
 
+  .activitySkillUp,
+  .activityCollaborateBuildConquer,
+  .activityHackathon {
+    // Placeholder for CSS Module
+  }
+
   // 700px (vertical tablets and horizontal phones)
   // Landscape and tablet optimized layout
   @media screen and (min-width: 43.75rem) {
@@ -55,7 +59,7 @@
     justify-content: space-between;
     align-items: center;
 
-    .text {
+    .titleAndDescription {
       width: 47.5%;
 
       .title {
@@ -73,6 +77,7 @@
     .image {
       margin: 0;
       width: 47.5%;
+      border-radius: 20px;
     }
   }
 
@@ -83,7 +88,7 @@
 
     margin-bottom: 4rem;
 
-    .text {
+    .titleAndDescription {
       width: 60%;
 
       .title {
@@ -102,12 +107,12 @@
 // 700px (vertical tablets and horizontal phones)
 // Landscape and tablet optimized layout
 @media screen and (min-width: 43.75rem) {
-  .about-activity-skill-up,
-  .about-activity-collaborate-build-conquer {
+  .activitySkillUp,
+  .activityCollaborateBuildConquer {
     flex-direction: row-reverse;
   }
 
-  .about-activity-hackathon {
+  .activityHackathon {
     flex-direction: row;
   }
 }

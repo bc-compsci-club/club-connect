@@ -1,15 +1,16 @@
 import Activity from './Activity';
 import HackathonActivity from './HackathonActivity';
-import styles from './WhatWeDo.module.scss';
+import whatWeDoStyles from './WhatWeDo.module.scss';
+import activityStyles from './Activity/Activity.module.scss';
 import skillUpImage from 'assets/about/activities/skill-up.jpg';
 import hackathonImage from 'assets/about/activities/hackathon.jpg';
 import collaborateBuildConquerImage from 'assets/about/activities/collaborate-build-conquer.jpg';
 
 const WhatWeDo = () => {
   return (
-    <section className={styles.whatWeDo}>
-      <div className={styles.whatWeDoContainer}>
-        <div className={styles.whatWeDoBeginning}>
+    <section className={whatWeDoStyles.whatWeDo}>
+      <div className={whatWeDoStyles.whatWeDoContainer}>
+        <div className={whatWeDoStyles.whatWeDoBeginning}>
           <h2>What We Do</h2>
           <p>
             Here at the Computer Science Club, there’s no shortage of things to
@@ -18,10 +19,10 @@ const WhatWeDo = () => {
           </p>
         </div>
 
-        <div className={styles.activitiesContainer}>
+        <div className={whatWeDoStyles.activitiesContainer}>
           {/* Skill Up */}
           <Activity
-            componentClass="about-activity-skill-up"
+            componentClass={activityStyles.activitySkillUp}
             image={skillUpImage}
             imageAlt="Students gathered in an event venue viewing a presentation from the presenter."
             title="Skill Up at an Event"
@@ -32,7 +33,7 @@ const WhatWeDo = () => {
 
           {/* Hackathon */}
           <HackathonActivity
-            componentClass="about-activity-hackathon"
+            componentClass={activityStyles.activityHackathon}
             image={hackathonImage}
             imageAlt="Winners of a hackathon with some team members from Brooklyn College."
             title="Hack Away at a Hackathon"
@@ -46,7 +47,7 @@ const WhatWeDo = () => {
 
           {/* Collaborate, Build, and Conquer */}
           <Activity
-            componentClass="about-activity-collaborate-build-conquer"
+            componentClass={activityStyles.activityCollaborateBuildConquer}
             image={collaborateBuildConquerImage}
             imageAlt="Students collaborating together to solve a problem."
             title="Collaborate, Build, and Conquer"
