@@ -1,0 +1,113 @@
+.activity {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  .text {
+    // Empty for CSS modules
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+    padding-left: 1.75vw;
+    padding-right: 1.75vw;
+
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .description {
+    padding-left: 1.75vw;
+    padding-right: 1.75vw;
+
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    text-align: left;
+  }
+
+  .image {
+    margin: 2rem auto 1.25rem;
+
+    height: auto;
+    width: 100%;
+
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+
+  // 700px (vertical tablets and horizontal phones)
+  // Landscape and tablet optimized layout
+  @media screen and (min-width: 43.75rem) {
+    padding-left: 5vw;
+    padding-right: 5vw;
+
+    // Padding for landscape iPhones with notch
+    @supports (padding: max(0px)) {
+      @media screen and (orientation: landscape) {
+        padding-left: max(5vw, calc(env(safe-area-inset-left) + 1rem));
+        padding-right: max(5vw, calc(env(safe-area-inset-right) + 1rem));
+      }
+    }
+
+    margin-bottom: 3rem;
+    justify-content: space-between;
+    align-items: center;
+
+    .text {
+      width: 47.5%;
+
+      .title {
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 2rem;
+      }
+    }
+
+    .description {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .image {
+      margin: 0;
+      width: 47.5%;
+    }
+  }
+
+  // 1280px
+  @media screen and (min-width: 80rem) {
+    padding-left: 0;
+    padding-right: 0;
+
+    margin-bottom: 4rem;
+
+    .text {
+      width: 60%;
+
+      .title {
+        font-size: 2rem;
+      }
+    }
+
+    .image {
+      width: 35%;
+    }
+  }
+}
+
+// Tablet and Desktop styles
+
+// 700px (vertical tablets and horizontal phones)
+// Landscape and tablet optimized layout
+@media screen and (min-width: 43.75rem) {
+  .about-activity-skill-up,
+  .about-activity-collaborate-build-conquer {
+    flex-direction: row-reverse;
+  }
+
+  .about-activity-hackathon {
+    flex-direction: row;
+  }
+}

@@ -1,0 +1,78 @@
+.whatWeDo {
+  background-color: #fff9ee;
+
+  .whatWeDoContainer {
+    margin: 0 auto;
+    padding: 3rem 0 1px;
+
+    .whatWeDoBeginning {
+      padding-left: 8vw;
+      padding-right: 8vw;
+      margin-bottom: 2rem;
+
+      h2 {
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+    }
+
+    .activitiesContainer {
+      padding: 0 6.25vw;
+    }
+  }
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  // 10vw of padding for width on large horizontal phones and tablets
+  @media screen and (min-width: 43.75rem) {
+    .whatWeDoContainer {
+      .whatWeDoBeginning {
+        padding-left: 6.25vw;
+        padding-right: 6.25vw;
+
+        max-width: 52rem;
+        margin: 0 auto 4rem;
+        text-align: center;
+
+        h2 {
+          font-size: 3rem;
+        }
+      }
+
+      .activitiesContainer {
+        padding: 0;
+      }
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 64rem) {
+    .whatWeDoContainer {
+      .whatWeDoBeginning {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 1280px) {
+    .whatWeDoContainer {
+      .activitiesContainer {
+        padding: 0 3vw;
+      }
+    }
+  }
+
+  // 1366px (medium laptops)
+  // Increase margin on top and set max width for all larger resolutions
+  @media screen and (min-width: 1366px) {
+    .whatWeDoContainer {
+      padding: 3rem 0 1rem;
+      max-width: var(--large-screen-max-width);
+
+      .activitiesContainer {
+        padding: 0;
+      }
+    }
+  }
+}
