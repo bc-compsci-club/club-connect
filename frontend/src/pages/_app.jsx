@@ -50,7 +50,7 @@ const MyApp = ({ Component, pageProps }) => {
 
       <Component width={width} {...pageProps} />
 
-      <Footer />
+      <Footer width={width} />
     </>
   );
 };
