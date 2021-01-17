@@ -9,7 +9,7 @@ const EventBrowser = (props) => {
   const { events } = props;
 
   return (
-    <div className={`${commonStyles.commonStyles} ${eventsStyles.events}`}>
+    <div className={`${commonStyles.styles} ${eventsStyles.events}`}>
       <section>
         <h1>Upcoming Events</h1>
 
