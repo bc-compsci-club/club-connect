@@ -1,8 +1,6 @@
-# bccompsci.club
+# Club Connect - Brooklyn College Computer Science Club
 
-![Node.js CI](https://github.com/bc-compsci-club/bccompsci.club/workflows/Node.js%20CI/badge.svg?branch=master)
-
-The official website for the Brooklyn College Computer Science Club.
+Club Connect is the digital portal for the Brooklyn College Computer Science Club.
 
 See it live: [https://bccompsci.club](https://bccompsci.club)
 
@@ -10,7 +8,7 @@ See it live: [https://bccompsci.club](https://bccompsci.club)
 
 ### Prerequisites
 
-bccompsci.club requires Node.js to run and build.
+Club Connect requires Node.js to run and build.
 
 - [Node.js (14.15.4 LTS recommended)](https://nodejs.org/)
 
