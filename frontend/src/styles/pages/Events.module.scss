@@ -1,0 +1,57 @@
+.events {
+  .loadingPlaceholder {
+    height: 100vh;
+  }
+
+  .upcoming {
+    margin-bottom: 2.5rem;
+  }
+
+  .bannersMonth {
+    margin: 1.5rem 0 0.5rem;
+    text-align: start;
+    font-weight: bold;
+  }
+
+  .banners {
+    margin: 1rem auto 2rem;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .bannersDescription {
+    margin: 0 0 20%;
+    font-size: 1.5rem;
+  }
+
+  .comingSoon {
+    margin-top: 6rem;
+    text-align: center;
+  }
+
+  // Desktop, Tablet, and Horizontal Phone styles
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  @media screen and (min-width: 43.75rem) {
+    display: flex;
+    flex-direction: column;
+
+    .upcoming {
+      margin-bottom: 5rem;
+    }
+
+    .bannersMonth {
+      margin-top: 1rem;
+    }
+
+    .banners {
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    p {
+      margin: 0 auto;
+      max-width: 44rem;
+    }
+  }
+}

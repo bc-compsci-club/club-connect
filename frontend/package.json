@@ -11,6 +11,7 @@
     "deploy": "npm run build && npm run gcp-predeploy && gcloud app deploy"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "next": "10.0.5",
     "next-images": "^1.6.2",
