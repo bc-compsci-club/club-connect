@@ -15,6 +15,8 @@ import { windowSupported } from 'utils/checkSupport';
 import '../styles/index.scss';
 import '../styles/overrides.scss';
 
+export const API_ROOT = 'http://localhost:8080'
+
 const MyApp = ({ Component, pageProps }) => {
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
 
