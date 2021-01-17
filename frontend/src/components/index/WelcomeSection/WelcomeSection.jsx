@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
 
-import { windowSupported } from 'utils/windowSupported';
+import { windowSupported } from 'utils/checkSupport';
 import styles from './WelcomeSection.module.scss';
 import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
 

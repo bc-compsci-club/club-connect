@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
-import { getiOSVersion, isUsingiOS } from 'utils/iOSUtils';
+import { getIosVersion, isIosPlatform } from 'utils/iOSUtils';
+import { windowSupported } from 'utils/checkSupport';
 
 // make a new context
 const HamburgerMenuContext = React.createContext();
@@ -11,7 +12,7 @@ const HamburgerMenuProvider = (props) => {
 
   // Workaround for the hamburger menu opening when the page is loaded on iOS 8 and under.
   useEffect(() => {
-    if (isUsingiOS() && getiOSVersion() < 9) {
+    if (isIosPlatform() && (getIosVersion() < 9)) {
       // Disable the sliding animation
       document.getElementsByClassName(
         'bm-menu-wrap'

@@ -11,7 +11,7 @@ import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
 import HamburgerMenu from '../components/common/HamburgerMenu';
 import { HamburgerMenuProvider } from '../components/common/HamburgerMenu/HamburgerMenuContext';
-import { windowSupported } from '../utils/windowSupported';
+import { windowSupported } from 'utils/checkSupport';
 import '../styles/index.scss';
 import '../styles/overrides.scss';
 
