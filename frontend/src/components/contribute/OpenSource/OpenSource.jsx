@@ -4,8 +4,7 @@ import Alert from 'react-bootstrap/Alert';
 import contributeStyles from 'styles/pages/Contribute.module.scss';
 
 const OpenSource = () => (
-  // bs-alert added to allow overrides.scss to target this specific element
-  <Element name="open-source bs-alert">
+  <Element name="open-source" className="contribute-open-source">
     <section className={contributeStyles.openSourceSoftware} id="open-source">
       <h2 className={contributeStyles.heading}>
         Contribute to the Club's Open Source Software
