@@ -1,8 +1,6 @@
 import { Link as ScrollLink } from 'react-scroll';
 
-import Volunteer from 'components/contribute/Volunteer/Volunteer';
-import OpenSource from 'components/contribute/OpenSource/OpenSource';
-import HostEvent from 'components/contribute/HostEvent/HostEvent';
+import { Volunteer, OpenSource, HostEvent } from 'components/contribute';
 import commonStyles from 'styles/commonStyles.module.scss';
 import contributeStyles from 'styles/pages/Contribute.module.scss';
 
