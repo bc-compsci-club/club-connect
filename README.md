@@ -21,8 +21,8 @@ Club Connect requires Node.js to run and build.
 ### Building for Production
 
 1. Run `npm install` to install the necessary dependencies.
-2. Run `npm run build` to minify and build the React website in production mode.
-3. The production-ready website has been built to the `/build` directory and can now be deployed.
+2. Run `npm run build` to minify and build the React frontend in production mode.
+3. The production-ready frontend has been built to the `/build` directory and can now be deployed.
 
 ## Browser Tests
 
