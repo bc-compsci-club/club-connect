@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { ToastContainer } from 'react-toastify';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import 'typeface-nunito';
 import 'typeface-raleway';
 import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Header from '../components/common/Header';
 import Footer from '../components/common/Footer';
@@ -51,6 +53,7 @@ const MyApp = ({ Component, pageProps }) => {
       </HamburgerMenuProvider>
 
       <Component width={width} {...pageProps} />
+      <ToastContainer />
 
       <Footer width={width} />
     </>
