@@ -17,7 +17,7 @@ import { windowSupported } from 'utils/checkSupport';
 import 'styles/index.scss';
 import 'styles/overrides.scss';
 
-export const API_ROOT = 'http://localhost:8080';
+export const API_ROOT = 'https://api.bccompsci.club';
 
 const MyApp = ({ Component, pageProps }) => {
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
