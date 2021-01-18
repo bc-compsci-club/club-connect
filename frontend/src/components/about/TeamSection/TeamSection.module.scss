@@ -1,0 +1,61 @@
+.team {
+  margin: 3rem auto 0;
+  padding: 0 1rem 0;
+}
+
+.position {
+  font-size: 1.7rem;
+  text-align: center;
+}
+
+.term {
+  font-size: 1.4rem;
+  text-align: center;
+  margin: 1rem 0 2rem;
+
+  @media screen and (min-width: 700px) {
+    margin-bottom: 0.75rem;
+  }
+}
+
+.positionExecutiveBoard {
+  padding-bottom: 1rem;
+}
+
+.teamMemberList {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem auto 2rem;
+
+  @media screen and (min-width: 700px) {
+    margin: 0.5rem auto 2.5rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 1200px;
+    flex-wrap: nowrap;
+  }
+}
+
+.join {
+  margin: 3rem auto;
+  padding: 0.5rem;
+  max-width: 1000px;
+
+  p {
+    font-family: 'Nunito', sans-serif;
+    text-align: center;
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: 700px) {
+    padding: 3rem;
+  }
+}

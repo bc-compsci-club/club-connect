@@ -1,0 +1,46 @@
+{
+  "name": "bc-compsci-club-portal-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "gcp-predeploy": "find ./build -name '\\[...*' -exec bash -c 'mv \"$1\" \"${1/.../@@@}\"' -- {} \\;",
+    "gcp-build": "find ./build -name '\\[@@@*' -exec bash -c 'mv \"$1\" \"${1/@@@/...}\"' -- {} \\;",
+    "dev": "next dev",
+    "build": "rm -rf ./build && NODE_ENV=production next build",
+    "start": "next start -p 8080",
+    "deploy": "npm run build && npm run gcp-predeploy && gcloud app deploy"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^10.0.5",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.5.3",
+    "dayjs": "^1.10.3",
+    "next": "10.0.5",
+    "next-compose-plugins": "^2.2.1",
+    "next-images": "^1.6.2",
+    "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
+    "react": "17.0.1",
+    "react-add-to-calendar-hoc": "^1.0.10",
+    "react-app-polyfill": "^2.0.0",
+    "react-bootstrap": "^1.4.3",
+    "react-burger-menu": "^3.0.3",
+    "react-content-loader": "^6.0.0",
+    "react-dom": "17.0.1",
+    "react-modal": "^3.12.1",
+    "react-scroll": "^1.8.1",
+    "react-share": "^4.3.1",
+    "react-toastify": "^6.2.0",
+    "sass": "^1.32.4",
+    "typeface-nunito": "^1.1.13",
+    "typeface-raleway": "^1.1.13",
+    "typewriter-effect": "^2.17.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.17.0",
+    "eslint-plugin-react": "^7.22.0",
+    "stylelint": "^13.8.0",
+    "stylelint-config-standard": "^20.0.0"
+  }
+}

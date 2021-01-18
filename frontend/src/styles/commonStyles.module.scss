@@ -1,0 +1,89 @@
+.styles {
+  margin: 0 auto;
+  padding: 8vw;
+  font-size: 1.25rem;
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+
+  h1 {
+    margin: 0 auto 8vw;
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+  }
+
+  h2 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2.5vh;
+  }
+
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  // Emoji Icons
+  span {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    font-size: 5rem;
+  }
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  // 10vw of padding for width on large horizontal phones and tablets
+  @media screen and (min-width: 43.75rem) {
+    margin: 0 auto 20%;
+    padding: 3rem 8vw;
+
+    // Padding for landscape iPhones with notch
+    @supports (padding: max(0px)) {
+      @media screen and (orientation: landscape) {
+        padding-left: max(8vw, calc(env(safe-area-inset-left) + 8vw));
+        padding-right: max(8vw, calc(env(safe-area-inset-right) + 8vw));
+      }
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin: 0 auto 2.5rem;
+    }
+
+    p {
+      margin-bottom: 2.5rem;
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  // Switch to max-width instead of using padding
+  @media screen and (min-width: 64rem) {
+    margin: 0 auto 20%;
+    padding: 3rem 0;
+    max-width: 53.8125rem; // 861px, 70% of 1230px
+  }
+
+  // Extra padding below content to put footer on bottom of page
+  // 1080p
+  @media screen and (min-width: 1920px) {
+    margin: 0 auto 12.5%;
+  }
+
+  // 1440p
+  @media screen and (min-width: 2560px) {
+    margin: 0 auto 25%;
+  }
+
+  // 2160p (4K)
+  @media screen and (min-width: 3840px) {
+    margin: 0 auto 35%;
+  }
+}

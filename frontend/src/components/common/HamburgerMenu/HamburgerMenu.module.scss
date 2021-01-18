@@ -1,0 +1,108 @@
+.hamburgerMenu {
+  // The react-burger-menu styles have been moved to overrides.scss.
+
+  .navMobileTopGroup {
+    outline: none;
+
+    // Includes the logo section and the close menu button
+    .navMobileLogoAndCloseMenu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      outline: none;
+      margin-bottom: 2rem;
+
+      // The logo combo with the logo image and text
+      .navMobileLogo a {
+        padding-left: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        text-decoration: none;
+        align-items: center;
+
+        img {
+          height: 2rem;
+          width: 2rem;
+        }
+
+        p {
+          margin: 0 0 0 0.5rem;
+          font-size: 0.9rem;
+          font-family: 'Raleway', sans-serif;
+          font-weight: bold;
+          color: #000;
+          line-height: 1.2;
+        }
+      }
+
+      // The close button to close the navigation menu
+      .navMobileCloseMenu {
+        padding-right: 0.25rem;
+
+        svg {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+    }
+
+    // Includes the links to other pages
+    .navMobileLinks {
+      padding-left: 1rem;
+
+      li {
+        list-style: none;
+        margin: 1rem 0;
+
+        a {
+          font-size: 1.75rem;
+          font-family: 'Nunito', sans-serif;
+          color: #000;
+          transition: 0.2s;
+          transition-timing-function: ease;
+        }
+
+        a:hover,
+        a:active {
+          color: #4053fe;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  // Join button
+  .navMobileJoinButton {
+    margin: 0 1rem 1rem;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    background-color: #4d5eff;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+
+  .navMobileJoinButton:hover {
+    background-color: #4d5eff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  .navMobileJoinButton:active {
+    background-color: #6574f7;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  // Desktop styles
+
+  // 1200px and above
+  @media screen and (min-width: 75rem) {
+    // Hide the menu entirely
+    display: none;
+  }
+}
