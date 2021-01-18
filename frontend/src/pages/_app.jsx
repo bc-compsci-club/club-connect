@@ -9,15 +9,15 @@ import 'normalize.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 
-import Header from '../components/common/Header';
-import Footer from '../components/common/Footer';
+import Header from 'components/common/Header';
+import Footer from 'components/common/Footer';
 import HamburgerMenu from '../components/common/HamburgerMenu';
-import { HamburgerMenuProvider } from '../components/common/HamburgerMenu/HamburgerMenuContext';
+import { HamburgerMenuProvider } from 'components/common/HamburgerMenu/HamburgerMenuContext';
 import { windowSupported } from 'utils/checkSupport';
-import '../styles/index.scss';
-import '../styles/overrides.scss';
+import 'styles/index.scss';
+import 'styles/overrides.scss';
 
-export const API_ROOT = 'http://localhost:8080'
+export const API_ROOT = 'http://localhost:8080';
 
 const MyApp = ({ Component, pageProps }) => {
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
