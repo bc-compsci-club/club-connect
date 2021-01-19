@@ -73,7 +73,7 @@ const ClubEventModel = sequelize.define<ClubEventInstance>('club_events', {
   },
 
   longDescription: {
-    type: DataTypes.STRING,
+    type: DataTypes.TEXT,
     allowNull: true,
     field: 'long_description',
   },
