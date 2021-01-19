@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
 import { ToastContainer } from 'react-toastify';
 import ReactGA from 'react-ga';
 import NProgress from 'nprogress';
@@ -18,7 +20,6 @@ import { HamburgerMenuProvider } from 'components/common/HamburgerMenu/Hamburger
 import { windowSupported } from 'utils/checkSupport';
 import 'styles/index.scss';
 import 'styles/overrides.scss';
-import { useRouter } from 'next/router';
 
 export const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT;
 
@@ -34,28 +35,28 @@ const MyApp = ({ Component, pageProps }) => {
     // Route change
     NProgress.configure({
       minimum: 0.2,
-      trickleSpeed: 200
+      trickleSpeed: 150,
     });
 
-    const handleRouteChangeStart = (url) => {
-      ReactGA.pageview(url);
+    const handleRouteChangeStart = () => {
       NProgress.start();
-      console.log(`Route change started! New route: ${url}`);
     };
 
-    // Route change
     const handleRouteChangeComplete = (url) => {
       NProgress.done();
-      console.log(`Route changed successfully!`);
+      ReactGA.pageview(url);
     };
 
+    // Initialize on first page load
     ReactGA.initialize(process.env.NEXT_PUBLIC_GA_ID);
     ReactGA.pageview(router.asPath);
 
+    // Register route change event listeners
     router.events.on('routeChangeStart', handleRouteChangeStart);
     router.events.on('routeChangeComplete', handleRouteChangeComplete);
 
     return () => {
+      // Unregister event listeners
       window.removeEventListener('resize', () => setWidth(window.innerWidth));
       router.events.off('routeChangeStart', handleRouteChangeStart);
       router.events.off('routeChangeComplete', handleRouteChangeComplete);
