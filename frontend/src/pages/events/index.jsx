@@ -41,16 +41,24 @@ const createEvent = (eventData) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const events = await axios.get(`${API_ROOT}/events/browser`);
+export const getStaticProps = async () => {
+  const clubEvents = await axios.get(`${API_ROOT}/events/browser`);
 
-  console.log(events.data);
-
-  if (!events.data) {
+  if (!clubEvents.data) {
     return { notFound: true };
   } else {
-    return { props: { events: events.data } };
+    return { props: { events: clubEvents.data }, revalidate: 1 };
   }
 };
+
+// export const getServerSideProps = async () => {
+//   const events = await axios.get(`${API_ROOT}/events/browser`);
+//
+//   if (!events.data) {
+//     return { notFound: true };
+//   } else {
+//     return { props: { events: events.data } };
+//   }
+// };
 
 export default EventBrowser;
