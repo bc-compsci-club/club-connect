@@ -39,7 +39,7 @@ const startServer = async () => {
   // Initialize middleware
   app.use(express.json());
   app.use(morgan('tiny'));
-  // app.use(cors);
+  app.use(cors());
   app.use(passport.initialize());
 
   // Initialize routes
