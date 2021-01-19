@@ -39,8 +39,14 @@ const MyApp = ({ Component, pageProps }) => {
       trickleSpeed: 150,
     });
 
-    const handleRouteChangeStart = () => {
-      NProgress.start();
+    const handleRouteChangeStart = (url) => {
+      // Progress bar will show only on individual event pages for now
+      // Add more to page allowlist later on when we add more dynamic pages
+      const urlStart = url.substring(0, 8);
+      const urlSplit = url.split('/');
+      if (urlStart === '/events/' && urlSplit[2] !== undefined) {
+        NProgress.start();
+      }
     };
 
     const handleRouteChangeComplete = (url) => {
