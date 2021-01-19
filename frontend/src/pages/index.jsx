@@ -11,7 +11,11 @@ const Home = (props) => {
   return (
     <>
       <Head>
-        <title>Home</title>
+        <title>
+          Brooklyn College Computer Science Club | Brooklyn College's Premier
+          Computer Science Community
+        </title>
+
         <meta
           property="og:title"
           content="Brooklyn College Computer Science Club"
