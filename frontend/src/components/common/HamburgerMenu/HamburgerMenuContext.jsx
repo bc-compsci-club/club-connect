@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { getIosVersion, isIosPlatform } from 'utils/iOSUtils';
-import { windowSupported } from 'utils/checkSupport';
 
 // make a new context
 const HamburgerMenuContext = React.createContext();

@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -7,7 +7,6 @@ import { API_ROOT } from 'pages/_app';
 
 const EventPage = (props) => {
   const { clubEventData } = props;
-  const router = useRouter();
 
   return (
     <div className="EventPage">

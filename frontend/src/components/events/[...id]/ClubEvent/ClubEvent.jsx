@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import dayjs from 'dayjs';
@@ -31,6 +32,7 @@ import shareIcon from 'assets/icons/share.svg';
 import addToCalendarIcon from 'assets/icons/add-to-calendar.svg';
 import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
+import { SITE_TITLE_BASE } from 'pages/_app';
 
 const shareData = {
   eventUrl: 'https://bccompsci.club/events',
@@ -138,102 +140,124 @@ const ClubEvent = (props) => {
   );
 
   return (
-    <section className={clubEventStyles.event}>
-      <div className={clubEventStyles.bannerAndInformation}>
-        <div className={clubEventStyles.bannerContainer}>
-          <img
-            className={clubEventStyles.clubEventBanner}
-            src={banner}
-            alt={title}
-          />
-        </div>
+    <>
+      <Head>
+        <title>
+          {title} | {SITE_TITLE_BASE}
+        </title>
 
-        <div className={clubEventStyles.information}>
-          <h1 className={clubEventStyles.title}>{title}</h1>
-          <div className={clubEventStyles.presenter}>
+        <meta
+          property="og:title"
+          content={`${title} | ${SITE_TITLE_BASE}`}
+          key="title"
+        />
+        <meta name="description" content={shortDescription} key="description" />
+        <meta property="og:type" content="events.event" />
+        <meta
+          property="og:url"
+          content={`https://bccompsci.club/events/${id}/${internalName}`}
+        />
+        <meta property="og:image" content={banner} />
+      </Head>
+      <section className={clubEventStyles.event}>
+        <div className={clubEventStyles.bannerAndInformation}>
+          <div className={clubEventStyles.bannerContainer}>
             <img
-              className={clubEventStyles.presenterImage}
-              src={presenterImage}
-              alt={presenter}
-            />
-            <p>
-              Presented by
-              <br />
-              {presenter}
-            </p>
-          </div>
-          <div className={clubEventStyles.time}>
-            <img src={clockIcon} alt="Event time" />
-            <p>
-              {dayjs(startDateTime).format('MMMM D, YYYY')}
-              <br />
-              {dayjs(startDateTime).format('h:mm A')} -{' '}
-              {dayjs(endDateTime).format('h:mm A')}
-            </p>
-          </div>
-          <div className={clubEventStyles.location}>
-            <img src={locationPinIcon} alt="Location" />
-            <p>{eventLocation}</p>
-          </div>
-          <div className={clubEventStyles.link}>
-            {meetingLink === null ? (
-              <Link
-                href={eventLocation.pathname}
-                onClick={() =>
-                  alert(
-                    'Check back here a day before the event starts for the meeting link!'
-                  )
-                }
-              >
-                {buttonText}
-              </Link>
-            ) : (
-              <a href={meetingLink} target="_blank" rel="noopener noreferrer">
-                {buttonText}
-              </a>
-            )}
-          </div>
-        </div>
-      </div>
-      <div className={clubEventStyles.descriptionsAndActions}>
-        <div className={clubEventStyles.descriptions}>
-          <p className={clubEventStyles.shortDescription}>{shortDescription}</p>
-          <p className="event-long-description">{longDescription}</p>
-        </div>
-        <div className={clubEventStyles.actions}>
-          <div className="event-add-to-calendar">
-            <CalendarModal
-              className="event-add-to-calendar-modal"
-              event={calendarData}
-              items={
-                isIosUserAgent
-                  ? [SHARE_SITES.GOOGLE, SHARE_SITES.ICAL, SHARE_SITES.YAHOO]
-                  : [
-                      SHARE_SITES.GOOGLE,
-                      SHARE_SITES.ICAL,
-                      SHARE_SITES.YAHOO,
-                      SHARE_SITES.OUTLOOK,
-                    ]
-              }
+              className={clubEventStyles.clubEventBanner}
+              src={banner}
+              alt={title}
             />
           </div>
 
-          <div className="event-share">
-            <ShareButton
-              shareModalIsOpen={shareModalIsOpen}
-              openShareModal={openShareModal}
-              closeShareModal={closeShareModal}
-              toggleShareModal={toggleShareModal}
-            />
-            <ShareModal
-              shareModalIsOpen={shareModalIsOpen}
-              onRequestClose={closeShareModal}
-              shareData={shareData}
-            />
+          <div className={clubEventStyles.information}>
+            <h1 className={clubEventStyles.title}>{title}</h1>
+            <div className={clubEventStyles.presenter}>
+              <img
+                className={clubEventStyles.presenterImage}
+                src={presenterImage}
+                alt={presenter}
+              />
+              <p>
+                Presented by
+                <br />
+                {presenter}
+              </p>
+            </div>
+            <div className={clubEventStyles.time}>
+              <img src={clockIcon} alt="Event time" />
+              <p>
+                {dayjs(startDateTime).format('MMMM D, YYYY')}
+                <br />
+                {dayjs(startDateTime).format('h:mm A')} -{' '}
+                {dayjs(endDateTime).format('h:mm A')}
+              </p>
+            </div>
+            <div className={clubEventStyles.location}>
+              <img src={locationPinIcon} alt="Location" />
+              <p>{eventLocation}</p>
+            </div>
+            <div className={clubEventStyles.link}>
+              {meetingLink === null ? (
+                <Link
+                  href={eventLocation.pathname}
+                  onClick={() =>
+                    alert(
+                      'Check back here a day before the event starts for the meeting link!'
+                    )
+                  }
+                >
+                  {buttonText}
+                </Link>
+              ) : (
+                <a href={meetingLink} target="_blank" rel="noopener noreferrer">
+                  {buttonText}
+                </a>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+        <div className={clubEventStyles.descriptionsAndActions}>
+          <div className={clubEventStyles.descriptions}>
+            <p className={clubEventStyles.shortDescription}>
+              {shortDescription}
+            </p>
+            <p className="event-long-description">{longDescription}</p>
+          </div>
+          <div className={clubEventStyles.actions}>
+            <div className="event-add-to-calendar">
+              <CalendarModal
+                className="event-add-to-calendar-modal"
+                event={calendarData}
+                items={
+                  isIosUserAgent
+                    ? [SHARE_SITES.GOOGLE, SHARE_SITES.ICAL, SHARE_SITES.YAHOO]
+                    : [
+                        SHARE_SITES.GOOGLE,
+                        SHARE_SITES.ICAL,
+                        SHARE_SITES.YAHOO,
+                        SHARE_SITES.OUTLOOK,
+                      ]
+                }
+              />
+            </div>
+
+            <div className="event-share">
+              <ShareButton
+                shareModalIsOpen={shareModalIsOpen}
+                openShareModal={openShareModal}
+                closeShareModal={closeShareModal}
+                toggleShareModal={toggleShareModal}
+              />
+              <ShareModal
+                shareModalIsOpen={shareModalIsOpen}
+                onRequestClose={closeShareModal}
+                shareData={shareData}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
   );
 };
 

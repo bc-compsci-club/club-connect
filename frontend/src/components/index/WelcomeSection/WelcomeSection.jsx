@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Typewriter from 'typewriter-effect';
 
@@ -29,7 +29,7 @@ const WelcomeSection = (props) => {
             </div>
           </div>
 
-          <div className={styles.welcomeSlideshow}>
+          <div className={styles.welcomeImage}>
             <img
               src={slideshow}
               alt="Members of the Computer Science Club at the SBUHacks hackathon."

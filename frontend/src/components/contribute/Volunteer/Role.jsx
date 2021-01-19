@@ -1,6 +1,5 @@
-import Link from 'next/link';
+import React from 'react';
 import Accordion from 'react-bootstrap/Accordion';
-import Button from 'react-bootstrap/Button';
 
 import contributeStyles from 'styles/pages/Contribute.module.scss';
 

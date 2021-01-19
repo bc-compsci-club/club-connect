@@ -1,3 +1,4 @@
+import React from 'react';
 import { Element } from 'react-scroll';
 import Alert from 'react-bootstrap/Alert';
 

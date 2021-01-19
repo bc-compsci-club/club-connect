@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Highlight from 'components/index/HighlightsSection/Highlight';
 import styles from './HighlightsSection.module.scss';
 import highlightStyles from 'components/index/HighlightsSection/Highlight/Highlight.module.scss';

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import joinSuccessStyles from 'components/join/JoinSuccess/JoinSuccess.module.scss';
 
 const WelcomeJoin = () => {

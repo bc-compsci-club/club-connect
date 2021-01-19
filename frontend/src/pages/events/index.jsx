@@ -1,31 +1,38 @@
+import React from 'react';
+import Head from 'next/head';
 import axios from 'axios';
 
 import { ClubEventBrowserListing } from 'components/events/index';
 import commonStyles from 'styles/commonStyles.module.scss';
 import eventsStyles from 'styles/pages/Events.module.scss';
-import { API_ROOT } from 'pages/_app';
+import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
 
 const EventBrowser = (props) => {
   const { events } = props;
 
   return (
-    <div className={`${commonStyles.styles} ${eventsStyles.events}`}>
-      <section>
-        <h1>Upcoming Events</h1>
+    <>
+      <Head>
+        <title>Events | {SITE_TITLE_BASE}</title>
+      </Head>
+      <div className={`${commonStyles.styles} ${eventsStyles.events}`}>
+        <section>
+          <h1>Upcoming Events</h1>
 
-        <div className={eventsStyles.banners}>
-          {events.upcomingEvents.map((event) => createEvent(event))}
-        </div>
-      </section>
+          <div className={eventsStyles.banners}>
+            {events.upcomingEvents.map((event) => createEvent(event))}
+          </div>
+        </section>
 
-      <section>
-        <h2>Past Events</h2>
+        <section>
+          <h2>Past Events</h2>
 
-        <div className={eventsStyles.banners}>
-          {events.pastEvents.map((event) => createEvent(event))}
-        </div>
-      </section>
-    </div>
+          <div className={eventsStyles.banners}>
+            {events.pastEvents.map((event) => createEvent(event))}
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 

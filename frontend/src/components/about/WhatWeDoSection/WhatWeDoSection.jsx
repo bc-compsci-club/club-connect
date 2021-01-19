@@ -1,3 +1,5 @@
+import React from 'react';
+
 import Activity from './Activity';
 import HackathonActivity from './HackathonActivity';
 import aboutStyles from 'styles/pages/About.module.scss';

@@ -1,3 +1,4 @@
+import React from 'react';
 import { Element } from 'react-scroll';
 
 import contributeStyles from 'styles/pages/Contribute.module.scss';

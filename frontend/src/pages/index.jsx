@@ -1,3 +1,4 @@
+import React from 'react';
 import Head from 'next/head';
 
 import {
@@ -12,7 +13,7 @@ const Home = (props) => {
     <>
       <Head>
         <title>
-          Brooklyn College Computer Science Club | Brooklyn College's Premier
+          Brooklyn College Computer Science Club - Brooklyn College's Premier
           Computer Science Community
         </title>
 
