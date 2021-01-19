@@ -2,7 +2,7 @@
 
 Club Connect is the digital portal for the Brooklyn College Computer Science Club.
 
-See it live: [https://bccompsci.club](https://bccompsci.club)
+See it live: [https://beta.bccompsci.club](https://beta.bccompsci.club)
 
 ## Getting Started
 
