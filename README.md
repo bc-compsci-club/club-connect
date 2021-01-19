@@ -12,17 +12,33 @@ Club Connect requires Node.js to run and build.
 
 - [Node.js (14.15.4 LTS recommended)](https://nodejs.org/)
 
-### Running the Website
+### Running the Portal in Development Mode
 
-1. Run `npm install` to install the necessary dependencies.
-2. Run `npm start` to start the development server.
-3. The frontend is now running in development mode on [http://localhost:3000](http://localhost:3000).
+1. Navigate to the `/frontend` and/or `/backend` directory depending on the part you want to run.
+2. Run `npm install` to install the necessary dependencies.
+3. Run `npm run dev` to start the development server.
+
+You will need to run these commands in the `/frontend` and/or `/backend` directory separately.
+
+By default, the frontend will run on [http://localhost:3000](http://localhost:3000) and the backend will run on [http://localhost:8080](http://localhost:8080).
 
 ### Building for Production
 
-1. Run `npm install` to install the necessary dependencies.
-2. Run `npm run build` to minify and build the React frontend in production mode.
-3. The production-ready frontend has been built to the `/build` directory and can now be deployed.
+1. Navigate to the `/frontend` and/or `/backend` directory depending on the part you want to build.
+2. Run `npm install` to install the necessary dependencies.
+3. Run `npm run build` to compile an optimized build for production use.
+4. The production-ready frontend has been built to the `/build` directory and can now be served using `npm start`
+
+You will need to run these commands in the `/frontend` and/or `/backend` directory separately.
+
+### Deploying the Frontend to Google App Engine
+
+The `deploy` npm script will run the steps needed to build and deploy the app with just one command.
+Refer to the [Google App Engine documentation](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/deploying-web-service) for steps on installing `gcloud` and configuring your Google Cloud Platform project.
+
+1. Navigate to the `/frontend` directory and initialize your Google App Engine project.
+2. Run `npm install` to install the necessary dependencies.
+3. Run `npm run deploy` to build and deploy the app to Google App Engine.
 
 ## Browser Tests
 
