@@ -1,4 +1,4 @@
-FROM node:15.5.1-alpine AS builder
+FROM node:14.15.4-alpine AS builder
 WORKDIR /build
 
 # Install dependencies
@@ -11,7 +11,7 @@ COPY tsconfig.json ./
 RUN npx tsc
 
 
-FROM node:15.5.1-alpine
+FROM node:14.15.4-alpine
 WORKDIR /usr/src/app
 
 # Copy production app and dependencies
