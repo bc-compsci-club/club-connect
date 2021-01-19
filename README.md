@@ -34,7 +34,7 @@ You will need to run these commands in the `/frontend` and/or `/backend` directo
 ### Deploying the Frontend to Google App Engine
 
 The `deploy` npm script will run the steps needed to build and deploy the app with just one command.
-Refer to the [Google App Engine documentation](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/deploying-web-service) for steps on installing `gcloud` and configuring your Google Cloud Platform project.
+Refer to the [Google App Engine documentation](https://cloud.google.com/appengine/docs/nodejs) for steps on installing `gcloud` and configuring your Google Cloud Platform project.
 
 1. Navigate to the `/frontend` directory and initialize your Google App Engine project.
 2. Run `npm install` to install the necessary dependencies.
