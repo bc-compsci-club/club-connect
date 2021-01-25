@@ -10,12 +10,10 @@
     font-size: 2.5rem;
     font-weight: bold;
     font-family: 'Raleway', sans-serif;
-    text-align: center;
   }
 
   h2 {
     font-family: 'Raleway', sans-serif;
-    text-align: center;
     font-size: 2rem;
     margin-bottom: 2.5vh;
   }
@@ -85,5 +83,73 @@
   // 2160p (4K)
   @media screen and (min-width: 3840px) {
     margin: 0 auto 35%;
+  }
+}
+
+.centerElement {
+  text-align: center;
+}
+
+.centerHeadings {
+  h1,
+  h2,
+  h3 {
+    text-align: center;
+  }
+}
+
+.expandedWidth {
+  // 1024px
+  @media screen and (min-width: 64rem) {
+    max-width: initial;
+    margin: auto 5vw;
+  }
+
+  @media screen and (min-width: 1280px) {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.labeledInput {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-left: 0.25rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  select,
+  select:focus {
+    //padding-left: 0.5rem;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    background: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
+      100% 50% no-repeat #fff;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    border: 2px solid #fff;
+    background-color: #ececec;
+    background-clip: padding-box;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border: 2px solid rgb(179, 179, 179);
+      background-color: #f3f3f3;
+      transition: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
   }
 }

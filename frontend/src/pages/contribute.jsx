@@ -15,7 +15,7 @@ const Contribute = () => {
       </Head>
       <div className={`${commonStyles.styles} ${contributeStyles.contribute}`}>
         <section>
-          <h1>Contribute to the Club</h1>
+          <h1 className={commonStyles.centerElement}>Contribute to the Club</h1>
           <p>
             The Brooklyn College Computer Science Club is a community-first,
             student-led organization made possible by a community of passionate

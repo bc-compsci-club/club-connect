@@ -12,15 +12,15 @@ const Resources = () => {
   return (
     <>
       <Head>
-        <title>
-          Resources | {SITE_TITLE_BASE}
-        </title>
+        <title>Resources | {SITE_TITLE_BASE}</title>
       </Head>
       <div className={`${commonStyles.styles} ${resourcesStyles.resources}`}>
-        <h1>Resources</h1>
-
+        <h1 className={commonStyles.centerElement}>Resources</h1>
         <LearnResources />
+
         <br />
+
+        <h1 className={commonStyles.centerElement}>Useful Tools</h1>
         <ToolsResources />
 
         <Alert variant="primary" className={resourcesStyles.contribute}>
