@@ -14,9 +14,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'nprogress/nprogress.css';
 
 import Header from 'components/common/Header';
-import Footer from 'components/common/Footer';
 import HamburgerMenu from '../components/common/HamburgerMenu';
 import { HamburgerMenuProvider } from 'components/common/HamburgerMenu/HamburgerMenuContext';
+import Footer from 'components/common/Footer';
+import wrapper from 'store';
+import { logInAction } from 'actions/userLoggedIn';
+import { getItemJson, setItemJson } from 'utils/localStorageJsonUtils';
 import { windowSupported } from 'utils/checkSupport';
 import 'styles/index.scss';
 import 'styles/overrides.scss';
@@ -110,4 +113,4 @@ const MyApp = ({ Component, pageProps }) => {
   );
 };
 
-export default MyApp;
+export default wrapper.withRedux(MyApp);
