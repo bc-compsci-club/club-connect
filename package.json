@@ -23,7 +23,7 @@
     "react-add-to-calendar": "^0.1.5",
     "react-add-to-calendar-hoc": "^1.0.10",
     "react-app-polyfill": "^2.0.0",
-    "react-bootstrap": "^1.4.0",
+    "react-bootstrap": "^1.4.3",
     "react-burger-menu": "^3.0.3",
     "react-content-loader": "^5.1.4",
     "react-dom": "^16.14.0",
