@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
-import { useRouter } from 'next/router';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+import { Button } from 'components/common';
 import authStyles from 'styles/shared/Auth.module.scss';
+import formStyles from 'styles/shared/Form.module.scss';
 import { API_ROOT } from 'pages/_app';
 
 const RequestPasswordResetForm = (props) => {
   const { setResetEmailSent } = props;
-
-  const router = useRouter();
 
   const [email, setEmail] = useState('');
   const [formSubmitting, setFormSubmitting] = useState(false);
@@ -59,22 +58,26 @@ const RequestPasswordResetForm = (props) => {
           />
         </div>
 
-        <button
-          className={authStyles.buttonPrimary}
+        <Button
+          classNamePassed={formStyles.cardSubmitButton}
           type="submit"
           disabled={formSubmitting}
+          big
         >
           {formSubmitting ? 'Sending Email...' : 'Send Reset Email'}
-        </button>
+        </Button>
       </form>
 
-      <button
-        onClick={() => router.push('/login')}
-        className={authStyles.buttonSecondary}
+      <Button
+        classNamePassed={formStyles.cardSecondaryButtons}
+        href="/login"
+        variant="secondary"
         disabled={formSubmitting}
+        big
+        asLink
       >
         Cancel
-      </button>
+      </Button>
     </>
   );
 };

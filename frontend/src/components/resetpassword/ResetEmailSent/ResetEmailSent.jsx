@@ -1,25 +1,25 @@
 import React from 'react';
-import { useRouter } from 'next/router';
 
-import styles from './ResetEmailSent.module.scss';
-import authStyles from 'styles/shared/Auth.module.scss';
+import { Button } from 'components/common';
+import resetEmailSentStyles from './ResetEmailSent.module.scss';
+import formStyles from 'styles/shared/Form.module.scss';
 
 const ResetEmailSent = () => {
-  const router = useRouter();
-
   return (
     <div>
-      <p className={styles.resetPasswordText}>
+      <p className={resetEmailSentStyles.resetPasswordText}>
         If an account exists with the email you entered, check your email for a
         link to finish resetting your password.
       </p>
 
-      <button
-        onClick={() => router.push('/login')}
-        className={authStyles.buttonPrimary}
+      <Button
+        classNamePassed={formStyles.cardSecondaryButtons}
+        href="/login"
+        big
+        asLink
       >
         Return to Log In
-      </button>
+      </Button>
     </div>
   );
 };
