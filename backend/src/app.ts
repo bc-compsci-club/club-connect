@@ -37,10 +37,18 @@ const startServer = async () => {
   const app = express();
 
   // Initialize middleware
-  app.use(express.json());
+  app.use(helmet());
+  app.use(bodyParser.json());
+  app.use(cookieParser());
   app.use(morgan('tiny'));
-  app.use(cors());
   app.use(passport.initialize());
+  app.use(
+    cors({
+      credentials: true,
+      origin: process.env.FRONTEND_DOMAIN,
+      exposedHeaders: 'Location',
+    })
+  );
 
   // Initialize routes
   app.use('/', rootRouter);
