@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { ToastContainer } from 'react-toastify';
 import ReactGA from 'react-ga';
-import NProgress from 'nprogress';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import 'typeface-nunito';
@@ -17,6 +16,7 @@ import Header from 'components/common/Header';
 import HamburgerMenu from '../components/common/HamburgerMenu';
 import { HamburgerMenuProvider } from 'components/common/HamburgerMenu/HamburgerMenuContext';
 import Footer from 'components/common/Footer';
+import { LoadingEventPage } from 'components/events/[...id]';
 import wrapper from 'store';
 import { logInAction } from 'actions/userLoggedIn';
 import { getItemJson, setItemJson } from 'utils/localStorageJsonUtils';
@@ -30,30 +30,44 @@ export const SITE_TITLE_BASE = 'Brooklyn College Computer Science Club';
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
 
+  const [loadingViewActive, setLoadingViewActive] = useState(false);
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
 
   useEffect(() => {
     // Window resize
     window.addEventListener('resize', () => setWidth(window.innerWidth));
 
-    // Route change
-    NProgress.configure({
-      minimum: 0.2,
-      trickleSpeed: 150,
-    });
-
     const handleRouteChangeStart = (url) => {
-      // Progress bar will show only on individual event pages for now
-      // Add more to page allowlist later on when we add more dynamic pages
       const urlStart = url.substring(0, 8);
       const urlSplit = url.split('/');
-      if (urlStart === '/events/' && urlSplit[2] !== undefined) {
-        NProgress.start();
+      if (
+        urlStart === '/events/' &&
+        urlSplit.length > 2 &&
+        urlSplit[2] !== undefined &&
+        urlSplit[2] !== 'request' &&
+        urlSplit[2] !== 'create'
+      ) {
+        window.scroll({
+          top: 0,
+          left: 0,
+        });
+        setLoadingViewActive(true);
       }
     };
 
     const handleRouteChangeComplete = (url) => {
-      NProgress.done();
+      const urlStart = url.substring(0, 8);
+      const urlSplit = url.split('/');
+      if (
+        urlStart === '/events/' &&
+        urlSplit.length > 2 &&
+        urlSplit[2] !== undefined &&
+        urlSplit[2] !== 'request' &&
+        urlSplit[2] !== 'create'
+      ) {
+        setLoadingViewActive(false);
+      }
+
       ReactGA.pageview(url);
     };
 
@@ -105,7 +119,12 @@ const MyApp = ({ Component, pageProps }) => {
         <Header />
       </HamburgerMenuProvider>
 
-      <Component width={width} {...pageProps} />
+      {loadingViewActive ? (
+        // Only activates for the event loading page for now
+        <LoadingEventPage />
+      ) : (
+        <Component width={width} {...pageProps} />
+      )}
       <ToastContainer />
 
       <Footer width={width} />
