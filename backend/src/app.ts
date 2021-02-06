@@ -56,11 +56,9 @@ const startServer = async () => {
   app.use('/events', eventsRouter);
 
   // Start listening for requests
-  app.listen(APP_PORT, () => {
-    console.log(`Portal backend listening on port ${APP_PORT}`);
-  });
+  app.listen(APP_PORT);
 };
 
 startServer().then(() => {
-  console.log('Server successfully started!');
+  console.log(`Server successfully started on port ${APP_PORT}.`);
 });
