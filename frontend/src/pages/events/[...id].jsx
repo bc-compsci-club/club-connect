@@ -16,7 +16,7 @@ const EventPage = (props) => {
 };
 
 export const getServerSideProps = async (context) => {
-  const clubEventId = context.params.id;
+  const clubEventId = context.params.id[0];
   const clubEvent = await axios.get(`${API_ROOT}/events/${clubEventId}`);
 
   if (!clubEvent.data) {
@@ -39,8 +39,8 @@ EventPage.propTypes = {
     eventLocation: PropTypes.string,
     shortDescription: PropTypes.string,
     longDescription: PropTypes.string,
-    meetingLink: PropTypes.string,
-    buttonText: PropTypes.string,
+    externalLink: PropTypes.string,
+    externalLinkButtonText: PropTypes.string,
   }),
 };
 
