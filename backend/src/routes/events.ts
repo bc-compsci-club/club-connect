@@ -23,12 +23,14 @@ import {
 } from '../common/imageProcessorOptions';
 import { FormMultipartBody, IdParams } from '../types';
 import { RequestStatuses } from '../enums';
+import { FindOptions } from 'sequelize';
 
 const eventsRouter = Router();
 
 // Request Queries
 interface EventsQuery {
   limit?: number;
+  detailed?: boolean;
 }
 
 // Other interfaces
@@ -39,12 +41,9 @@ interface CategorizedClubEvents {
 }
 
 // Validations
-const formMultipartValidation = [body('formDataJson').isJSON()];
-const eventPostValidation = [
-  body('title').notEmpty().isString().isLength({ max: 250 }).trim(),
-];
 const eventGetValidation = [
   query('limit').optional().isInt({ min: 1 }).toInt(),
+  query('detailed').optional().isBoolean().toBoolean(),
 ];
 
 // Multer Uploads
@@ -87,13 +86,29 @@ eventsRouter.get(
       return res.status(400).json(validationErrors.array());
     }
 
+    // Configure event find options
+    const findOptions: FindOptions = {
+      attributes: [
+        'id',
+        'internalName',
+        'title',
+        'banner',
+        'startDateTime',
+        'endDateTime',
+      ],
+      order: [['startDateTime', 'DESC']],
+      limit: req.query.limit ? req.query.limit : 25,
+    };
+
+    if (req.query.detailed) {
+      // Omitting the attributes key returns all attributes
+      delete findOptions.attributes;
+    }
+
     // Get events and return them
     let events: ClubEventInstance[];
     try {
-      events = await ClubEventModel.findAll({
-        order: [['id', 'DESC']],
-        limit: req.query.limit ? req.query.limit : 25,
-      });
+      events = await ClubEventModel.findAll(findOptions);
     } catch (err) {
       return next(err);
     }
@@ -103,7 +118,7 @@ eventsRouter.get(
 );
 
 /**
- * Get a list of events optimized for the event browser
+ * Get a list of events categorized for the event browser
  *
  * @route GET /events/browser
  */
@@ -120,12 +135,19 @@ eventsRouter.get(
       return res.status(400).json(validationErrors.array());
     }
 
-    // Get events from database
+    // Get events sorted by their start date
     let clubEvents: ClubEventInstance[];
     try {
       clubEvents = await ClubEventModel.findAll({
-        attributes: ['id', 'internalName', 'title', 'banner'],
-        order: [['id', 'DESC']],
+        attributes: [
+          'id',
+          'internalName',
+          'title',
+          'banner',
+          'startDateTime',
+          'endDateTime',
+        ],
+        order: [['startDateTime', 'DESC']],
         limit: req.query.limit ? req.query.limit : 25,
       });
     } catch (err) {
@@ -139,7 +161,7 @@ eventsRouter.get(
     };
 
     const currentDateTime = new Date();
-    clubEvents.forEach((clubEvent: ClubEventInstance) => {
+    clubEvents.forEach((clubEvent) => {
       if (clubEvent.endDateTime && clubEvent.endDateTime < currentDateTime) {
         categorizedClubEvents.pastEvents.push(clubEvent);
       } else {
@@ -184,7 +206,6 @@ eventsRouter.get(
 eventsRouter.post(
   '/',
   authenticateJwt,
-  formMultipartValidation,
   createUpdateEventUpload,
   async (
     req: Request<{}, {}, FormMultipartBody>,
@@ -205,15 +226,12 @@ eventsRouter.post(
     const parsedBody = JSON.parse(req.body.formDataJson);
     const validationErrors: string[] = [];
 
-    if (validator.isEmpty(parsedBody.title)) {
-      validationErrors.push('Title cannot be blank');
-    }
-    if (validator.isLength(parsedBody.title, { max: 250 })) {
+    if (!validator.isLength(parsedBody.title, { min: 1, max: 250 })) {
       validationErrors.push('Title must be less than 250 characters');
     }
 
     if (validationErrors.length > 0) {
-      res.status(400).json(validationErrors);
+      return res.status(400).json(validationErrors);
     }
 
     parsedBody.title = validator.trim(parsedBody.title);
