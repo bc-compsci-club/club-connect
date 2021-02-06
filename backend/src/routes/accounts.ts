@@ -275,8 +275,7 @@ accountsRouter.post(
         maxAge: JWT_EXPIRATION_TIME_MS,
         expires: new Date(tokenExpiry),
         httpOnly: true,
-        secure: true,
-        domain: process.env.BACKEND_DOMAIN,
+        secure: isProduction,
       });
 
       return res.sendStatus(200);
