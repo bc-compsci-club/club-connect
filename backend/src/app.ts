@@ -29,7 +29,6 @@ const startServer = async () => {
   try {
     console.log('Connecting to database...');
     await sequelize.authenticate();
-    await sequelize.sync();
     console.log('Database connection successful.');
   } catch (err) {
     // Stop the server if the database connection was unsuccessful.
