@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 import { windowSupported } from 'utils/checkSupport';
 import styles from './WelcomeSection.module.scss';
-import slideshow from 'assets/home/welcome-slideshow/inspiration.jpg';
+import slideshow from 'assets/pages/home/welcome-slideshow/inspiration.jpg';
 
 const WelcomeSection = (props) => {
   return (

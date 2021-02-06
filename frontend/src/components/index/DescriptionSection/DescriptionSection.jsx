@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './DescriptionSection.module.scss';
-import image from 'assets/home/linkedin.jpg';
+import image from 'assets/pages/home/linkedin.jpg';
 
 const DescriptionSection = (props) => {
   return (

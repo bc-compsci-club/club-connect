@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import styles from 'components/dashboard/UpcomingClubEvent/UpcomingClubEvent.module.scss';
-import bannerSrc from 'assets/auth-background.jpg';
+import bannerSrc from 'assets/backgrounds/auth.jpg';
 
 // Represents an event on the event browser.
 const UpcomingClubEvent = () => {

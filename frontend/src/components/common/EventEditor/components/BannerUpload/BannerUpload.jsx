@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import Button from 'components/common/Button';
 import { windowSupported } from 'utils/checkSupport';
 import eventEditorStyles from 'components/common/EventEditor/EventEditor.module.scss';
-import addImageIcon from 'assets/add-image.svg';
+import addImageIcon from 'assets/icons/add-image.svg';
 
 export const BannerUpload = (props) => {
   const { onChange, setBannerFile } = props;

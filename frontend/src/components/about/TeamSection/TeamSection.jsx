@@ -5,13 +5,13 @@ import TeamMember from './TeamMember';
 import aboutStyles from 'styles/pages/About.module.scss';
 import teamStyles from './TeamSection.module.scss';
 import logo from 'assets/logo.png';
-import kevinImage from 'assets/about/team-members/2020-2021/kevin.jpg';
-import dennisImage from 'assets/about/team-members/2020-2021/dennis.jpg';
-import shahzodaImage from 'assets/about/team-members/2019-2020/shahzoda.jpg';
-import vincentImage from 'assets/about/team-members/2019-2020/vincent.jpg';
-import rohmaImage from 'assets/about/team-members/2019-2020/rohma.jpg';
-import tylerImage from 'assets/about/team-members/2019-2020/tyler.jpg';
-import siamImage from 'assets/about/team-members/2019-2020/siam.jpg';
+import kevinImage from 'assets/pages/about/team-members/2020-2021/kevin.jpg';
+import dennisImage from 'assets/pages/about/team-members/2020-2021/dennis.jpg';
+import shahzodaImage from 'assets/pages/about/team-members/2019-2020/shahzoda.jpg';
+import vincentImage from 'assets/pages/about/team-members/2019-2020/vincent.jpg';
+import rohmaImage from 'assets/pages/about/team-members/2019-2020/rohma.jpg';
+import tylerImage from 'assets/pages/about/team-members/2019-2020/tyler.jpg';
+import siamImage from 'assets/pages/about/team-members/2019-2020/siam.jpg';
 
 const TeamSection = () => {
   return (

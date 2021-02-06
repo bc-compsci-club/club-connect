@@ -2,7 +2,7 @@
   // Mobile styles
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-    url('../../../assets/about/about-header-mobile.jpg');
+    url('../../../assets/pages/about/about-header-mobile.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -62,7 +62,7 @@
   // Small landscape phones
   @media screen and (orientation: landscape) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('../../../assets/about/about-header-desktop.jpg');
+      url('../../../assets/pages/about/about-header-desktop.jpg');
 
     .topContainer {
       padding: 5vw 6.25vw;
@@ -87,7 +87,7 @@
   // Landscape and tablet optimized layout
   @media screen and (min-width: 43.75rem) {
     background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-      url('../../../assets/about/about-header-desktop.jpg');
+      url('../../../assets/pages/about/about-header-desktop.jpg');
 
     h1 {
       margin-bottom: 7.5%;
@@ -104,7 +104,7 @@
     // Large landscape phones
     @media screen and (orientation: landscape) {
       background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
-        url('../../../assets/about/about-header-desktop.jpg');
+        url('../../../assets/pages/about/about-header-desktop.jpg');
       padding: 0;
 
       .topContainer {

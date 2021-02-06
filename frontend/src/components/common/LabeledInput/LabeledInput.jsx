@@ -1,9 +1,7 @@
 import React from 'react';
 
-import styles from 'components/common/LabeledInput/LabeledInput.module.scss';
-
 const LabeledInput = (props) => {
-  const { labelText, name, ref, className } = props;
+  const { labelText, name, ref, className, ...otherProps } = props;
 
   let passedClassName = '';
   if (className !== undefined) {
@@ -11,9 +9,9 @@ const LabeledInput = (props) => {
   }
 
   return (
-    <div className={`${styles.labeledInput} ${passedClassName}`}>
+    <div className={passedClassName}>
       <label htmlFor={name}>{labelText}</label>
-      <input name={name} id={name} ref={ref} {...props} />
+      <input name={name} id={name} ref={ref} {...otherProps} />
     </div>
   );
 };

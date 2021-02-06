@@ -5,9 +5,9 @@ import HackathonActivity from './HackathonActivity';
 import aboutStyles from 'styles/pages/About.module.scss';
 import whatWeDoStyles from './WhatWeDoSection.module.scss';
 import activityStyles from './Activity/Activity.module.scss';
-import skillUpImage from 'assets/about/activities/skill-up.jpg';
-import hackathonImage from 'assets/about/activities/hackathon.jpg';
-import collaborateBuildConquerImage from 'assets/about/activities/collaborate-build-conquer.jpg';
+import skillUpImage from 'assets/pages/about/activities/skill-up.jpg';
+import hackathonImage from 'assets/pages/about/activities/hackathon.jpg';
+import collaborateBuildConquerImage from 'assets/pages/about/activities/collaborate-build-conquer.jpg';
 
 const WhatWeDoSection = () => {
   return (
