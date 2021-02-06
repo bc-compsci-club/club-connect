@@ -1,11 +1,20 @@
-import { Model, DataTypes } from 'sequelize';
+import { DataTypes, Model, Optional } from 'sequelize';
 
-import sequelize from '../sequelizeInstance';
-import { ClubEvent } from '../types';
+import { sequelize } from '../database';
+import { ClubEventBase } from '../types';
 
-// No additional attributes needed
+interface ClubEventAttributes extends ClubEventBase {
+  id: number;
+  presenter?: string;
+  presenterImage?: string;
+}
 
-export interface ClubEventInstance extends Model<ClubEvent, {}>, ClubEvent {}
+interface ClubEventCreationAttributes
+  extends Optional<ClubEventAttributes, 'id'> {}
+
+export interface ClubEventInstance
+  extends Model<ClubEventAttributes, ClubEventCreationAttributes>,
+    ClubEventAttributes {}
 
 // Database conventions based off of a sample database provided by MySQL
 // https://dev.mysql.com/doc/employee/en/
@@ -34,6 +43,7 @@ const ClubEventModel = sequelize.define<ClubEventInstance>('club_events', {
     type: DataTypes.STRING,
     allowNull: true,
     field: 'banner',
+    defaultValue: 'https://i.imgur.com/OdgkNym.png', // Fully transparent background
   },
 
   presenter: {
@@ -46,6 +56,13 @@ const ClubEventModel = sequelize.define<ClubEventInstance>('club_events', {
     type: DataTypes.STRING,
     allowNull: true,
     field: 'presenter_image',
+    defaultValue: 'https://static.thenounproject.com/png/630740-200.png',
+  },
+
+  presentingMemberId: {
+    type: DataTypes.INTEGER,
+    allowNull: true,
+    field: 'presenting_member_id',
   },
 
   startDateTime: {
@@ -78,23 +95,17 @@ const ClubEventModel = sequelize.define<ClubEventInstance>('club_events', {
     field: 'long_description',
   },
 
-  meetingLink: {
+  externalLink: {
     type: DataTypes.STRING,
     allowNull: true,
-    field: 'meeting_link',
+    field: 'external_link',
   },
 
-  buttonText: {
+  externalLinkButtonText: {
     type: DataTypes.STRING,
     allowNull: true,
-    field: 'button_text',
-  },
-
-  hasEnded: {
-    type: DataTypes.BOOLEAN,
-    allowNull: true,
-    field: 'has_ended',
-    defaultValue: false,
+    field: 'external_link_button_text',
+    defaultValue: 'Join Event',
   },
 });
 
