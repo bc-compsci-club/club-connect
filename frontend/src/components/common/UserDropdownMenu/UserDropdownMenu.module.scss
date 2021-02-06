@@ -1,0 +1,55 @@
+.dropdown {
+  display: none;
+
+  @media screen and (min-width: 64rem) {
+    display: initial;
+    position: absolute;
+    margin-top: -0.25rem;
+
+    padding: 1rem;
+
+    width: 15rem;
+    height: auto;
+    background-color: #fff;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    z-index: 1000;
+
+    top: 4.5rem;
+    right: 1rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    right: 1.25rem;
+  }
+
+  @media screen and (min-width: 1366px) {
+    right: calc((100vw - 1300px) / 2);
+  }
+}
+
+.memberName {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.divider {
+  margin: 0.75rem auto;
+}
+
+.dropdownList {
+  margin: 0;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+
+  li:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  li.logOutButton {
+    margin-top: 0.4rem;
+    margin-bottom: 0.25rem;
+  }
+}
