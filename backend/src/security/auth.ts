@@ -3,11 +3,12 @@ import passportLocal from 'passport-local';
 import passportJwt from 'passport-jwt';
 import bcrypt from 'bcrypt';
 
-import UserModel, { UserInstance } from '../models/User.model';
+import RegisteredMemberModel, {
+  RegisteredMemberInstance,
+} from '../models/RegisteredMember.model';
 
 const localStrategy = passportLocal.Strategy;
 const jwtStrategy = passportJwt.Strategy;
-const extractJwt = passportJwt.ExtractJwt;
 
 // Email and password auth
 passport.use(
@@ -15,25 +16,27 @@ passport.use(
     { usernameField: 'email' },
     async (email, password, done) => {
       // Find the user in the database
-      const foundUser: UserInstance | null = await UserModel.findOne({
-        where: {
-          email: email,
-        },
-      });
+      const foundMember: RegisteredMemberInstance | null = await RegisteredMemberModel.findOne(
+        {
+          where: {
+            email: email,
+          },
+        }
+      );
 
       // Check if the account exists
-      if (foundUser === null) {
+      if (foundMember === null) {
         return done(null, false);
       }
 
       // Try to authenticate user
       const isPasswordCorrect: boolean = await bcrypt.compare(
         password,
-        foundUser.passwordHash
+        foundMember.passwordHash
       );
 
       if (isPasswordCorrect) {
-        return done(null, foundUser);
+        return done(null, foundMember);
       } else {
         return done(null, false);
       }
@@ -41,24 +44,35 @@ passport.use(
   )
 );
 
+// req.cookies is populated from cookie-parser
+const cookieExtractor = (req: { cookies: { token: string } }) => {
+  if (req && req.cookies) {
+    return req.cookies.token;
+  } else {
+    return null;
+  }
+};
+
 // JWT auth
 passport.use(
   new jwtStrategy(
     {
       secretOrKey: process.env.JWT_SECRET,
-      jwtFromRequest: extractJwt.fromHeader('token'),
+      jwtFromRequest: cookieExtractor,
     },
     async (payload, done) => {
       if (Date.now() > payload.expires) {
-        return done('JWT expired!');
+        return done(null, false);
       }
 
-      const foundUser: UserInstance | null = await UserModel.findOne({
-        where: { userId: payload.userId },
-      });
+      const foundMember: RegisteredMemberInstance | null = await RegisteredMemberModel.findOne(
+        {
+          where: { memberId: payload.memberId },
+        }
+      );
 
-      if (foundUser) {
-        return done(null, foundUser);
+      if (foundMember) {
+        return done(null, foundMember);
       } else {
         return done(null, false);
       }
