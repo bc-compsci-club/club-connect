@@ -296,7 +296,7 @@ const ClubEvent = (props) => {
                   }}
                 >
                   <DeleteForeverRoundedIcon
-                    style={{ color: '#4d5eff', marginRight: '0.5rem' }}
+                    style={{ color: '#ff4d4d', marginRight: '0.5rem' }}
                   />
                   <p>Delete Event</p>
                 </button>
