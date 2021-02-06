@@ -1,0 +1,35 @@
+.announcement {
+  .link:hover {
+    text-decoration: none;
+
+    h3 {
+      text-decoration: underline;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  .postDate {
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 0.75rem;
+  }
+
+  p.text {
+    margin-bottom: 0;
+    color: black;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    @media screen and (min-width: 700px) {
+      -webkit-line-clamp: 2;
+    }
+  }
+}

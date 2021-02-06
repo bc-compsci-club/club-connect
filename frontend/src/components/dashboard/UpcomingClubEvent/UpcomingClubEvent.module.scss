@@ -1,0 +1,26 @@
+.upcomingClubEvent {
+  &:first-child {
+    margin-top: 1.5rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+}
+
+.clubEventContainer {
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.banner {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
