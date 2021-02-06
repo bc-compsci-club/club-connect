@@ -1,5 +1,6 @@
-import express, { NextFunction, Request, Response } from 'express';
+import express from 'express';
 import helmet from 'helmet';
+import compression from 'compression';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
@@ -42,6 +43,7 @@ const startServer = async () => {
 
   // Initialize middleware
   app.use(helmet());
+  app.use(compression());
   app.use(bodyParser.json());
   app.use(cookieParser());
   app.use(morgan('tiny'));
