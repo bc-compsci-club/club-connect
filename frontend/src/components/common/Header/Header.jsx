@@ -1,12 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 import { HamburgerMenuContext } from 'components/common/HamburgerMenu/HamburgerMenuContext';
+import { UserDropdownMenu } from 'components/common/index';
+import UserIcon from 'components/common/UserIcon';
+import { windowSupported } from 'utils/checkSupport';
 import styles from './Header.module.scss';
 import logo from 'assets/logo.png';
+import hamburgerMenuIcon from 'assets/icons/hamburger-menu.svg';
+import dropdownArrowIcon from 'assets/icons/dropdown-arrow.svg';
 
 const Header = () => {
   const context = useContext(HamburgerMenuContext);
+  const isUserLoggedIn = useSelector((state) => state.userLoggedIn);
+
+  const [dropdownMenuOpen, setDropdownMenuOpen] = useState(false);
 
   return (
     <header>
@@ -26,27 +35,20 @@ const Header = () => {
 
           {/* Desktop Navigation */}
           <nav className={styles.navbarMainLinks}>
-            <ul>
-              <li>
-                <Link href="/about">About Us</Link>
-              </li>
-              <li>
-                <Link href="/events">Events</Link>
-              </li>
-              <li>
-                <Link href="/resources">Resources</Link>
-              </li>
-              <li>
-                <Link href="/contribute">Contribute</Link>
-              </li>
-              <li>
-                <Link href="/contact">Contact</Link>
-              </li>
+            {windowSupported() && isUserLoggedIn ? (
+              <>
+                <LoggedInItems
+                  dropdownMenuOpen={dropdownMenuOpen}
+                  setDropdownMenuOpen={setDropdownMenuOpen}
+                />
 
-              <li className={styles.joinButton}>
-                <Link href="/join">Join the Club</Link>
-              </li>
-            </ul>
+                {dropdownMenuOpen && (
+                  <UserDropdownMenu setDropdownMenuOpen={setDropdownMenuOpen} />
+                )}
+              </>
+            ) : (
+              <LoggedOutItems />
+            )}
           </nav>
 
           {/* Mobile Navigation */}
@@ -54,16 +56,7 @@ const Header = () => {
             className={styles.navbarHamburgerMenuButton}
             onClick={context.toggleMenu}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="black"
-              width="48px"
-              height="48px"
-            >
-              <path d="M0 0h24v24H0V0z" fill="none" />
-              <path d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z" />
-            </svg>
+            <img src={hamburgerMenuIcon} alt="Open menu" />
           </button>
         </div>
       </nav>
@@ -71,4 +64,73 @@ const Header = () => {
   );
 };
 
+const LoggedInItems = (props) => {
+  const { dropdownMenuOpen, setDropdownMenuOpen } = props;
+
+  return (
+    <ul>
+      <li>
+        <Link href="/about">About</Link>
+      </li>
+      <li>
+        <Link href="/dashboard">Dashboard</Link>
+      </li>
+      <li>
+        <Link href="/announcements">Announcements</Link>
+      </li>
+      <li>
+        <Link href="/events">Events</Link>
+      </li>
+      <li>
+        <Link href="/resources">Resources</Link>
+      </li>
+      <li>
+        <Link href="/contribute">Contribute</Link>
+      </li>
+      <li className={styles.userIcon}>
+        <button
+          onClick={() => {
+            setDropdownMenuOpen(!dropdownMenuOpen);
+          }}
+        >
+          <UserIcon />
+          <img
+            className={styles.dropdownArrow}
+            src={dropdownArrowIcon}
+            alt="Toggle dropdown menu"
+          />
+        </button>
+      </li>
+    </ul>
+  );
+};
+
+const LoggedOutItems = () => {
+  return (
+    <ul>
+      <li>
+        <Link href="/about">About</Link>
+      </li>
+      <li>
+        <Link href="/events">Events</Link>
+      </li>
+      <li>
+        <Link href="/resources">Resources</Link>
+      </li>
+      <li>
+        <Link href="/contribute">Contribute</Link>
+      </li>
+      <li>
+        <Link href="/login">
+          <a>
+            <strong>Log In</strong>
+          </a>
+        </Link>
+      </li>
+      <li className={styles.joinButton}>
+        <Link href="/join">Join the Club</Link>
+      </li>
+    </ul>
+  );
+};
 export default Header;
