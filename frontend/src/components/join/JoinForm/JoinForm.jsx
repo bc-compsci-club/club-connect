@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import Link from 'next/link';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
+import { Button } from 'components/common';
 import joinFormStyles from './JoinForm.module.scss';
 import authStyles from 'styles/shared/Auth.module.scss';
-import loginFormStyles from 'styles/pages/Login.module.scss';
-import Link from 'next/link';
+import formStyles from 'styles/shared/Form.module.scss';
 import { API_ROOT } from 'pages/_app';
 
 const OLD_JOIN_ENDPOINT =
@@ -116,19 +117,20 @@ const JoinForm = (props) => {
               />
             </div>
 
-            <button
-              className={authStyles.buttonPrimary}
+            <Button
+              classNamePassed={formStyles.cardSubmitButton}
               type="submit"
               disabled={formSubmitting}
+              big
             >
               Join!
-            </button>
+            </Button>
           </form>
 
-          <div className={loginFormStyles.joinLink}>
+          <div className={authStyles.alternateAction}>
             <p>
               <strong>
-                Need to activate your account?{' '}
+                Need to activate your account instead?{' '}
                 <Link href="/join/activate">Click Here.</Link>
               </strong>
             </p>

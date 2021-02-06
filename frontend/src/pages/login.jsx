@@ -6,11 +6,13 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import queryString from 'query-string';
 
+import { Button } from 'components/common';
 import { getUserIsLoggedIn, setLoggedIn } from 'utils/auth';
+import { toastErrorCenter } from 'utils/generalUtils';
 import loginFormStyles from 'styles/pages/Login.module.scss';
+import formStyles from 'styles/shared/Form.module.scss';
 import authStyles from 'styles/shared/Auth.module.scss';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
-import { toastErrorCenter } from 'utils/generalUtils';
 
 const LogIn = () => {
   const router = useRouter();
@@ -123,16 +125,17 @@ const LogIn = () => {
                   <Link href="/resetpassword">Forgot password?</Link>
                 </div>
 
-                <button
-                  className={authStyles.buttonPrimary}
+                <Button
+                  classNamePassed={formStyles.cardSubmitButton}
                   type="submit"
                   disabled={formSubmitting}
+                  big
                 >
                   Log In
-                </button>
+                </Button>
               </form>
 
-              <div className={loginFormStyles.joinLink}>
+              <div className={authStyles.alternateAction}>
                 <p>
                   <strong>
                     Not a member yet? <Link href="/join">Join Now.</Link>

@@ -7,9 +7,10 @@ import axios from 'axios';
 import queryString from 'query-string';
 import { toast } from 'react-toastify';
 
+import { Button } from 'components/common';
 import { getUserIsLoggedIn, setLoggedIn } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
-import loginFormStyles from 'styles/pages/Login.module.scss';
+import formStyles from 'styles/shared/Form.module.scss';
 import authStyles from 'styles/shared/Auth.module.scss';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
 
@@ -144,13 +145,14 @@ const CompleteAccountActivationForm = (props) => {
           />
         </div>
 
-        <button
-          className={authStyles.buttonPrimary}
+        <Button
+          classNamePassed={formStyles.cardSubmitButton}
           type="submit"
           disabled={formSubmitting}
+          big
         >
           {formSubmitting ? 'Activating Account...' : 'Activate!'}
-        </button>
+        </Button>
       </form>
     </div>
   );
@@ -206,16 +208,17 @@ const RequestActivationForm = () => {
           />
         </div>
 
-        <button
-          className={authStyles.buttonPrimary}
+        <Button
+          classNamePassed={formStyles.cardSubmitButton}
           type="submit"
           disabled={formSubmitting}
+          big
         >
           {formSubmitting ? 'Sending...' : 'Send Activation Email'}
-        </button>
+        </Button>
       </form>
 
-      <div className={loginFormStyles.joinLink}>
+      <div className={authStyles.alternateAction}>
         <p>
           <strong>
             Not a member yet? <Link href="/join">Join Now.</Link>
