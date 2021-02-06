@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
-// import ContentLoader from 'react-content-loader';
 import {
   EmailIcon,
   EmailShareButton,
@@ -61,8 +60,6 @@ const ClubEvent = (props) => {
   } = props.clubEventData;
 
   const router = useRouter();
-  const location = router.asPath;
-  console.log(location);
 
   // Data for calendar and share sheet
   const [calendarData, setCalendarData] = useState({

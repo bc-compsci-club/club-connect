@@ -13,7 +13,6 @@ const JoinForm = (props) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
-
   const [formSubmitting, setFormSubmitting] = useState(false);
 
   const handleSubmit = (e) => {

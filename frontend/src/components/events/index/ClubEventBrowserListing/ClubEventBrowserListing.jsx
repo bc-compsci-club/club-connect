@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-import styles from 'components/events/index/ClubEventBrowserListing/ClubEventBrowserListing.module.scss';
+import styles from './ClubEventBrowserListing.module.scss';
 import emptyBanner from 'assets/logo.png';
 
 // Represents an event on the event browser.
