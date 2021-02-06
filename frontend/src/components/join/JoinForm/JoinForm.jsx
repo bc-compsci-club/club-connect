@@ -3,8 +3,12 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import joinFormStyles from './JoinForm.module.scss';
+import authStyles from 'styles/shared/Auth.module.scss';
+import loginFormStyles from 'styles/pages/Login.module.scss';
+import Link from 'next/link';
+import { API_ROOT } from 'pages/_app';
 
-const JOIN_ENDPOINT =
+const OLD_JOIN_ENDPOINT =
   'https://us-east1-bc-cs-club-website.cloudfunctions.net/handleJoin';
 
 const JoinForm = (props) => {
@@ -19,25 +23,41 @@ const JoinForm = (props) => {
     e.preventDefault();
     setFormSubmitting(true);
 
+    const memberData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+    };
+
     axios
-      .post(JOIN_ENDPOINT)
+      .post(`${API_ROOT}/join`, memberData)
       .then((res) => {
-        if (res.status === 200) {
-          setMemberJoined(true);
-          setFormSubmitting(false);
-        } else {
-          processError();
-        }
+        setMemberJoined(true);
       })
       .catch((err) => {
-        console.error(err);
-        processError();
+        if (err.response.status === 409) {
+          toast.error(
+            'The email address you provided is already in use. If this is your email address, please contact us at contact@bccompsci.club for further assistance.',
+            {
+              position: 'top-center',
+              autoClose: 15000,
+              closeOnClick: false,
+              draggable: false,
+            }
+          );
+        } else {
+          processError(err);
+        }
+      })
+      .finally(() => {
+        setFormSubmitting(false);
       });
   };
 
-  const processError = () => {
+  const processError = (err) => {
     setMemberJoined(false);
-    setFormSubmitting(false);
+
+    if (err) console.error(err);
     toast.error(
       'An error occurred while registering you for the club. Please try again. If the error continues, please send us an email at contact@bccompsci.club so we can manually register you.',
       {
@@ -50,14 +70,14 @@ const JoinForm = (props) => {
   };
 
   return (
-    <section className={joinFormStyles.join}>
-      <div className={joinFormStyles.flexContainer}>
-        <div className={joinFormStyles.container}>
+    <section className={`${joinFormStyles.joinBackground} ${authStyles.auth}`}>
+      <div className={authStyles.flexContainer}>
+        <div className={authStyles.container}>
           <h1>Join the Club</h1>
           <form name="join" id="join-form" onSubmit={handleSubmit}>
-            <div className={joinFormStyles.nameRow}>
-              <div className={joinFormStyles.firstName}>
-                <label htmlFor="first-name">First Name*</label>
+            <div className={authStyles.twoColumnField}>
+              <div className={authStyles.leftField}>
+                <label htmlFor="first-name">First Name</label>
                 <input
                   type="text"
                   name="first-name"
@@ -69,8 +89,8 @@ const JoinForm = (props) => {
                 />
               </div>
 
-              <div className={joinFormStyles.lastName}>
-                <label htmlFor="last-name">Last Name*</label>
+              <div className={authStyles.rightField}>
+                <label htmlFor="last-name">Last Name</label>
                 <input
                   type="text"
                   name="last-name"
@@ -83,8 +103,8 @@ const JoinForm = (props) => {
               </div>
             </div>
 
-            <div className={joinFormStyles.email}>
-              <label htmlFor="email">Email Address*</label>
+            <div className={authStyles.fullWidthField}>
+              <label htmlFor="email">Email Address</label>
               <input
                 type="email"
                 name="email"
@@ -96,10 +116,23 @@ const JoinForm = (props) => {
               />
             </div>
 
-            <button type="submit" disabled={formSubmitting}>
+            <button
+              className={authStyles.buttonPrimary}
+              type="submit"
+              disabled={formSubmitting}
+            >
               Join!
             </button>
           </form>
+
+          <div className={loginFormStyles.joinLink}>
+            <p>
+              <strong>
+                Need to activate your account?{' '}
+                <Link href="/join/activate">Click Here.</Link>
+              </strong>
+            </p>
+          </div>
         </div>
       </div>
     </section>
