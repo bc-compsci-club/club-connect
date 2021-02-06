@@ -1,25 +1,45 @@
-// Club event
+import { ParamsDictionary } from 'express-serve-static-core';
+
 import { Roles } from './security/accessControl';
 
-// A full club event
-export interface ClubEvent {
-  id?: number; // Only optional before creating a new event and getting a new ID
+// Common data for club events.
+export interface ClubEventBase {
   internalName: string;
   title: string;
   banner?: string;
-  presenter?: string;
-  presenterImage?: string;
+  presentingMemberId?: number; // Refers to `memberId` on `member` table
   startDateTime?: Date;
   endDateTime?: Date;
   eventLocation?: string;
   shortDescription?: string;
   longDescription?: string;
-  meetingLink?: string;
-  buttonText?: string;
-  hasEnded: boolean;
+  externalLink?: string;
+  externalLinkButtonText?: string;
 }
 
-// A listing in the event browser
+// Common data for verifications.
+export interface VerificationBase {
+  key: string;
+  expiryDateTime: Date;
+  memberId: number;
+}
+
+// Represents a registered member saved in the user's browser's localStorage.
+export interface MemberData {
+  memberId: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  brooklynCollegeEmail?: string;
+  memberImage?: string;
+  role: Roles;
+}
+
+/**
+ * A listing in the event browser
+ *
+ * @deprecated
+ */
 export interface ClubEventListing {
   id: number;
   internalName: string;
@@ -27,47 +47,68 @@ export interface ClubEventListing {
   banner?: string; // A link to the banner on Google Cloud Storage
 }
 
-// Club events sorted into upcoming and past events
-export interface CategorizedClubEvents {
-  upcomingEvents: ClubEvent[]
-  pastEvents: ClubEvent[]
-}
-
-// Required data to authenticate a user
+// Required credentials to authenticate a member
 export interface AuthenticationCredentials {
   email: string;
   password: string;
 }
 
-// Adds "remember me" for when users try to log in
-export interface LoggingInUser extends AuthenticationCredentials {
-  rememberMe: boolean;
-}
-
-// Required data to register a new user
-export interface RegisteringUser extends AuthenticationCredentials {
+// Required data to register a new member
+export interface RegisteringMember extends AuthenticationCredentials {
   firstName: string;
   lastName: string;
+}
+
+export interface JoiningMember {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+
+export interface PasswordResetBody {
+  key: string;
+  password: string;
 }
 
 // Contents of the JWT used to authenticate
 export interface JwtContents {
-  userId: string;
+  memberId: string;
   expires: number;
 }
 
-// Represents a fully registered user stored in the database
-// We don't extend RegisteringUser because we store the hashed password instead of the raw password in AuthenticationCredentials
-export interface User {
-  userId: string;
-  firstName: string;
-  lastName: string;
-  email: string;
-  passwordHash: string;
-  role: Roles;
+// Options for the image processor cloud function.
+export interface ImageProcessorOptions {
+  crop?: {
+    cropUsing: 'ratio' | 'resolution';
+    horizontal: number;
+    vertical: number;
+  };
+  resize?: {
+    ignoreAspectRatio?: boolean;
+    width: number;
+    height: number;
+  };
+  optimize?: {
+    quality?: number;
+  };
 }
 
-export interface VerifyEmailBody {
-  type: 'BrooklynCollege' | 'Cuny';
-  schoolEmail?: string;
+// Common Request Params
+// ParamsDictionary requires strings for all members
+export interface IdParams extends ParamsDictionary {
+  id: string;
+}
+
+// Common Request Bodies
+export interface FormMultipartBody {
+  formDataJson: string;
+}
+
+export interface EmailBody {
+  email: string;
+}
+
+export interface VerificationBody {
+  key: string;
+  password: string;
 }
