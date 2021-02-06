@@ -1,0 +1,62 @@
+.formInputsAndImage {
+  width: 100%;
+  margin-bottom: 0.5rem;
+
+  @media screen and (min-width: 64rem) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.name {
+  @media screen and (min-width: 64rem) {
+    flex-basis: 70%;
+  }
+}
+
+.memberImageContainer {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 64rem) {
+    flex-basis: 25%;
+    display: block;
+    text-align: center;
+  }
+}
+
+.memberImageLabel {
+  margin-top: 0.5rem;
+  text-align: center;
+
+  @media screen and (min-width: 43.75rem) {
+    text-align: left;
+    margin-top: 0;
+  }
+
+  @media screen and (min-width: 64rem) {
+    text-align: center;
+  }
+}
+
+.memberImage {
+  margin: 1rem auto 1.5rem;
+  height: 50vw;
+  object-fit: cover;
+  // Override default React skeleton styles
+  width: 50vw !important;
+  border: 1px solid lightgray;
+  border-radius: 100% !important;
+
+  @media screen and (min-width: 43.75rem) {
+    margin: 1rem 0;
+    height: 30vw;
+    width: 30vw !important;
+  }
+
+  @media screen and (min-width: 64rem) {
+    height: 10rem;
+    width: 10rem !important;
+  }
+}
