@@ -1,0 +1,46 @@
+span.roundLoadingButton {
+  border-radius: 50px;
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+
+  @media screen and (min-width: 43.75rem) {
+    width: 95%;
+  }
+}
+
+.presenterData {
+  display: block;
+  width: 100%;
+}
+
+.actionsLoading {
+  padding-left: 6vw;
+  padding-right: 6vw;
+  margin-top: 1rem;
+
+  & > span:first-child {
+    margin-bottom: 0.8rem;
+  }
+
+  @media screen and (min-width: 43.75rem) {
+    margin-top: 0.9rem;
+    padding: 0;
+  }
+}
+
+.descriptionLoading {
+  margin-top: 0.8rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-top: 0.5rem;
+  }
+}
+
+.shortDescriptionLoading {
+  margin-bottom: 1.4rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-bottom: 1rem;
+  }
+}

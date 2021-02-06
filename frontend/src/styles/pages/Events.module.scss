@@ -1,0 +1,37 @@
+.eventBrowser {
+  @media screen and (min-width: 43.75rem) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.upcoming {
+  margin-bottom: 2.5rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-bottom: 5rem;
+  }
+}
+
+.banners {
+  margin: 1rem auto 2rem;
+  display: grid;
+  gap: 1.5rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-top: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+.category {
+  margin-bottom: 1rem;
+}
+
+.actionButton {
+  @media screen and (min-width: 43.75rem) {
+    margin: 0 auto;
+    width: 35%;
+  }
+}

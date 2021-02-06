@@ -1,0 +1,789 @@
+// TODO: Rewrite the events page
+
+.event {
+  p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+  }
+
+  .bannerAndInformation {
+    .bannerContainer {
+      margin-bottom: 1rem;
+
+      .clubEventBanner {
+        width: 100%;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    .information {
+      padding: 1rem 8vw 0;
+
+      .title {
+        margin: 0 0 0.75rem;
+        font-family: 'Nunito', sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .presenter {
+        margin-bottom: 1.75rem;
+        display: flex;
+        align-items: center;
+
+        p {
+          margin: 0 0 0 1rem;
+        }
+
+        .presenterImageContainer {
+          height: 3rem;
+          border-radius: 100rem;
+        }
+      }
+
+      .time {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+
+        p {
+          margin: 0 0 0 1rem;
+        }
+
+        img {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      .location {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+
+        p {
+          margin: 0 0 0 1rem;
+        }
+
+        img {
+          height: 2rem;
+          width: 2rem;
+        }
+      }
+
+      .link {
+        a {
+          display: block;
+          margin: 0 auto 0.5rem;
+          text-align: center;
+          text-decoration: none;
+          font-family: 'Nunito', sans-serif;
+          font-size: 1.5rem;
+          transition: 0.2s;
+          transition-timing-function: ease-in-out;
+          padding: 1rem;
+          color: #fff;
+          font-weight: bold;
+          background-color: #3bba7d;
+          border-radius: 50px;
+        }
+
+        a:hover {
+          background-color: #4dc98d;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        a:active {
+          background-color: #3bba7d;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+
+  .descriptionsAndActions {
+    display: flex;
+    flex-direction: column-reverse;
+
+    .descriptions {
+      padding: 0 8vw 1rem;
+
+      .shortDescription {
+        font-weight: bold;
+      }
+    }
+
+    .actions {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+
+      button {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.25rem;
+        font-weight: bold;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5rem auto;
+        padding: 0.75rem;
+        width: 84%;
+        border: none;
+        border-radius: 100px;
+        background-color: #f0f0f0;
+        transition: 0.2s;
+        transition-timing-function: ease-in-out;
+
+        img {
+          height: 2rem;
+          width: 2rem;
+          margin-right: 0.5rem;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      button:hover {
+        background-color: #f5f5f5;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button:active {
+        background-color: #f0f0f0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+
+  // Disable tablet styles and use mobile style for now until we can think of a better layout
+  // TODO: Improve tablet vertical layout
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  // 10vw of padding for width on large horizontal phones and tablets
+  //@media screen and (min-width: 43.75rem) {
+
+  //@media screen and (min-width: 64rem) {
+  //  min-height: 100vh;
+  //  margin: 0 auto;
+  //  padding: 2rem 5vw 5vw;
+  //
+  //  // Padding for landscape iPhones with notch
+  //  @supports (padding: max(0px)) {
+  //    @media screen and (orientation: landscape) {
+  //      padding-left: max(5vw, calc(env(safe-area-inset-left) + 5vw));
+  //      padding-right: max(5vw, calc(env(safe-area-inset-right) + 5vw));
+  //    }
+  //  }
+  //
+  //  .event-banner-and-information {
+  //    margin-bottom: 1rem;
+  //    display: flex;
+  //    justify-content: space-between;
+  //    align-items: center;
+  //
+  //    .event-banner-container {
+  //      width: 55%;
+  //
+  //      .event-banner {
+  //        border-radius: 15px;
+  //      }
+  //    }
+  //
+  //    .event-information {
+  //      padding: 0;
+  //      width: 40%;
+  //
+  //      .event-presenter {
+  //        margin-bottom: 1rem;
+  //      }
+  //
+  //      .event-location {
+  //        margin-bottom: 1rem;
+  //      }
+  //
+  //      .event-link {
+  //        a {
+  //          margin: 0 auto;
+  //        }
+  //      }
+  //    }
+  //  }
+  //
+  //  .event-descriptions-and-actions {
+  //    .event-descriptions {
+  //      padding: 0 5vw;
+  //    }
+  //  }
+  //
+  //  @media screen and (orientation: landscape) {
+  //    .event-banner-and-information {
+  //      margin-bottom: 2rem;
+  //      display: flex;
+  //      justify-content: space-between;
+  //      align-items: center;
+  //
+  //      .event-banner-container {
+  //        width: 55%;
+  //
+  //        .event-banner {
+  //          border-radius: 15px;
+  //        }
+  //      }
+  //
+  //      .event-information {
+  //        padding: 0;
+  //        width: 40%;
+  //
+  //        .event-presenter {
+  //          margin-bottom: 1rem;
+  //        }
+  //
+  //        .event-location {
+  //          margin-bottom: 1.5rem;
+  //        }
+  //      }
+  //    }
+  //  }
+  //}
+
+  // TODO: reduce individual device breakpoints for margin and padding
+
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 64rem) {
+    padding: 5vw;
+
+    .bannerAndInformation {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      .bannerContainer {
+        width: 66.25%;
+
+        .clubEventBanner {
+          border-radius: 15px;
+        }
+      }
+
+      .information {
+        margin-top: 0.66rem;
+        padding: 0;
+        width: 30%;
+
+        .presenter {
+          margin-bottom: 0.75rem;
+        }
+
+        .location {
+          margin-bottom: 1.5rem;
+        }
+
+        .link a {
+          width: 95%;
+        }
+      }
+    }
+
+    .descriptionsAndActions {
+      flex-direction: row;
+      justify-content: space-between;
+
+      .descriptions {
+        padding: 0 0.66rem;
+        width: 66.25%;
+
+        .shortDescription {
+          font-size: 1.5rem;
+        }
+      }
+
+      .actions {
+        flex-direction: column;
+        width: 30%;
+
+        button {
+          width: 95%;
+          padding: 0.75rem;
+          margin: 0.4rem auto;
+        }
+      }
+    }
+  }
+
+  // 1072px (iPad 2019)
+  @media screen and (min-width: 67rem) {
+    .bannerAndInformation {
+      .information {
+        .presenter {
+          margin-bottom: 1.75rem;
+        }
+
+        .location {
+          margin-bottom: 1.5rem; // iPad 2019
+        }
+      }
+    }
+  }
+
+  // 1088px (iPad Pro 10.5 2017 and iPad Air 2019)
+  @media screen and (min-width: 68rem) {
+    .bannerAndInformation {
+      .information {
+        .presenter {
+          margin-bottom: 1.75rem;
+        }
+
+        .location {
+          margin-bottom: 2rem; // iPad 2019
+        }
+      }
+    }
+  }
+
+  // 1136px (Samsung Galaxy Tab S4, S5e, S6)
+  @media screen and (min-width: 71rem) {
+    .bannerAndInformation {
+      .information {
+        .presenter {
+          margin-bottom: 2.25rem;
+        }
+      }
+    }
+  }
+
+  // 1184px (small laptops)
+  @media screen and (min-width: 74rem) {
+    .bannerAndInformation {
+      .information {
+        .presenter {
+          margin-bottom: 3.75rem;
+        }
+      }
+    }
+  }
+
+  // 1280px (small-medium laptops)
+  @media screen and (min-width: 80rem) {
+    .bannerAndInformation {
+      .information {
+        .presenter {
+          margin-bottom: 5.25rem;
+        }
+      }
+    }
+  }
+
+  // 1366px (medium laptops)
+  // Increase margin on top and set max width for all larger resolutions
+  @media screen and (min-width: 85.375rem) {
+    min-height: 80vh;
+    margin: 4rem auto;
+    padding: 0;
+    max-width: var(--large-screen-max-width);
+
+    .bannerAndInformation {
+      .information {
+        .presenter {
+          margin-bottom: 7.45rem;
+        }
+      }
+    }
+  }
+}
+
+// Loading placeholder
+.EventLoading {
+  padding: 0 6.25vw;
+
+  .ContentLoader {
+    width: 50%;
+    display: block;
+    text-align: center;
+    margin: 2rem auto 0;
+  }
+}
+
+// TODO: Use a better solution for add to calendar feature
+
+.AddToCalendarModal,
+.ShareModal {
+  display: flex;
+  flex-direction: column;
+  margin-top: 7.5%;
+  padding: 1rem;
+  height: 100vh;
+
+  font-family: 'Nunito', sans-serif;
+  text-align: center;
+
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  outline: none;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 2.75rem 0 0.5rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-size: 1.5rem;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  button {
+    display: block;
+    margin: 0.5rem auto;
+    text-align: center;
+    text-decoration: none;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    width: 95%;
+    color: #000;
+    font-weight: bold;
+    background-color: #eee;
+    border: none;
+    border-radius: 50px;
+  }
+
+  svg {
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+    border-radius: 100%;
+  }
+
+  svg:hover {
+    background-color: #ececec;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+  }
+
+  svg:active {
+    background-color: #dedede;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .closeButton {
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+
+    &:hover {
+      background-color: #ececec;
+      box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      background-color: #dedede;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // 370px (larger phones)
+  @media screen and (min-width: 23.125rem) {
+    h2 {
+      font-size: 2rem;
+      margin: 2.5rem 0 0.5rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    div {
+      a {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    button {
+      margin: 0.5rem auto 2rem;
+      padding: 1rem;
+    }
+  }
+
+  // Landscape phones
+  @media screen and (orientation: landscape) {
+    margin: 1rem auto;
+    height: 100vh;
+
+    h2 {
+      font-size: 1.5rem;
+      margin: 3rem 0 0;
+    }
+
+    p {
+      margin: 0.25rem 0;
+    }
+
+    div {
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      a {
+        font-size: 1.25rem;
+        padding: 0 0.75rem;
+        margin: 0;
+      }
+
+      a:not(:last-child) {
+        border-right: 1px solid lightgray;
+      }
+    }
+
+    button {
+      font-size: 1.5rem;
+      width: 50%;
+      padding: 0.5rem;
+    }
+
+    // Medium horizontal devices
+    @media screen and (min-width: 37.5rem) {
+      h2 {
+        font-size: 2rem;
+        margin: 3rem auto 0;
+      }
+
+      p {
+        margin: 0.5rem 0;
+      }
+
+      div {
+        a {
+          font-size: 1.25rem;
+          padding: 0 1rem;
+        }
+      }
+    }
+  }
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  // 10vw of padding for width on large horizontal phones and tablets
+  @media screen and (min-width: 43.75rem) {
+    margin: 15vh auto;
+    width: 40rem;
+    height: auto;
+
+    h2 {
+      font-size: 2.5rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    div {
+      margin: 1rem 0;
+
+      a {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+    button {
+      width: 30%;
+    }
+
+    // Landscape phones
+    @media screen and (orientation: landscape) {
+      margin: 2.5rem auto 0;
+      height: 100vh;
+      width: 100vw;
+
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 0;
+      }
+
+      p {
+        font-size: 1.25rem;
+      }
+
+      div {
+        flex-direction: row;
+        justify-content: center;
+        margin: 0;
+
+        a {
+          font-size: 1.5rem;
+          padding: 0 1rem;
+          margin: 0.25rem 0;
+        }
+      }
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 64rem) {
+    margin: 25vh auto;
+    height: auto;
+    width: 55rem;
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    div {
+      margin-bottom: 1rem;
+    }
+
+    button {
+      margin-top: 1rem;
+    }
+  }
+
+  // 1100px (small laptops)
+  // Set font size for all larger resolutions
+  @media screen and (min-width: 68.75rem) {
+    margin: 25vh auto;
+  }
+}
+
+.ShareModal {
+  margin-top: 2rem;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  // URL text field
+  input {
+    margin: 1rem auto;
+    width: 95%;
+    border: 2px solid #fff;
+    background-color: #ececec;
+    background-clip: padding-box;
+    padding: 0.25rem 1rem;
+    border-radius: 10px;
+  }
+
+  .sharePlatforms {
+    margin-top: -1rem;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    // Share buttons
+    button {
+      width: 12.5%;
+      height: 2rem;
+      margin: 2rem 1rem 0;
+    }
+  }
+
+  // Close button
+  button {
+    padding: 0.25rem;
+    margin: 2rem auto;
+  }
+
+  @media screen and (orientation: landscape) {
+    margin-top: 0.65rem;
+
+    // URL text field
+    input {
+      margin: 0 auto 0.5rem;
+    }
+
+    .sharePlatforms {
+      width: 80%;
+      margin: 0 auto;
+      flex-wrap: nowrap;
+
+      // Share buttons
+      button {
+        height: 2rem;
+        margin: 0 1rem;
+        padding: 0;
+      }
+    }
+
+    // Close button
+    button {
+      padding: 0.25rem;
+      margin: 0.75rem auto;
+    }
+  }
+
+  // 700px/43.75rem and above (Vertical tablets and large horizontal phones)
+  // 10vw of padding for width on large horizontal phones and tablets
+  @media screen and (min-width: 43.75rem) {
+    margin-top: 25vh;
+
+    // URL text field
+    input {
+      width: 80%;
+      margin-bottom: 1.5rem;
+    }
+
+    .sharePlatforms {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: nowrap;
+    }
+
+    // Close button
+    button {
+      margin: 1rem auto;
+      padding: 0.5rem;
+      width: 30%;
+    }
+
+    @media screen and (orientation: landscape) {
+      margin-top: 3rem;
+
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+      .sharePlatforms {
+        margin: 0 auto;
+        width: 80%;
+
+        // Share buttons
+        button {
+          //width: 20%;
+          height: 2rem;
+          margin: 0 0.5rem;
+          padding: 0 0.5rem;
+        }
+      }
+
+      // Close button
+      button {
+        margin: 1.5rem auto;
+      }
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  @media screen and (min-width: 64rem) {
+    margin-top: 25vh;
+
+    h2 {
+      margin-bottom: 2rem;
+    }
+
+    // URL text field
+    input {
+      margin-bottom: 2rem;
+    }
+
+    .sharePlatforms {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+.memberHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.memberImage {
+  border: 1px solid lightgray;
+  border-radius: 100%;
+  height: 4rem;
+  width: 4rem;
+
+  @media screen and (min-width: 43.75rem) {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+.nameAndRole {
+  font-family: 'Raleway', sans-serif;
+  margin-left: 1rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-left: 1.5rem;
+  }
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+
+  @media screen and (min-width: 43.75rem) {
+    font-size: 2.5rem;
+  }
+}
+
+.role {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+
+  @media screen and (min-width: 43.75rem) {
+    font-size: 1.75rem;
+  }
+}

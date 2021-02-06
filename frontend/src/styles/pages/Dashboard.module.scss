@@ -1,0 +1,118 @@
+.welcomeHeadingLoading {
+  margin-bottom: 2.25rem;
+}
+
+.dashboardGrid {
+  h2 {
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+
+  // 1024px
+  @media screen and (min-width: 64rem) {
+    display: grid;
+    column-gap: 1.5rem;
+    row-gap: 1.5rem;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+  }
+}
+
+.dashboardCard {
+  margin-bottom: 8vw;
+  width: 100%;
+
+  h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  @media screen and (min-width: 64rem) {
+    margin-bottom: 0;
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+}
+
+// Announcements
+.announcementsCard {
+  @extend .dashboardCard;
+
+  grid-row: 1;
+  grid-column: 1 / 5;
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  @media screen and (min-width: 43.75rem) {
+    h3 {
+      font-size: 1.75rem;
+    }
+  }
+}
+
+.announcementsHeader {
+  @media screen and (min-width: 43.75rem) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.postButton {
+  display: none;
+
+  @media screen and (min-width: 43.75rem) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2.75rem;
+  }
+}
+
+.clubEventsCard {
+  @extend .dashboardCard;
+  padding: 2rem 1.75rem 1.75rem;
+
+  h2 {
+    text-align: center;
+  }
+
+  grid-row: 1;
+  grid-column: 5 / 7;
+}
+
+.clubEventsList {
+  display: flex;
+  flex-direction: column;
+
+  article {
+    margin-bottom: 1.75rem;
+  }
+}
+
+.submittedEventsCard {
+  @extend .dashboardCard;
+
+  grid-row: 2;
+  grid-column: 1 / 4;
+  height: 30rem;
+}
+
+.submittedTicketsCard {
+  @extend .dashboardCard;
+
+  grid-row: 2;
+  grid-column: 4 / 7;
+}
+
+.actionsCard {
+  @extend .dashboardCard;
+
+  grid-row: 3;
+  grid-column: 1 / 7;
+}
