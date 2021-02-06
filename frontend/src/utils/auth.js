@@ -95,10 +95,28 @@ export const loginRedirect = async (router) => {
   });
 };
 
+/**
+ * Gets whether or not the user is logged in.
+ * @return {boolean} True if the user is logged in, False otherwise.
+ */
 export const getUserIsLoggedIn = () => {
   return getItemJson('userLoggedIn');
 };
 
 export const getUserData = () => {
-  return getItemJson('loggedInUserData');
+  const userData = getItemJson('loggedInUserData');
+
+  if (userData) {
+    return userData;
+  } else {
+    return {
+      firstName: null,
+      lastName: null,
+      email: null,
+      brooklynCollegeEmail: null,
+      memberId: null,
+      memberImage: null,
+      role: null,
+    };
+  }
 };

@@ -20,11 +20,12 @@ import Footer from 'components/common/Footer';
 import { LoadingEventPage } from 'components/events/[...id]';
 import wrapper from 'store';
 import { logInAction } from 'actions/userLoggedIn';
+import { getUserIsLoggedIn, refreshUserData, setLoggedOut } from 'utils/auth';
+import { toastErrorCenter } from 'utils/generalUtils';
 import { getItemJson, setItemJson } from 'utils/localStorageJsonUtils';
 import { windowSupported } from 'utils/checkSupport';
 import 'styles/index.scss';
 import 'styles/overrides.scss';
-import { getUserIsLoggedIn, refreshUserData } from 'utils/auth';
 
 export const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT;
 export const SITE_TITLE_BASE = 'Brooklyn College Computer Science Club';
@@ -37,15 +38,25 @@ const MyApp = ({ Component, pageProps }) => {
   const [loadingViewActive, setLoadingViewActive] = useState(false);
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
 
-  useEffect(() => {
+  useEffect(async () => {
+    // Safety check to log out the user if the user data doesn't exist
+    if (getUserIsLoggedIn() && getItemJson('loggedInUserData') === undefined) {
+      toastErrorCenter('Your local member data was not found. Please log in again.')
+      await setLoggedOut(dispatch, router);
+      router.reload();
+      return;
+    }
+
     // Initialize localStorage on first visit
     if (!getItemJson('initialSetupDone')) {
       setItemJson('userLoggedIn', false);
       setItemJson('initialSetupDone', true);
     }
 
+    // Refresh user data on page load
     if (getUserIsLoggedIn()) {
-      refreshUserData().then(() => dispatch(logInAction()));
+      await refreshUserData();
+      dispatch(logInAction());
     }
 
     // Window resize
