@@ -11,6 +11,7 @@ import settingsSectionStyles from 'styles/pages/Settings.module.scss';
 import profileSettingsStyles from './ProfileSettings.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
 import { API_ROOT } from 'pages/_app';
+import { toast } from 'react-toastify';
 
 const settingsEndpoint = `${API_ROOT}/accounts/settings`;
 const axiosConfig = {
@@ -67,6 +68,10 @@ const ProfileSettings = () => {
     // Submit member image only if it exists
     if (data.memberImageFile.length > 0) {
       formData.append('memberImageFile', data.memberImageFile[0]);
+      toast('Uploading profile image...', {
+        position: 'top-center',
+        autoClose: 10000,
+      });
     }
 
     try {
@@ -82,15 +87,13 @@ const ProfileSettings = () => {
         'An error occurred while updating your settings. Please try again.'
       );
       console.error(err);
-      console.log(err.response);
-      console.log(formData.get('formDataJson'));
       return;
     }
 
     // Refresh the user's data
     await refreshUserData();
     toastSuccessCenter(
-      'Your profile has been updated successfully! Refreshing the page shortly...'
+      'Your profile has been updated successfully! Refreshing the page...'
     );
 
     // Reload the page to apply the changes
