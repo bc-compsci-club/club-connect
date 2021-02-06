@@ -1,15 +1,22 @@
-import express from 'express';
-import cors from 'cors';
+import express, { NextFunction, Request, Response } from 'express';
+import helmet from 'helmet';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import passport from 'passport';
+import cors from 'cors';
+import sgMail from '@sendgrid/mail';
 
 import './security/auth';
 import { sequelize } from './database';
 import eventsRouter from './routes/events';
-import authRouter from './routes/auth';
 import rootRouter from './routes/root';
+import announcementsRouter from './routes/announcements';
+import accountsRouter from './routes/accounts';
+import joinRouter from './routes/join';
 
 const APP_PORT = process.env.PORT || 8080;
+export const UPLOADED_FILES_DEST = process.env.UPLOADED_FILES_DEST as string;
 export const isProduction = process.env.NODE_ENV === 'production';
 
 if (!isProduction) {
@@ -21,10 +28,7 @@ const startServer = async () => {
   try {
     console.log('Connecting to database...');
     await sequelize.authenticate();
-    if (!isProduction) {
-      // Sync in dev mode
-      await sequelize.sync();
-    }
+    await sequelize.sync();
     console.log('Database connection successful.');
   } catch (err) {
     // Stop the server if the database connection was unsuccessful.
@@ -52,8 +56,13 @@ const startServer = async () => {
 
   // Initialize routes
   app.use('/', rootRouter);
-  app.use('/auth', authRouter);
+  app.use('/join', joinRouter);
+  app.use('/accounts', accountsRouter);
   app.use('/events', eventsRouter);
+  app.use('/announcements', announcementsRouter);
+
+  // Initialize SendGrid
+  sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);
 
   // Start listening for requests
   app.listen(APP_PORT);
