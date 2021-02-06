@@ -12,10 +12,10 @@ const Contact = () => {
       <Head>
         <title>Contact | {SITE_TITLE_BASE}</title>
       </Head>
-      <div className={`${commonStyles.styles} ${contactStyles.contact}`}>
+      <div className={`${commonStyles.text} ${contactStyles.contact}`}>
         <section>
           <article>
-            <h1>Contact Us</h1>
+            <h1 className={commonStyles.centerElement}>Contact Us</h1>
             <p>
               If you have any questions, comments, and/or concerns, are
               interested in leading an event, want to sponsor the club, or have
