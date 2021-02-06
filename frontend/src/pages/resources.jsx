@@ -4,8 +4,8 @@ import Alert from 'react-bootstrap/Alert';
 
 import commonStyles from 'styles/commonStyles.module.scss';
 import resourcesStyles from 'styles/pages/Resources.module.scss';
-import LearnResources from 'assets/resources/learn.mdx';
-import ToolsResources from 'assets/resources/tools.mdx';
+import LearnResources from 'assets/pages/resources/learn.mdx';
+import ToolsResources from 'assets/pages/resources/tools.mdx';
 import { SITE_TITLE_BASE } from 'pages/_app';
 
 const Resources = () => {
