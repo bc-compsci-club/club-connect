@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import ReactGA from 'react-ga';
 import 'react-app-polyfill/ie11';
@@ -23,17 +24,30 @@ import { getItemJson, setItemJson } from 'utils/localStorageJsonUtils';
 import { windowSupported } from 'utils/checkSupport';
 import 'styles/index.scss';
 import 'styles/overrides.scss';
+import { getUserIsLoggedIn, refreshUserData } from 'utils/auth';
 
 export const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT;
 export const SITE_TITLE_BASE = 'Brooklyn College Computer Science Club';
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const isDropdownOpen = useSelector((state) => state.isDropdownOpen);
 
   const [loadingViewActive, setLoadingViewActive] = useState(false);
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
 
   useEffect(() => {
+    // Initialize localStorage on first visit
+    if (!getItemJson('initialSetupDone')) {
+      setItemJson('userLoggedIn', false);
+      setItemJson('initialSetupDone', true);
+    }
+
+    if (getUserIsLoggedIn()) {
+      refreshUserData().then(() => dispatch(logInAction()));
+    }
+
     // Window resize
     window.addEventListener('resize', () => setWidth(window.innerWidth));
 
