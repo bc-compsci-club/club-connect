@@ -36,6 +36,20 @@ const EventBrowser = (props) => {
             {events.pastEvents.map((event) => createEvent(event))}
           </div>
         </section>
+
+        {windowSupported() && getUserIsLoggedIn() && (
+          <section className={eventBrowserStyles.actionButton}>
+            {getUserData().role === 'Admin' ? (
+              <Button href="/events/create" asLink>
+                Create New Event
+              </Button>
+            ) : (
+              <Button href="/events/request" asLink>
+                Submit Event Request
+              </Button>
+            )}
+          </section>
+        )}
       </div>
     </>
   );
