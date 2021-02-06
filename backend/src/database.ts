@@ -1,4 +1,5 @@
 import { Options, Sequelize } from 'sequelize';
+import redis from 'redis';
 
 // Check DB environment variables and stop the server if they don't exist
 if (
@@ -17,7 +18,8 @@ if (
   process.exit(1);
 }
 
-const sequelize = new Sequelize({
+// Sequelize
+export const sequelize = new Sequelize({
   dialect: process.env.DB_DIALECT,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
@@ -25,5 +27,8 @@ const sequelize = new Sequelize({
   host: process.env.DB_HOST,
   port: parseInt(process.env.DB_PORT.toString()),
 } as Options);
+
+// Redis
+export const redisClient = redis.createClient();
 
 export default sequelize;

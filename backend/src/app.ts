@@ -4,7 +4,7 @@ import morgan from 'morgan';
 import passport from 'passport';
 
 import './security/auth';
-import sequelize from './sequelizeInstance';
+import { sequelize } from './database';
 import eventsRouter from './routes/events';
 import authRouter from './routes/auth';
 import rootRouter from './routes/root';
