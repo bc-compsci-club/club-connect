@@ -133,7 +133,7 @@ const BCVerificationSettings = () => {
           <p className={bcVerificationStyles.description}>
             Are you a Brooklyn College student, alumni, or faculty member?
             Verify your Brooklyn College email to gain access to exclusive
-            opportunities for Brooklyn College club members and to gain
+            opportunities for Brooklyn College club members and to get
             the&nbsp;
             <strong>BC Verified</strong> Discord role!
           </p>
