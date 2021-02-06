@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
@@ -23,7 +22,10 @@ import {
   WhatsappShareButton,
 } from 'react-share';
 import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
+import EditRoundedIcon from '@material-ui/icons/EditRounded';
+import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 
+import { getUserData, getUserIsLoggedIn } from 'utils/auth';
 import { isIosUserAgent } from 'utils/iOSUtils';
 import { createMicrosoftWebLink } from 'utils/calendarUtils';
 import clubEventStyles from './ClubEvent.module.scss';
@@ -31,7 +33,9 @@ import shareIcon from 'assets/icons/share.svg';
 import addToCalendarIcon from 'assets/icons/add-to-calendar.svg';
 import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
-import { SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
+import axios from 'axios';
 
 const shareData = {
   eventUrl: 'https://bccompsci.club/events',
@@ -55,8 +59,8 @@ const ClubEvent = (props) => {
     eventLocation,
     shortDescription,
     longDescription,
-    meetingLink,
-    buttonText,
+    externalLink,
+    externalLinkButtonText,
   } = props.clubEventData;
 
   const router = useRouter();
@@ -96,19 +100,20 @@ const ClubEvent = (props) => {
     setShareModalIsOpen(!shareModalIsOpen);
   };
 
-  useEffect(() => {
+  useEffect(async () => {
     const pathArray = router.asPath.split('/');
 
     // Add the event's internal name to the URL if the name isn't already in the URL
     if (pathArray[3] === undefined) {
-      router.push(`/events/${id}/${internalName}`);
+      await router.push(`/events/${id}/${internalName}`);
+      return;
     }
 
     // Redirect to meeting link if /join is after the event name
     if (pathArray[4] === 'join') {
-      if (meetingLink !== null) {
-        console.log('Redirecting to meeting link...');
-        window.location.replace(meetingLink);
+      if (externalLink !== null) {
+        window.location.replace(externalLink);
+        return;
       }
     }
 
@@ -170,7 +175,7 @@ const ClubEvent = (props) => {
             <h1 className={clubEventStyles.title}>{title}</h1>
             <div className={clubEventStyles.presenter}>
               <img
-                className={clubEventStyles.presenterImage}
+                className={clubEventStyles.presenterImageContainer}
                 src={presenterImage}
                 alt={presenter}
               />
@@ -194,20 +199,22 @@ const ClubEvent = (props) => {
               <p>{eventLocation}</p>
             </div>
             <div className={clubEventStyles.link}>
-              {meetingLink === null ? (
-                <Link
-                  href={eventLocation.pathname}
+              {externalLink === null ? (
+                <a
+                  href={router.asPath}
                   onClick={() =>
-                    alert(
-                      'Check back here a day before the event starts for the meeting link!'
-                    )
+                    alert('Coming soon! Check back shortly for updates.')
                   }
                 >
-                  {buttonText}
-                </Link>
+                  {externalLinkButtonText}
+                </a>
               ) : (
-                <a href={meetingLink} target="_blank" rel="noopener noreferrer">
-                  {buttonText}
+                <a
+                  href={externalLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {externalLinkButtonText}
                 </a>
               )}
             </div>
@@ -251,6 +258,50 @@ const ClubEvent = (props) => {
                 shareData={shareData}
               />
             </div>
+
+            {getUserIsLoggedIn() && getUserData().role === 'Admin' && (
+              <>
+                <button onClick={() => router.push(`/events/edit?id=${id}`)}>
+                  <EditRoundedIcon
+                    style={{ color: '#4d5eff', marginRight: '0.5rem' }}
+                  />
+                  <p>Edit Event</p>
+                </button>
+
+                <button
+                  style={{ backgroundColor: '#ffcfcf' }}
+                  onClick={async () => {
+                    const confirmDeleteEvent = confirm(
+                      'Are you sure you want to delete this event?'
+                    );
+
+                    if (confirmDeleteEvent) {
+                      try {
+                        await axios.delete(`${API_ROOT}/events/${id}`, {
+                          withCredentials: true,
+                        });
+                      } catch (err) {
+                        toastErrorCenter(
+                          'An error occurred while deleting the event.'
+                        );
+                        console.error(err);
+                        return;
+                      }
+
+                      toastSuccessCenter(
+                        'The event has been successfully deleted.'
+                      );
+                      router.push('/events');
+                    }
+                  }}
+                >
+                  <DeleteForeverRoundedIcon
+                    style={{ color: '#4d5eff', marginRight: '0.5rem' }}
+                  />
+                  <p>Delete Event</p>
+                </button>
+              </>
+            )}
           </div>
         </div>
       </section>
