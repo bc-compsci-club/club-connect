@@ -119,7 +119,7 @@ const MyApp = ({ Component, pageProps }) => {
 
         {/* IE11 Custom Properties Polyfill Script */}
         {/* Will only load if IE11 is being used */}
-        {typeof window !== 'undefined' &&
+        {windowSupported() &&
           window.MSInputMethodContext &&
           document.documentMode &&
           console.log('Polyfilling IE11 Custom Properties...') &&

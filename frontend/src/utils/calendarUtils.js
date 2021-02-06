@@ -10,8 +10,6 @@ export const getRandomKey = () => {
 export const createMicrosoftWebLink = (link, eventData) => {
   let finalLink = link;
 
-  console.log(eventData);
-
   finalLink +=
     '&startdt=' + dayjs(eventData.startDatetime).format('YYYY-MM-DDTHH:mm:ssZ');
   finalLink +=
