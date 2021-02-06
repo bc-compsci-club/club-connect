@@ -13,7 +13,7 @@ const Contribute = () => {
       <Head>
         <title>Contribute | {SITE_TITLE_BASE}</title>
       </Head>
-      <div className={`${commonStyles.styles} ${contributeStyles.contribute}`}>
+      <div className={`${commonStyles.container} ${commonStyles.text} ${contributeStyles.contribute}`}>
         <section>
           <h1 className={commonStyles.centerElement}>Contribute to the Club</h1>
           <p>

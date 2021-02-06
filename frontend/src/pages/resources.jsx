@@ -14,7 +14,9 @@ const Resources = () => {
       <Head>
         <title>Resources | {SITE_TITLE_BASE}</title>
       </Head>
-      <div className={`${commonStyles.styles} ${resourcesStyles.resources}`}>
+      <div
+        className={`${commonStyles.container} ${commonStyles.text} ${resourcesStyles.resources}`}
+      >
         <h1 className={commonStyles.centerElement}>Resources</h1>
         <LearnResources />
 

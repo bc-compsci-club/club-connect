@@ -2,9 +2,9 @@ import React from 'react';
 import Head from 'next/head';
 
 import {
-  WelcomeSection,
   DescriptionSection,
   HighlightsSection,
+  WelcomeSection,
 } from 'components/index';
 import { Ending } from 'components/common';
 
