@@ -59,7 +59,8 @@ const MyApp = ({ Component, pageProps }) => {
         urlSplit.length > 2 &&
         urlSplit[2] !== undefined &&
         urlSplit[2] !== 'request' &&
-        urlSplit[2] !== 'create'
+        urlSplit[2] !== 'create' &&
+        urlSplit[2] !== 'edit'
       ) {
         window.scroll({
           top: 0,
@@ -70,18 +71,7 @@ const MyApp = ({ Component, pageProps }) => {
     };
 
     const handleRouteChangeComplete = (url) => {
-      const urlStart = url.substring(0, 8);
-      const urlSplit = url.split('/');
-      if (
-        urlStart === '/events/' &&
-        urlSplit.length > 2 &&
-        urlSplit[2] !== undefined &&
-        urlSplit[2] !== 'request' &&
-        urlSplit[2] !== 'create'
-      ) {
-        setLoadingViewActive(false);
-      }
-
+      setLoadingViewActive(false);
       ReactGA.pageview(url);
     };
 
