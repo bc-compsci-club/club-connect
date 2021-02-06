@@ -29,6 +29,10 @@ export const sequelize = new Sequelize({
 } as Options);
 
 // Redis
-export const redisClient = redis.createClient();
+export const redisClient = redis.createClient({
+  host: process.env.REDIS_HOST,
+  port: parseInt(process.env.REDIS_PORT as string),
+  auth_pass: process.env.REDIS_PASSWORD,
+});
 
 export default sequelize;
