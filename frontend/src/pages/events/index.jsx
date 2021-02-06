@@ -53,24 +53,26 @@ const createEvent = (eventData) => {
   );
 };
 
+// Incremental Static Regeneration
 export const getStaticProps = async () => {
-  const clubEvents = await axios.get(`${API_ROOT}/events/browser`);
+  let res;
+  try {
+    res = await axios.get(`${API_ROOT}/events/browser`);
+  } catch (err) {
+    return {
+      props: {
+        events: {
+          upcomingEvents: [],
+          pastEvents: [],
+        },
+      },
+      revalidate: 1,
+    };
+  }
 
-  if (!clubEvents.data) {
-    return { notFound: true };
-  } else {
-    return { props: { events: clubEvents.data }, revalidate: 1 };
+  if (res.data) {
+    return { props: { events: res.data }, revalidate: 1 };
   }
 };
-
-// export const getServerSideProps = async () => {
-//   const events = await axios.get(`${API_ROOT}/events/browser`);
-//
-//   if (!events.data) {
-//     return { notFound: true };
-//   } else {
-//     return { props: { events: events.data } };
-//   }
-// };
 
 export default EventBrowser;
