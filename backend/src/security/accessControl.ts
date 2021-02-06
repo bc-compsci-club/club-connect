@@ -1,16 +1,16 @@
 import { AccessControl } from 'accesscontrol';
 
+// Roles for club members.
 export enum Roles {
   Member = 'Member', // Unverified club member
-  CunyMember = 'CunyMember', // CUNY verified club member
   BrooklynCollegeMember = 'BrooklynCollegeMember', // Brooklyn College verified club member
   Admin = 'Admin', // Executive Board member
 }
 
+// Resources that members can access.
 export enum Resources {
   Announcements = 'Announcements',
   BrooklynCollegeAnnouncements = 'BrooklynCollegeAnnouncements',
-  CunyAnnouncements = 'CunyAnnouncements',
   ClubEvents = 'ClubEvents',
 }
 
@@ -28,12 +28,6 @@ const grants = {
       'update:any': ['*'],
       'delete:any': ['*'],
     },
-    [Resources.CunyAnnouncements]: {
-      'create:any': ['*'],
-      'read:any': ['*'],
-      'update:any': ['*'],
-      'delete:any': ['*'],
-    },
     [Resources.ClubEvents]: {
       'create:any': ['*'],
       'read:any': ['*'],
@@ -42,20 +36,13 @@ const grants = {
     },
   },
   [Roles.BrooklynCollegeMember]: {
-    $extend: [Roles.CunyMember],
+    $extend: [Roles.Member],
     [Resources.BrooklynCollegeAnnouncements]: {
-      'read:any': ['*'],
-    },
-  },
-  [Roles.CunyMember]: {
-    [Resources.CunyAnnouncements]: {
       'read:any': ['*'],
     },
   },
   [Roles.Member]: {},
 };
-
-console.log(grants);
 
 const ac = new AccessControl(grants).lock();
 
