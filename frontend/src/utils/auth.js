@@ -2,7 +2,6 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { getItemJson, setItemJson } from 'utils/localStorageJsonUtils';
-import { toastErrorCenter } from 'utils/generalUtils';
 import { logInAction, logOutAction } from 'actions/userLoggedIn';
 import { API_ROOT } from 'pages/_app';
 
@@ -38,9 +37,6 @@ export const setLoggedOut = async (dispatch, router, routeTo = '/') => {
       }
     );
   } catch (err) {
-    toastErrorCenter(
-      'An error occurred while logging you out. Please try again.'
-    );
     console.error(err);
   }
 };
@@ -52,9 +48,6 @@ export const refreshUserData = async () => {
       withCredentials: true,
     });
   } catch (err) {
-    toastErrorCenter(
-      'There was an error while updating your member profile. Some parts of the portal may not function properly. Please try logging out and logging in again.'
-    );
     console.error(err);
     return;
   }
