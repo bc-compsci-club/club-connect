@@ -95,11 +95,27 @@
   }
 }
 
+.customInternalName {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+// For larger forms like the event editor
 .submitButton {
   margin: 2rem auto;
 }
 
-.customInternalName {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+// For smaller forms like login and registration
+.cardSubmitButton {
+  width: 100%;
+  margin: 2rem auto 0;
+
+  @media screen and (min-width: 43.75rem) {
+    width: initial;
+  }
+}
+
+.cardSecondaryButtons {
+  @extend .cardSubmitButton;
+  margin: 1rem auto 0;
 }

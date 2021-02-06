@@ -1,31 +1,49 @@
 import React from 'react';
 import Link from 'next/link';
+import PropTypes from 'prop-types';
 
 import styles from './Button.module.scss';
 
 const Button = (props) => {
-  const { asLink, href, classNamePassed, children } = props;
+  const { asLink, href, big, variant, classNamePassed, children, ...otherProps } = props;
 
-  let combinedClassName = `${styles.button}`;
+  let resultClassName = big ? `${styles.buttonBig}` : `${styles.button}`;
+
+  // Set button variant
+  // Button defaults to primary
+  if (variant === 'secondary') {
+    resultClassName += ` ${styles.buttonSecondary}`;
+  }
+
+  // Append classNamePassed to className
   if (classNamePassed !== undefined) {
-    combinedClassName += ` ${classNamePassed}`;
+    resultClassName += ` ${classNamePassed}`;
   }
 
   if (asLink) {
     return (
       <Link href={href}>
-        <a className={combinedClassName} {...props}>
+        <a className={resultClassName} {...otherProps}>
           {children}
         </a>
       </Link>
     );
   } else {
     return (
-      <button className={combinedClassName} {...props}>
+      <button className={resultClassName} {...otherProps}>
         {children}
       </button>
     );
   }
+};
+
+Button.propTypes = {
+  asLink: PropTypes.bool,
+  href: PropTypes.string,
+  big: PropTypes.bool,
+  variant: PropTypes.string,
+  classNamePassed: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default Button;

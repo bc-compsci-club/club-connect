@@ -124,65 +124,17 @@
 }
 
 .authBackground {
-  background-image: url('../../assets/auth-background.jpg');
+  background-image: url('../../assets/backgrounds/auth.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.button {
+.alternateAction {
   display: block;
-
-  margin: 2rem auto 0;
-  padding: 1rem 2rem;
-  width: 100%;
-
+  margin: 2rem 0 0;
   text-align: center;
-  text-decoration: none;
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.25rem;
-  font-weight: bold;
 
-  border-radius: 50px;
-  border: none;
-  transition: 0.2s;
-  transition-timing-function: ease-in-out;
-  outline: none;
-
-  &:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }
-
-  &:active {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.buttonPrimary {
-  @extend .button;
-
-  color: #fff;
-  background-color: #4d5eff;
-
-  &:hover {
-    background-color: #5767fe;
-  }
-
-  &:active {
-    background-color: #6574f7;
-  }
-}
-
-.buttonSecondary {
-  @extend .button;
-
-  background-color: #e1e1e1;
-  margin-top: 1rem;
-
-  &:hover {
-    background-color: #eee;
-  }
-
-  &:active {
-    background-color: #f3f3f3;
+  p {
+    margin: 0;
   }
 }

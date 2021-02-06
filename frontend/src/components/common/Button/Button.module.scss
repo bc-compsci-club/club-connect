@@ -4,6 +4,7 @@
   align-items: center;
 
   color: #fff;
+  font-family: 'Nunito', sans-serif;
   font-weight: bold;
   padding: 0.5rem 1.5rem;
   background-color: #4d5eff;
@@ -30,6 +31,48 @@
   }
 }
 
+.buttonBig {
+  @extend .button;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+
+  &:hover:not(:disabled) {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  @media screen and (min-width: 43.75rem) {
+    font-size: 1.5rem;
+  }
+}
+
+.buttonSecondary {
+  color: black;
+  background-color: #e1e1e1;
+
+  &:disabled {
+    color: gray;
+    background-color: #f3f3f3;
+  }
+
+  &:hover:not(:disabled) {
+    color: black;
+    background-color: #eee;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+  }
+
+  &:active:not(:disabled) {
+    color: black;
+    background-color: #f3f3f3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+// Remove default border around HTML buttons
 button.button {
   border: none;
 }
