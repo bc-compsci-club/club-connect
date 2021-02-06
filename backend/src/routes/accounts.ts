@@ -240,7 +240,7 @@ accountsRouter.post(
         role: role,
       };
 
-      // Save the member in the database
+      // Move member from joined to registered
       let registeredMember: RegisteredMemberInstance;
       try {
         // Add member to the registered members database
@@ -248,7 +248,12 @@ accountsRouter.post(
           registeredMemberData
         );
 
-        // Remove from the joined members database
+        // Remove activation keys that reference the joined member ID
+        await JoinedMemberActivationModel.destroy({
+          where: { memberId: joinedMember.id },
+        });
+
+        // Remove member from the joined members database
         await JoinedMemberModel.destroy({
           where: { id: joinedMember.id },
         });
