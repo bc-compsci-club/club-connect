@@ -43,7 +43,6 @@ const ClubEventModel = sequelize.define<ClubEventInstance>('club_events', {
     type: DataTypes.STRING,
     allowNull: true,
     field: 'banner',
-    defaultValue: 'https://i.imgur.com/OdgkNym.png', // Fully transparent background
   },
 
   presenter: {
@@ -56,7 +55,6 @@ const ClubEventModel = sequelize.define<ClubEventInstance>('club_events', {
     type: DataTypes.STRING,
     allowNull: true,
     field: 'presenter_image',
-    defaultValue: 'https://static.thenounproject.com/png/630740-200.png',
   },
 
   presentingMemberId: {
@@ -105,7 +103,6 @@ const ClubEventModel = sequelize.define<ClubEventInstance>('club_events', {
     type: DataTypes.STRING,
     allowNull: true,
     field: 'external_link_button_text',
-    defaultValue: 'Join Event',
   },
 });
 
