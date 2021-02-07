@@ -3,8 +3,7 @@ import Link from 'next/link';
 import { useSelector } from 'react-redux';
 
 import { HamburgerMenuContext } from 'components/common/HamburgerMenu/HamburgerMenuContext';
-import { UserDropdownMenu } from 'components/common/index';
-import UserIcon from 'components/common/UserIcon';
+import { UserIcon, UserDropdownMenu } from 'components/common';
 import { windowSupported } from 'utils/checkSupport';
 import styles from './Header.module.scss';
 import logo from 'assets/logo.png';

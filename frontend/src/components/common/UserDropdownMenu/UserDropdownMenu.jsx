@@ -3,8 +3,8 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 
-import { getUserData, setLoggedOut } from 'utils/auth';
 import { Button } from 'components/common';
+import { getUserData, setLoggedOut } from 'utils/auth';
 import styles from './UserDropdownMenu.module.scss';
 
 const UserDropdownMenu = (props) => {

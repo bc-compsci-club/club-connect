@@ -1,23 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
-import queryString from 'query-string';
 import { Controller, useForm } from 'react-hook-form';
+import queryString from 'query-string';
 import cloneDeep from 'lodash.clonedeep';
 import { DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DayJsUtils from '@date-io/dayjs';
 
-import {
-  BannerUpload,
-  PresenterImageUpload,
-} from 'components/common/EventEditor/components';
-import Button from 'components/common/Button';
+import { BannerUpload, PresenterImageUpload } from './components';
+import { Button } from 'components/common';
 import { windowSupported } from 'utils/checkSupport';
 import { toastErrorCenter } from 'utils/generalUtils';
+import { API_ROOT } from 'pages/_app';
 import eventEditorStyles from './EventEditor.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { API_ROOT } from 'pages/_app';
 
 const EventEditor = (props) => {
   const { formType, submitFunction, submitting } = props;

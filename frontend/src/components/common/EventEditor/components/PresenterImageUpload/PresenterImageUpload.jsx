@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { toast } from 'react-toastify';
 
-import eventEditorStyles from 'components/common/EventEditor/EventEditor.module.scss';
+import eventEditorStyles from '../../EventEditor.module.scss';
 import addImageIcon from 'assets/icons/add-image.svg';
 
 export const PresenterImageUpload = (props) => {

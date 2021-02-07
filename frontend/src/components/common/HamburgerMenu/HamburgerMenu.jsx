@@ -4,14 +4,13 @@ import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { slide as Menu } from 'react-burger-menu';
 
-import Button from 'components/common/Button';
+import { Button, UserIcon } from 'components/common';
 import { HamburgerMenuContext } from './HamburgerMenuContext';
 import { getUserData, getUserIsLoggedIn, setLoggedOut } from 'utils/auth';
 import { windowSupported } from 'utils/checkSupport';
 import styles from './HamburgerMenu.module.scss';
 import logo from 'assets/logo.png';
 import closeIcon from 'assets/icons/close.svg';
-import UserIcon from 'components/common/UserIcon';
 
 const HamburgerMenu = () => {
   const router = useRouter();
