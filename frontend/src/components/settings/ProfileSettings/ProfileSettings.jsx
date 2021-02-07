@@ -6,7 +6,11 @@ import Skeleton from 'react-loading-skeleton';
 
 import Button from 'components/common/Button';
 import { refreshUserData } from 'utils/auth';
-import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
+import {
+  getMemberImage,
+  toastErrorCenter,
+  toastSuccessCenter,
+} from 'utils/generalUtils';
 import settingsSectionStyles from 'styles/pages/Settings.module.scss';
 import profileSettingsStyles from './ProfileSettings.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
@@ -25,9 +29,7 @@ const ProfileSettings = () => {
   const router = useRouter();
   const { register, handleSubmit, reset } = useForm();
 
-  const [memberImageUrl, setMemberImageUrl] = useState(
-    'https://storage.googleapis.com/club-connect/public/member-images/default.png'
-  );
+  const [memberImageUrl, setMemberImageUrl] = useState(getMemberImage());
   const [pageReady, setPageReady] = useState(false);
   const [submitting, setSubmitting] = useState(false);
 

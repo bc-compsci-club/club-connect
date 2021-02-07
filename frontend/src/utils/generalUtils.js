@@ -1,5 +1,7 @@
-import { getUserData, getUserIsLoggedIn } from 'utils/auth';
 import { toast } from 'react-toastify';
+
+import { getUserData, getUserIsLoggedIn } from 'utils/auth';
+import defaultMemberImage from 'assets/icons/profile.svg';
 
 /**
  * Retrieves the logged in member's profile image.
@@ -9,7 +11,7 @@ export const getMemberImage = () => {
   if (getUserIsLoggedIn() && getUserData().memberImage) {
     return getUserData().memberImage;
   } else {
-    return 'https://storage.googleapis.com/club-connect/public/member-images/default.png';
+    return defaultMemberImage;
   }
 };
 
