@@ -181,7 +181,7 @@ const EditAnnouncement = () => {
           )}
 
           <Button
-            classNamePassed={formStyles.submitButton}
+            classNamePassed={formStyles.formButton}
             type="submit"
             disabled={!formReady || submitting}
           >
