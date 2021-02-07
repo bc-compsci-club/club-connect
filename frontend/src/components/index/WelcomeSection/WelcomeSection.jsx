@@ -4,7 +4,7 @@ import Typewriter from 'typewriter-effect';
 
 import { windowSupported } from 'utils/checkSupport';
 import styles from './WelcomeSection.module.scss';
-import slideshow from 'assets/pages/home/inspiration.jpg';
+import inspirationImage from 'assets/pages/home/inspiration.jpg';
 
 const WelcomeSection = (props) => {
   return (
@@ -31,7 +31,7 @@ const WelcomeSection = (props) => {
 
           <div className={styles.welcomeImage}>
             <img
-              src={slideshow}
+              src={inspirationImage}
               alt="Members of the Computer Science Club at the SBUHacks hackathon."
             />
           </div>

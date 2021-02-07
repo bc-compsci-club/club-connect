@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Highlight from 'components/index/HighlightsSection/Highlight';
-import styles from './HighlightsSection.module.scss';
-import highlightStyles from 'components/index/HighlightsSection/Highlight/Highlight.module.scss';
-import learn from 'assets/pages/home/highlights/learn.jpg';
-import collaborate from 'assets/pages/home/highlights/collaborate.jpg';
-import network from 'assets/pages/home/highlights/network.jpg';
+import { Highlight } from './components';
+import highlightsSectionStyles from './HighlightsSection.module.scss';
+import highlightStyles from 'components/Highlight/Highlight.module.scss';
+import learnImage from 'assets/pages/home/highlights/learn.jpg';
+import collaborateImage from 'assets/pages/home/highlights/collaborate.jpg';
+import networkImage from 'assets/pages/home/highlights/network.jpg';
 
 const descriptions = [
   // Learn
@@ -29,7 +29,7 @@ const descriptions = [
 
 const HighlightsSection = () => {
   return (
-    <section className={styles.highlights}>
+    <section className={highlightsSectionStyles.highlights}>
       {/* Learn */}
       <Highlight
         containerClass={highlightStyles.highlightLearn}
@@ -37,7 +37,7 @@ const HighlightsSection = () => {
         description={descriptions[0]}
         linkUrl="/events"
         linkText="Browse Events"
-        image={learn}
+        image={learnImage}
         imageAlt="Learn"
         backgroundColor="#FFF9EE"
       />
@@ -49,7 +49,7 @@ const HighlightsSection = () => {
         description={descriptions[1]}
         linkUrl="/about"
         linkText="See What We Do"
-        image={collaborate}
+        image={collaborateImage}
         imageAlt="Collaborate"
         backgroundColor="#EEFFF0"
       />
@@ -61,7 +61,7 @@ const HighlightsSection = () => {
         description={descriptions[2]}
         linkUrl="/join"
         linkText="Join The Community"
-        image={network}
+        image={networkImage}
         imageAlt="Network"
         backgroundColor="#EEF7FF"
       />
