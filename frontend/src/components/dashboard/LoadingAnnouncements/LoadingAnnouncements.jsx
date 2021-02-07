@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LoadingAnnouncement from 'components/common/LoadingAnnouncement';
+import { LoadingAnnouncement } from 'components/common';
 
 // Represents an event on the event browser.
 const LoadingAnnouncements = () => {

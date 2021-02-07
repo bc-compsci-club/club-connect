@@ -1,1 +1,1 @@
-export { default } from 'components/dashboard/UpcomingClubEvent/UpcomingClubEvent';
+export { default } from './UpcomingClubEvent';

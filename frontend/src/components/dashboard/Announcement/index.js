@@ -1,1 +1,1 @@
-export { default } from 'components/dashboard/Announcement/Announcement';
+export { default } from './Announcement';

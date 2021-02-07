@@ -1,1 +1,1 @@
-export { default } from 'components/dashboard/LoadingAnnouncements/LoadingAnnouncements';
+export { default } from './LoadingAnnouncements';
