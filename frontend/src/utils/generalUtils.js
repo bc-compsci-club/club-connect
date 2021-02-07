@@ -46,3 +46,17 @@ export const toastSuccessCenter = (message) => {
 export const toastErrorCenter = (message) => {
   toast.error(message, { position: 'top-center' });
 };
+
+/**
+ * Shows an error toast in the top center of the screen with a long duration
+ * and with no close on click.
+ * @param {string} message The message to show.
+ */
+export const toastErrorCenterImportant = (message) => {
+  toast.error(message, {
+    position: 'top-center',
+    autoClose: 15000,
+    closeOnClick: false,
+    draggable: false,
+  });
+};
