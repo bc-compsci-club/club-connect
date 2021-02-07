@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import axios from 'axios';
+import queryString from 'query-string';
 import { Controller, useForm } from 'react-hook-form';
 import cloneDeep from 'lodash.clonedeep';
 import { DateTimePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import DayJsUtils from '@date-io/dayjs';
-// import { DevTool } from '@hookform/devtools';
 
 import {
   BannerUpload,
@@ -11,13 +13,11 @@ import {
 } from 'components/common/EventEditor/components';
 import Button from 'components/common/Button';
 import { windowSupported } from 'utils/checkSupport';
+import { toastErrorCenter } from 'utils/generalUtils';
 import eventEditorStyles from './EventEditor.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 import { API_ROOT } from 'pages/_app';
-import queryString from 'query-string';
-import { toastErrorCenter } from 'utils/generalUtils';
-import { useRouter } from 'next/router';
-import axios from 'axios';
 
 const EventEditor = (props) => {
   const { formType, submitFunction, submitting } = props;
@@ -112,7 +112,7 @@ const EventEditor = (props) => {
           />
         </div>
 
-        {formType === 'create' || formType === 'edit' && (
+        {(formType === 'create' || formType === 'edit') && (
           <div className={eventEditorStyles.presenterInputs}>
             <div className={formStyles.labeledInput}>
               <label htmlFor="presenter">Presenter</label>
@@ -318,7 +318,7 @@ const EventEditor = (props) => {
 
         {formType === 'create' && (
           <Button
-            classNamePassed={formStyles.submitButton}
+            classNamePassed={`${formStyles.formButton} ${commonStyles.actionButton}`}
             type="submit"
             disabled={!editorReady || submitting}
           >
@@ -328,7 +328,7 @@ const EventEditor = (props) => {
 
         {formType === 'request' && (
           <Button
-            classNamePassed={formStyles.submitButton}
+            classNamePassed={`${formStyles.formButton} ${commonStyles.actionButton}`}
             type="submit"
             disabled={!editorReady || submitting}
           >
@@ -338,7 +338,7 @@ const EventEditor = (props) => {
 
         {formType === 'edit' && (
           <Button
-            classNamePassed={formStyles.submitButton}
+            classNamePassed={`${formStyles.formButton} ${commonStyles.actionButton}`}
             type="submit"
             disabled={!editorReady || submitting}
           >
@@ -346,8 +346,6 @@ const EventEditor = (props) => {
           </Button>
         )}
       </form>
-
-      {/*<DevTool control={control} />*/}
     </>
   );
 };

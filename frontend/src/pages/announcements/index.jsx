@@ -4,9 +4,14 @@ import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
+import { Button } from 'components/common';
 import Announcement from 'components/dashboard/Announcement';
 import LoadingAnnouncement from 'components/common/LoadingAnnouncement';
-import { ensureUserIsAuthenticated } from 'utils/auth';
+import {
+  ensureUserIsAuthenticated,
+  getUserData,
+  getUserIsLoggedIn,
+} from 'utils/auth';
 import commonStyles from 'styles/commonStyles.module.scss';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
 
@@ -55,6 +60,16 @@ const Announcements = () => {
                 <p className={commonStyles.centerElement}>
                   There are currently no announcements at this time.
                 </p>
+              )}
+
+              {getUserIsLoggedIn() && getUserData().role === 'Admin' && (
+                <section
+                  className={`${commonStyles.actionButton} ${commonStyles.marginTopTwoRem}`}
+                >
+                  <Button href="/announcements/post" asLink>
+                    Post Announcement
+                  </Button>
+                </section>
               )}
             </>
           ) : (

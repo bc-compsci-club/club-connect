@@ -5,7 +5,6 @@ import axios from 'axios';
 import { ClubEventBrowserListing } from 'components/events/index';
 import Button from 'components/common/Button';
 import { getUserData, getUserIsLoggedIn } from 'utils/auth';
-import { windowSupported } from 'utils/checkSupport';
 import eventBrowserStyles from 'styles/pages/Events.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
@@ -37,8 +36,8 @@ const EventBrowser = (props) => {
           </div>
         </section>
 
-        {windowSupported() && getUserIsLoggedIn() && (
-          <section className={eventBrowserStyles.actionButton}>
+        {getUserIsLoggedIn() && (
+          <section className={commonStyles.actionButton}>
             {getUserData().role === 'Admin' ? (
               <Button href="/events/create" asLink>
                 Create New Event

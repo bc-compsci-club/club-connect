@@ -16,7 +16,8 @@ const RequestEvent = () => {
   const dispatch = useDispatch();
 
   const [submitting, setSubmitting] = useState(false);
-  useEffect(async () => {
+
+  useEffect(() => {
     ensureUserIsAuthenticated(router, dispatch);
   }, []);
 

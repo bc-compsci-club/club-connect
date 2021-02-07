@@ -109,3 +109,23 @@
   text-align: center;
   font-size: 5rem;
 }
+
+// Center buttons in the middle of the screen on desktop and span full width on mobile
+.actionButton {
+  @media screen and (min-width: 43.75rem) {
+    margin: 0 auto;
+    width: 35%;
+  }
+}
+
+.marginTopOneRem {
+  margin-top: 1rem;
+}
+
+.marginTopOnePointFiveRem {
+  margin-top: 1.5rem;
+}
+
+.marginTopTwoRem {
+  margin-top: 2rem;
+}

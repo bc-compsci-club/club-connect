@@ -112,7 +112,7 @@ const AnnouncementPage = (props) => {
               </Button>
               <Button
                 classNamePassed={announcementStyles.actionButton}
-                style={{ backgroundColor: '#ff4d4d' }}
+                variant="danger"
                 onClick={async () => {
                   const confirmDeleteAnnouncement = confirm(
                     'Are you sure you want to delete this announcement?'
