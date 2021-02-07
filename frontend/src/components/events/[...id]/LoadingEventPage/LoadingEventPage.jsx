@@ -1,8 +1,8 @@
 import React from 'react';
 import Skeleton from 'react-loading-skeleton';
 
-import eventPageStyles from 'components/events/[...id]/ClubEvent/ClubEvent.module.scss';
 import loadingEventPageStyles from './LoadingEventPage.module.scss';
+import eventPageStyles from 'components/events/[...id]/ClubEvent/ClubEvent.module.scss';
 import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
 

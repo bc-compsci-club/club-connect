@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { NextSeo } from 'next-seo';
 import axios from 'axios';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
@@ -30,6 +30,7 @@ import { getUserData, getUserIsLoggedIn } from 'utils/auth';
 import { isIosUserAgent } from 'utils/iOSUtils';
 import { createMicrosoftWebLink } from 'utils/calendarUtils';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 import clubEventStyles from './ClubEvent.module.scss';
 import defaultBanner from 'assets/banner-default.png';
 import defaultPresenterImage from 'assets/icons/profile.svg';
@@ -37,8 +38,6 @@ import shareIcon from 'assets/icons/share.svg';
 import addToCalendarIcon from 'assets/icons/add-to-calendar.svg';
 import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
-import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
-import { NextSeo } from 'next-seo';
 
 let modalCalendarData = {};
 
