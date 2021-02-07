@@ -37,7 +37,8 @@ import shareIcon from 'assets/icons/share.svg';
 import addToCalendarIcon from 'assets/icons/add-to-calendar.svg';
 import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import { NextSeo } from 'next-seo';
 
 let modalCalendarData = {};
 
@@ -111,24 +112,28 @@ const ClubEvent = (props) => {
 
   return (
     <>
-      <Head>
-        <title>
-          {title} | {SITE_TITLE_BASE}
-        </title>
+      <NextSeo
+        title={`${title} – ${SITE_NAME_BASE}`}
+        description={
+          shortDescription
+            ? shortDescription
+            : `${title} is an event hosted by the Brooklyn College Computer Science Club.`
+        }
+        openGraph={{
+          site_name: SITE_NAME_BASE,
+          title: title,
+          description: shortDescription
+            ? shortDescription
+            : `${title} is an event hosted by the Brooklyn College Computer Science Club.`,
+          images: [{ url: banner ? banner : defaultBanner }],
+          type: 'events.event',
+          url: `https://bccompsci.club/events/${id}/${internalName}`,
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+      />
 
-        <meta
-          property="og:title"
-          content={`${title} | ${SITE_TITLE_BASE}`}
-          key="title"
-        />
-        <meta name="description" content={shortDescription} key="description" />
-        <meta property="og:type" content="events.event" />
-        <meta
-          property="og:url"
-          content={`https://bccompsci.club/events/${id}/${internalName}`}
-        />
-        <meta property="og:image" content={banner} />
-      </Head>
       <section className={clubEventStyles.event}>
         <div className={clubEventStyles.bannerAndInformation}>
           <div className={clubEventStyles.bannerContainer}>

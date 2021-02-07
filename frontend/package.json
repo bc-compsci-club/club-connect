@@ -28,6 +28,7 @@
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.6.2",
     "next-redux-wrapper": "^6.0.2",
+    "next-seo": "^4.19.0",
     "normalize.css": "^8.0.1",
     "nprogress": "^0.2.0",
     "prop-types": "^15.7.2",

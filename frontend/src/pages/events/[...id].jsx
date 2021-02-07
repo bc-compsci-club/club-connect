@@ -1,6 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 import { ClubEvent } from 'components/events/[...id]';
 import { API_ROOT } from 'pages/_app';
