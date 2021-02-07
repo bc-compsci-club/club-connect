@@ -4,8 +4,8 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import Button from 'react-bootstrap/Button';
 
-import contactFormStyles from './ContactForm.module.scss';
 import { API_ROOT } from 'pages/_app';
+import contactFormStyles from './ContactForm.module.scss';
 
 const ContactForm = () => {
   const [name, setName] = useState('');
