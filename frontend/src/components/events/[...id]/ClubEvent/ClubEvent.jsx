@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import axios from 'axios';
 import dayjs from 'dayjs';
 import Modal from 'react-modal';
 import {
@@ -25,6 +26,7 @@ import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
 import EditRoundedIcon from '@material-ui/icons/EditRounded';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 
+import { Button } from 'components/common';
 import { getUserData, getUserIsLoggedIn } from 'utils/auth';
 import { isIosUserAgent } from 'utils/iOSUtils';
 import { createMicrosoftWebLink } from 'utils/calendarUtils';
@@ -35,7 +37,6 @@ import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
-import axios from 'axios';
 
 const shareData = {
   eventUrl: 'https://bccompsci.club/events',
@@ -182,7 +183,7 @@ const ClubEvent = (props) => {
               <p>
                 Presented by
                 <br />
-                {presenter}
+                {presenter ? presenter : 'Unspecified'}
               </p>
             </div>
             <div className={clubEventStyles.time}>
@@ -196,25 +197,29 @@ const ClubEvent = (props) => {
             </div>
             <div className={clubEventStyles.location}>
               <img src={locationPinIcon} alt="Location" />
-              <p>{eventLocation}</p>
+              <p>{eventLocation ? eventLocation : 'Unspecified'}</p>
             </div>
             <div className={clubEventStyles.link}>
-              {externalLink === null ? (
-                <a
-                  href={router.asPath}
-                  onClick={() =>
-                    alert('Coming soon! Check back shortly for updates.')
-                  }
-                >
-                  {externalLinkButtonText}
-                </a>
-              ) : (
+              {externalLink ? (
                 <a
                   href={externalLink}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {externalLinkButtonText}
+                  {externalLinkButtonText
+                    ? externalLinkButtonText
+                    : 'More Details'}
+                </a>
+              ) : (
+                <a
+                  href="javascript:void(0)"
+                  onClick={() =>
+                    alert('Coming soon! Check back shortly for updates.')
+                  }
+                >
+                  {externalLinkButtonText
+                    ? externalLinkButtonText
+                    : 'More Details'}
                 </a>
               )}
             </div>
@@ -263,9 +268,11 @@ const ClubEvent = (props) => {
               <>
                 <button onClick={() => router.push(`/events/edit?id=${id}`)}>
                   <EditRoundedIcon
-                    style={{ color: '#4d5eff', marginRight: '0.5rem' }}
+                    style={{
+                      color: '#4d5eff',
+                    }}
                   />
-                  <p>Edit Event</p>
+                  <span>Edit Event</span>
                 </button>
 
                 <button
@@ -295,10 +302,8 @@ const ClubEvent = (props) => {
                     }
                   }}
                 >
-                  <DeleteForeverRoundedIcon
-                    style={{ color: '#ff4d4d', marginRight: '0.5rem' }}
-                  />
-                  <p>Delete Event</p>
+                  <DeleteForeverRoundedIcon style={{ color: '#ff4d4d' }} />
+                  <span>Delete Event</span>
                 </button>
               </>
             )}
@@ -323,11 +328,7 @@ const AddToCalendarButton = (props) => {
   }, []);
 
   return (
-    <button
-      id="AddToCalendarButton"
-      className="AddToCalendarButton"
-      onClick={onClick}
-    >
+    <button id="AddToCalendarButton" onClick={onClick}>
       <img src={addToCalendarIcon} alt="Add to Calendar" />
       {children}
     </button>
@@ -396,9 +397,9 @@ const ShareButton = ({
   };
 
   return (
-    <button className="event-share-button" onClick={handleClick}>
+    <button onClick={handleClick}>
       <img src={shareIcon} alt="Share This Event" />
-      <p>Share This Event</p>
+      <span>Share This Event</span>
     </button>
   );
 };
