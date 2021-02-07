@@ -37,8 +37,8 @@ const EventBrowser = (props) => {
           </div>
         </section>
 
-        {windowSupported() && getUserIsLoggedIn() && (
-          <section className={eventBrowserStyles.actionButton}>
+        {getUserIsLoggedIn() && (
+          <section className={commonStyles.actionButton}>
             {getUserData().role === 'Admin' ? (
               <Button href="/events/create" asLink>
                 Create New Event
