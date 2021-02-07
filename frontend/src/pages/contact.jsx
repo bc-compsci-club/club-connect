@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-
-import ContactForm from 'components/contact/ContactForm';
-import commonStyles from 'styles/commonStyles.module.scss';
-import contactStyles from 'styles/pages/Contact.module.scss';
-import { SITE_NAME_BASE } from 'pages/_app';
 import { NextSeo } from 'next-seo';
+
+import { ContactForm } from 'components/contact';
+import { SITE_NAME_BASE } from 'pages/_app';
+import contactStyles from 'styles/pages/Contact.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 const pageTitle = `Contact – ${SITE_NAME_BASE}`;
 

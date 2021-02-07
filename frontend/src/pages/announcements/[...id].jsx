@@ -3,18 +3,18 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import ReactMarkdown from 'react-markdown';
 import { toast } from 'react-toastify';
 import Skeleton from 'react-loading-skeleton';
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 
 import { Button } from 'components/common';
 import { ensureUserIsAuthenticated, getUserData } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
-import commonStyles from 'styles/commonStyles.module.scss';
-import announcementStyles from 'styles/pages/AnnouncementPage.module.scss';
 import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import announcementStyles from 'styles/pages/AnnouncementPage.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 dayjs.extend(relativeTime);
 

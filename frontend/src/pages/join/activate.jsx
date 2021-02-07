@@ -4,16 +4,16 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import { NextSeo } from 'next-seo';
 import queryString from 'query-string';
 import { toast } from 'react-toastify';
 
 import { Button } from 'components/common';
 import { getUserIsLoggedIn, setLoggedIn } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
-import formStyles from 'styles/shared/Form.module.scss';
-import authStyles from 'styles/shared/Auth.module.scss';
 import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
-import { NextSeo } from 'next-seo';
+import authStyles from 'styles/shared/Auth.module.scss';
+import formStyles from 'styles/shared/Form.module.scss';
 
 const pageTitle = `Activate Your Account – ${SITE_NAME_BASE}`;
 

@@ -13,9 +13,9 @@ import {
 } from 'components/settings';
 import { ensureUserIsAuthenticated, refreshUserData } from 'utils/auth';
 import { getItemJson } from 'utils/localStorageJsonUtils';
+import { SITE_NAME_BASE } from 'pages/_app';
 import settingsStyles from 'styles/pages/Settings.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { SITE_NAME_BASE } from 'pages/_app';
 
 const Settings = () => {
   const router = useRouter();

@@ -7,9 +7,9 @@ import queryString from 'query-string';
 import { toast } from 'react-toastify';
 
 import { ensureUserIsAuthenticated } from 'utils/auth';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 import verifyBCStyles from 'styles/pages/VerifyBC.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const VerifyBC = () => {
   const router = useRouter();

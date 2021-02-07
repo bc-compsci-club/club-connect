@@ -5,11 +5,11 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import EventEditor from 'components/common/EventEditor/EventEditor';
-import commonStyles from 'styles/commonStyles.module.scss';
-import formStyles from 'styles/shared/Form.module.scss';
-import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import { EventEditor } from 'components/common';
 import { ensureUserIsAuthenticated } from 'utils/auth';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import formStyles from 'styles/shared/Form.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 const RequestEvent = () => {
   const router = useRouter();

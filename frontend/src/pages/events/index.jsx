@@ -4,11 +4,11 @@ import axios from 'axios';
 import { NextSeo } from 'next-seo';
 
 import { ClubEventBrowserListing } from 'components/events/index';
-import Button from 'components/common/Button';
+import { Button } from 'components/common';
 import { getUserData, getUserIsLoggedIn } from 'utils/auth';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 import eventBrowserStyles from 'styles/pages/Events.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const pageTitle = `Events – ${SITE_NAME_BASE}`;
 

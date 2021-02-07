@@ -3,15 +3,15 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 import queryString from 'query-string';
+import { toast } from 'react-toastify';
 
-import EventEditor from 'components/common/EventEditor/EventEditor';
+import { EventEditor } from 'components/common';
 import { ensureUserIsAuthenticated } from 'utils/auth';
 import { toastErrorCenter } from 'utils/generalUtils';
-import commonStyles from 'styles/commonStyles.module.scss';
-import formStyles from 'styles/shared/Form.module.scss';
 import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import formStyles from 'styles/shared/Form.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 const EditEvent = () => {
   const router = useRouter();

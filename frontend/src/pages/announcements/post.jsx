@@ -6,12 +6,12 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 
-import Button from 'components/common/Button';
+import { Button } from 'components/common';
 import { ensureUserIsAuthenticated, getUserData } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
-import commonStyles from 'styles/commonStyles.module.scss';
-import formStyles from 'styles/shared/Form.module.scss';
 import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import formStyles from 'styles/shared/Form.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 const PostAnnouncement = () => {
   const router = useRouter();

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 import { JoinForm, JoinSuccess } from 'components/join';
 import { SITE_NAME_BASE } from 'pages/_app';
-import { NextSeo } from 'next-seo';
 
 const pageTitle = `Join the Club – ${SITE_NAME_BASE}`;
 

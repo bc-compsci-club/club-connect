@@ -4,16 +4,15 @@ import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
-import { Button } from 'components/common';
-import Announcement from 'components/dashboard/Announcement';
-import LoadingAnnouncement from 'components/common/LoadingAnnouncement';
+import { Announcement } from 'components/dashboard';
+import { Button, LoadingAnnouncement } from 'components/common';
 import {
   ensureUserIsAuthenticated,
   getUserData,
   getUserIsLoggedIn,
 } from 'utils/auth';
-import commonStyles from 'styles/commonStyles.module.scss';
 import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 const Announcements = () => {
   const router = useRouter();

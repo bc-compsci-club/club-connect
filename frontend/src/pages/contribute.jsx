@@ -1,12 +1,12 @@
 import React from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import { Link as ScrollLink } from 'react-scroll';
 
 import { Volunteer, OpenSource, HostEvent } from 'components/contribute';
-import commonStyles from 'styles/commonStyles.module.scss';
-import contributeStyles from 'styles/pages/Contribute.module.scss';
 import { SITE_NAME_BASE } from 'pages/_app';
-import { NextSeo } from 'next-seo';
+import contributeStyles from 'styles/pages/Contribute.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 const pageTitle = `Contribute – ${SITE_NAME_BASE}`;
 

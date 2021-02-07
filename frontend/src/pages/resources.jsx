@@ -1,13 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import Alert from 'react-bootstrap/Alert';
 
-import commonStyles from 'styles/commonStyles.module.scss';
-import resourcesStyles from 'styles/pages/Resources.module.scss';
+import { SITE_NAME_BASE } from 'pages/_app';
 import LearnResources from 'assets/pages/resources/learn.mdx';
 import ToolsResources from 'assets/pages/resources/tools.mdx';
-import { SITE_NAME_BASE } from 'pages/_app';
-import { NextSeo } from 'next-seo';
+import resourcesStyles from 'styles/pages/Resources.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
 
 const pageTitle = `Resources – ${SITE_NAME_BASE}`;
 

@@ -6,20 +6,22 @@ import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import Skeleton from 'react-loading-skeleton';
 
-import Card from 'components/common/Card';
-import Button from 'components/common/Button';
-import LoadingAnnouncement from 'components/common/LoadingAnnouncement';
-import LoadingClubEvent from 'components/common/LoadingClubEvent';
-import Announcement from 'components/dashboard/Announcement';
+import { Announcement } from 'components/dashboard';
 import { ClubEventBrowserListing } from 'components/events/index';
+import {
+  Button,
+  Card,
+  LoadingAnnouncement,
+  LoadingClubEvent,
+} from 'components/common';
 import {
   ensureUserIsAuthenticated,
   getUserData,
   refreshUserData,
 } from 'utils/auth';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 import dashboardStyles from 'styles/pages/Dashboard.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const Dashboard = () => {
   const router = useRouter();
@@ -115,7 +117,9 @@ const Dashboard = () => {
                     ))}
                   </div>
                 ) : (
-                  <p>There are no announcements at this time. Check back soon!</p>
+                  <p>
+                    There are no announcements at this time. Check back soon!
+                  </p>
                 )}
               </>
             ) : (
@@ -147,7 +151,9 @@ const Dashboard = () => {
                     ))}
                   </div>
                 ) : (
-                  <p>There are no upcoming events at this time. Check back soon!</p>
+                  <p>
+                    There are no upcoming events at this time. Check back soon!
+                  </p>
                 )}
               </>
             ) : (

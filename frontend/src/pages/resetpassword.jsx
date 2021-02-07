@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 import queryString from 'query-string';
 
-import RequestPasswordResetEmailForm from 'components/resetpassword/RequestPasswordResetForm';
-import ResetEmailSent from 'components/resetpassword/ResetEmailSent/ResetEmailSent';
-import CompleteResetPasswordForm from 'components/resetpassword/CompleteResetPasswordForm/CompleteResetPasswordForm';
-import authStyles from 'styles/shared/Auth.module.scss';
+import {
+  CompleteResetPasswordForm,
+  RequestPasswordResetForm,
+  ResetEmailSent,
+} from 'components/resetpassword';
 import { SITE_NAME_BASE } from 'pages/_app';
-import { NextSeo } from 'next-seo';
+import authStyles from 'styles/shared/Auth.module.scss';
 
 const pageTitle = `Reset Password – ${SITE_NAME_BASE}`;
 
@@ -51,7 +53,7 @@ const ResetPassword = () => {
                   {resetEmailSent ? (
                     <ResetEmailSent />
                   ) : (
-                    <RequestPasswordResetEmailForm
+                    <RequestPasswordResetForm
                       setResetEmailSent={setResetEmailSent}
                     />
                   )}
