@@ -1,7 +1,7 @@
 import React from 'react';
 import { Element } from 'react-scroll';
 
-import Role from './Role';
+import { Role } from './components';
 import contributeStyles from 'styles/pages/Contribute.module.scss';
 
 const Volunteer = () => (
