@@ -23,17 +23,29 @@ const EventBrowser = (props) => {
         <section className={eventBrowserStyles.category}>
           <h1 className={commonStyles.centerElement}>Upcoming Events</h1>
 
-          <div className={eventBrowserStyles.banners}>
-            {events.upcomingEvents.map((event) => createEvent(event))}
-          </div>
+          {events.upcomingEvents.length > 0 ? (
+            <div className={eventBrowserStyles.banners}>
+              {events.upcomingEvents.map((event) => createEvent(event))}
+            </div>
+          ) : (
+            <p className={eventBrowserStyles.noEvents}>
+              There are no upcoming events at this time. Check back soon!
+            </p>
+          )}
         </section>
 
         <section className={eventBrowserStyles.category}>
           <h2 className={commonStyles.centerElement}>Past Events</h2>
 
-          <div className={eventBrowserStyles.banners}>
-            {events.pastEvents.map((event) => createEvent(event))}
-          </div>
+          {events.pastEvents.length > 0 ? (
+            <div className={eventBrowserStyles.banners}>
+              {events.pastEvents.map((event) => createEvent(event))}
+            </div>
+          ) : (
+            <p className={eventBrowserStyles.noEvents}>
+              There are no past events at this time.
+            </p>
+          )}
         </section>
 
         {getUserIsLoggedIn() && (
