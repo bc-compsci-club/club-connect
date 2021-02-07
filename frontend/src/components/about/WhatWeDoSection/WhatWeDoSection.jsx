@@ -1,10 +1,9 @@
 import React from 'react';
 
-import Activity from './Activity';
-import HackathonActivity from './HackathonActivity';
-import aboutStyles from 'styles/pages/About.module.scss';
+import { Activity, HackathonActivity } from './components';
+import activityStyles from './components/Activity/Activity.module.scss';
 import whatWeDoStyles from './WhatWeDoSection.module.scss';
-import activityStyles from './Activity/Activity.module.scss';
+import aboutStyles from 'styles/pages/About.module.scss';
 import skillUpImage from 'assets/pages/about/activities/skill-up.jpg';
 import hackathonImage from 'assets/pages/about/activities/hackathon.jpg';
 import collaborateBuildConquerImage from 'assets/pages/about/activities/collaborate-build-conquer.jpg';

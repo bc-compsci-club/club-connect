@@ -1,7 +1,7 @@
 import React from 'react';
 
-import aboutStyles from 'styles/pages/About.module.scss';
 import whoWeAreStyles from './WhoWeAreSection.module.scss';
+import aboutStyles from 'styles/pages/About.module.scss';
 
 const WhoWeAreSection = () => {
   return (

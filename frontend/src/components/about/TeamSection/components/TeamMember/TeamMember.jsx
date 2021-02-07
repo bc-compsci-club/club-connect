@@ -1,4 +1,4 @@
-import styles from './TeamMember.module.scss';
+import styles from 'components/about/TeamSection/components/TeamMember/TeamMember.module.scss';
 
 const TeamMember = (props) => {
   return (

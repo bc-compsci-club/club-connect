@@ -1,3 +1,2 @@
-import WhoWeAreSection from './WhoWeAreSection.jsx';
+export { default } from './WhoWeAreSection';
 
-export default WhoWeAreSection;

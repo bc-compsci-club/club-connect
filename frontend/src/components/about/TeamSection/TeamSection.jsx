@@ -1,10 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
 
-import TeamMember from './TeamMember';
-import aboutStyles from 'styles/pages/About.module.scss';
+import { TeamMember } from './components';
 import teamStyles from './TeamSection.module.scss';
-import logo from 'assets/logo.png';
+import aboutStyles from 'styles/pages/About.module.scss';
+import clubLogo from 'assets/logo.png';
 import kevinImage from 'assets/pages/about/team-members/2020-2021/kevin.jpg';
 import dennisImage from 'assets/pages/about/team-members/2020-2021/dennis.jpg';
 import shahzodaImage from 'assets/pages/about/team-members/2019-2020/shahzoda.jpg';
@@ -29,11 +29,11 @@ const TeamSection = () => {
           <h4 className={teamStyles.term}>June 2020 - May 2021</h4>
           <div className={teamStyles.teamMemberList}>
             {/* 150 characters max for description */}
-            <TeamMember image={logo} firstName="Syeda" lastName="Kazmi">
+            <TeamMember image={clubLogo} firstName="Syeda" lastName="Kazmi">
               Hi! I&apos;m an Executive Board Member of the Brooklyn College
               Computer Science Club.
             </TeamMember>
-            <TeamMember image={logo} firstName="Junninho" lastName="Thomas">
+            <TeamMember image={clubLogo} firstName="Junninho" lastName="Thomas">
               Hi! I&apos;m an Executive Board Member of the Brooklyn College
               Computer Science Club.
             </TeamMember>
@@ -47,7 +47,11 @@ const TeamSection = () => {
               Science here at BC. I develop innovative software to help solve
               problems and overcome challenges.
             </TeamMember>
-            <TeamMember image={logo} firstName="Neissa" lastName="Dorsinville">
+            <TeamMember
+              image={clubLogo}
+              firstName="Neissa"
+              lastName="Dorsinville"
+            >
               Hi! I&apos;m an Executive Board Member of the Brooklyn College
               Computer Science Club.
             </TeamMember>
@@ -129,7 +133,7 @@ const TeamSection = () => {
               College. I&apos;m trying to write code that will make the world a
               better place one day!
             </TeamMember>
-            <TeamMember image={logo} firstName="Junninho" lastName="Thomas">
+            <TeamMember image={clubLogo} firstName="Junninho" lastName="Thomas">
               Hi! I&apos;m an Executive Board Member of the Brooklyn College
               Computer Science Club.
             </TeamMember>
