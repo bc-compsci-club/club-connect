@@ -5,14 +5,25 @@ import PropTypes from 'prop-types';
 import styles from './Button.module.scss';
 
 const Button = (props) => {
-  const { asLink, href, big, variant, classNamePassed, children, ...otherProps } = props;
+  const {
+    asLink,
+    href,
+    big,
+    variant,
+    classNamePassed,
+    children,
+    ...otherProps
+  } = props;
 
   let resultClassName = big ? `${styles.buttonBig}` : `${styles.button}`;
 
   // Set button variant
   // Button defaults to primary
+  console.log(variant);
   if (variant === 'secondary') {
     resultClassName += ` ${styles.buttonSecondary}`;
+  } else if (variant === 'danger') {
+    resultClassName += ` ${styles.buttonDanger}`;
   }
 
   // Append classNamePassed to className
