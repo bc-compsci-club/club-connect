@@ -4,13 +4,10 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { Button } from 'components/common';
+import { API_ROOT } from 'pages/_app';
 import joinFormStyles from './JoinForm.module.scss';
 import authStyles from 'styles/shared/Auth.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
-import { API_ROOT } from 'pages/_app';
-
-const OLD_JOIN_ENDPOINT =
-  'https://us-east1-bc-cs-club-website.cloudfunctions.net/handleJoin';
 
 const JoinForm = (props) => {
   const { setMemberJoined } = props;

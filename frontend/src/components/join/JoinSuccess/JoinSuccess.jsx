@@ -2,8 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Button } from 'components/common';
-import joinSuccessStyles from 'components/join/JoinSuccess/JoinSuccess.module.scss';
-import commonStyles from 'styles/commonStyles.module.scss';
+import joinSuccessStyles from './JoinSuccess.module.scss';
 
 const WelcomeJoin = () => {
   return (
