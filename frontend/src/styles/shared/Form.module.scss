@@ -59,7 +59,7 @@
 }
 
 .checkbox {
-  margin-left: 0.5rem;
+  margin-left: 0.25rem;
   margin-bottom: 1.25rem;
   margin-top: 0.5rem;
   width: 100%;
@@ -68,10 +68,6 @@
 
   input[type='checkbox'] {
     transform: scale(1.5);
-    border: 3px solid red;
-
-    height: 1rem;
-    padding: 1rem;
   }
 
   label {
