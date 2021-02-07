@@ -3,12 +3,10 @@ import Link from 'next/link';
 import PropTypes from 'prop-types';
 
 import styles from './ClubEventBrowserListing.module.scss';
-import emptyBanner from 'assets/logo.png';
+import defaultBanner from 'assets/banner-default.png';
 
-// Represents an event on the event browser.
 const ClubEventBrowserListing = (props) => {
   const { id, internalName, title, banner } = props;
-  const bannerSrc = banner ? banner : emptyBanner;
 
   return (
     <article>
@@ -17,7 +15,7 @@ const ClubEventBrowserListing = (props) => {
           <div className={styles.clubEventBannerWrapper}>
             <img
               className={styles.clubEventBanner}
-              src={bannerSrc}
+              src={banner ? banner : defaultBanner}
               alt={title}
               loading="lazy"
             />

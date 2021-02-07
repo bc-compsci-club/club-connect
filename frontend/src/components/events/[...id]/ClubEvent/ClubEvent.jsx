@@ -29,13 +29,15 @@ import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 import { getUserData, getUserIsLoggedIn } from 'utils/auth';
 import { isIosUserAgent } from 'utils/iOSUtils';
 import { createMicrosoftWebLink } from 'utils/calendarUtils';
+import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 import clubEventStyles from './ClubEvent.module.scss';
+import defaultBanner from 'assets/banner-default.png';
+import defaultPresenterImage from 'assets/icons/profile.svg';
 import shareIcon from 'assets/icons/share.svg';
 import addToCalendarIcon from 'assets/icons/add-to-calendar.svg';
 import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
-import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 
 let modalCalendarData = {};
 
@@ -132,7 +134,7 @@ const ClubEvent = (props) => {
           <div className={clubEventStyles.bannerContainer}>
             <img
               className={clubEventStyles.clubEventBanner}
-              src={banner}
+              src={banner ? banner : defaultBanner}
               alt={title}
             />
           </div>
@@ -142,7 +144,7 @@ const ClubEvent = (props) => {
             <div className={clubEventStyles.presenter}>
               <img
                 className={clubEventStyles.presenterImageContainer}
-                src={presenterImage}
+                src={presenterImage ? presenterImage : defaultPresenterImage}
                 alt={presenter}
               />
               <p>
