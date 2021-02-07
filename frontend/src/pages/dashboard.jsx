@@ -57,13 +57,13 @@ const Dashboard = () => {
 
     // Events
     axios
-      .get(`${API_ROOT}/events`, {
+      .get(`${API_ROOT}/events/browser`, {
         params: {
           limit: 3,
         },
       })
       .then((res) => {
-        setClubEvents(res.data);
+        setClubEvents(res.data.upcomingEvents);
         setClubEventsLoaded(true);
       });
   }, []);
