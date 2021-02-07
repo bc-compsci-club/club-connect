@@ -1,6 +1,6 @@
-// Checks for iOS using navigator.platform
 import { navigatorSupported } from 'utils/checkSupport';
 
+// Checks for iOS using navigator.platform
 export const isIosPlatform = () => {
   if (!navigatorSupported()) {
     return false;

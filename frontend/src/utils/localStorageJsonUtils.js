@@ -1,4 +1,3 @@
-// Store data in localStorage as JSON for strong typing
 import { windowSupported } from 'utils/checkSupport';
 
 /**
