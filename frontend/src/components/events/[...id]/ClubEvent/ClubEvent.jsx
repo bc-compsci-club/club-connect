@@ -26,7 +26,6 @@ import AddToCalendarHOC, { SHARE_SITES } from 'react-add-to-calendar-hoc';
 import EditRoundedIcon from '@material-ui/icons/EditRounded';
 import DeleteForeverRoundedIcon from '@material-ui/icons/DeleteForeverRounded';
 
-import { Button } from 'components/common';
 import { getUserData, getUserIsLoggedIn } from 'utils/auth';
 import { isIosUserAgent } from 'utils/iOSUtils';
 import { createMicrosoftWebLink } from 'utils/calendarUtils';
@@ -37,13 +36,6 @@ import clockIcon from 'assets/icons/clock.svg';
 import locationPinIcon from 'assets/icons/location-pin.svg';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
-
-const shareData = {
-  eventUrl: 'https://bccompsci.club/events',
-  shareTitle: 'Join me at an event!',
-  shareDescription:
-    'Join me at an event by the Brooklyn College Computer Science Club!',
-};
 
 let modalCalendarData = {};
 
@@ -64,83 +56,56 @@ const ClubEvent = (props) => {
     externalLinkButtonText,
   } = props.clubEventData;
 
+  const calendarData = {
+    title: title,
+    description: `${shortDescription}\n\n${longDescription}\n\nMore Details: https://bccompsci.club/events/${id}/${internalName}\nJoin the Event: https://bccompsci.club/events/${id}/${internalName}/join`,
+    startDatetime: dayjs(startDateTime).format('YYYYMMDDTHHmmss'),
+    endDatetime: dayjs(endDateTime).format('YYYYMMDDTHHmmss'),
+    duration: Math.abs(dayjs(startDateTime).diff(endDateTime, 'h')),
+    eventLocation: `https://bccompsci.club/events/${id}/${internalName}/join`,
+    timezone: 'America/New_York',
+  };
+
+  const shareData = {
+    eventUrl: `https://bccompsci.club/events/${id}/${internalName}`,
+    shareTitle: `Join me at ${title}!`,
+    shareDescription: `Join me at ${title}, an event presented by ${presenter} and hosted by the Brooklyn College Computer Science Club! Register here:`,
+  };
+
   const router = useRouter();
 
-  // Data for calendar and share sheet
-  const [calendarData, setCalendarData] = useState({
-    title: null,
-    description: null,
-    startDatetime: null,
-    endDatetime: null,
-    duration: null,
-    eventLocation: null,
-    timezone: null,
-  });
-  const [shareData, setShareData] = useState({
-    eventUrl: 'https://bccompsci.club/events',
-    shareTitle: 'Join me at an event!',
-    shareDescription:
-      'Join me at an event by the Brooklyn College Computer Science Club!',
-  });
-
-  // Share sheet modal for unsupported devices
   const [shareModalIsOpen, setShareModalIsOpen] = useState(false);
-
-  // Opens the share sheet modal.
-  const openShareModal = () => {
-    setShareModalIsOpen(true);
-  };
-
-  // Closes the share sheet modal.
-  const closeShareModal = () => {
-    setShareModalIsOpen(false);
-  };
-
-  // Toggles the share sheet modal.
-  const toggleShareModal = () => {
-    setShareModalIsOpen(!shareModalIsOpen);
-  };
 
   useEffect(async () => {
     const pathArray = router.asPath.split('/');
 
-    // Add the event's internal name to the URL if the name isn't already in the URL
-    if (pathArray[3] === undefined) {
+    // Redirect to meeting link if /join is after the event name
+    if (pathArray[4] === 'join' && externalLink) {
+      location.replace(externalLink);
+      return;
+    }
+
+    // Set the event's internal name in the URL if the internal name doesn't match the one in the URL
+    if (pathArray[3] !== internalName) {
       await router.push(`/events/${id}/${internalName}`);
       return;
     }
 
-    // Redirect to meeting link if /join is after the event name
-    if (pathArray[4] === 'join') {
-      if (externalLink !== null) {
-        window.location.replace(externalLink);
-        return;
-      }
-    }
-
-    setCalendarData({
-      title: title,
-      description: `${shortDescription}\n\n${longDescription}\n\nMore Details: https://bccompsci.club/events/${id}/${internalName}\nJoin the Event: https://bccompsci.club/events/${id}/${internalName}/join`,
-      startDatetime: dayjs(startDateTime).format('YYYYMMDDTHHmmss'),
-      endDatetime: dayjs(endDateTime).format('YYYYMMDDTHHmmss'),
-      duration: Math.abs(dayjs(startDateTime).diff(endDateTime, 'h')),
-      eventLocation: `https://bccompsci.club/events/${id}/${internalName}/join`,
-      timezone: 'America/New_York',
-    });
-
     modalCalendarData = calendarData; // Temporary solution until Redux is added
-
-    setShareData({
-      eventUrl: `https://bccompsci.club/events/${id}/${internalName}`,
-      shareTitle: `Join me at ${title}!`,
-      shareDescription: `Join me at ${title}, an event by ${presenter}! Register here:`,
-    });
   }, []);
 
   const CalendarModal = AddToCalendarHOC(
     AddToCalendarButton,
     AddToCalendarModal
   );
+
+  const toggleShareModal = () => {
+    setShareModalIsOpen(!shareModalIsOpen);
+  };
+
+  const closeShareModal = () => {
+    setShareModalIsOpen(false);
+  };
 
   return (
     <>
@@ -252,14 +217,12 @@ const ClubEvent = (props) => {
 
             <div className="event-share">
               <ShareButton
-                shareModalIsOpen={shareModalIsOpen}
-                openShareModal={openShareModal}
-                closeShareModal={closeShareModal}
                 toggleShareModal={toggleShareModal}
+                shareData={shareData}
               />
               <ShareModal
-                shareModalIsOpen={shareModalIsOpen}
                 onRequestClose={closeShareModal}
+                shareModalIsOpen={shareModalIsOpen}
                 shareData={shareData}
               />
             </div>
@@ -378,12 +341,9 @@ const AddToCalendarModal = (props) => {
   );
 };
 
-const ShareButton = ({
-  shareModalIsOpen,
-  openShareModal,
-  closeShareModal,
-  toggleShareModal,
-}) => {
+const ShareButton = (props) => {
+  const { toggleShareModal, shareData } = props;
+
   const handleClick = () => {
     if (navigator.share) {
       navigator.share({
@@ -405,7 +365,7 @@ const ShareButton = ({
 };
 
 const ShareModal = (props) => {
-  const { shareModalIsOpen, onRequestClose, shareData } = props;
+  const { onRequestClose, shareModalIsOpen, shareData } = props;
 
   Modal.setAppElement('#__next');
 
