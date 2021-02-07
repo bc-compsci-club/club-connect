@@ -12,7 +12,10 @@ import { getUserIsLoggedIn, setLoggedIn } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 import formStyles from 'styles/shared/Form.module.scss';
 import authStyles from 'styles/shared/Auth.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
+import { NextSeo } from 'next-seo';
+
+const pageTitle = `Activate Your Account – ${SITE_NAME_BASE}`;
 
 const ActivateAccount = () => {
   const router = useRouter();
@@ -37,8 +40,16 @@ const ActivateAccount = () => {
   return (
     <>
       <Head>
-        <title>Activate Your Account | {SITE_TITLE_BASE}</title>
+        <title>{pageTitle}</title>
       </Head>
+
+      <NextSeo
+        title={pageTitle}
+        openGraph={{
+          title: pageTitle,
+          url: 'https://bccompsci.club/join/activate',
+        }}
+      />
 
       <div>
         <section className={`${authStyles.auth} ${authStyles.authBackground}`}>

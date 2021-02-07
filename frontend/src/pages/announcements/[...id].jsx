@@ -13,8 +13,8 @@ import { Button } from 'components/common';
 import { ensureUserIsAuthenticated, getUserData } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 import commonStyles from 'styles/commonStyles.module.scss';
-import announcementStyles from 'styles/pages/announcements/AnnouncementPage.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import announcementStyles from 'styles/pages/AnnouncementPage.module.scss';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 dayjs.extend(relativeTime);
 
@@ -57,7 +57,7 @@ const AnnouncementPage = (props) => {
     <>
       <Head>
         <title>
-          {pageTitle} | {SITE_TITLE_BASE}
+          {pageTitle} – {SITE_NAME_BASE}
         </title>
       </Head>
 

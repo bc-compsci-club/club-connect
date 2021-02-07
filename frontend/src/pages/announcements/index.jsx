@@ -13,7 +13,7 @@ import {
   getUserIsLoggedIn,
 } from 'utils/auth';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const Announcements = () => {
   const router = useRouter();
@@ -42,8 +42,9 @@ const Announcements = () => {
   return (
     <>
       <Head>
-        <title>Announcements | {SITE_TITLE_BASE}</title>
+        <title>Announcements – {SITE_NAME_BASE}</title>
       </Head>
+
       <div className={`${commonStyles.container} ${commonStyles.text}`}>
         <h1 className={commonStyles.centerElement}>Announcements</h1>
 

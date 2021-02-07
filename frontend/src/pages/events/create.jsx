@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import EventEditor from 'components/common/EventEditor/EventEditor';
 import commonStyles from 'styles/commonStyles.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 import { ensureUserIsAuthenticated, getUserData } from 'utils/auth';
 
 const CreateEvent = () => {
@@ -61,7 +61,7 @@ const CreateEvent = () => {
   return (
     <>
       <Head>
-        <title>Create New Event | {SITE_TITLE_BASE}</title>
+        <title>Create New Event – {SITE_NAME_BASE}</title>
       </Head>
 
       <div

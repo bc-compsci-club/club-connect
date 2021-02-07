@@ -11,7 +11,7 @@ import { ensureUserIsAuthenticated } from 'utils/auth';
 import { toastErrorCenter } from 'utils/generalUtils';
 import commonStyles from 'styles/commonStyles.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const EditEvent = () => {
   const router = useRouter();
@@ -61,7 +61,7 @@ const EditEvent = () => {
   return (
     <>
       <Head>
-        <title>Create New Event | {SITE_TITLE_BASE}</title>
+        <title>Edit Event – {SITE_NAME_BASE}</title>
       </Head>
 
       <div

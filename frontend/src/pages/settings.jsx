@@ -15,7 +15,7 @@ import { ensureUserIsAuthenticated, refreshUserData } from 'utils/auth';
 import { getItemJson } from 'utils/localStorageJsonUtils';
 import settingsStyles from 'styles/pages/Settings.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { SITE_TITLE_BASE } from 'pages/_app';
+import { SITE_NAME_BASE } from 'pages/_app';
 
 const Settings = () => {
   const router = useRouter();
@@ -48,7 +48,7 @@ const Settings = () => {
   return (
     <>
       <Head>
-        <title>Settings | {SITE_TITLE_BASE}</title>
+        <title>Settings – {SITE_NAME_BASE}</title>
       </Head>
 
       <div

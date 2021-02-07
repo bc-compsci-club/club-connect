@@ -19,7 +19,7 @@ import {
 } from 'utils/auth';
 import dashboardStyles from 'styles/pages/Dashboard.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const Dashboard = () => {
   const router = useRouter();
@@ -71,7 +71,7 @@ const Dashboard = () => {
   return (
     <>
       <Head>
-        <title>Member Dashboard | {SITE_TITLE_BASE}</title>
+        <title>Member Dashboard – {SITE_NAME_BASE}</title>
       </Head>
 
       <div className={`${commonStyles.expandedWidthContainer}`}>

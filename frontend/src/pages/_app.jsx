@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { ToastContainer } from 'react-toastify';
 import ReactGA from 'react-ga';
+import { DefaultSeo } from 'next-seo';
 import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import 'typeface-nunito';
@@ -26,14 +27,14 @@ import { getItemJson, setItemJson } from 'utils/localStorageJsonUtils';
 import { windowSupported } from 'utils/checkSupport';
 import 'styles/index.scss';
 import 'styles/overrides.scss';
+import siteImage from 'assets/banner-default.png';
 
 export const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT;
-export const SITE_TITLE_BASE = 'Brooklyn College Computer Science Club';
+export const SITE_NAME_BASE = 'Brooklyn College Computer Science Club';
 
 const MyApp = ({ Component, pageProps }) => {
   const router = useRouter();
   const dispatch = useDispatch();
-  const isDropdownOpen = useSelector((state) => state.isDropdownOpen);
 
   const [loadingViewActive, setLoadingViewActive] = useState(false);
   const [width, setWidth] = useState(windowSupported() ? window.innerWidth : 0);
@@ -41,7 +42,9 @@ const MyApp = ({ Component, pageProps }) => {
   useEffect(async () => {
     // Safety check to log out the user if the user data doesn't exist
     if (getUserIsLoggedIn() && getItemJson('loggedInUserData') === undefined) {
-      toastErrorCenter('Your local member data was not found. Please log in again.')
+      toastErrorCenter(
+        'Your local member data was not found. Please log in again.'
+      );
       await setLoggedOut(dispatch, router);
       router.reload();
       return;
@@ -102,18 +105,19 @@ const MyApp = ({ Component, pageProps }) => {
     };
   }, []);
 
+  const siteTitle = `${SITE_NAME_BASE} – Brooklyn College's Premier Computer Science Community`;
+  const siteDescription =
+    'The Brooklyn College Computer Science Club is Brooklyn College’s premier student-led, community-first computer science community.';
+
   return (
     <>
       <Head>
-        <title>
-          {SITE_TITLE_BASE} | Brooklyn College's Premier Computer Science
-          Community
-        </title>
+        <title>{siteTitle}</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, viewport-fit=cover"
         />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#f8c560" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
@@ -128,6 +132,22 @@ const MyApp = ({ Component, pageProps }) => {
             '<script src="https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.1.0/ie11CustomProperties.min.js"></script>'
           )}
       </Head>
+
+      <DefaultSeo
+        title={SITE_NAME_BASE}
+        description={siteDescription}
+        openGraph={{
+          site_name: SITE_NAME_BASE,
+          title: siteTitle,
+          description: siteDescription,
+          images: [{ url: siteImage }],
+          type: 'website',
+          url: 'https://bccompsci.club',
+        }}
+        twitter={{
+          cardType: 'summary_large_image',
+        }}
+      />
 
       <HamburgerMenuProvider>
         <HamburgerMenu />

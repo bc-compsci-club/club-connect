@@ -12,7 +12,7 @@ import { ensureUserIsAuthenticated, getUserData } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 import commonStyles from 'styles/commonStyles.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 // TODO: Modularize announcement editor like the EventEditor component
 const EditAnnouncement = () => {
@@ -90,7 +90,7 @@ const EditAnnouncement = () => {
   return (
     <>
       <Head>
-        <title>Post Announcement | {SITE_TITLE_BASE}</title>
+        <title>Edit Announcement – {SITE_NAME_BASE}</title>
       </Head>
 
       <div

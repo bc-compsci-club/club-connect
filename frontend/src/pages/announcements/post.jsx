@@ -11,7 +11,7 @@ import { ensureUserIsAuthenticated, getUserData } from 'utils/auth';
 import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 import commonStyles from 'styles/commonStyles.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const PostAnnouncement = () => {
   const router = useRouter();
@@ -62,7 +62,7 @@ const PostAnnouncement = () => {
   return (
     <>
       <Head>
-        <title>Post Announcement | {SITE_TITLE_BASE}</title>
+        <title>Post Announcement – {SITE_NAME_BASE}</title>
       </Head>
 
       <div

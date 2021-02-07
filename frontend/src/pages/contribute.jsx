@@ -5,15 +5,29 @@ import { Link as ScrollLink } from 'react-scroll';
 import { Volunteer, OpenSource, HostEvent } from 'components/contribute';
 import commonStyles from 'styles/commonStyles.module.scss';
 import contributeStyles from 'styles/pages/Contribute.module.scss';
-import { SITE_TITLE_BASE } from 'pages/_app';
+import { SITE_NAME_BASE } from 'pages/_app';
+import { NextSeo } from 'next-seo';
+
+const pageTitle = `Contribute – ${SITE_NAME_BASE}`;
 
 const Contribute = () => {
   return (
     <>
       <Head>
-        <title>Contribute | {SITE_TITLE_BASE}</title>
+        <title>{pageTitle}</title>
       </Head>
-      <div className={`${commonStyles.container} ${commonStyles.text} ${contributeStyles.contribute}`}>
+
+      <NextSeo
+        title={pageTitle}
+        openGraph={{
+          title: pageTitle,
+          url: 'https://bccompsci.club/contribute',
+        }}
+      />
+
+      <div
+        className={`${commonStyles.container} ${commonStyles.text} ${contributeStyles.contribute}`}
+      >
         <section>
           <h1 className={commonStyles.centerElement}>Contribute to the Club</h1>
           <p>

@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import { NextSeo } from 'next-seo';
 
 import {
   TeamSection,
@@ -8,14 +9,25 @@ import {
   WhoWeAreSection,
 } from 'components/about';
 import { Ending } from 'components/common';
-import { SITE_TITLE_BASE } from 'pages/_app';
+import { SITE_NAME_BASE } from 'pages/_app';
+
+const pageTitle = `About Us – ${SITE_NAME_BASE}`;
 
 const About = (props) => {
   return (
     <>
       <Head>
-        <title>About Us | {SITE_TITLE_BASE}</title>
+        <title>{pageTitle}</title>
       </Head>
+
+      <NextSeo
+        title={pageTitle}
+        openGraph={{
+          title: pageTitle,
+          url: 'https://bccompsci.club/about',
+        }}
+      />
+
       <div>
         <TopSection />
         <WhoWeAreSection />
