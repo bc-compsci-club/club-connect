@@ -8,10 +8,10 @@ import { toast } from 'react-toastify';
 
 import Button from 'components/common/Button';
 import { ensureUserIsAuthenticated, getUserData } from 'utils/auth';
+import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 import commonStyles from 'styles/commonStyles.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
 import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
-import { toastErrorCenter, toastSuccessCenter } from 'utils/generalUtils';
 
 const PostAnnouncement = () => {
   const router = useRouter();
