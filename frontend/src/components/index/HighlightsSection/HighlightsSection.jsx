@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Highlight } from './components';
 import highlightsSectionStyles from './HighlightsSection.module.scss';
-import highlightStyles from 'components/Highlight/Highlight.module.scss';
+import highlightStyles from './components/Highlight/Highlight.module.scss';
 import learnImage from 'assets/pages/home/highlights/learn.jpg';
 import collaborateImage from 'assets/pages/home/highlights/collaborate.jpg';
 import networkImage from 'assets/pages/home/highlights/network.jpg';
