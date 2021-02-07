@@ -58,7 +58,7 @@ const Announcements = () => {
                 </>
               ) : (
                 <p className={commonStyles.centerElement}>
-                  There are currently no announcements at this time.
+                  There are no announcements at this time. Check back soon!
                 </p>
               )}
 

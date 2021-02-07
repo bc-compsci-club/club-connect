@@ -115,7 +115,7 @@ const Dashboard = () => {
                     ))}
                   </div>
                 ) : (
-                  <p>There are currently no announcements at this time.</p>
+                  <p>There are no announcements at this time. Check back soon!</p>
                 )}
               </>
             ) : (
@@ -147,7 +147,7 @@ const Dashboard = () => {
                     ))}
                   </div>
                 ) : (
-                  <p>There are no upcoming events at this time.</p>
+                  <p>There are no upcoming events at this time. Check back soon!</p>
                 )}
               </>
             ) : (
