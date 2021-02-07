@@ -1,7 +1,7 @@
 import React from 'react';
 
-import memberHeaderStyles from 'components/settings/MemberHeader/MemberHeader.module.scss';
 import { getMemberImage } from 'utils/generalUtils';
+import memberHeaderStyles from './MemberHeader.module.scss';
 
 const MemberHeader = (props) => {
   const { userData } = props;

@@ -2,20 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import Skeleton from 'react-loading-skeleton';
 
-import Button from 'components/common/Button';
+import { Button } from 'components/common';
 import { refreshUserData } from 'utils/auth';
 import {
   getMemberImage,
   toastErrorCenter,
   toastSuccessCenter,
 } from 'utils/generalUtils';
-import settingsSectionStyles from 'styles/pages/Settings.module.scss';
-import profileSettingsStyles from './ProfileSettings.module.scss';
-import formStyles from 'styles/shared/Form.module.scss';
 import { API_ROOT } from 'pages/_app';
-import { toast } from 'react-toastify';
+import profileSettingsStyles from './ProfileSettings.module.scss';
+import settingsSectionStyles from 'styles/pages/Settings.module.scss';
+import formStyles from 'styles/shared/Form.module.scss';
 
 const settingsEndpoint = `${API_ROOT}/accounts/settings`;
 const axiosConfig = {

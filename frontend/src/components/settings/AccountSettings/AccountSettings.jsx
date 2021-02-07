@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { useForm } from 'react-hook-form';
 
-import Button from 'components/common/Button';
-import formStyles from 'styles/shared/Form.module.scss';
-import settingsSectionStyles from 'styles/pages/Settings.module.scss';
-import accountSettingsStyles from './AccountSettings.module.scss';
+import { Button } from 'components/common';
 import { API_ROOT } from 'pages/_app';
+import accountSettingsStyles from './AccountSettings.module.scss';
+import settingsSectionStyles from 'styles/pages/Settings.module.scss';
+import formStyles from 'styles/shared/Form.module.scss';
 
 const settingsEndpoint = `${API_ROOT}/accounts/settings`;
 const axiosConfig = {
