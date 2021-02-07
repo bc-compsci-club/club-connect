@@ -4,65 +4,150 @@
   font-family: 'Nunito', sans-serif;
 
   @media screen and (min-width: 80rem) {
-    margin: 7.5rem auto 0;
+    margin: 3rem auto;
     width: 1230px;
-    height: 90vh;
   }
 }
 
 .emoji {
-  display: block;
-  margin: 0 auto 2.5rem;
-  width: fit-content;
   font-size: 5rem;
+  margin: 0 auto 1rem;
+  display: block;
+  width: fit-content;
+}
+
+.heading {
+  font-family: 'Raleway', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.text {
+  //margin-top: 2rem;
+  font-size: 1.25rem;
+
+  p:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  @media screen and (min-width: 43.75rem) {
+    margin: 0 auto 1rem;
+    max-width: 48rem;
+  }
 }
 
 .welcomeHeading {
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
+  @extend .heading;
 
-  @media screen and (min-width: 80rem) {
+  @media screen and (min-width: 43.75rem) {
     font-size: 3rem;
   }
 }
 
-.text {
-  margin-top: 2rem;
-  font-size: 1.25rem;
-
-  @media screen and (min-width: 80rem) {
-    margin: 2rem auto 0;
-    font-size: 1.5rem;
-    width: 65%;
-  }
+.onboardingStep {
+  margin: 0 auto 2rem;
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  a {
-    font-size: 1.75rem;
-    margin: 1rem 0;
-  }
-
-  @media screen and (min-width: 80rem) {
-    margin-top: 1rem;
+.discordContainer {
+  margin-bottom: 3rem;
+  @media screen and (min-width: 43.75rem) {
+    margin-top: 1.5rem;
+    margin-bottom: 3rem;
+    display: flex;
     flex-direction: row;
-
-    a {
-      padding: 0 2.5rem;
-    }
+    justify-content: space-between;
   }
 }
 
-.nextSteps {
-  h3 {
-    font-weight: bold;
+.discordWidget {
+  flex-basis: 47.5%;
+  display: block;
+  margin-top: 2rem;
+  height: 31.25rem;
+  width: 100%;
+  border: 1px solid lightgray;
+  border-radius: 0.5rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-top: 0;
+    width: auto;
+  }
+}
+
+.discordInstructions {
+  margin-bottom: 2.5rem;
+
+  @media screen and (min-width: 43.75rem) {
+    flex-basis: 47.5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+  }
+}
+
+.discordText {
+  @extend .text;
+
+  p {
+    margin: 0;
   }
 
-  margin-top: 2rem;
+  @media screen and (min-width: 43.75rem) {
+    margin: 0;
+    width: 100%;
+  }
+}
+
+.discordButton {
+  margin-bottom: 0.25rem;
+}
+
+.welcomeSection {
+  margin-bottom: 2rem;
+}
+
+.communitySection {
+  margin: 0 auto 2.25rem;
+
+  h3 {
+    font-size: 1.75rem;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    text-align: center;
+  }
+}
+
+.exploreSection {
+  margin-bottom: 3rem;
+}
+
+.communityText {
+  @extend .text;
+
+  @media screen and (min-width: 43.75rem) {
+    width: 100%;
+  }
+}
+
+.buttonContainer {
+  margin: 1.25rem auto 3rem;
+  font-size: 1.25rem;
+  width: 100%;
+
+  @media screen and (min-width: 43.75rem) {
+    width: 55%;
+  }
+
+  @media screen and (min-width: 64rem) {
+    width: 45%;
+  }
+}
+
+.list {
+  @extend .text;
+  margin-bottom: 1.5rem;
 }
