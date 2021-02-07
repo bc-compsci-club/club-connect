@@ -7,7 +7,9 @@ import queryString from 'query-string';
 import { toast } from 'react-toastify';
 
 import { ensureUserIsAuthenticated } from 'utils/auth';
-import { API_ROOT, SITE_TITLE_BASE } from 'pages/_app';
+import verifyBCStyles from 'styles/pages/VerifyBC.module.scss';
+import commonStyles from 'styles/commonStyles.module.scss';
+import { API_ROOT, SITE_NAME_BASE } from 'pages/_app';
 
 const VerifyBC = () => {
   const router = useRouter();
@@ -34,6 +36,8 @@ const VerifyBC = () => {
         { position: 'top-center' }
       );
       console.error(err);
+      router.push('/settings?section=bcverification');
+      return;
     }
 
     toast.success(
@@ -46,10 +50,12 @@ const VerifyBC = () => {
   return (
     <>
       <Head>
-        <title>Account Verification | {SITE_TITLE_BASE}</title>
+        <title>Account Verification – {SITE_NAME_BASE}</title>
       </Head>
 
-      <div>Verifying account...</div>
+      <div className={commonStyles.container}>
+        <p className={verifyBCStyles.verifyingMessage}>Verifying account...</p>
+      </div>
     </>
   );
 };
