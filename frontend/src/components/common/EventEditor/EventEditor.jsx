@@ -112,7 +112,7 @@ const EventEditor = (props) => {
           />
         </div>
 
-        {formType === 'create' || formType === 'edit' && (
+        {(formType === 'create' || formType === 'edit') && (
           <div className={eventEditorStyles.presenterInputs}>
             <div className={formStyles.labeledInput}>
               <label htmlFor="presenter">Presenter</label>
