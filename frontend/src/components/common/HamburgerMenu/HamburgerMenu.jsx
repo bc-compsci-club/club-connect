@@ -154,7 +154,7 @@ const HamburgerMenu = () => {
                   <li>
                     <Link href="/login">
                       <a
-                        className={`${styles.navBottomListLink} ${styles.navMobileLink}`}
+                        className={`${styles.navLogInLink} ${styles.navBottomListLink} ${styles.navMobileLink}`}
                         onClick={context.toggleMenu}
                       >
                         <strong>Log In</strong>
