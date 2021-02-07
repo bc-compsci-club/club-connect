@@ -61,9 +61,11 @@ const HamburgerMenu = () => {
           </nav>
         </div>
 
-        <div className={styles.divider}>
-          <hr />
-        </div>
+        {getUserIsLoggedIn() && (
+          <div className={styles.divider}>
+            <hr />
+          </div>
+        )}
 
         {/* Bottom part that replaces the dropdown menu */}
         <div>
