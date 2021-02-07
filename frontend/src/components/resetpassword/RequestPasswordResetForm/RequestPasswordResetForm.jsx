@@ -3,9 +3,9 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { Button } from 'components/common';
+import { API_ROOT } from 'pages/_app';
 import authStyles from 'styles/shared/Auth.module.scss';
 import formStyles from 'styles/shared/Form.module.scss';
-import { API_ROOT } from 'pages/_app';
 
 const RequestPasswordResetForm = (props) => {
   const { setResetEmailSent } = props;

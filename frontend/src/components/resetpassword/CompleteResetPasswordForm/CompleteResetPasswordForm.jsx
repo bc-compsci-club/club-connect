@@ -3,9 +3,9 @@ import { useRouter } from 'next/router';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-import authStyles from 'styles/shared/Auth.module.scss';
-import { API_ROOT } from 'pages/_app';
 import { getUserIsLoggedIn } from 'utils/auth';
+import { API_ROOT } from 'pages/_app';
+import authStyles from 'styles/shared/Auth.module.scss';
 
 const CompleteResetPasswordForm = (props) => {
   const { passwordResetKey } = props;

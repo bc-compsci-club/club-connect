@@ -1,1 +1,1 @@
-export { default } from 'components/resetpassword/RequestPasswordResetForm/RequestPasswordResetForm';
+export { default } from './RequestPasswordResetForm';
