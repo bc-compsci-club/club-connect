@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import axios from 'axios';
-import { toast } from 'react-toastify';
 
 import { Button } from 'components/common';
+import { toastErrorCenterImportant } from 'utils/generalUtils';
 import { API_ROOT } from 'pages/_app';
 import joinFormStyles from './JoinForm.module.scss';
 import authStyles from 'styles/shared/Auth.module.scss';
@@ -17,7 +17,7 @@ const JoinForm = (props) => {
   const [email, setEmail] = useState('');
   const [formSubmitting, setFormSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setFormSubmitting(true);
 
@@ -27,44 +27,25 @@ const JoinForm = (props) => {
       email: email,
     };
 
-    axios
-      .post(`${API_ROOT}/join`, memberData)
-      .then((res) => {
-        setMemberJoined(true);
-      })
-      .catch((err) => {
-        if (err.response.status === 409) {
-          toast.error(
-            'The email address you provided is already in use. If this is your email address, please contact us at contact@bccompsci.club for further assistance.',
-            {
-              position: 'top-center',
-              autoClose: 15000,
-              closeOnClick: false,
-              draggable: false,
-            }
-          );
-        } else {
-          processError(err);
-        }
-      })
-      .finally(() => {
-        setFormSubmitting(false);
-      });
-  };
-
-  const processError = (err) => {
-    setMemberJoined(false);
-
-    if (err) console.error(err);
-    toast.error(
-      'An error occurred while registering you for the club. Please try again. If the error continues, please send us an email at contact@bccompsci.club so we can manually register you.',
-      {
-        position: 'top-center',
-        autoClose: 15000,
-        closeOnClick: false,
-        draggable: false,
+    try {
+      await axios.post(`${API_ROOT}/join`, memberData);
+    } catch (err) {
+      if (err.response && err.response.status === 409) {
+        toastErrorCenterImportant(
+          'The email address you provided is already in use. If this is your email address, please contact us at contact@bccompsci.club for further assistance.'
+        );
+      } else {
+        toastErrorCenterImportant(
+          'An error occurred while registering you for the club. Please try again. If the error continues, please send us an email at contact@bccompsci.club so we can manually register you.'
+        );
       }
-    );
+
+      setFormSubmitting(false);
+      return;
+    }
+
+    setMemberJoined(true);
+    setFormSubmitting(false);
   };
 
   return (
