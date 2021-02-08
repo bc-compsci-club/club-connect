@@ -4,6 +4,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { getUserIsLoggedIn } from 'utils/auth';
+import { toastErrorCenter } from 'utils/generalUtils';
 import { API_ROOT } from 'pages/_app';
 import authStyles from 'styles/shared/Auth.module.scss';
 
@@ -29,9 +30,13 @@ const CompleteResetPasswordForm = (props) => {
     setFormSubmitting(true);
 
     if (password !== passwordConfirmation) {
-      toast.error('Your password and confirmation do not match.', {
-        position: 'top-center',
-      });
+      toast.error('Your password and confirmation do not match.');
+      setFormSubmitting(false);
+      return;
+    }
+
+    if (password.length < 12) {
+      toastErrorCenter('Your password must be at least 12 characters long.');
       setFormSubmitting(false);
       return;
     }

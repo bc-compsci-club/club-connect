@@ -53,7 +53,6 @@ const LogIn = () => {
     } catch (err) {
       // err.response might be undefined
       const errStatus = err.response && err.response.status;
-      console.log(err.response);
       if (errStatus === 401) {
         toastErrorCenter(
           'Your email or password is incorrect. Please check your credentials and try again.'

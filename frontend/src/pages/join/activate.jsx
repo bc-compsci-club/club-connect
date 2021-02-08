@@ -82,9 +82,13 @@ const CompleteAccountActivationForm = (props) => {
     setFormSubmitting(true);
 
     if (password !== passwordConfirmation) {
-      toast.error('Your password and confirmation do not match.', {
-        position: 'top-center',
-      });
+      toast.error('Your password and confirmation do not match.');
+      setFormSubmitting(false);
+      return;
+    }
+
+    if (password.length < 12) {
+      toastErrorCenter('Your password must be at least 12 characters long.');
       setFormSubmitting(false);
       return;
     }

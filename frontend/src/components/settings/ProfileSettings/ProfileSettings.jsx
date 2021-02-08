@@ -41,7 +41,7 @@ const ProfileSettings = () => {
       toastErrorCenter(
         'An error occurred while retrieving your profile settings. Please try refreshing the page.'
       );
-      console.log(err);
+      console.err(err);
       return;
     }
 
