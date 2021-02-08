@@ -1,0 +1,54 @@
+// React Burger Menu
+// Hides the button it comes with and uses the navbar button instead
+.bm-burger-button {
+  display: none;
+}
+
+// The slide out mobile navigation menu
+.bm-menu {
+  border-radius: 10px 0 0 10px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  padding: 1rem;
+
+  // Includes both the top group and the join button
+  .bm-item-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+// Typewriter effect
+.Typewriter {
+  display: inline-block;
+
+  .Typewriter__wrapper {
+    font-weight: bold;
+  }
+}
+
+// React modal
+.ReactModal__Overlay {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+// Contribute Bootstrap alerts
+.contribute-open-source .alert {
+  margin-left: -40px;
+  margin-bottom: 0.5rem;
+}
+
+// Contact form alerts
+.contact-form-alert .alert {
+  padding: 1.25rem;
+}

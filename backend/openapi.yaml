@@ -1,0 +1,285 @@
+openapi: 3.0.3
+info:
+  title: Club Connect - Brooklyn College Computer Science Club
+  description: The OpenAPI document for Club Connect, the full-stack portal for the Brooklyn College Computer Science Club.
+  version: 1.0.0
+  contact:
+    email: contact@bccompsci.club
+servers:
+  - url: 'https://api.bccompsci.club'
+  - url: 'http://127.0.0.1:8080'
+tags:
+  - name: account
+    description: Routes regarding a member's account, including authentication and account activation.
+  - name: announcements
+    description: Routes regarding club announcements for registered club members.
+  - name: events
+    description: Routes regarding club events.
+components:
+  securitySchemes:
+    jwtCookieAuth:
+      type: apiKey
+      in: cookie
+      name: token
+paths:
+  # Accounts
+  /account/activate/register:
+    post:
+      summary: Registers a joined (but not activated) club member using an activation key.
+      description: The third and final step in the member registration flow.
+      tags:
+        - account
+      responses:
+        200:
+          description: The account has been activated.
+  /account/activate/sendEmail:
+    post:
+      summary: Sends an email to a registered member's email address with an activation key.
+      description: The second step in the member registration flow.
+      tags:
+        - account
+      responses:
+        200:
+          description: The verification email has been sent with a link containing the activation key.
+  /account/data:
+    get:
+      summary: Gets the member's account data.
+      tags:
+        - account
+      security:
+        - jwtCookieAuth: []
+      responses:
+        200:
+          description: A JSON object with the member's account data.
+  /account/login:
+    post:
+      summary: Logs a member in.
+      tags:
+        - account
+      responses:
+        200:
+          description: A JSON object with a JWT and a HttpOnly cookie with a refresh token.
+  /account/logout:
+    post:
+      summary: Logs a member out by overwriting the HttpOnly refresh token cookie with an empty cookie that expires immediately.
+      tags:
+        - account
+      responses:
+        200:
+          description: A HttpOnly cookie with an immediate expiry.
+  /account/settings:
+    get:
+      summary: Gets the member's account settings.
+      tags:
+        - account
+      security:
+        - jwtCookieAuth: []
+      parameters:
+        - name: section
+          in: query
+          description: When provided, return only the settings pertaining to a specific settings section.
+          required: false
+          schema:
+            type: string
+            enum:
+              - profile
+              - account
+              - bcverification
+      responses:
+        200:
+          description: A JSON object with the member's settings data.
+        400:
+          description: An invalid section was provided in the query.
+        401:
+          description: The member is not logged in.
+    put:
+      summary: Updates the settings of a member's account.
+      tags:
+        - account
+      security:
+        - jwtCookieAuth: []
+      parameters:
+        - name: section
+          in: query
+          description: When provided, update only the settings pertaining to a specific settings section.
+          required: false
+          schema:
+            type: string
+            enum:
+              - profile
+              - account
+              - bcverification
+      responses:
+        200:
+          description: The member's settings have been updated
+        400:
+          description: An invalid section was provided in the query.
+        401:
+          description: The member is not logged in.
+  /account/verifyBrooklynCollege:
+    post:
+      summary: Sends a verification email to a Brooklyn College email address.
+      tags:
+        - account
+      security:
+        - jwtCookieAuth: []
+      responses:
+        200:
+          description: The verification email has been sent.
+        400:
+          description: An invalid email address was provided.
+        403:
+          description: The member is not logged in.
+  /announcements:
+    get:
+      summary: Returns a list of announcements.
+      description: Requires the Member, BrooklynCollegeMember, or Admin role.
+      tags:
+        - announcements
+      security:
+        - jwtCookieAuth: []
+      parameters:
+        - name: role
+          in: query
+          description: When provided, return only announcements pertaining to a specific minimum role.
+          required: false
+          schema:
+            type: string
+            enum:
+              - Member
+              - BrooklynCollegeMember
+
+      responses:
+        200:
+          description: A JSON array of announcements. By default, returns all announcements the authenticated member has access to.<br>If a role was provided, returns only announcements that match the role.
+        401:
+          description: The member is not authenticated
+        403:
+          description: The member does not have access/role is not high enough
+        404:
+          description: The queried role was not found
+    post:
+      summary: Creates a new announcement.
+      description: Requires the Admin role.
+      tags:
+        - announcements
+      security:
+        - jwtCookieAuth: []
+      responses:
+        201:
+          description: The announcement has been created.
+          headers:
+            Location:
+              description: The location of the new event.
+              schema:
+                type: string
+        400:
+          description: The POSTed data failed validation
+        403:
+          description: Access denied
+        404:
+          description: The queried role was not found
+  /announcements/:id:
+    get:
+      summary: Gets an announcement by its ID.
+      description: Requires the Member, BrooklynCollegeMember, or Admin role.
+      tags:
+        - announcements
+      security:
+        - jwtCookieAuth: []
+      responses:
+        200:
+          description: A JSON array of announcements
+          content:
+            application/json:
+              schema:
+                type: array
+
+        403:
+          description: Access denied
+        404:
+          description: The queried role was not found.
+    delete:
+      summary: Deletes an announcement by its ID.
+      description: Requires the Admin role.
+      tags:
+        - announcements
+      security:
+        - jwtCookieAuth: []
+      responses:
+        201:
+          description: The announcement has been deleted.
+        400:
+          description: The submitted data failed validation
+        403:
+          description: Access denied
+        404:
+          description: The queried role was not found
+  /events:
+    get:
+      summary: Returns a list of events.
+      tags:
+        - events
+      responses:
+        200:
+          description: A JSON array of events.
+          content:
+            application/json:
+              schema:
+                type: array
+    post:
+      summary: Creates a new event. Not the same as creating an event request.
+      description: Requires the Admin role.
+      tags:
+        - events
+      security:
+        - jwtCookieAuth: []
+      responses:
+        201:
+          description: The event has been created.
+          headers:
+            Location:
+              description: The location of the new event.
+              schema:
+                type: string
+  /events/request:
+    post:
+      summary: Submits a new event request. Not the same as creating an event.
+      tags:
+        - events
+      security:
+        - jwtCookieAuth: []
+      responses:
+        200:
+          description: The event request has been created.
+  /events/{id}:
+    get:
+      summary: Gets an event by its ID.
+      tags:
+        - events
+      parameters:
+        - name: id
+          in: path
+          description: Event ID
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: A JSON object containing event data.
+          content:
+            application/json:
+              schema:
+                type: object
+        404:
+          description: No event was found with the ID.
+    delete:
+      summary: Deletes an event by its ID.
+      description: Requires the Admin role.
+      tags:
+        - events
+      security:
+        - jwtCookieAuth: []
+      responses:
+        200:
+          description: The event has been deleted.

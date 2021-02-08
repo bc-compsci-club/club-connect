@@ -1,0 +1,72 @@
+h2.headline {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  line-height: 1.25;
+}
+
+.announcementDateTime {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.hr {
+  margin: 1rem auto 1.5rem;
+}
+
+// Customize markdown rendering styles
+.announcementBodyLoading {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    margin: initial;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+}
+
+// Loading
+.titleLoading {
+  text-align: center;
+  margin: 0 auto 1.75rem;
+
+  span:first-child {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.announcementPostDateTimeLoading {
+  margin-top: 0.6rem;
+}
+
+.hrLoading {
+  margin: 0.6rem auto 1.55rem;
+}
+
+.actionButton {
+  margin: 1rem auto;
+  width: 100%;
+
+  @media screen and (min-width: 43.75rem) {
+    width: 35%;
+  }
+}

@@ -1,0 +1,10 @@
+.contact {
+  margin: 0 auto 35vh;
+  padding: 3rem 6.25vw 0;
+  height: auto;
+
+  @media screen and (min-width: 64rem) {
+    padding: 3rem 0 0;
+    max-width: 44rem;
+  }
+}

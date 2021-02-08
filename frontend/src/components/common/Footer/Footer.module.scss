@@ -1,0 +1,25 @@
+.footer {
+  background-color: #232a67;
+}
+
+.footerContainer {
+  padding: 1rem 0;
+
+  p {
+    font-size: 0.75rem;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+  }
+
+  a {
+    color: rgb(148, 214, 255);
+  }
+
+  @media screen and (min-width: 43.75rem) {
+    p {
+      font-size: 1rem;
+    }
+  }
+}

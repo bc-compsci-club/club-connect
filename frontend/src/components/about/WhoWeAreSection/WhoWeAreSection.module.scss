@@ -1,0 +1,21 @@
+.whoWeAre {
+  padding: 2.75rem 8vw 3rem;
+  margin: 0 auto;
+
+  @media screen and (min-width: 43.75rem) {
+    padding: 2.75rem 10vw 3rem;
+
+    // Padding for landscape iPhones with notch
+    @supports (padding: max(0px)) {
+      @media screen and (orientation: landscape) {
+        padding-left: max(10vw, calc(env(safe-area-inset-left) + 10vw));
+        padding-right: max(10vw, calc(env(safe-area-inset-right) + 10vw));
+      }
+    }
+  }
+
+  @media screen and (min-width: 64rem) {
+    padding: 2.75rem 0 3rem;
+    max-width: 48rem;
+  }
+}

@@ -1,0 +1,65 @@
+.settings {
+  min-height: 100vh;
+}
+
+.selectorAndSection {
+  margin-top: 1.5rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.settingsSelector {
+  width: 100%;
+  margin-bottom: 1.5rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin-bottom: 0;
+    flex-basis: 40%;
+  }
+
+  @media screen and (min-width: 64rem) {
+    flex-basis: 20%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    flex-basis: 17.5%;
+  }
+}
+
+.settingsSection {
+  @media screen and (min-width: 43.75rem) {
+    flex-basis: 75%;
+    margin-left: 2rem;
+  }
+}
+
+.settingsSectionHeading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0.5rem 0 1.5rem 0.25rem;
+
+  @media screen and (min-width: 43.75rem) {
+    margin: 0.5rem 0 1.5rem;
+    font-size: 2.5rem;
+  }
+}
+
+.formInputs {
+  margin-bottom: 1.5rem;
+
+  @media screen and (min-width: 64rem) {
+    max-width: 70%;
+  }
+}
+
+.submitButton {
+  width: 100%;
+
+  @media screen and (min-width: 43.75rem) {
+    width: auto;
+  }
+}

@@ -1,0 +1,6 @@
+node_modules
+.gcloudignore
+.DS_Store
+
+.next/
+src/

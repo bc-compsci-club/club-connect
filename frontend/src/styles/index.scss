@@ -1,0 +1,112 @@
+// Global styles
+
+/*
+  Old Breakpoints:
+  - Under 576px/30rem (Vertical phones)
+  - 576px/30rem and above (Small horizontal phones)
+  - 768px/48rem and above (Vertical tablets and large horizontal phones)
+  - 1024px/64rem and above (Horizontal tablets)
+  - 1100px/68.75rem and above (Large horizontal tablets and small laptops)
+  - 1280px/80rem and above (Small laptops)
+  - 1366px/85.375rem and above (Medium laptops and everything above)
+
+  New Breakpoints:
+  "Mobile" Layout
+  - Under 362px/22.625rem: Small vertical phones
+  - 362px/22.625rem: Large vertical phones (meant for phones above 360px wide) and small horizontal phones
+
+  "Tablet" Layout (Very similar to the Desktop layout, but optimized for smaller widths)
+  - 700px/43.75rem: Vertical tablets and horizontal phones (768px would leave out Galaxy Tab S4/S5e/S6)
+
+  "Desktop" Layout
+  - 1024px/64rem: Horizontal tablets (Mainly 4:3 tablets including iPads and Galaxy Tab S3)
+  - 1100px/68.75rem: Medium horizontal tablets (Mainly 16:9 and 16:10) and small laptops (Some Chromebooks are 1200x800)
+  - 1280px/80rem: Large horizontal tablets (tablets with 100% native DPI scaling like the Nexus 7) and small laptops
+  - 1366px/85.375rem: Medium laptops and above (At this resolution, we set a hard width cap instead of using padding on the sides)
+*/
+
+// Default styles, as well as devices below 700px/43.75rem
+// (Small vertical phones)
+:root {
+  // All sizes
+  --font-size-p: 1.25rem; // 20px, standard across all screen sizes
+
+  // Side padding for containers
+  --content-side-padding: 0 6.25vw; // Standalone padding variable
+  --content-side-padding-value: 6.25vw; // For use with combined padding property
+
+  // Text styles
+  --font-family-heading: 'Raleway', sans-serif;
+  --font-family-text: 'Nunito', sans-serif;
+
+  // Headings
+  --font-size-h1: 2.75rem; // 44px
+  --font-size-h2: 2.1rem; // ~33.6px
+}
+
+.btn {
+  padding: 1rem;
+  width: 100%;
+}
+
+// 362px/22.625rem and above
+// (Larger vertical phones)
+@media screen and (min-width: 22.625rem) {
+  :root {
+    --font-size-h2: 2.25rem; // 36px
+  }
+}
+
+// 700px/43.75rem and above
+// (Vertical tablets and large horizontal phones)
+@media screen and (min-width: 43.75rem) {
+  :root {
+    // Side padding for containers
+    //--content-side-padding: 0 4vw; // Standalone padding variable
+    //--content-side-padding-value: 4vw; // For use with combined padding property
+
+    // Text
+    --font-size-h1: 4rem; // 64px
+    --font-size-h2: 3rem; // 48px
+    --font-size-h3: 2.5rem; // 40px
+  }
+
+  .btn {
+    padding: 1rem 2.5rem;
+  }
+}
+
+// 1366px/85.375rem and above (Medium laptops and everything above)
+@media screen and (min-width: 85.375rem) {
+  :root {
+    // Max width
+    --content-max-width: 48rem; // For long bodies of text meant for reading
+    --before-content-max-width: 52rem; // For short descriptions before main content
+    --large-screen-max-width: 76.875rem; // 1230px, for restricting the main content from going too wide on high resolutions
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+  // Hamburger menu navbar
+  padding: 2rem 0;
+
+  // Full navbar, 1024px and above
+  @media screen and (min-width: 64rem) {
+    padding: 2.25rem 0;
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

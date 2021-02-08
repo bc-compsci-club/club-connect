@@ -1,0 +1,118 @@
+.formPage {
+  margin: 0 auto 35vh;
+  padding: 3rem 6.25vw 0;
+  height: auto;
+
+  @media screen and (min-width: 64rem) {
+    padding: 3rem 0 0;
+    max-width: 44rem;
+  }
+}
+
+.labeledInput {
+  margin-bottom: 1rem;
+
+  label {
+    display: block;
+    margin-left: 0.25rem;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  select,
+  select:focus {
+    //padding-left: 0.5rem;
+    -moz-appearance: none; /* Firefox */
+    -webkit-appearance: none; /* Safari and Chrome */
+    appearance: none;
+    background: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="24"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>')
+      100% 50% no-repeat #fff;
+  }
+
+  input,
+  select,
+  textarea {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border: 2px solid #fff;
+    background-color: #ececec;
+    background-clip: padding-box;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border: 2px solid rgb(179, 179, 179);
+      background-color: #f3f3f3;
+      transition: 0.2s;
+      transition-timing-function: ease-in-out;
+    }
+  }
+
+  // There is some extra space below the textareas for some reason
+  textarea {
+    margin-bottom: -0.7rem !important;
+  }
+}
+
+.checkbox {
+  margin-left: 0.25rem;
+  margin-bottom: 1.25rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  input[type='checkbox'] {
+    transform: scale(1.5);
+  }
+
+  label {
+    padding-left: 1rem;
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 43.75rem) {
+    margin-bottom: 0;
+  }
+}
+
+.checkboxCentered {
+  justify-content: center;
+}
+
+.twoColumn {
+  @media screen and (min-width: 43.75rem) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+  }
+}
+
+.customInternalName {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+// For larger forms like the event editor
+.formButton {
+  margin: 2rem auto;
+}
+
+// For smaller forms like login and registration
+.cardSubmitButton {
+  width: 100%;
+  margin: 2rem auto 0;
+
+  @media screen and (min-width: 43.75rem) {
+    width: initial;
+  }
+}
+
+.cardSecondaryButtons {
+  @extend .cardSubmitButton;
+  margin: 1rem auto 0;
+}

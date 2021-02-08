@@ -1,0 +1,142 @@
+.auth {
+  // Mobile styles
+  height: 100vh;
+
+  .flexContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+
+    .container {
+      padding: 2.5rem 1.5rem 3rem;
+      width: 90vw;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      height: auto;
+
+      h1 {
+        margin-bottom: 3rem;
+        font-family: 'Raleway', sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      form {
+        margin-top: 2rem;
+
+        .twoColumnField {
+          display: flex;
+          justify-content: space-between;
+
+          .leftField {
+            padding-right: 0.5rem;
+          }
+
+          .rightField {
+            padding-left: 0.5rem;
+          }
+        }
+
+        .fullWidthField {
+          margin-top: 1.5rem;
+
+          input {
+            width: 100%;
+          }
+        }
+
+        label {
+          display: block;
+          margin-left: 0.25rem;
+          font-family: 'Nunito', sans-serif;
+          font-size: 1.25rem;
+          line-height: 1;
+        }
+
+        input[type='text'],
+        input[type='email'],
+        input[type='password'] {
+          font-family: 'Nunito', sans-serif;
+          font-size: 1.25rem;
+          line-height: 1.5;
+          border: 2px solid #fff;
+          background-color: #ececec;
+          background-clip: padding-box;
+          padding: 0.5rem;
+          border-radius: 10px;
+          width: 100%;
+
+          &:focus {
+            outline: none;
+            border: 2px solid rgb(179, 179, 179);
+            background-color: #f3f3f3;
+            transition: 0.2s;
+            transition-timing-function: ease-in-out;
+          }
+        }
+      }
+    }
+  }
+
+  // Landscape mobile registration form
+  @media screen and (orientation: landscape) and (max-height: 600px) {
+    min-height: 165vh;
+  }
+
+  // Desktop styles
+  // 768px
+  @media screen and (min-width: 48rem) {
+    .flexContainer {
+      .container {
+        max-width: 32rem;
+
+        h1 {
+          margin-bottom: 3rem;
+          font-family: 'Raleway', sans-serif;
+          font-size: 2.25rem;
+          font-weight: bold;
+          text-align: center;
+        }
+
+        form {
+          margin-top: 2rem;
+
+          .twoColumnField {
+            .leftField {
+              width: 100%;
+            }
+
+            .rightField {
+              width: 100%;
+            }
+          }
+
+          button[type='submit'] {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            width: 98%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.authBackground {
+  background-image: url('../../assets/backgrounds/auth.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.alternateAction {
+  display: block;
+  margin: 2rem 0 0;
+  text-align: center;
+
+  p {
+    margin: 0;
+  }
+}

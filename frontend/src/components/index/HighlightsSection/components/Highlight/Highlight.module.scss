@@ -1,0 +1,132 @@
+.highlight {
+  margin: 4rem 0;
+  padding: 3rem 0;
+
+  .highlightContainer {
+    margin: 0 auto;
+    padding: 0 6.25vw;
+    display: flex;
+    flex-direction: column;
+
+    .highlightContent {
+      padding-left: 1.75vw;
+      padding-right: 1.75vw;
+
+      h2 {
+        font-family: 'Raleway', sans-serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+
+      p {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.25rem;
+      }
+
+      a {
+        font-family: 'Nunito', sans-serif;
+        font-size: 1.5rem;
+        color: #4d5eff;
+      }
+    }
+
+    .highlightImage {
+      margin: 2rem auto 0;
+      height: auto;
+      width: 100%;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+    }
+
+    .highlightLearn,
+    .highlightCollaborate,
+    .highlightNetwork {
+      // Empty here to let CSS modules pick up these class names
+      // Implemented on larger screens below
+    }
+  }
+
+  // Tablet and Desktop styles
+
+  // 700px (vertical tablets and horizontal phones)
+  // Landscape and tablet optimized layout
+  @media screen and (min-width: 43.75rem) {
+    padding: 4rem 0;
+
+    .highlightContainer {
+      padding: 0 5vw;
+
+      // Padding for landscape iPhones with notch
+      @supports (padding: max(0px)) {
+        @media screen and (orientation: landscape) {
+          padding-left: max(5vw, calc(env(safe-area-inset-left) + 1rem));
+          padding-right: max(5vw, calc(env(safe-area-inset-right) + 1rem));
+        }
+      }
+
+      align-items: center;
+      justify-content: space-between;
+
+      .highlightContent {
+        padding-left: 0;
+        padding-right: 0;
+        width: 47.5%;
+
+        h2 {
+          font-size: 2.5rem;
+        }
+
+        a {
+          font-size: 1.5rem;
+        }
+      }
+
+      .highlightImage {
+        margin: 0;
+        width: 47.5%;
+        border-radius: 20px;
+      }
+    }
+
+    // Row format for highlights
+    .highlightLearn,
+    .highlightNetwork {
+      flex-direction: row-reverse;
+    }
+
+    .highlightCollaborate {
+      flex-direction: row;
+    }
+  }
+
+  // 1024px (horizontal tablets)
+  // Use full size layout and font size
+  @media screen and (min-width: 64rem) {
+    .highlightContainer {
+      .highlightContent {
+        width: 44%;
+
+        h2 {
+          font-size: 3rem;
+        }
+
+        p {
+          font-size: 1.25rem;
+        }
+      }
+
+      .highlightImage {
+        width: 50%;
+      }
+    }
+  }
+
+  // 1366px (medium laptops and above)
+  // Use max-width over padding for larger screens
+  @media screen and (min-width: 85.375rem) {
+    .highlightContainer {
+      padding: 0;
+      max-width: 76.875rem; // 1230px
+    }
+  }
+}

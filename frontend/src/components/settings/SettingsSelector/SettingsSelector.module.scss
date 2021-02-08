@@ -1,0 +1,36 @@
+.container {
+  border: 2px solid lightgray;
+  border-radius: 0.75rem;
+  padding: 1rem;
+}
+
+.heading {
+  font-weight: bold;
+}
+
+.settingsList {
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.settingsLink {
+  list-style: none;
+
+  &:not(:last-child) {
+    margin-bottom: 0.25rem;
+  }
+}
+
+.link {
+  color: black;
+
+  &:hover {
+    color: #4d5eff;
+    text-decoration: none;
+  }
+}
+
+.linkSelected {
+  font-weight: bold;
+  color: #4d5eff;
+}
