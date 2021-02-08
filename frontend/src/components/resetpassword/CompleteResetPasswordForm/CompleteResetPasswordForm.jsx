@@ -4,9 +4,9 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 import { getUserIsLoggedIn } from 'utils/auth';
+import { toastErrorCenter } from 'utils/generalUtils';
 import { API_ROOT } from 'pages/_app';
 import authStyles from 'styles/shared/Auth.module.scss';
-import { toastErrorCenter } from 'utils/generalUtils';
 
 const CompleteResetPasswordForm = (props) => {
   const { passwordResetKey } = props;
