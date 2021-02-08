@@ -28,7 +28,3 @@ jobs:
       working-directory: backend
     - run: npm run build --if-present
       working-directory: backend
-    - uses: actions/upload-artifact@v2
-      with:
-        name: Build Output
-        path: backend/build/
