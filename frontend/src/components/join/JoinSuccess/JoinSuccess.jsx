@@ -56,7 +56,7 @@ const WelcomeJoin = () => {
 
           <p>
             <Link href="/join/activate">
-              <a target="_blank">Activate your account</a>
+              <a target="_blank" rel="noopener noreferrer">Activate your account</a>
             </Link>{' '}
             to gain access to everything the club has to offer, such as the
             latest announcements, opportunities exclusively for Brooklyn College
@@ -66,7 +66,7 @@ const WelcomeJoin = () => {
         </div>
 
         <div className={joinSuccessStyles.buttonContainer}>
-          <Button href="/join/activate" target="_blank" big asLink>
+          <Button href="/join/activate" target="_blank" rel="noopener noreferrer" big asLink>
             Activate Your Account
           </Button>
         </div>
@@ -115,8 +115,8 @@ const WelcomeJoin = () => {
                 published by them{' '}
                 <a
                   href="https://support.discord.com/hc/en-us/articles/360045138571-Beginner-s-Guide-to-Discord"
-                  rel="noopener noreferrer"
                   target="_blank"
+                  rel="noopener noreferrer"
                 >
                   here.
                 </a>
@@ -144,9 +144,9 @@ const WelcomeJoin = () => {
 
                 <div className={joinSuccessStyles.discordButton}>
                   <Button
-                    href="https://discord.com/invite/FwM8e53s"
-                    rel="noopener noreferrer"
+                    href="https://bccompsci.club/discord"
                     target="_blank"
+                    rel="noopener noreferrer"
                     style={{
                       backgroundColor: '#7289da',
                     }}
@@ -160,7 +160,7 @@ const WelcomeJoin = () => {
 
               <iframe
                 className={joinSuccessStyles.discordWidget}
-                src="https://discord.com/widget?id=380815741705912320&theme=light"
+                src={process.env.NEXT_PUBLIC_DISCORD_WIDGET}
                 allowTransparency="true"
                 frameBorder="0"
                 sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
@@ -184,8 +184,8 @@ const WelcomeJoin = () => {
             <div className={joinSuccessStyles.buttonContainer}>
               <Button
                 href="https://bccompsci.club/messenger"
-                rel="noopener noreferrer"
                 target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   backgroundColor: '#3399ff',
                 }}
@@ -212,8 +212,8 @@ const WelcomeJoin = () => {
             <div className={joinSuccessStyles.buttonContainer}>
               <Button
                 href="https://bccompsci.club/facebook"
-                rel="noopener noreferrer"
                 target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   backgroundColor: '#3366ff',
                 }}
@@ -238,8 +238,8 @@ const WelcomeJoin = () => {
             <div className={joinSuccessStyles.buttonContainer}>
               <Button
                 href="https://bccompsci.club/instagram"
-                rel="noopener noreferrer"
                 target="_blank"
+                rel="noopener noreferrer"
                 style={{
                   backgroundColor: '#ff3399',
                 }}
@@ -267,27 +267,29 @@ const WelcomeJoin = () => {
           <li>
             Check out some of our upcoming club events at our&nbsp;
             <Link href="/events">
-              <a target="_blank">events page</a>
+              <a target="_blank" rel="noopener noreferrer">events page</a>
             </Link>
           </li>
           <li>
             Find awesome resources for your next project or interview at
             our&nbsp;
             <Link href="/resources">
-              <a target="_blank">resources page</a>
+              <a target="_blank" rel="noopener noreferrer">resources page</a>
             </Link>
           </li>
           <li>
             Volunteer for the club and help to improve the club for everyone at
             our&nbsp;
             <Link href="/contribute">
-              <a target="_blank">contribution page</a>
+              <a target="_blank" rel="noopener noreferrer">contribution page</a>
             </Link>
           </li>
           <li>
             Start a discussion with the&nbsp;
             <Link href="https://bccompsci.club/discord">
-              <a target="_blank">Discord community</a>
+              <a target="_blank" rel="noopener noreferrer">
+                Discord community
+              </a>
             </Link>{' '}
             in the&nbsp;
             <strong>#general</strong> channel
