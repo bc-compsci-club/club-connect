@@ -19,7 +19,6 @@ const Button = (props) => {
 
   // Set button variant
   // Button defaults to primary
-  console.log(variant);
   if (variant === 'secondary') {
     resultClassName += ` ${styles.buttonSecondary}`;
   } else if (variant === 'danger') {
