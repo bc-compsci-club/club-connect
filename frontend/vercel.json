@@ -2,13 +2,37 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/discord", "destination": "https://discord.com/invite/ztz44wG" },
-    { "source": "/messenger", "destination": "https://forms.gle/FzqhVEB54rvTqBgi7" },
-    { "source": "/facebook", "destination": "https://www.facebook.com/groups/bc.cis.club" },
-    { "source": "/instagram", "destination": "https://www.instagram.com/bc_compsci" },
-    { "source": "/surveys/welcome-back", "destination": "https://forms.gle/CBMDV1aDVqmVAVrv9" },
-    { "source": "/surveys/welcome", "destination": "https://forms.gle/jbrkMKuqixLS2teHA" },
-    { "source": "/surveys/meet-the-board", "destination": "https://forms.gle/NbWnFkHxFsKQsHYk9" },
-    { "source": "/contribute/apply", "destination": "https://forms.gle/HWNzk4LwP1QVQmn87" }
+    {
+      "source": "/discord",
+      "destination": "https://discord.com/invite/ztz44wG"
+    },
+    {
+      "source": "/messenger",
+      "destination": "https://forms.gle/FzqhVEB54rvTqBgi7"
+    },
+    {
+      "source": "/facebook",
+      "destination": "https://www.facebook.com/groups/bc.cis.club"
+    },
+    {
+      "source": "/instagram",
+      "destination": "https://www.instagram.com/bc_compsci"
+    },
+    {
+      "source": "/surveys/welcome-back",
+      "destination": "https://forms.gle/CBMDV1aDVqmVAVrv9"
+    },
+    {
+      "source": "/surveys/welcome",
+      "destination": "https://forms.gle/jbrkMKuqixLS2teHA"
+    },
+    {
+      "source": "/surveys/meet-the-board",
+      "destination": "https://forms.gle/NbWnFkHxFsKQsHYk9"
+    },
+    {
+      "source": "/contribute/apply",
+      "destination": "https://forms.gle/HWNzk4LwP1QVQmn87"
+    }
   ]
 }
