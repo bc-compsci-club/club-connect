@@ -1,7 +1,6 @@
 {
-  "short_name": "BC CS Club",
   "name": "Brooklyn College Computer Science Club",
-  "description": "The Brooklyn College Computer Science Club is Brooklyn College’s premier student-led, community-first computer science community.",
+  "short_name": "BC CS Club",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -16,7 +15,5 @@
   ],
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
-  "start_url": "/",
-  "scope": "/",
-  "display": "browser"
+  "display": "standalone"
 }
