@@ -169,6 +169,9 @@ eventsRouter.get(
       }
     });
 
+    // Order upcoming events properly
+    categorizedClubEvents.upcomingEvents.reverse();
+
     return res.json(categorizedClubEvents);
   }
 );
