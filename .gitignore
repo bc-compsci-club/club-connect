@@ -36,3 +36,6 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify/
+
+# Files used for local development
+dev/
