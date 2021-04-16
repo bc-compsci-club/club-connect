@@ -7,21 +7,14 @@ Club Connect is the digital portal for the Brooklyn College Computer Science Clu
 ### Prerequisites
 
 - Club Connect requires Node.js to build and run.
-
   - [Node.js (14.16.1 LTS recommended)](https://nodejs.org/)
-
 - The Express backend requires a Sequelize-compatible database and a Redis data store. Club Connect was developed with MySQL in mind, but you may use any database supported by the Sequelize ORM.
-
   - [MySQL (8.0.23 recommended)](https://dev.mysql.com/downloads/)
   - [Redis (6.2 recommended)](https://redis.io/download)
-
 - Club Connect utilizes two additional custom-built services, the [Image Processor Service](https://github.com/bc-compsci-club/image-processor) and the [Registration Service](https://github.com/bc-compsci-club/bc-compsci-club-registration-system), both deployed separately as serverless Google Cloud Functions. Refer the [Google Cloud Functions documentation](https://cloud.google.com/functions) for more information about deploying these additional services.
-
 - To store uploaded data, Club Connect uses a Google Cloud Storage bucket. Refer
   the [Google Cloud Storage documentation](https://cloud.google.com/storage) for more information about setting up a Google Cloud Storage bucket.
-
 - To send transactional emails across the app, Club Connect utilizes the SendGrid API via the official Node.js client library. Refer to the [SendGrid API documentation](https://sendgrid.com/docs/for-developers/sending-email/api-getting-started/#prerequisites-for-sending-your-first-email-with-the-sendgrid-api) for more information about getting your API key for using the SendGrid API.
-
 - To subscribe members to the club's mailing list, the registration service utilizes the Mailchimp Marketing API via the official Node.js client library. Refer to the [Mailchimp developer documentation](https://mailchimp.com/developer/marketing/guides/quick-start/) for more information about getting your API key and settings for using the Mailchimp Marketing API.
 
 ### Running in Development Mode
