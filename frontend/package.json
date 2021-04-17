@@ -1,7 +1,7 @@
 {
   "name": "club-connect-frontend",
   "version": "2.0.2",
-  "description": "The backend for Club Connect, the digital portal for the Brooklyn College Computer Science Club.",
+  "description": "The frontend for Club Connect, the digital portal for the Brooklyn College Computer Science Club.",
   "scripts": {
     "gcp-predeploy": "find ./build -name '\\[...*' -exec bash -c 'mv \"$1\" \"${1/.../@@@}\"' -- {} \\;",
     "gcp-build": "find ./build -name '\\[@@@*' -exec bash -c 'mv \"$1\" \"${1/@@@/...}\"' -- {} \\;",
