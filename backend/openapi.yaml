@@ -116,6 +116,8 @@ paths:
             application/json:
               schema:
                 type: array
+                items:
+                  $ref: '#/components/schemas/Event'
   /events/{id}:
     get:
       summary: Gets an event by its ID.
@@ -134,7 +136,7 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                $ref: '#/components/schemas/Event'
         404:
           description: No event was found with the ID.
 components:
