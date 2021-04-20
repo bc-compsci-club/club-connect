@@ -67,7 +67,7 @@ paths:
       parameters:
         - name: role
           in: query
-          description: When provided, return only announcements pertaining to a specific minimum role.
+          description: When provided, return only announcements pertaining to a specific minimum role. Defaults to all announcements the authenticated member has access to.
           required: false
           schema:
             type: string
