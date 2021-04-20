@@ -103,7 +103,7 @@ paths:
           description: The member does not have access and/or the member's role is not high enough.
         404:
           description: The queried role was not found.
-  /announcements/:id:
+  /announcements/{id}:
     get:
       summary: Gets an announcement by its ID.
       description: Requires the Member, BrooklynCollegeMember, or Admin role.
