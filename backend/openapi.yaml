@@ -1,13 +1,15 @@
 openapi: 3.0.3
 info:
   title: Club Connect - Brooklyn College Computer Science Club
-  description: The OpenAPI document for Club Connect, the full-stack portal for the Brooklyn College Computer Science Club.
+  description: The API documentation for Club Connect, the full-stack portal for the Brooklyn College Computer Science Club.
   version: 1.0.0
 servers:
   - url: 'http://127.0.0.1:8080'
 tags:
   - name: root
     description: Base routes for the application.
+  - name: join
+    description: Routes for joining the club as a new member.
   - name: accounts
     description: Routes regarding a member's account, including authentication and account activation.
   - name: announcements
