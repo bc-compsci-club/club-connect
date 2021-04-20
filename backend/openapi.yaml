@@ -196,6 +196,22 @@ components:
           type: string
           format: password
           minLength: 12
+    Announcement:
+      type: object
+      properties:
+        id:
+          type: integer
+          minimum: 1
+        internalName:
+          type: string
+        title:
+          type: string
+        headline:
+          type: string
+        body:
+          type: string
+        role:
+          type: string
     Event:
       type: object
       properties:
@@ -231,22 +247,6 @@ components:
           type: string
           format: uri
         externalLinkButtonText:
-          type: string
-    Announcement:
-      type: object
-      properties:
-        id:
-          type: integer
-          minimum: 1
-        internalName:
-          type: string
-        title:
-          type: string
-        headline:
-          type: string
-        body:
-          type: string
-        role:
           type: string
   securitySchemes:
     jwtCookieAuth:
