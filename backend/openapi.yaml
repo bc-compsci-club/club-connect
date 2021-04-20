@@ -74,6 +74,19 @@ paths:
             enum:
               - Member
               - BrooklynCollegeMember
+        - name: limit
+          in: query
+          description: When provided, limit the number of returned announcements. Defaults to 25.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+        - name: detailed
+          in: query
+          description: When provided, toggles whether or not to return the announcement's body. Defaults to true.
+          required: false
+          schema:
+            type: boolean
       responses:
         200:
           description: A JSON array of announcements.
