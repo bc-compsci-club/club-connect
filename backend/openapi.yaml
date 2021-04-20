@@ -33,20 +33,20 @@ paths:
   # Accounts
   /accounts/login:
     post:
-      summary: Logs a member in.
+      summary: Logs a member in and returns a JWT to authenticate with the application.
       tags:
         - account
       responses:
         200:
-          description: A JSON object with a JWT and a HttpOnly cookie with a refresh token.
-  /account/logout:
-    post:
-      summary: Logs a member out by overwriting the HttpOnly refresh token cookie with an empty cookie that expires immediately.
+          description: The login was successful. A JWT is returned that can be used with the application to access authenticated routes.
+  /accounts/ping:
+    get:
+      summary: Checks if an issued JWT is valid and ready for authentication with the application.
       tags:
         - account
       responses:
         200:
-          description: A HttpOnly cookie with an immediate expiry.
+          description: The JWT is valid and can be used to access restricted routes the member has access to.
   /announcements:
     get:
       summary: Returns a list of announcements.
