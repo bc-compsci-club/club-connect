@@ -133,20 +133,6 @@ paths:
           description: An invalid section was provided in the query.
         401:
           description: The member is not logged in.
-  /account/verifyBrooklynCollege:
-    post:
-      summary: Sends a verification email to a Brooklyn College email address.
-      tags:
-        - account
-      security:
-        - jwtCookieAuth: []
-      responses:
-        200:
-          description: The verification email has been sent.
-        400:
-          description: An invalid email address was provided.
-        403:
-          description: The member is not logged in.
   /announcements:
     get:
       summary: Returns a list of announcements.
