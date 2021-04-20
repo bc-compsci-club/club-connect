@@ -152,7 +152,7 @@ paths:
             type: boolean
       responses:
         200:
-          description: A JSON array of events.
+          description: A JSON array of multiple events and their data.
           content:
             application/json:
               schema:
