@@ -181,22 +181,6 @@ paths:
           description: Access denied
         404:
           description: The queried role was not found.
-    delete:
-      summary: Deletes an announcement by its ID.
-      description: Requires the Admin role.
-      tags:
-        - announcements
-      security:
-        - jwtCookieAuth: []
-      responses:
-        201:
-          description: The announcement has been deleted.
-        400:
-          description: The submitted data failed validation
-        403:
-          description: Access denied
-        404:
-          description: The queried role was not found
   /events:
     get:
       summary: Returns a list of events.
