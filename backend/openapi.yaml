@@ -22,6 +22,7 @@ paths:
       responses:
         200:
           description: The server has acknowledged your request and is ready to handle requests.
+
   # Accounts
   /accounts/login:
     post:
@@ -54,6 +55,8 @@ paths:
           description: The JWT is valid and can be used to access restricted routes that the member has access to.
         401:
           description: The JWT is invalid and/or the member is not authenticated.
+
+  # Announcements
   /announcements:
     get:
       summary: Returns a list of announcements.
@@ -129,6 +132,8 @@ paths:
           description: The member does not have access and/or the member's role is not high enough.
         404:
           description: The queried role was not found.
+
+  # Events
   /events:
     get:
       summary: Returns a list of events and their data.
