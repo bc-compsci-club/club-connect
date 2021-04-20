@@ -28,17 +28,6 @@ paths:
       responses:
         200:
           description: The server has acknowledged your request and is working properly.
-  # Join
-  /join:
-    post:
-      summary: Submits a request to join the club as a new member.
-      tags:
-        - join
-      responses:
-        200:
-          description: The member data provided in the request has been registered as a new club member.
-        409:
-          description: A member is already registered with the provided email.
   # Accounts
   /account/activate/register:
     post:
