@@ -175,27 +175,6 @@ paths:
           description: The member does not have access/role is not high enough
         404:
           description: The queried role was not found
-    post:
-      summary: Creates a new announcement.
-      description: Requires the Admin role.
-      tags:
-        - announcements
-      security:
-        - jwtCookieAuth: []
-      responses:
-        201:
-          description: The announcement has been created.
-          headers:
-            Location:
-              description: The location of the new event.
-              schema:
-                type: string
-        400:
-          description: The POSTed data failed validation
-        403:
-          description: Access denied
-        404:
-          description: The queried role was not found
   /announcements/:id:
     get:
       summary: Gets an announcement by its ID.
