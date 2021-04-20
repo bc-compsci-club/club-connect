@@ -184,16 +184,6 @@ paths:
             application/json:
               schema:
                 type: array
-  /events/request:
-    post:
-      summary: Submits a new event request. Not the same as creating an event.
-      tags:
-        - events
-      security:
-        - jwtCookieAuth: []
-      responses:
-        200:
-          description: The event request has been created.
   /events/{id}:
     get:
       summary: Gets an event by its ID.
