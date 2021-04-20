@@ -115,6 +115,20 @@ paths:
       summary: Returns a list of events.
       tags:
         - events
+      parameters:
+        - name: limit
+          in: query
+          description: When provided, limit the number of returned events. Defaults to 25.
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+        - name: detailed
+          in: query
+          description: When provided, if false, returns only the event's ID, internal name, title, banner, start date & time, and end date & time. Defaults to false.
+          required: false
+          schema:
+            type: boolean
       responses:
         200:
           description: A JSON array of events.
