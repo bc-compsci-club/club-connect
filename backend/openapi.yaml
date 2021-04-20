@@ -14,12 +14,6 @@ tags:
     description: Routes regarding club announcements for registered club members.
   - name: events
     description: Routes regarding club events.
-components:
-  securitySchemes:
-    jwtCookieAuth:
-      type: apiKey
-      in: cookie
-      name: token
 paths:
   # Root
   /:
@@ -136,3 +130,17 @@ paths:
                 type: object
         404:
           description: No event was found with the ID.
+components:
+  schemas:
+    Login:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+  securitySchemes:
+    jwtCookieAuth:
+      type: apiKey
+      in: cookie
+      name: token
