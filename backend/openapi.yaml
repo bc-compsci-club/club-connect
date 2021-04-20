@@ -144,8 +144,11 @@ components:
       properties:
         email:
           type: string
+          format: email
         password:
           type: string
+          format: password
+          minLength: 12
   securitySchemes:
     jwtCookieAuth:
       type: apiKey
