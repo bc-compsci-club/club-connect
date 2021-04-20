@@ -30,6 +30,13 @@ paths:
       summary: Logs a member in and returns a JWT to authenticate with the application.
       tags:
         - account
+      requestBody:
+        description: The credentials to log in with.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Login'
+        required: true
       responses:
         200:
           description: The login was successful. A JWT is returned as a cookie named "token" that can be used to access authenticated routes.
