@@ -11,7 +11,7 @@
       "description": "Base routes for the application."
     },
     {
-      "name": "account",
+      "name": "accounts",
       "description": "Routes regarding authentication with the application."
     },
     {
@@ -41,7 +41,7 @@
       "post": {
         "summary": "Logs a member in and returns a JWT to authenticate with the application.",
         "tags": [
-          "account"
+          "accounts"
         ],
         "requestBody": {
           "description": "The credentials to log in with.",
@@ -71,7 +71,7 @@
       "get": {
         "summary": "Checks if an issued JWT in a cookie is valid and ready for authentication with the application.",
         "tags": [
-          "account"
+          "accounts"
         ],
         "security": [
           {
@@ -303,6 +303,30 @@
           }
         }
       },
+      "Announcement": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "internalName": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      },
       "Event": {
         "type": "object",
         "properties": {
@@ -350,30 +374,6 @@
             "format": "uri"
           },
           "externalLinkButtonText": {
-            "type": "string"
-          }
-        }
-      },
-      "Announcement": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "minimum": 1
-          },
-          "internalName": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string"
-          },
-          "headline": {
-            "type": "string"
-          },
-          "body": {
-            "type": "string"
-          },
-          "role": {
             "type": "string"
           }
         }
