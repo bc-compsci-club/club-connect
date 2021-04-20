@@ -23,6 +23,16 @@ components:
       in: cookie
       name: token
 paths:
+  # Root
+  /:
+    get:
+      summary: Checks whether or not the server is working.
+      description: Mainly used to check if the backend is up and running.
+      tags:
+        - root
+      responses:
+        200:
+          description: The server has acknowledged your request and is working properly.
   # Accounts
   /account/activate/register:
     post:
