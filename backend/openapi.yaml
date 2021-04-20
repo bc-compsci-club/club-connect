@@ -40,26 +40,7 @@ paths:
       responses:
         200:
           description: The account has been activated.
-  /account/activate/sendEmail:
-    post:
-      summary: Sends an email to a registered member's email address with an activation key.
-      description: The second step in the member registration flow.
-      tags:
-        - account
-      responses:
-        200:
-          description: The verification email has been sent with a link containing the activation key.
-  /account/data:
-    get:
-      summary: Gets the member's account data.
-      tags:
-        - account
-      security:
-        - jwtCookieAuth: []
-      responses:
-        200:
-          description: A JSON object with the member's account data.
-  /account/login:
+  /accounts/login:
     post:
       summary: Logs a member in.
       tags:
