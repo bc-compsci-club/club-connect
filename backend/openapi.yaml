@@ -149,6 +149,42 @@ components:
           type: string
           format: password
           minLength: 12
+    Event:
+      type: object
+      properties:
+        id:
+          type: integer
+          minimum: 1
+        internalName:
+          type: string
+        banner:
+          type: string
+          format: uri
+        presenter:
+          type: string
+        presenterImage:
+          type: string
+          format: uri
+        presentingMemberId:
+          type: integer
+          minimum: 1
+        startDateTime:
+          type: string
+          format: date-time
+        endDateTime:
+          type: string
+          format: date-time
+        eventLocation:
+          type: string
+        shortDescription:
+          type: string
+        longDescription:
+          type: string
+        externalLink:
+          type: string
+          format: uri
+        externalLinkButtonText:
+          type: string
   securitySchemes:
     jwtCookieAuth:
       type: apiKey
