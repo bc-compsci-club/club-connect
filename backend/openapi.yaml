@@ -9,7 +9,7 @@ servers:
   - url: 'https://api.bccompsci.club'
   - url: 'http://127.0.0.1:8080'
 tags:
-  - name: account
+  - name: accounts
     description: Routes regarding a member's account, including authentication and account activation.
   - name: announcements
     description: Routes regarding club announcements for registered club members.
