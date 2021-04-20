@@ -31,15 +31,6 @@ paths:
         200:
           description: The server has acknowledged your request and is working properly.
   # Accounts
-  /account/activate/register:
-    post:
-      summary: Registers a joined (but not activated) club member using an activation key.
-      description: The third and final step in the member registration flow.
-      tags:
-        - account
-      responses:
-        200:
-          description: The account has been activated.
   /accounts/login:
     post:
       summary: Logs a member in.
