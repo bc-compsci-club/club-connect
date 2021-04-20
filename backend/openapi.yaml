@@ -133,7 +133,7 @@ paths:
           description: The queried role was not found.
   /events:
     get:
-      summary: Returns a list of events.
+      summary: Returns a list of events and their data.
       tags:
         - events
       parameters:
