@@ -6,6 +6,8 @@ info:
 servers:
   - url: 'http://127.0.0.1:8080'
 tags:
+  - name: root
+    description: Base routes for the application.
   - name: accounts
     description: Routes regarding a member's account, including authentication and account activation.
   - name: announcements
