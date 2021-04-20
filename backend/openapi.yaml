@@ -269,13 +269,3 @@ paths:
                 type: object
         404:
           description: No event was found with the ID.
-    delete:
-      summary: Deletes an event by its ID.
-      description: Requires the Admin role.
-      tags:
-        - events
-      security:
-        - jwtCookieAuth: []
-      responses:
-        200:
-          description: The event has been deleted.
