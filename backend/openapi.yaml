@@ -108,6 +108,14 @@ paths:
       description: Requires the Member, BrooklynCollegeMember, or Admin role.
       tags:
         - announcements
+      parameters:
+        - name: id
+          in: path
+          description: Announcement ID
+          required: true
+          schema:
+            type: integer
+            minimum: 1
       security:
         - jwtCookieAuth: []
       responses:
