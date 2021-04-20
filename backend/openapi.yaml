@@ -126,7 +126,7 @@ paths:
                   $ref: '#/components/schemas/Event'
   /events/{id}:
     get:
-      summary: Gets an event by its ID.
+      summary: Gets an event and its data by its ID.
       tags:
         - events
       parameters:
@@ -136,6 +136,7 @@ paths:
           required: true
           schema:
             type: integer
+            minimum: 1
       responses:
         200:
           description: A JSON object containing event data.
