@@ -6,7 +6,7 @@ info:
 tags:
   - name: root
     description: Base routes for the application.
-  - name: account
+  - name: accounts
     description: Routes regarding authentication with the application.
   - name: announcements
     description: Routes regarding club announcements for registered club members.
@@ -27,7 +27,7 @@ paths:
     post:
       summary: Logs a member in and returns a JWT to authenticate with the application.
       tags:
-        - account
+        - accounts
       requestBody:
         description: The credentials to log in with.
         content:
@@ -46,7 +46,7 @@ paths:
     get:
       summary: Checks if an issued JWT in a cookie is valid and ready for authentication with the application.
       tags:
-        - account
+        - accounts
       security:
         - jwtCookieAuth: []
       responses:
