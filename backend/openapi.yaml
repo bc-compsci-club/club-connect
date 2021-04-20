@@ -75,55 +75,6 @@ paths:
       responses:
         200:
           description: A HttpOnly cookie with an immediate expiry.
-  /account/settings:
-    get:
-      summary: Gets the member's account settings.
-      tags:
-        - account
-      security:
-        - jwtCookieAuth: []
-      parameters:
-        - name: section
-          in: query
-          description: When provided, return only the settings pertaining to a specific settings section.
-          required: false
-          schema:
-            type: string
-            enum:
-              - profile
-              - account
-              - bcverification
-      responses:
-        200:
-          description: A JSON object with the member's settings data.
-        400:
-          description: An invalid section was provided in the query.
-        401:
-          description: The member is not logged in.
-    put:
-      summary: Updates the settings of a member's account.
-      tags:
-        - account
-      security:
-        - jwtCookieAuth: []
-      parameters:
-        - name: section
-          in: query
-          description: When provided, update only the settings pertaining to a specific settings section.
-          required: false
-          schema:
-            type: string
-            enum:
-              - profile
-              - account
-              - bcverification
-      responses:
-        200:
-          description: The member's settings have been updated
-        400:
-          description: An invalid section was provided in the query.
-        401:
-          description: The member is not logged in.
   /announcements:
     get:
       summary: Returns a list of announcements.
