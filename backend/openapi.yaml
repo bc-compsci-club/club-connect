@@ -38,7 +38,11 @@ paths:
         - account
       responses:
         200:
-          description: The login was successful. A JWT is returned that can be used with the application to access authenticated routes.
+          description: The login was successful. A JWT is returned as a cookie named "token" that can be used to access authenticated routes.
+        400:
+          description: The provided credentials are in an incorrect format.
+        401:
+          description: The provided credentials are invalid.
   /accounts/ping:
     get:
       summary: Checks if an issued JWT in a cookie is valid and ready for authentication with the application.
