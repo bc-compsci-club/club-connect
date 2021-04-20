@@ -184,21 +184,6 @@ paths:
             application/json:
               schema:
                 type: array
-    post:
-      summary: Creates a new event. Not the same as creating an event request.
-      description: Requires the Admin role.
-      tags:
-        - events
-      security:
-        - jwtCookieAuth: []
-      responses:
-        201:
-          description: The event has been created.
-          headers:
-            Location:
-              description: The location of the new event.
-              schema:
-                type: string
   /events/request:
     post:
       summary: Submits a new event request. Not the same as creating an event.
