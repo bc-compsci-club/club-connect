@@ -85,14 +85,15 @@ paths:
         - jwtCookieAuth: []
       responses:
         200:
-          description: A JSON array of announcements
+          description: A JSON object with the details of the requested announcement.
           content:
             application/json:
               schema:
-                type: array
-
+                type: object
+        401:
+          description: The member is not authenticated.
         403:
-          description: Access denied
+          description: The member does not have access and/or the member's role is not high enough.
         404:
           description: The queried role was not found.
   /events:
