@@ -24,12 +24,12 @@ paths:
   # Root
   /:
     get:
-      summary: Checks whether or not the server is working.
+      summary: Utility route to check the server's current status.
       tags:
         - root
       responses:
         200:
-          description: The server has acknowledged your request and is working properly.
+          description: The server has acknowledged your request and is ready to handle requests.
   # Accounts
   /accounts/login:
     post:
