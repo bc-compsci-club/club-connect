@@ -3,7 +3,7 @@
   "info": {
     "title": "Club Connect - Brooklyn College Computer Science Club",
     "description": "The public API documentation for Club Connect, the full-stack portal for the Brooklyn College Computer Science Club. Only the routes documented here are officially supported and permitted for use in third-party applications and integrations.",
-    "version": "2.0.2"
+    "version": "2.0.3"
   },
   "tags": [
     {
