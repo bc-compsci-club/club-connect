@@ -8,7 +8,7 @@ Club Connect is the digital portal for the Brooklyn College Computer Science Clu
 
 - Club Connect requires Node.js to build and run.
   - [Node.js (14.16.1 LTS recommended)](https://nodejs.org/)
-- The Express backend requires a Sequelize-compatible database and a Redis data store. Club Connect was developed with MySQL in mind, but you may use any database supported by the Sequelize ORM.
+- The Express backend requires a Sequelize-compatible database and a Redis data store. Club Connect was developed with MySQL in mind, but you may use any database supported by the Sequelize ORM. If you choose to use another database, you may need to install the appropriate database driver for Sequelize to use. See [the Sequelize documentation](https://sequelize.org/master/manual/getting-started.html) for more information regarding the correct database driver to install.
   - [MySQL (8.0.23 recommended)](https://dev.mysql.com/downloads/)
   - [Redis (6.2 recommended)](https://redis.io/download)
 - Club Connect utilizes two additional custom-built services, the [Image Processor Service](https://github.com/bc-compsci-club/image-processor) and the [Registration Service](https://github.com/bc-compsci-club/bc-compsci-club-registration-system), both deployed separately as serverless Google Cloud Functions. Refer the [Google Cloud Functions documentation](https://cloud.google.com/functions) for more information about deploying these additional services.
@@ -215,7 +215,6 @@ The registration service is a separate service that is called by Club Connect us
   - Cloud Functions
   - Cloud SQL
   - Cloud Storage
-  - Cloud Firestore
 
 ### Additional Services
 

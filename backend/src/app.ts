@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser';
 import morgan from 'morgan';
 import passport from 'passport';
 import cors from 'cors';
+import swaggerUi from 'swagger-ui-express';
 import sgMail from '@sendgrid/mail';
 
 import './security/auth';
@@ -15,6 +16,8 @@ import rootRouter from './routes/root';
 import announcementsRouter from './routes/announcements';
 import accountsRouter from './routes/accounts';
 import joinRouter from './routes/join';
+
+import swaggerDocument from './converted-api-docs.json';
 
 const APP_PORT = process.env.PORT || 8080;
 export const UPLOADED_FILES_DEST = process.env.UPLOADED_FILES_DEST as string;
@@ -61,6 +64,7 @@ const startServer = async () => {
   app.use('/accounts', accountsRouter);
   app.use('/events', eventsRouter);
   app.use('/announcements', announcementsRouter);
+  app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
   // Initialize SendGrid
   sgMail.setApiKey(process.env.SENDGRID_API_KEY as string);

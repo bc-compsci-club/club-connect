@@ -1,0 +1,390 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Club Connect - Brooklyn College Computer Science Club",
+    "description": "The public API documentation for Club Connect, the full-stack portal for the Brooklyn College Computer Science Club. Only the routes documented here are officially supported and permitted for use in third-party applications and integrations.",
+    "version": "2.0.3"
+  },
+  "tags": [
+    {
+      "name": "root",
+      "description": "Base routes for the application."
+    },
+    {
+      "name": "accounts",
+      "description": "Routes regarding authentication with the application."
+    },
+    {
+      "name": "announcements",
+      "description": "Routes regarding club announcements for registered club members."
+    },
+    {
+      "name": "events",
+      "description": "Routes regarding club events."
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Utility route to check the server's current status.",
+        "tags": [
+          "root"
+        ],
+        "responses": {
+          "200": {
+            "description": "The server has acknowledged your request and is ready to handle requests."
+          }
+        }
+      }
+    },
+    "/accounts/login": {
+      "post": {
+        "summary": "Logs a member in and returns a JWT to authenticate with the application.",
+        "tags": [
+          "accounts"
+        ],
+        "requestBody": {
+          "description": "The credentials to log in with.",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The login was successful. A JWT is returned as a cookie named \"token\" that can be used to access authenticated routes."
+          },
+          "400": {
+            "description": "The provided credentials are in an incorrect format."
+          },
+          "401": {
+            "description": "The provided credentials are invalid."
+          }
+        }
+      }
+    },
+    "/accounts/ping": {
+      "get": {
+        "summary": "Checks if an issued JWT in a cookie is valid and ready for authentication with the application.",
+        "tags": [
+          "accounts"
+        ],
+        "security": [
+          {
+            "jwtCookieAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The JWT is valid and can be used to access restricted routes that the member has access to."
+          },
+          "401": {
+            "description": "The JWT is invalid and/or the member is not authenticated."
+          }
+        }
+      }
+    },
+    "/announcements": {
+      "get": {
+        "summary": "Returns a list of announcements.",
+        "description": "Requires the Member, BrooklynCollegeMember, or Admin role.",
+        "tags": [
+          "announcements"
+        ],
+        "security": [
+          {
+            "jwtCookieAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "role",
+            "in": "query",
+            "description": "When provided, return only announcements pertaining to a specific minimum role. Defaults to all announcements the authenticated member has access to.",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "Member",
+                "BrooklynCollegeMember"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "When provided, limit the number of returned announcements. Defaults to 25.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "description": "When provided, toggles whether or not to return the announcement's body. Defaults to true.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON array of announcements.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Announcement"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The member is not authenticated."
+          },
+          "403": {
+            "description": "The member does not have access and/or the member's role is not high enough."
+          },
+          "404": {
+            "description": "The queried role was not found."
+          }
+        }
+      }
+    },
+    "/announcements/{id}": {
+      "get": {
+        "summary": "Gets an announcement by its ID.",
+        "description": "Requires the Member, BrooklynCollegeMember, or Admin role.",
+        "tags": [
+          "announcements"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Announcement ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "security": [
+          {
+            "jwtCookieAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object with the details of the requested announcement.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Announcement"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "The member is not authenticated."
+          },
+          "403": {
+            "description": "The member does not have access and/or the member's role is not high enough."
+          },
+          "404": {
+            "description": "The queried role was not found."
+          }
+        }
+      }
+    },
+    "/events": {
+      "get": {
+        "summary": "Returns a list of events and their data.",
+        "tags": [
+          "events"
+        ],
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "When provided, limit the number of returned events. Defaults to 25.",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          {
+            "name": "detailed",
+            "in": "query",
+            "description": "When provided, if false, returns only the event's ID, internal name, title, banner, start date & time, and end date & time. Defaults to false.",
+            "required": false,
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON array of multiple events and their data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Event"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/events/{id}": {
+      "get": {
+        "summary": "Gets an event and its data by its ID.",
+        "tags": [
+          "events"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Event ID",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A JSON object containing event data.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Event"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No event was found with the ID."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Login": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "type": "string",
+            "format": "password",
+            "minLength": 12
+          }
+        }
+      },
+      "Announcement": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "internalName": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "headline": {
+            "type": "string"
+          },
+          "body": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        }
+      },
+      "Event": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "internalName": {
+            "type": "string"
+          },
+          "banner": {
+            "type": "string",
+            "format": "uri"
+          },
+          "presenter": {
+            "type": "string"
+          },
+          "presenterImage": {
+            "type": "string",
+            "format": "uri"
+          },
+          "presentingMemberId": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "startDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "endDateTime": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "eventLocation": {
+            "type": "string"
+          },
+          "shortDescription": {
+            "type": "string"
+          },
+          "longDescription": {
+            "type": "string"
+          },
+          "externalLink": {
+            "type": "string",
+            "format": "uri"
+          },
+          "externalLinkButtonText": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "jwtCookieAuth": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "token"
+      }
+    }
+  }
+}

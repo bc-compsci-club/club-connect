@@ -1,6 +1,6 @@
 {
   "name": "club-connect-frontend",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "The frontend for Club Connect, the digital portal for the Brooklyn College Computer Science Club.",
   "scripts": {
     "gcp-predeploy": "find ./build -name '\\[...*' -exec bash -c 'mv \"$1\" \"${1/.../@@@}\"' -- {} \\;",
@@ -12,7 +12,7 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "author": "bc-compsci-club",
+  "author": "Brooklyn College Computer Science Club",
   "license": "GPL-3.0",
   "dependencies": {
     "@date-io/dayjs": "^1.3.13",
@@ -26,7 +26,7 @@
     "bootstrap": "^4.5.3",
     "dayjs": "^1.10.3",
     "lodash.clonedeep": "^4.5.0",
-    "next": "10.0.5",
+    "next": "^10.1.3",
     "next-compose-plugins": "^2.2.1",
     "next-images": "^1.6.2",
     "next-redux-wrapper": "^6.0.2",
@@ -64,9 +64,9 @@
     "@babel/core": "^7.12.10",
     "@hookform/devtools": "^2.2.1",
     "@storybook/addon-actions": "^6.1.14",
-    "@storybook/addon-essentials": "^6.1.14",
+    "@storybook/addon-essentials": "^6.2.8",
     "@storybook/addon-links": "^6.1.14",
-    "@storybook/react": "^6.1.14",
+    "@storybook/react": "^6.2.8",
     "babel-loader": "^8.2.2",
     "eslint": "^7.17.0",
     "eslint-plugin-react": "^7.22.0",

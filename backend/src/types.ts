@@ -35,18 +35,6 @@ export interface MemberData {
   role: Roles;
 }
 
-/**
- * A listing in the event browser
- *
- * @deprecated
- */
-export interface ClubEventListing {
-  id: number;
-  internalName: string;
-  title: string;
-  banner?: string; // A link to the banner on Google Cloud Storage
-}
-
 // Required credentials to authenticate a member
 export interface AuthenticationCredentials {
   email: string;
