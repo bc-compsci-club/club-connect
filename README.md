@@ -215,7 +215,6 @@ The registration service is a separate service that is called by Club Connect us
   - Cloud Functions
   - Cloud SQL
   - Cloud Storage
-  - Cloud Firestore
 
 ### Additional Services
 
