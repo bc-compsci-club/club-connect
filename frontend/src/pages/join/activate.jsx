@@ -59,7 +59,6 @@ const ActivateAccount = () => {
             ) : (
               <RequestActivationForm />
             )}
-            }
           </div>
         </section>
       </div>
