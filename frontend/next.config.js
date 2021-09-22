@@ -12,4 +12,4 @@ const mdxConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx'],
 };
 
-module.exports = withPlugins([images, [mdx, mdxConfig]], nextConfig);
+module.exports = withPlugins([images, [mdx, mdxConfig]]);
