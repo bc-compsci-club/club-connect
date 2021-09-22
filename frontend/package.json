@@ -11,6 +11,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "export": "npm run build && next export -o _static"
     "deploy_bk": "npm run build && npm run gcp-predeploy && gcloud app deploy",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
