@@ -155,6 +155,7 @@ const HamburgerMenu = () => {
                     <Button
                       classNamePassed={styles.navJoinButton}
                       href="https://docs.google.com/forms/d/e/1FAIpQLScb5bZEYE9sBzT57bbepmSFy6M21yoOWg4i5zHYSicfkxTOOg/viewform?usp=sf_link"
+                      target = "_blank"
                       onClick={context.toggleMenu}
                       asLink
                       big
