@@ -20,7 +20,7 @@ const WelcomeSection = (props) => {
               experience or major.
             </p>
             <div className={styles.welcomeActionButtons}>
-              <Link href="https://docs.google.com/forms/d/e/1FAIpQLScb5bZEYE9sBzT57bbepmSFy6M21yoOWg4i5zHYSicfkxTOOg/viewform?usp=sf_link">
+              <Link href="/join">
                 <a className={styles.joinButton}>Join&nbsp;the&nbsp;Club</a>
               </Link>
               <Link href="/about">
