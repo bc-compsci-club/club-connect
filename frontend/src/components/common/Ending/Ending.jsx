@@ -8,7 +8,7 @@ const Ending = ({ width }) => {
     <section className={styles.ending}>
       <div className={styles.endingContainer}>
         <EndingText width={width} />
-        <Link href="/join">Join the Club</Link>
+        <Link href = "https://docs.google.com/forms/d/e/1FAIpQLScb5bZEYE9sBzT57bbepmSFy6M21yoOWg4i5zHYSicfkxTOOg/viewform?usp=sf_link" target="_blank" >Join the Club</Link>
       </div>
     </section>
   );
