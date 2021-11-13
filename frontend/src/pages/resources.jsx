@@ -8,6 +8,7 @@ import LearnResources from 'assets/pages/resources/learn.mdx';
 import ToolsResources from 'assets/pages/resources/tools.mdx';
 import resourcesStyles from 'styles/pages/Resources.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
+import csHandook from '../frontend/src/assets/csHandook.pdf';
 
 const pageTitle = `Resources – ${SITE_NAME_BASE}`;
 
@@ -30,6 +31,8 @@ const Resources = () => {
         className={`${commonStyles.container} ${commonStyles.text} ${resourcesStyles.resources}`}
       >
         <h1 className={commonStyles.centerElement}>Resources</h1>
+        <a href={csHandbook} download="csHandbook.pdf"> Brooklyn College CS Handbook </a>
+        
         <LearnResources />
 
         <br />
