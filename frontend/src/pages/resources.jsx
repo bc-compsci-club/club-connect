@@ -31,7 +31,7 @@ const Resources = () => {
         className={`${commonStyles.container} ${commonStyles.text} ${resourcesStyles.resources}`}
       >
         <h1 className={commonStyles.centerElement}>Resources</h1>
-        <h2 className={commonStyles.centerElement}><a href={csHandbook} download="csHandbook.pdf"> Brooklyn College CS Handbook </a></h2>
+        <h2 className={commonStyles.centerElement}><a href={csHandbook} target="_blank" download="csHandbook.pdf"> Brooklyn College CS Handbook </a></h2>
         
         <LearnResources />
 
