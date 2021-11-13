@@ -8,7 +8,7 @@ import LearnResources from 'assets/pages/resources/learn.mdx';
 import ToolsResources from 'assets/pages/resources/tools.mdx';
 import resourcesStyles from 'styles/pages/Resources.module.scss';
 import commonStyles from 'styles/commonStyles.module.scss';
-import csHandbook from '../frontend/src/assets/csHandbook.pdf';
+import csHandbook from 'assets/csHandbook.pdf';
 
 const pageTitle = `Resources – ${SITE_NAME_BASE}`;
 
