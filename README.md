@@ -221,6 +221,11 @@ The registration service is a separate service that is called by Club Connect us
 - Mailchimp (via Node.js Library)
 - SendGrid (via Node.js Library)
 
+## Want to Contribute?
+We are a community-driven club that welcomes any useful contributions made by students at Brooklyn College.
+
+Please read our [contributing section](/CONTRIBUTING.md) before making any Pull Requests.
+
 ## License
 
 Club Connect is licensed under the [GPL-3.0](LICENSE) License.
