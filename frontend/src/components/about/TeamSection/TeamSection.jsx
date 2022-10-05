@@ -13,6 +13,12 @@ import rohmaImage from 'assets/pages/about/team-members/2019-2020/rohma.jpg';
 import tylerImage from 'assets/pages/about/team-members/2019-2020/tyler.jpg';
 import siamImage from 'assets/pages/about/team-members/2019-2020/siam.jpg';
 
+import anastasiaImage from 'assets/pages/about/team-members/2021-2022/Anastasia.jpg';
+import evelynImage from 'assets/pages/about/team-members/2021-2022/Evelyn.png';
+import oleksandraImage from 'assets/pages/about/team-members/2021-2022/Oleksandra.jpg';
+import gilmanImage from 'assets/pages/about/team-members/2021-2022/Gilman.jpg';
+
+
 const TeamSection = () => {
   return (
     <section className={teamStyles.team}>
@@ -23,7 +29,56 @@ const TeamSection = () => {
         <h3 className={teamStyles.position}>
           <strong>Executive Board Members</strong>
         </h3>
-
+        {/* 2022 - 2023 Executive Board */}
+        <div>
+          <h4 className={teamStyles.term}>June 2022 - May 2023</h4>
+          <div className={teamStyles.teamMemberList}>
+            {/* 150 characters max for description */}
+            <TeamMember image={oleksandraImage} firstName="Oleksandra" lastName="Kurbanova">
+              I love algorithms and LeetCode. I spend my free time in books and open world games. 
+            </TeamMember>
+            <TeamMember
+              image={evelynImage} firstName="Evelyn" lastName="Velez"
+            >
+              I enjoy coding, hiking scenic landscapes, and going on joy rides. 
+            </TeamMember>
+            <TeamMember
+              image={gilmanImage} firstName="Gilman" lastName="Huang"
+            >
+              NYC Tech Talent Pipeline Residency fellow. Old man aspiring to be a video game speedrunner. 
+            </TeamMember>
+            <TeamMember
+              image={clubLogo} firstName="xxxxx" lastName="xxxxx"
+            >
+              Hi! I&apos;m an Executive Board Member of the Brooklyn College
+              Computer Science Club.
+            </TeamMember>
+          </div>
+        </div>
+        {/* 2021 - 2022 Executive Board */}
+        <div>
+          <h4 className={teamStyles.term}>June 2021 - May 2022</h4>
+          <div className={teamStyles.teamMemberList}>
+            {/* 150 characters max for description */}
+            <TeamMember image={anastasiaImage} firstName="Anastasia" lastName="Gusenkov">
+              Currently trying out UI/UX development.
+              Playing D&amp;D on the weekends.
+            </TeamMember>
+            <TeamMember image={oleksandraImage} firstName="Oleksandra" lastName="Kurbanova">
+              I love algorithms and LeetCode. I spend my free time in books and open world games. 
+            </TeamMember>
+            <TeamMember
+              image={evelynImage} firstName="Evelyn" lastName="Velez"
+            >
+              I enjoy coding, hiking scenic landscapes, and going on joy rides. 
+            </TeamMember>
+            <TeamMember
+              image={gilmanImage} firstName="Gilman" lastName="Huang"
+            >
+              NYC Tech Talent Pipeline Residency fellow. Old man aspiring to be a video game speedrunner. 
+            </TeamMember>
+          </div>
+        </div>
         {/* 2020 - 2021 Executive Board */}
         <div>
           <h4 className={teamStyles.term}>June 2020 - May 2021</h4>
