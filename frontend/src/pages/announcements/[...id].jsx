@@ -180,12 +180,13 @@ const AnnouncementPage = (props) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      id: context.params.id[0],
-    },
-  };
-};
+/* Temp fix - cannot export getServerSideProps from a Page when running 'next export' during deployment */
+// export const getServerSideProps = async (context) => {
+//   return {
+//     props: {
+//       id: context.params.id[0],
+//     },
+//   };
+// };
 
 export default AnnouncementPage;

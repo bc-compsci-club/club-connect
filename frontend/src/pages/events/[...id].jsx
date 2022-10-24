@@ -15,16 +15,17 @@ const EventPage = (props) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
-  const clubEventId = context.params.id[0];
-  const clubEvent = await axios.get(`${API_ROOT}/events/${clubEventId}`);
+/* Temp fix - cannot export getServerSideProps from a Page when running 'next export' during deployment */
+// export const getServerSideProps = async (context) => {
+//   const clubEventId = context.params.id[0];
+//   const clubEvent = await axios.get(`${API_ROOT}/events/${clubEventId}`);
 
-  if (!clubEvent.data) {
-    return { notFound: true };
-  } else {
-    return { props: { clubEventData: clubEvent.data } };
-  }
-};
+//   if (!clubEvent.data) {
+//     return { notFound: true };
+//   } else {
+//     return { props: { clubEventData: clubEvent.data } };
+//   }
+// };
 
 EventPage.propTypes = {
   clubEventData: PropTypes.shape({
