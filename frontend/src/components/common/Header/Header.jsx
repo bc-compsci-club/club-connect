@@ -119,6 +119,7 @@ const LoggedOutItems = () => {
       <li>
         <Link href="/contribute">Contribute</Link>
       </li>
+
       {/* <li>
         <Link href="/login">
           <a>
@@ -127,12 +128,7 @@ const LoggedOutItems = () => {
         </Link>
       </li> */}
       <li className={styles.joinButton}>
-        <Link
-          href="https://docs.google.com/forms/d/e/1FAIpQLScb5bZEYE9sBzT57bbepmSFy6M21yoOWg4i5zHYSicfkxTOOg/viewform?usp=sf_link"
-          target="_blank"
-        >
-          Join the Club
-        </Link>
+        <a href = "https://docs.google.com/forms/d/e/1FAIpQLScb5bZEYE9sBzT57bbepmSFy6M21yoOWg4i5zHYSicfkxTOOg/viewform?usp=sf_link" target= "_blank">Join the Club</a>
       </li>
     </ul>
   );

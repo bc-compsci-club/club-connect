@@ -150,20 +150,12 @@ const HamburgerMenu = () => {
                 </>
               ) : (
                 <>
-                  <li>
-                    <Link href="/login">
-                      <a
-                        className={`${styles.navLogInLink} ${styles.navBottomListLink} ${styles.navMobileLink}`}
-                        onClick={context.toggleMenu}
-                      >
-                        <strong>Log In</strong>
-                      </a>
-                    </Link>
-                  </li>
+                 
                   <li>
                     <Button
                       classNamePassed={styles.navJoinButton}
-                      href="/join"
+                      href="https://docs.google.com/forms/d/e/1FAIpQLScb5bZEYE9sBzT57bbepmSFy6M21yoOWg4i5zHYSicfkxTOOg/viewform?usp=sf_link"
+                      target = "_blank"
                       onClick={context.toggleMenu}
                       asLink
                       big

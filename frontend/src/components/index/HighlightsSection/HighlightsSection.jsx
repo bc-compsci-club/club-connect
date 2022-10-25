@@ -59,7 +59,7 @@ const HighlightsSection = () => {
         containerClass={highlightStyles.highlightNetwork}
         title="Network"
         description={descriptions[2]}
-        linkUrl="/join"
+        linkUrl="https://docs.google.com/forms/d/e/1FAIpQLScb5bZEYE9sBzT57bbepmSFy6M21yoOWg4i5zHYSicfkxTOOg/viewform?usp=sf_link"
         linkText="Join The Community"
         image={networkImage}
         imageAlt="Network"
