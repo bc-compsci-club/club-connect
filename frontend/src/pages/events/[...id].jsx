@@ -6,7 +6,24 @@ import { ClubEvent } from 'components/events/[...id]';
 import { API_ROOT } from 'pages/_app';
 
 const EventPage = (props) => {
-  const { clubEventData } = props;
+  const eventData = { clubEventData: {
+      id: 123,
+      internalName: 'bc comp sci',
+      title: 'admin',
+      banner: 'none',
+      presenter: 'cs club',
+      presenterImage: 'none',
+      startDateTime: 'none',
+      endDateTime: 'none',
+      eventLocation: 'Student Center',
+      shortDescription: 'short description',
+      longDescription: 'long description',
+      externalLink: 'https://example.com',
+      externalLinkButtonText: 'link to event',
+    }
+  };
+
+  const { clubEventData } = eventData;
 
   return (
     <div className="EventPage">
@@ -35,8 +52,8 @@ EventPage.propTypes = {
     banner: PropTypes.string,
     presenter: PropTypes.string,
     presenterImage: PropTypes.string,
-    startDateTime: PropTypes.instanceOf(Date),
-    endDateTime: PropTypes.instanceOf(Date),
+    startDateTime: PropTypes.string, // change to instanceOf(Date)
+    endDateTime: PropTypes.string, // change to instanceOf(Date)
     eventLocation: PropTypes.string,
     shortDescription: PropTypes.string,
     longDescription: PropTypes.string,

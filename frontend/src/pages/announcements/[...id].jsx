@@ -22,7 +22,8 @@ const AnnouncementPage = (props) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const { id } = props;
+  const tempIdForDebugging = 123;
+  const { id } = props || tempIdForDebugging;
 
   const [pageLoaded, setPageLoaded] = useState(false);
   const [pageTitle, setPageTitle] = useState('Loading...');
