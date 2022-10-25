@@ -1,6 +1,8 @@
 # Contributing
 
-Thank you for your interest in contributing to the club's website! No matter how large or how small, we welcome all contributions made by students at Brooklyn College. Our club is community-driven and our goals are to help students improve their technical skills and further their education in computer science.
+**__Note__: At this time, we are only accepting contributions from currently matriculated Brooklyn College students*
+
+Thank you for your interest in contributing to the club's website! No matter how large or how small, we welcome all contributions made by **students at Brooklyn College**. Our club is community-driven and our goals are to help students improve their technical skills and further their education in computer science.
 
 # Table of Contents
 
@@ -21,8 +23,9 @@ There are a few guidelines you should know while working on the website.
 - We use functional React components in this project. If you have a class-based component, please refactor it to a functional component before opening a pull request.
 
 # Raising a Pull Request (PR)
+For general guidelines on claiming issues to work on, refer to the steps outlined on our website's [Contribute Page](https://bccompsci.club/contribute)
 
-The workflow you should follow when contributing to this project can be seen in the diagram below (made using [mermaid](https://mermaid-js.github.io/mermaid/#/gitgraph?id=themes))
+The workflow you should follow when contributing to this project can be seen in the diagram below (*made using [mermaid](https://mermaid-js.github.io/mermaid/#/gitgraph?id=themes)*)
 
 ```mermaid
 %%{init: {'theme': 'base', 'gitGraph': {'showCommitLabel': false}}}%%
@@ -154,7 +157,7 @@ Each commit should **focus on one action** and should have a descriptive commit 
 "add events page, add newsletter page, remove help page, update signup page"
 
 # good
-"renamed general utils method 'userId' to getClubMemberId"
+"rename general utils method 'userId' to getClubMemberId"
 "create events page to list past and current events"
 "create newsletter page to display monthly club fliers"
 "remove unreachable help page"
@@ -170,6 +173,7 @@ The following is a list of terms and abbreviations that are used throughout this
 - doc - Documentation
 - env - environment
 - PR - pull request
+- prod - production
 - repo - repository
 
 [Back to Top ^](#contributing)
