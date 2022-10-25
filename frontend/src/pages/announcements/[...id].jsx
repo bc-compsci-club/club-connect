@@ -22,7 +22,8 @@ const AnnouncementPage = (props) => {
   const router = useRouter();
   const dispatch = useDispatch();
 
-  const { id } = props;
+  const tempIdForDebugging = 123;
+  const { id } = props || tempIdForDebugging;
 
   const [pageLoaded, setPageLoaded] = useState(false);
   const [pageTitle, setPageTitle] = useState('Loading...');
@@ -180,12 +181,13 @@ const AnnouncementPage = (props) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
-  return {
-    props: {
-      id: context.params.id[0],
-    },
-  };
-};
+/* Temp fix - cannot export getServerSideProps from a Page when running 'next export' during deployment */
+// export const getServerSideProps = async (context) => {
+//   return {
+//     props: {
+//       id: context.params.id[0],
+//     },
+//   };
+// };
 
 export default AnnouncementPage;
