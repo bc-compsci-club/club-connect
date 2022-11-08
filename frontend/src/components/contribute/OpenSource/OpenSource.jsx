@@ -61,7 +61,7 @@ const OpenSource = () => (
         <div>
           <h4>
             Once you've been assigned the issue by a maintainer, you can fork
-            the project repository and stat working on it!
+            the project repository and start working on it!
           </h4>
           <li>Fork the project's repository to your own GitHub account.</li>
           <li>Clone the forked repository to your computer.</li>
