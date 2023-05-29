@@ -164,12 +164,13 @@ Each commit should **focus on one action** and should have a descriptive commit 
 # Glossary
 
 The following is a list of terms and abbreviations that are used throughout this project
-
-- cs - Computer Science
-- dev - Developer/Development
-- doc - Documentation
-- env - environment
-- PR - pull request
-- repo - repository
+| Abbreviation | Term |
+| - | - |
+| cs | Computer Science |
+| dev | Developer/Development |
+| doc | Documentation |
+| env | environment |
+| PR | pull request |
+| repo | repository |
 
 [Back to Top ^](#contributing)
