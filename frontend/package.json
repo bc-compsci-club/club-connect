@@ -5,10 +5,14 @@
   "scripts": {
     "gcp-predeploy": "find ./build -name '\\[...*' -exec bash -c 'mv \"$1\" \"${1/.../@@@}\"' -- {} \\;",
     "gcp-build": "find ./build -name '\\[@@@*' -exec bash -c 'mv \"$1\" \"${1/@@@/...}\"' -- {} \\;",
+    "dev_bk": "next dev",
+    "build_bk": "rm -rf ./build && NODE_ENV=production next build",
+    "start_bk": "next start -p ${PORT-3000}",
     "dev": "next dev",
-    "build": "rm -rf ./build && NODE_ENV=production next build",
-    "start": "next start -p ${PORT-3000}",
-    "deploy": "npm run build && npm run gcp-predeploy && gcloud app deploy",
+    "build": "next build",
+    "start": "next start",
+    "export": "npm run build && next export -o _static",
+    "deploy_bk": "npm run build && npm run gcp-predeploy && gcloud app deploy",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
